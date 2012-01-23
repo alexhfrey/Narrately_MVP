@@ -1,9 +1,20 @@
 MVP1::Application.routes.draw do
+  get "pages/home"
+
+  get "projects/new"
+
+  get "projects/create"
+
+  get "projects/show"
+
   get "users/new"
 
   get "users/create"
 
   get "users/show"
+  
+  root :to => 'pages#home'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

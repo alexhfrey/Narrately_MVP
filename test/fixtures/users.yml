@@ -1,0 +1,23 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  email: MyString
+  facebook_id: 1
+  twitter_handle: MyString
+  sex: MyString
+  age: 1
+  referral_campaign: MyString
+  referral_source: MyString
+  profile_image: MyString
+
+two:
+  name: MyString
+  email: MyString
+  facebook_id: 1
+  twitter_handle: MyString
+  sex: MyString
+  age: 1
+  referral_campaign: MyString
+  referral_source: MyString
+  profile_image: MyString
