@@ -1,2 +1,6 @@
-<h1>Projects#show</h1>
+<h1>Project Page</h1>
 <p>Find me in app/views/projects/show.html.erb</p>
+<p>Some sample code to test functionality / database integration </p>
+<div>Title: <%= @project.project_title %></div>
+<div>Description: <%= @project.description %> </div>
+<div>Creator: <%= link_to @project.user.name, @project.user %> </div>

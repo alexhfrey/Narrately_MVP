@@ -1,0 +1,6 @@
+<h1>Confirmation Page</h1>
+<h2><%= "Project Title: #{@project.project_title}" %></h2>
+<p>Find me in app/views/projects/confirmation.html.erb</p>
+<p>Thanks for signing up <%= @project.user.name %>. We will email you with a unique url when we confirm your project, <strong> <%= @project.project_title %></strong></p>
+<div><%= link_to "Go to my project page (would not be live yet in final version)",@project %></div>
+<div><%= link_to "Go to my dashboard",@user %></div>
