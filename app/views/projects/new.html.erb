@@ -17,10 +17,10 @@
     <%= f.label :purchase_link %><br />
     <%= f.text_field :purchase_link %>
   </div>
-  <%# <div class="field"> %>
-  <%# = f.label :file1, "Reward File" %>
-  <%# = f.file_field :file1 %>
-  <%# /div> %>
+  <div class="field"> 
+  <%= f.label :output_file, "Reward File" %>
+  <%= f.file_field :output_file %>
+  </div>
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>

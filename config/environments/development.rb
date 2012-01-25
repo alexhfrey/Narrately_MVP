@@ -16,6 +16,8 @@ MVP1::Application.configure do
 
   # Don't care if the mailer can't send
   config.action_mailer.raise_delivery_errors = false
+  
+  Paperclip.options[:command_path] = "C:\Program Files\ImageMagick-6.7.4-Q16"
 
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
