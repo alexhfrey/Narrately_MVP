@@ -8,7 +8,9 @@ MVP1::Application.routes.draw do
 			get 'confirmation'
 		end
    end
-   
+  
+  match "/auth/:provider/callback" => "sessions#create"
+  match '/signout' => "sessions#destroy", :as => :signout
   match '/signup',  :to => 'users#new'	
   
   
