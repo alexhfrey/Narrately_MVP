@@ -4,3 +4,7 @@
 <div>Title: <%= @project.project_title %></div>
 <div>Description: <%= @project.description %> </div>
 <div>Creator: <%= link_to @project.user.name, @project.user %> </div>
+<div>
+<%= image_tag @project.project_image.url(:medium) %> </div>
+
+<%= link_to "Claim your reward", @project.output_file.url %>

@@ -1,6 +1,8 @@
 <h1>Create Project Page</h1>
-
-<%= form_for(@project) do |f| %>
+<%= @project.errors.each_full{|msg| puts msg } %>
+<%= form_for @project, :html => { :multipart => true } do |f| %>
+  
+  
   <div class = "field">
 	<%= f.hidden_field :user_id, :value => @user.id %>
    </div>
@@ -16,6 +18,13 @@
   <div class="field">
     <%= f.label :purchase_link %><br />
     <%= f.text_field :purchase_link %>
+  </div><br/>
+  <div class = "field">
+	<%= select_tag(:tag, options_for_select([['Romance', 1], ['Mystery', 2], ['Business', 3]])) %>
+  </div>
+  <div class="field"> 
+  <%= f.label :project_image, "Project Cover Image" %>
+  <%= f.file_field :project_image %>
   </div>
   <div class="field"> 
   <%= f.label :output_file, "Reward File" %>

@@ -12,7 +12,7 @@ class ProjectsController < ApplicationController
 	if @project.save
 		render :confirmation
 	else 
-	flash 'Did not work'
+	
 	render 'new'
 	end
   end
