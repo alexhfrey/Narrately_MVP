@@ -2,7 +2,7 @@ MVP1::Application.routes.draw do
   get "pages/home"
   
   
-  resources :users, :only => [:new, :create, :show] 
+  resources :users, :only => [:show] 
 	resources :projects, :only => [:new, :create, :show] do
 		member do
 			get 'confirmation'

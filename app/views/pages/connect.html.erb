@@ -1,0 +1,1 @@
+<%= link_to "Sign in with Facebook", "/auth/facebook" %>

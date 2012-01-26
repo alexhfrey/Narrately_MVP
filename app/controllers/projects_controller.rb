@@ -1,25 +1,23 @@
 class ProjectsController < ApplicationController
   def new
-	@user = User.find(params[:user_id])
+	@user = current_user
 	@project = @user.projects.build
-	params[:user_id] = params[:user_id]
+	
   end
 
   def create
-	@user = User.find(params[:project][:user_id])
+	@user = current_user
 	@project = @user.projects.build(params[:project])
 	
 	if @project.save
 		render :confirmation
-	else 
-	
+	else 	
 	render 'new'
 	end
   end
 
   def show
   @project = Project.find(params[:id])
-  
   end
   
   def confirmation
