@@ -1,7 +1,7 @@
 class AddOutputfileColumnsToProjects < ActiveRecord::Migration
   def self.up
     change_table :projects do |t|
-      t.has_attached_file :output_file, :default_url => "/images/missing.png"
+      t.has_attached_file :output_file
     end
   end
 
