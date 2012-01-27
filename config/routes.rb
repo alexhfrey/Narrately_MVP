@@ -12,6 +12,7 @@ MVP1::Application.routes.draw do
   match "/auth/:provider/callback" => "sessions#create"
   match '/signout' => "sessions#destroy", :as => :signout
   match '/signup',  :to => 'users#new'	
+  match '/signin', :to => 'sessions#new'
   
   
 
