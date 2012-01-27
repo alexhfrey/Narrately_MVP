@@ -530,7 +530,7 @@ height:20px;
 	list-style:none;
 	float:left;
 	    margin-left: -3px;
-    margin-top: 35px;
+    margin-top: 5px;
 	margin-bottom:5px;}
 	.footermenu li {
 	float:left;
@@ -548,6 +548,7 @@ height:20px;
 	    color: #4E5A66;
     display: block;
     float: left;
+    padding-left: 10px; 
     width: 100%;}
 	.copyline a {
 	color:#2e353d;
