@@ -1,7 +1,11 @@
 MVP1::Application.routes.draw do
-  get "pages/home"
+ 
+
+ 
+
+ 
   
-  
+  resources :actions, :only => [:new, :create]
   resources :users, :only => [:show] 
 	resources :projects, :only => [:new, :create, :show] do
 		member do
@@ -13,6 +17,7 @@ MVP1::Application.routes.draw do
   match '/signout' => "sessions#destroy", :as => :signout
   match '/signup',  :to => 'users#new'	
   match '/signin', :to => 'sessions#new'
+  match "/projects/:id/share"  => 'actions#new'
   
   
 
