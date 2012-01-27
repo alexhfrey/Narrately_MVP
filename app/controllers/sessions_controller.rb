@@ -8,7 +8,7 @@ def create
 	else #Direct to New Project signup if this is a new user
 		user = User.create_with_omniauth(auth)
 		session[:user_id] = user.id
-		redirect_to new_project_url
+		redirect_to new_project_path
 	end
 end
 
