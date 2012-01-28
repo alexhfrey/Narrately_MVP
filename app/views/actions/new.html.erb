@@ -3,4 +3,4 @@
 <h1>Actions#new</h1>
 <p>Find me in app/views/actions/new.html.erb</p>
 
-<a href= <%= "https://twitter.com/share?url=" + CGI::escape("http://www.narrately.com/projects/" + params(:id)) %> class="twitter-share-button" data-lang="en" data-related="narrately">Tweet</a>
+<a href= <%= "https://twitter.com/share?url=" + @query %> class="twitter-share-button" data-lang="en" >Tweet</a>

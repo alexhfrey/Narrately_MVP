@@ -10,7 +10,8 @@ gem 'paperclip', :path => 'vendor/GEMS/paperclip'
 
 gem 'omniauth-facebook'
 
-
+gem 'aws-s3'
+gem 'aws-sdk'
 
 group :development do
 	gem 'annotate', '2.4.0'

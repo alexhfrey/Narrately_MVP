@@ -5,6 +5,6 @@
 <div>Description: <%= @project.description %> </div>
 <div>Creator: <%= link_to @project.user.name, @project.user %> </div>
 <div>
-<%= image_tag @project.project_image.url(:medium) %> </div>
+<%= image_tag @project.project_image.url %> </div>
 
-<div><%= link_to "SHARE!", new_action_path %>
+<div><%= link_to "SHARE!", new_project_action_path (@project) %>
