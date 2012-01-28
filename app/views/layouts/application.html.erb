@@ -32,7 +32,7 @@
 <div class="grid_16 menu">
 
 <ul class="menu1">
-<% page = request.request_uri %>
+<% page = request.fullpath %>
 <li><a href="index.html" <%= if page.include? "home" 
 								print('class="active"') 
 								else 

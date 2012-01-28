@@ -3,7 +3,7 @@
 <p>Hello! Some sample code to test functionality / database integration </p>
 <div>Title: <%= @project.project_title %></div>
 <div>Description: <%= @project.description %> </div>
-<div>Creator: <%= link_to @project.user.name, @project.user %> </div>
+<div>Creator: <%= link_to @user.name, @user %> </div>
 <div>
 <%= image_tag @project.project_image.url %> </div>
 
