@@ -10,14 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120126183727) do
-
-  create_table "actions", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "project_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(:version => 20120129085934) do
 
   create_table "projects", :force => true do |t|
     t.integer  "user_id"
@@ -40,6 +33,13 @@ ActiveRecord::Schema.define(:version => 20120126183727) do
     t.integer  "project_image_file_size"
     t.string   "project_image_file_name"
     t.string   "project_image_content_type"
+  end
+
+  create_table "shares", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "project_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", :force => true do |t|

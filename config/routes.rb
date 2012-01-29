@@ -1,9 +1,5 @@
 MVP1::Application.routes.draw do
  
-
- 
-
- 
   
  
   resources :users, :only => [:show] 
@@ -11,14 +7,14 @@ MVP1::Application.routes.draw do
 		member do
 			get 'confirmation'
 		end
-		resources :actions, :only => [:new, :create]
+		resources :shares, :only => [:new, :create]
    end
   
   match "/auth/:provider/callback" => "sessions#create"
   match '/signout' => "sessions#destroy", :as => :signout
   match '/signup',  :to => 'users#new'	
   match '/signin', :to => 'sessions#new'
-  match "/projects/:id/share"  => 'actions#new'
+  
   
   
 
