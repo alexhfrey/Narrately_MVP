@@ -1198,13 +1198,14 @@ height:20px;
     margin-bottom: 5px;
     text-align: center;
     width: 78px;}
-	.oldprice {
-	    color: #4d4c4c;
+    
+	.saleleft {
+	color: #4d4c4c;
     display: block;
     float: left;
-    font-size: 14px;
+    font-size: 12px;
     height: 20px;
-    margin-bottom: -2px;
+    margin-bottom: 0px;
     margin-top: -15px;
     text-align: center;
     text-decoration: none;
