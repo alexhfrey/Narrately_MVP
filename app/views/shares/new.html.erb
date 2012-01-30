@@ -14,8 +14,9 @@ twttr.events.bind('tweet', function(event) {
 ); });
 </script>
 <h1>Actions#new</h1>
-<form name="test" action= "<%= create_projects_share_path %>" method="post"> 
-	<input type = "hidden" name = "authenticity_token" value = <%= form_authenticity_token %> />
+<%= form_tag(create_projects_share_path :method => "post") do %> 
+	<%= text_field_tag(:q, :value => "test")%>
+<% end %>
 </form>
 <p>Find me in app/views/actions/new.html.erb</p>
 
