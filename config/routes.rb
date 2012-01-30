@@ -3,6 +3,7 @@ MVP1::Application.routes.draw do
   
  
   resources :users, :only => [:show] 
+  
   resources :projects, :only => [:new, :create, :show] do
 		member do
 			get 'confirmation'

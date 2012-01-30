@@ -9,6 +9,9 @@ gem 'sqlite3'
 gem 'paperclip', :path => 'vendor/GEMS/paperclip'
 
 gem 'omniauth-facebook'
+gem 'omniauth-twitter'
+gem 'bcrypt-ruby'
+gem 'omniauth-identity'
 
 gem 'aws-s3'
 gem 'aws-sdk'

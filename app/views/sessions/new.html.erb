@@ -1,3 +1,38 @@
-<div>Sign-in Page : Facebook and Twitter images should go here </div>
-<%= link_to "Sign in with Facebook", "/auth/facebook" %>
-	
+<%= stylesheet_link_tag "zocial.css" %>
+<br/>
+<div class="cleanloginbox">
+	<div class="logintitle" align="center">Login to Narrately</div>
+	<div class="lines"></div>
+
+	<div class="logininfo" align="center">
+		<br /> 
+		<a href = "auth/facebook">
+			<button class='zocial facebook'>
+				<span>Login with Facebook</span>
+			</button></a>
+			<a href = "auth/twitter">
+			<button class='zocial twitter'>
+				<span>Login with Twitter</span>
+			</button>
+		</a>
+		<p div class="p2"><b>- Or -</b></p>
+		Login with your email address:
+		<%= form_tag "/auth/identity/callback" do%>
+			<fieldset>
+				<div class = "field">
+					<%= label_tag :auth_key, "Email" %><br/>
+					<%= text_field_tag :auth_key, "email address", :class => "text"%> 
+				</div>
+				<div class = "field">
+					<%= label_tag :password %><br>
+					<%= password_field_tag :password, "Password", :class => "text" %>
+				</div>
+				<div class = "actions">
+					<%= submit_tag "Login" %> 
+				</div> 	 
+			</fieldset>
+		<% end %>
+	</div>
+</div>
+
+

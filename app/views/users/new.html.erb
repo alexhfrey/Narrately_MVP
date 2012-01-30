@@ -1,19 +1,50 @@
-<h1>Sign up to narrately</h1>
+<%= stylesheet_link_tag "zocial.css" %>
+<br/>
+<div class="cleanloginbox">
+	<div class="logintitle" align="center">Login to Narrately</div>
+	<div class="lines"></div>
 
-<%= form_for(@user) do |f| %>
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+	<div class="logininfo" align="center">
+		<br /> 
+		<a href = "auth/facebook">
+			<button class='zocial facebook'>
+				<span>Sign up with Facebook</span>
+			</button></a>
+			<a href = "auth/twitter">
+			<button class='zocial twitter'>
+				<span>Sign up with Twitter</span>
+			</button>
+		</a>
+		<p div class="p2"><b>- Or -</b></p>
+		Register with your email address:
+		<%= form_tag "/auth/identity/register" do%>
+			<% if @identity && @identity.errors.any? %>
+				<div class="error_messages">
+				<h2><%= pluralize(@identity.errors.count, "error") %> prohibited this account from being saved:</h2>
+				<ul>
+				<% @identity.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+				<% end %>
+				</ul>
+				</div>
+			<% end %>
+			<fieldset>
+				<div class = "field">
+					<%= label_tag :email, "Email" %><br/>
+					<%= text_field_tag :email, @identity.try(:email), :class => "text"%> 
+				</div>
+				<div class = "field">
+					<%= label_tag :password %><br>
+					<%= password_field_tag :password, :class => "text" %>
+				</div>
+				<div class="field">
+					<%= label_tag :password_confirmation %><br>
+					<%= password_field_tag :password_confirmation %>
+				</div>
+				<div class = "actions">
+					<%= submit_tag "Register" %> 
+				</div> 	 
+			</fieldset>
+		<% end %>
+	</div>
+</div>
