@@ -1,0 +1,18 @@
+<h1>Project Page</h1>
+<p>Find me in app/views/projects/show.html.erb</p>
+<p>Hello! Some sample code to test functionality / database integration </p>
+<div>Title: <%= @project.project_title %></div>
+<div>Description: <%= @project.description %> </div>
+
+<div>
+<%= image_tag @project.project_image.url %> </div>
+<% if @promotion_clear %>
+	<div><%= link_to "SHARE!", new_project_share_path(@project) %> </div>
+<% else %>
+	<%= link_to "BUY", @project.purchase_link %>
+<% end %>
+
+
+add bio
+add facebook link
+add twitter link

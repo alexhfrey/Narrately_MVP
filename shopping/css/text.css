@@ -45,11 +45,20 @@ h4 {
 
 h5 {
   font-size: 17px;
+  color: #0278A7;
+  font-weight: normal; 
 }
 
 h6 {
-  font-size: 15px;
-}
+clear: both; 
+  color: #363D47;
+  font-size: 18px;
+  font-weight: normal; 
+  margin-bottom: 15px; 
+  margin-left: 10px;  
+  margin-top: 10px;
+  text-shadow: 0 1px 0 #FFFFFF; 
+  }
 
 /* `Spacing
 ----------------------------------------------------------------------------------------------------*/
@@ -73,7 +82,6 @@ h1,
 h2,
 h3,
 h4,
-h5,
 h6,
 ol,
 ul,
@@ -84,3 +92,27 @@ fieldset,
 figure {
   margin-bottom: 20px;
 }
+
+p4 {  
+margin-bottom: 0px;
+}
+
+h5 {
+  margin-bottom: 5px;
+
+}
+
+.p2 {
+padding-top: 25px; 
+margin-bottom: 5px; 
+width: 8%;
+margin: 0px auto;
+}
+
+.emaillogin {
+padding-top: 5px; 
+margin-bottom: 5px; 
+width: 40%;
+margin: 0px auto;
+}
+

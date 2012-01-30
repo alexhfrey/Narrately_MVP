@@ -1,24 +1,39 @@
+<%= stylesheet_link_tag "custom.css" %>
+<%= stylesheet_link_tag "blueprint/screen.css" %>
+
+
+<div class = "container">
 <h1>Create Project Page</h1>
-<%= @project.errors.each_full{|msg| puts msg } %>
-<%= form_for @project, :html => { :multipart => true } do |f| %>
+
+<div class="span-12">
+<%= form_for(@project, :html => { :multipart => true }) do |f| %>
+<fieldset>
+ <%= render 'shared/error_messages' %>
   
-  
-  <div class = "field">
+
+  <div class = "field"><p>
 	<%= f.hidden_field :user_id, :value => @user.id %>
-   </div>
-  <div class="field">
+   </p></div>
+  <p><div class = "field">
     <%= f.label :name, "Project name" %><br />
-    <%= f.text_field :project_title %>
-  </div>
-  <div class="field">
-    <%= f.label :description, "Describe your project" %><br />
-    <%= f.text_area :description,  :size => "60x12" %>
-	
-  </div>
-  <div class="field">
+    <%= f.text_field :project_title, :class => "title" %> <br>
+  </p></div>
+  <p style = "clear:left"><div class = "field">
+    <%= f.label :description, "Project Description" %><br />
+    <%= f.text_area :description,  :class => "text" %>
+  </p></div>
+  <p>
     <%= f.label :purchase_link %><br />
     <%= f.text_field :purchase_link %>
-  </div><br/>
+  </p><br/>
+  <p>
+    <%= f.label :promotion_limit %><br />
+    <%= f.text_field :promotion_limit %>
+  </p><br/>
+  <p>
+    <%= f.label :author biography %><br />
+    <%= f.text_field :purchase_link %>
+  </p><br/>
   <div class = "field">
 	<%= select_tag(:tag, options_for_select([['Romance', 1], ['Mystery', 2], ['Business', 3]])) %>
   </div>
@@ -34,5 +49,7 @@
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
+</fieldset>
+</div>
 
-<p>Find me in app/views/projects/new.html.erb</p>
+</div>

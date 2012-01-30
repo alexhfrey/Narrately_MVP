@@ -14,10 +14,16 @@ twttr.events.bind('tweet', function(event) {
 ); });
 </script>
 <h1>Actions#new</h1>
+<<<<<<< HEAD
 <%= form_tag(create_projects_share_path :method => "post") do %> 
 	<%= text_field_tag(:q, :value => "test")%>
 <% end %>
 </form>
+=======
+<%= form_tag(project_shares_path(@project), :method => "post") do %>
+<%= hidden_field_tag(:user_id, @user.id) %>
+<% end %>
+>>>>>>> ec4c043025c96753bc07374c43817f0c69f3d17b
 <p>Find me in app/views/actions/new.html.erb</p>
 
 <a href= <%= "https://twitter.com/share?url=" + @query %> class="twitter-share-button" data-lang="en" >Tweet</a>

@@ -74,6 +74,9 @@ body {
 .container_16 .grid_4 {
   width: 220px;
 }
+.container_16 .grid_44 {
+  width: 250px;
+}
 
 .container_12 .grid_6,
 .container_16 .grid_8 {
@@ -168,7 +171,7 @@ body {
 }
 
 .container_16 .grid_10 {
-  width: 580px;
+  width: 600px;
 }
 
 .container_16 .grid_11 {
@@ -185,6 +188,13 @@ body {
 
 .container_16 .grid_15 {
   width: 880px;
+}
+
+.container_16 .grid_top {
+  width: 600px;
+  margin-left: 28px;
+  margin-top: 10px;
+
 }
 
 /* `Prefix Extra Space >> Global

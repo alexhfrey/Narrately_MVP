@@ -1,10 +1,94 @@
-<h1>Project Page</h1>
-<p>Find me in app/views/projects/show.html.erb</p>
-<p>Hello! Some sample code to test functionality / database integration </p>
-<div>Title: <%= @project.project_title %></div>
-<div>Description: <%= @project.description %> </div>
-<div>Creator: <%= link_to @user.name, @user %> </div>
-<div>
-<%= image_tag @project.project_image.url %> </div>
+<link rel="stylesheet" href="css/reset.css" />
+<link rel="stylesheet" href="css/text.css" />
+<link rel="stylesheet" href="css/960.css" />
+<link rel="stylesheet" href="style.css" />
 
-<div><%= link_to "SHARE!", new_project_share_path(@project) %> </div>
+
+<div class="container_16 padding50">
+
+<div class="grid_11 singleleft">
+<div class="projectbox">
+<div class="bigtitle"><%= @project.project_title %></div>
+<div class="lines"></div>
+<div class="productimages">
+<div class="mainimg"><%= image_tag(@project.project_image.url) %></div>
+</div>
+
+<div class="productdata">
+<h6>About This Project</h6>
+<%= @project.description %>
+</div>
+</div>
+
+
+<div class="projectshare">
+<div class="productdata">
+<h4>Supporter Props</h4>
+<div class="grid_10">
+Tweets.....tweets......and more tweets</div>
+</div>
+</div>
+
+
+<div class="grid_4 righthome">
+
+
+<div class="categorybox">
+<div class="sharebox">
+<h6>Endorse & Earn Reward</h6>
+<div class="grid_4">
+<a href="confirm.html"><span class="onsaleleft"><span class="2oldprice"></span>8</span></a>
+
+<div class="infospan">Reward: <span>Free Book</span></div>
+<div class="infospan">Total:<span>20</span></div>
+<div class="infospan">Left:<span>8</span></div>
+<a class="shareit" href="confirm.html">Share it!</a>
+</div>
+</div>
+</div>
+
+
+
+<div class="categorybox">
+<div class="authordata">
+<h6>About Author</h6>
+<div class="grid_4">
+<img src="http://www.socialearth.org/wp-content/uploads/2012/01/facebook.jpg" alt="" title="facebook" width="220" height="220" class="alignnone size-full wp-image-16236" />
+<a href="#"><h5>@creator.name</h5></a>
+<p>@creator.biography</p>
+<ul>
+<li><a href="https://www.facebook.com/alex.h.frey">Facebook</a></li>
+<li><a href="https://twitter.com/#!/alexhfrey">Twitter</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="categories-widget">
+<div class="categorybox sellers">
+<h6>Supporters</h6>
+<ul>
+<li>
+<a href="#"><img class="smallpreview" alt="" src="images/smallcam.png"></a>
+<a href="#"><img class="smallpreview" alt="" src="images/smallcam.png"></a>
+<a href="#"><img class="smallpreview" alt="" src="images/smallcam.png"></a>
+<a href="#"><img class="smallpreview" alt="" src="images/smallcam.png"></a>
+</li>
+<li>
+<a href="#"><img class="smallpreview" alt="" src="images/smallcam.png"></a>
+<a href="#"><img class="smallpreview" alt="" src="images/smallcam.png"></a>
+<a href="#"><img class="smallpreview" alt="" src="images/smallcam.png"></a>
+<a href="#"><img class="smallpreview" alt="" src="images/smallcam.png"></a>
+</li>
+<li>
+<a href="#"><img class="smallpreview" alt="" src="images/smallcam.png"></a>
+<a href="#"><img class="smallpreview" alt="" src="images/smallcam.png"></a>
+<a href="#"><img class="smallpreview" alt="" src="images/smallcam.png"></a>
+<a href="#"><img class="smallpreview" alt="" src="images/smallcam.png"></a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+</div>
