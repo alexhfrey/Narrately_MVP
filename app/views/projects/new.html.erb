@@ -1,18 +1,24 @@
+<%= stylesheet_link_tag "custom.css" %>
+
+
+<div class = "container">
 <h1>Create Project Page</h1>
-<%= @project.errors.each_full{|msg| puts msg } %>
-<%= form_for @project, :html => { :multipart => true } do |f| %>
+
+<div class="span-12">
+<%= form_for(@project, :html => { :multipart => true }) do |f| %>
+ <%= render 'shared/error_messages' %>
   
-  
+
   <div class = "field">
 	<%= f.hidden_field :user_id, :value => @user.id %>
    </div>
   <div class="field">
     <%= f.label :name, "Project name" %><br />
-    <%= f.text_field :project_title %>
+    <%= f.text_field :project_title, :class => "title" %>
   </div>
   <div class="field">
     <%= f.label :description, "Describe your project" %><br />
-    <%= f.text_area :description,  :size => "60x12" %>
+    <%= f.text_area :description,  :class => "text" %>
 	
   </div>
   <div class="field">
@@ -34,5 +40,7 @@
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
+</div>
 
 <p>Find me in app/views/projects/new.html.erb</p>
+</div>

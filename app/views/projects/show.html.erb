@@ -6,5 +6,8 @@
 <div>Creator: <%= link_to @user.name, @user %> </div>
 <div>
 <%= image_tag @project.project_image.url %> </div>
-
-<div><%= link_to "SHARE!", new_project_share_path(@project) %> </div>
+<% if @promotion_clear %>
+	<div><%= link_to "SHARE!", new_project_share_path(@project) %> </div>
+<% else %>
+	<%= link_to "BUY", @project.purchase_link %>
+<% end %>
