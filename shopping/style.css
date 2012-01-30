@@ -212,6 +212,28 @@ margin-top:25px;
 .padd:hover {
 background:url(images/buynowhover.png) no-repeat;
 color:#FFF!important;}
+
+.shareit { 
+display:block;
+width:217px;
+height:62px;
+background:url(images/sharenow.png);
+color:#FFF;
+font-weight:bold;
+font-size:22px;
+text-decoration:none;
+    line-height: 53px;
+    text-align: center;
+	text-shadow:1px 0px 0px #c51b00;
+margin-top:15px;	
+margin-bottom: 10px;
+margin-left: 3px;  
+}
+.shareit:hover {
+background:url(images/shareithover.png) no-repeat;
+color:#FFF!important;}
+
+
 .rewardsleft {
 display:block;
 width:77px;
@@ -219,12 +241,13 @@ height:77px;
 background:url("images/circle-yellow.png");
 color:#FFF;
 font-weight:bold;
-font-size:15px;
-text-decoration:none;
-    line-height: 26px;
+font-size:20px;
+    text-margin: 
+    line-height: 46px;
     text-align: center;
 	text-shadow:1px 0px 0px #c51b00;
-margin-top:0px;	
+margin-top:10px;
+margin-left:60px;	
 }
 .rewardsleft:hover {
 background:url(images/buynowhover.png) no-repeat;
@@ -1162,6 +1185,33 @@ height:20px;
     width: 78px;
     alink: text-decoration: none; 
     }
+    
+    .onsaleleft {
+    background: url("images/circle-yellow.png") repeat scroll 0 0 transparent;
+    color: #4d4c4c;
+    display: block;
+    font-size: 30px;
+    height: 78px;
+    line-height: 75px;
+    margin-left: 65px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    text-align: center;
+    width: 78px;}
+	.oldprice {
+	    color: #4d4c4c;
+    display: block;
+    float: left;
+    font-size: 14px;
+    height: 20px;
+    margin-bottom: -2px;
+    margin-top: -15px;
+    text-align: center;
+    text-decoration: none;
+    width: 78px;
+    alink: text-decoration: none; 
+    }
+    
 	.navigation {
 	width:100%;
 	margin-left:auto;}
@@ -1268,12 +1318,12 @@ height:20px;
     padding-left:5px;}
 	.infospan {
 	color:#707780;
-	font-size:15px;
-	height:30px;
+	font-size:18px;
+	height:34px;
 	width:100%;
 	border-bottom:1px dashed #c2cbd3;
 	margin-left:0px;
-	line-height:27px;}
+	line-height:34px;}
 	.infospan span {
     float: right;
     padding-right: 50px;
