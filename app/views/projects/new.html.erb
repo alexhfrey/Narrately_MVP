@@ -1,5 +1,4 @@
-<%= stylesheet_link_tag "custom.css" %>
-<%= stylesheet_link_tag "blueprint/screen.css" %>
+
 
 
 <div class = "container">
@@ -30,10 +29,7 @@
     <%= f.label :promotion_limit %><br />
     <%= f.text_field :promotion_limit %>
   </p><br/>
-  <p>
-    <%= f.label :author biography %><br />
-    <%= f.text_field :purchase_link %>
-  </p><br/>
+  
   <div class = "field">
 	<%= select_tag(:tag, options_for_select([['Romance', 1], ['Mystery', 2], ['Business', 3]])) %>
   </div>

@@ -1,0 +1,206 @@
+/* CSS DOCUMENT */
+
+/* Buttons **************************************** */
+
+a {
+	color: #fff;
+	text-decoration: none;
+	margin: 0 20px 0 0; /* Delete this line in you css */
+}
+
+a.square,
+a.square span {
+	-moz-border-radius: 0.25em;
+	-webkit-border-radius: 0.25em;
+}
+
+a.rounded,
+a.rounded span {
+	-moz-border-radius: 1.5em;
+	-webkit-border-radius: 1.5em;
+}
+
+/*  
+	Buttons Dimentions 
+*/
+
+/* Big **************************************** */
+a.big {
+	padding: 10px 0;
+	font: normal 150% arial,sans-serif;
+    text-color: #fff; 
+}
+a.big span {
+	padding: 9px 19px;
+}
+
+/* Medium **************************************** */
+a.medium {
+	padding: 7px 0;
+	font: normal 100% arial,sans-serif;
+}
+a.medium span {
+	padding: 6px 14px;
+}
+
+/* Small **************************************** */
+a.small {
+	padding: 5px 0;
+	font: normal 75% arial,sans-serif;
+}
+a.small span {
+	padding: 4px 9px;
+}
+
+
+/* 
+	Buttons Color 
+*/
+
+/* Blue **************************************** */
+
+a.blue {
+	background: -webkit-gradient(linear, left top, left bottom, from(#93b8c9), to(#055b81));
+	background: -moz-linear-gradient(top,  #93b8c9, #055b81);
+	border: 1px solid #055b81;
+	text-shadow: 0px 1px 1px #055B81;
+} 
+
+a.blue:hover {
+	-moz-box-shadow: 0px 0px 5px #055b81;
+	-webkit-box-shadow: 0px 0px 5px #055b81; 
+}
+
+a.blue:active {
+	background: -webkit-gradient(linear, left top, left bottom, from(#055b81), to(#93b8c9));
+	background: -moz-linear-gradient(top,  #055b81, #93b8c9);
+}
+
+a.blue span {
+	border: 1px solid #93B8C9;
+}
+
+.greenbuttonlogin {
+margin-top:25px;
+margin-left: 0px;}
+
+/* Green **************************************** */
+
+a.green {
+	background: -webkit-gradient(linear, left top, left bottom, from(#74ce48), to(#007700));
+	background: -moz-linear-gradient(top,  #74ce48, #007700);
+	border: 1px solid #007700;
+	text-shadow: 0px 1px 1px #007700;
+}
+
+a.green:hover {
+	-moz-box-shadow: 0px 0px 5px #007700;
+	-webkit-box-shadow: 0px 0px 5px #007700; 
+}
+
+a.green:active {
+	background: -webkit-gradient(linear, left top, left bottom, from(#007700), to(#74ce48));
+	background: -moz-linear-gradient(top,  #007700, #74ce48);
+}
+
+a.green span {
+	border: 1px solid #74ce48;
+    margin-top: 30px; 
+}
+
+/* Red **************************************** */
+
+a.red {
+	background: -webkit-gradient(linear, left top, left bottom, from(#ce4848), to(#770000));
+	background: -moz-linear-gradient(top,  #ce4848, #770000);
+	border: 1px solid #770000;
+	text-shadow: 0px 1px 1px #770000;
+}
+
+a.red:hover {
+	-moz-box-shadow: 0px 0px 5px #770000;
+	-webkit-box-shadow: 0px 0px 5px #770000;
+}
+
+a.red:active {
+	background: -webkit-gradient(linear, left top, left bottom, from(#770000), to(#ce4848));
+	background: -moz-linear-gradient(top,  #770000, #ce4848);
+}
+
+a.red span {
+	border: 1px solid #ce4848;
+}
+
+/* Orange **************************************** */
+
+a.orange {
+	background: -webkit-gradient(linear, left top, left bottom, from(#fe9d2b), to(#9e360f));
+	background: -moz-linear-gradient(top,  #fe9d2b, #9e360f);
+	border: 1px solid #9e360f;
+	text-shadow: 0px 1px 1px #9e360f;
+}
+
+a.orange:hover {
+	-moz-box-shadow: 0px 0px 5px #9e360f;
+	-webkit-box-shadow: 0px 0px 5px #9e360f;
+}
+
+a.orange:active {
+	background: -webkit-gradient(linear, left top, left bottom, from(#9e360f), to(#fe9d2b));
+	background: -moz-linear-gradient(top,  #9e360f, #fe9d2b);
+}
+
+a.orange span {
+	border: 1px solid #fe9d2b;
+}
+
+/* Purple **************************************** */
+
+a.purple {
+	background: -webkit-gradient(linear, left top, left bottom, from(#fd2be7), to(#840e78));
+	background: -moz-linear-gradient(top,  #fd2be7, #840e78);
+	border: 1px solid #840e78;
+	text-shadow: 0px 1px 1px #840e78;
+}
+
+a.purple:hover {
+	-moz-box-shadow: 0px 0px 5px #840e78;
+	-webkit-box-shadow: 0px 0px 5px #840e78;
+}
+
+a.purple:active {
+	background: -webkit-gradient(linear, left top, left bottom, from(#840e78), to(#fd2be7));
+	background: -moz-linear-gradient(top,  #840e78, #fd2be7);
+}
+
+a.purple span {
+	border: 1px solid #fd2be7;
+}
+
+button.css3button {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #ffffff;
+	padding: 10px 20px;
+	background: -moz-linear-gradient(
+		top,
+		#42ff42 0%,
+		#146600);
+	background: -webkit-gradient(
+		linear, left top, left bottom, 
+		from(#42ff42),
+		to(#146600));
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border: 1px solid #134201;
+	-moz-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 2px rgba(255,255,255,1);
+	-webkit-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 2px rgba(255,255,255,1);
+	text-shadow:
+		0px -1px 0px rgba(000,000,000,0.4),
+		0px 1px 0px rgba(255,255,255,0.3);
+}
