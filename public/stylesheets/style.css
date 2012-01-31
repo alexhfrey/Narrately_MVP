@@ -480,6 +480,34 @@ padding-left:10px;
 padding-top:10px;
 padding-right:10px;
 padding-bottom:10px;}
+
+.myprojectbox {
+background:#FFF;
+width:640px;
+width:640px;
+border-right:1px solid #c2cbd2;
+border-bottom:1px solid #c2cbd2;
+border-radius:5px;
+margin-top:5px;
+float:left;
+padding-left:10px;
+padding-top:10px;
+padding-right:10px;
+padding-bottom:10px;}
+
+.mysharesbox {
+background:#FFF;
+width:640px;
+width:640px;
+border-right:1px solid #c2cbd2;
+border-bottom:1px solid #c2cbd2;
+border-radius:5px;
+margin-top:5px;
+float:left;
+padding-left:10px;
+padding-top:10px;
+padding-right:10px;
+padding-bottom:10px;}
 .createwelcome {
 background:#FFF;
 width:640px;

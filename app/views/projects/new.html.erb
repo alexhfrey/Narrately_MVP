@@ -1,9 +1,28 @@
+<div class="container_16 padding50">
+<div class="grid_16">
+</div>
 
+<div class="grid_11 singleleft">
+
+<div class="createwelcome">
+<div class="productdata">
+<div class="bigtitle">We help creatives promote their work</div>
+<div class="grid_top">
+<p>Narrately is a social marketing platform which helps authors connect with their fans and promote their books</p>
+<p>Display three step process here</p>
+</div>
+</div>
+</div>
+
+<div class="projectbox">
+<div class="createform">
+<div class="container showgrid">
 
 
 <div class = "container">
-<h1>Create Project Page</h1>
-
+<h2>1. Project Details</h2>
+<p>Let your fans know what you're working on - include some basic info here</p>
+<hr>
 <div class="span-12">
 <%= form_for(@project, :html => { :multipart => true }) do |f| %>
 <fieldset>
@@ -21,31 +40,77 @@
     <%= f.label :description, "Project Description" %><br />
     <%= f.text_area :description,  :class => "text" %>
   </p></div>
-  <p>
-    <%= f.label :purchase_link %><br />
-    <%= f.text_field :purchase_link %>
-  </p><br/>
+  <div class="field"> 
+  <%= f.label :project_image, "Project Cover Image" %>
+  <%= f.file_field :project_image %>
+  </div>
+   <div class = "field">
+	<%= select_tag(:tag, options_for_select([['Romance', 1], ['Mystery', 2], ['Business', 3]])) %>
+  </div>
+  <h2>2. Reward Details</h2>
+<p>This is the reward your fans will receive when they share your work- make it count!</p>
+<hr>
   <p>
     <%= f.label :promotion_limit %><br />
     <%= f.text_field :promotion_limit %>
   </p><br/>
   
-  <div class = "field">
-	<%= select_tag(:tag, options_for_select([['Romance', 1], ['Mystery', 2], ['Business', 3]])) %>
-  </div>
-  <div class="field"> 
-  <%= f.label :project_image, "Project Cover Image" %>
-  <%= f.file_field :project_image %>
-  </div>
   <div class="field"> 
   <%= f.label :output_file, "Reward File" %>
   <%= f.file_field :output_file %>
   </div>
+<br/>  
+<h2>3. Purchase Details</h2>
+<p>Once your reward limit is hit- then fans will be able to purchase your product.</p>
+<hr>
+<p>
+    <%= f.label :purchase_link %><br />
+    <%= f.text_field :purchase_link %>
+  </p><br/>
+  
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
 </fieldset>
 </div>
+
+</div>
+</div>
+</fieldset>
+</form>
+
+      <div class="span-12 last"></div>
+
+      <div class="span-24 last">
+      </div>
+</div>
+</div>
+</div>
+
+
+
+<div class="grid_4 righthome">
+<div class="categorybox">
+<div class="howitworkscreate">
+<h6>How it Works</h6>
+<div class="grid_4">
+<b>Step 1:</b>
+<p>
+This is my under 200 character bio. 
+Keeping it short!</p>
+<b>Step 2:</b>
+<p>
+This is my under 200 character bio. 
+Keeping it short!</p>
+<b>Step 3:</b>
+<p>
+This is my under 200 character bio. 
+Keeping it short!</p>
+</div>
+</div>
+</div>
+</div>
+
 
 </div>

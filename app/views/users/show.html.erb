@@ -1,7 +1,98 @@
-<h1>User Dashboard</h1>
-<h2><%= @user.name %>
+<div class="container_16 padding50">
+<div class="grid_16">
+</div>
 
-<p>Find me in app/views/users/show.html.erb</p>
+
+<div class="grid_11 singleleft">
+<div class="myprojectbox">
+<div class="bigtitle">My Projects</div>
+<div class="lines"></div>
+<div class="productdata">
 <p>I have <%= @user.projects.length %> projects on Narrately </p>
 <%= link_to "Launch a new project with Narrately", new_project_path %>
 
+<ul class="featprod grayprod cat">
+<li>
+<img class="fimg2" alt="" src="images/demo-img2.jpg">
+<span class="smalltitle"><a href="product.html">Some title here</a></span>
+<span class="smalldesc">Item no.: 1422</span>
+<span class="green">$square</span>
+</li>
+</ul>
+</div>
+</div>
+
+
+<div class="mysharesbox">
+<div class="bigtitle">My Shares</div>
+<div class="lines"></div>
+<div class="productdata">
+<ul class="featprod grayprod cat">
+<li>
+<img class="fimg2" alt="" src="images/demo-img2.jpg">
+<span class="smalltitle"><a href="product.html">Some title here</a></span>
+<span class="smalldesc">Item no.: 1422</span>
+<span class="green">$square</span>
+</li>
+<li>
+<img class="fimg2" alt="" src="images/demo-img2.jpg">
+<span class="smalltitle"><a href="product.html">Some title here</a></span>
+<span class="smalldesc">Item no.: 1422</span>
+<span class="green">$square</span>
+</li>
+<li>
+<img class="fimg2" alt="" src="images/demo-img2.jpg">
+<span class="smalltitle"><a href="product.html">Some title here</a></span>
+<span class="smalldesc">Item no.: 1422</span>
+<span class="green">$square</span>
+</li>
+</ul>
+
+
+<ul class="griditems">
+<li>
+<span class="gridimg">
+<a href="#"><img src="images/gridcam.png" alt="" /></a>
+</span>
+<span class="griddetails">
+<span class="gridtitle">Nikon Camera <span>Item no.: 1442</span></span>
+<span class="gridcontent">
+The 30-inch Apple Cinema HD Display delivers an amazing 
+2560 x 1600 pixel resolution. Designed specifically for the 
+creative professional..
+</span>
+<span class="gridprice">
+<span class="onsale"><span class="oldprice">$6314</span>$199</span>
+</span>
+</span>
+<span class="gridadd"><a href="#">Add to cart</a></span>
+<span class="gridcompare"><a href="#">Add to compare list</a></span>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+
+
+<div class="grid_4 righthome">
+
+<div class="categorybox">
+<div class="authordata">
+<div class="grid_4">
+<img src="http://www.socialearth.org/wp-content/uploads/2012/01/facebook.jpg" alt="" title="facebook" width="220" height="220" class="alignnone size-full wp-image-16236" />
+<h2><%= @user.name %></h2>
+<p>
+This is my under 200 character bio. 
+Keeping it short!</p>
+<ul>
+<li><a href="https://www.facebook.com/alex.h.frey">Facebook</a></li>
+<li><a href="https://twitter.com/#!/alexhfrey">Twitter</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+
+</div>
