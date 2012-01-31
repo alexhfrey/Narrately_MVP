@@ -1,5 +1,6 @@
 class Project < ActiveRecord::Base
 belongs_to :user
+has_many :shares
 
 validates :description, :length => { :minimum => 100, :maximum => 1000, 
 						:message => "Project description must be between 50 and 500 characters"}

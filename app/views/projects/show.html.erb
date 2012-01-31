@@ -44,7 +44,7 @@ Tweets.....tweets......and more tweets</div>
 <% if @promotions_clear %>
 	<%= link_to "Share it!", new_project_share_path(@project), :class => "shareit" %>
 <% else %>
-	<%= link_to "Buy it!", @project.purchase_link %>
+	<%= link_to "Buy it!", @project.purchase_link, :class => "shareit" %>
 	<% end %>
 
 
@@ -58,8 +58,8 @@ Tweets.....tweets......and more tweets</div>
 <div class="authordata">
 <h6>About Author</h6>
 <div class="grid_4">
-<img src="http://www.socialearth.org/wp-content/uploads/2012/01/facebook.jpg" alt="" title="facebook" width="220" height="220" class="alignnone size-full wp-image-16236" />
-<a href="#"><h5>Alex Frey</h5></a>
+<%= image_tag @creator.profile_image, :title=> "facebook", :width=> 220, :height=>220, :class=> "alignnone size-full wp-image-16236" %>
+<a href="#"><h5><%= @creator.name %></h5></a>
 <p>
 This is my under 200 character bio. 
 Keeping it short!</p>
@@ -75,10 +75,9 @@ Keeping it short!</p>
 <h6>Supporters</h6>
 <ul>
 <li>
-<a href="#"><img class="smallpreview" alt="" src="images/smallcam.png"></a>
-<a href="#"><img class="smallpreview" alt="" src="images/smallcam.png"></a>
-<a href="#"><img class="smallpreview" alt="" src="images/smallcam.png"></a>
-<a href="#"><img class="smallpreview" alt="" src="images/smallcam.png"></a>
+<% @shares.each do  |s| %>
+<%= image_tag s.user.profile_image, :class => "smallpreview" %>
+<% end %>
 </li>
 <li>
 <a href="#"><img class="smallpreview" alt="" src="images/smallcam.png"></a>
