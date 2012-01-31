@@ -38,9 +38,14 @@ Tweets.....tweets......and more tweets</div>
 <a href="confirm.html"><span class="onsaleleft"><span class="saleleft">LEFT:</span>8</span></a>
 
 <div class="infospan">Reward: <span>Free Book</span></div>
-<div class="infospan">Total:<span>20</span></div>
-<div class="infospan">Left:<span>8</span></div>
-<%= link_to "Share it!", new_project_share_path(@project), :class => "shareit" %>
+<div class="infospan">Total:<span><%= @project.promotion_limit %></span></div>
+<div class="infospan">Left:<span><%= @promotions_left %></span></div>
+<% if @promotions_clear %>
+	<%= link_to "Share it!", new_project_share_path(@project), :class => "shareit" %>
+<% else %>
+	<%= link_to "Buy it!", @project.purchase_link %>
+	<% end %>
+
 </div>
 </div>
 </div>
