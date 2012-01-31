@@ -5,15 +5,15 @@
 
 <div class="grid_11 singleleft">
 <div class="projectbox">
-<div class="bigtitle">Get Rich With a Beginner's Guide to Investing</div>
+<div class="bigtitle"><%= @project.project_title %></div>
 <div class="lines"></div>
 <div class="productimages">
-<div class="mainimg"><img src="../images/mainimg.png" alt="nikon" /></div>
+<div class="mainimg"><%= image_tag @project.project_image.url %></div>
 </div>
 
 <div class="productdata">
 <h6>About This Project</h6>
-Looking to invest for the ?rst time? A Beginnerís Guide to Investing provides a universal framework for novice traders to learn how to effectively invest their hardearned money.
+<%= @project.description %>
 </div>
 </div>
 
@@ -40,7 +40,7 @@ Tweets.....tweets......and more tweets</div>
 <div class="infospan">Reward: <span>Free Book</span></div>
 <div class="infospan">Total:<span>20</span></div>
 <div class="infospan">Left:<span>8</span></div>
-<a class="shareit" href="confirm.html">Share it!</a>
+<%= link_to "Share it!", new_project_share_path(@project), :class => "shareit" %>
 </div>
 </div>
 </div>
