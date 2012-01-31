@@ -9,6 +9,8 @@ class UsersController < ApplicationController
  
   def show
   @user = User.find(params[:id])
+  @first_project = @user.projects.first
+  @shares = @user.shares
   end
 
 end

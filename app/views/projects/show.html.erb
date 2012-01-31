@@ -8,7 +8,7 @@
 <div class="bigtitle"><%= @project.project_title %></div>
 <div class="lines"></div>
 <div class="productimages">
-<div class="mainimg"><%= image_tag @project.project_image.url %></div>
+<div class="mainimg"><%= image_tag @project.project_image.url, :width => "600", :height => "350" %></div>
 </div>
 
 <div class="productdata">
@@ -58,8 +58,8 @@ Tweets.....tweets......and more tweets</div>
 <div class="authordata">
 <h6>About Author</h6>
 <div class="grid_4">
-<%= image_tag @creator.profile_image, :title=> "facebook", :width=> 220, :height=>220, :class=> "alignnone size-full wp-image-16236" %>
-<a href="#"><h5><%= @creator.name %></h5></a>
+<%= image_tag @creator.profile_image, :title=> "facebook", :width=> 220, :height=>220, :class=> "alignnone size-full wp-image-16236" unless @creator.profile_image.nil? %>
+<h5><%= link_to @creator.name, @creator %></h5>
 <p>
 This is my under 200 character bio. 
 Keeping it short!</p>
@@ -75,23 +75,21 @@ Keeping it short!</p>
 <h6>Supporters</h6>
 <ul>
 <li>
-<% @shares.each do  |s| %>
-<%= image_tag s.user.profile_image, :class => "smallpreview" %>
+<% @shares.first(4).each do  |s| %>
+<%= link_to image_tag(s.user.profile_image, :class => "smallpreview" ), s.user %>
 <% end %>
 </li>
+
 <li>
-<a href="#"><img class="smallpreview" alt="" src="images/smallcam.png"></a>
-<a href="#"><img class="smallpreview" alt="" src="images/smallcam.png"></a>
-<a href="#"><img class="smallpreview" alt="" src="images/smallcam.png"></a>
-<a href="#"><img class="smallpreview" alt="" src="images/smallcam.png"></a>
+<% @shares[5..8].each do |s| %>
+<%= link_to image_tag(s.user.profile_image, :class => "smallpreview" ), s.user %>
+<% end unless @shares[5..8].nil? %>
 </li>
 <li>
-<a href="#"><img class="smallpreview" alt="" src="images/smallcam.png"></a>
-<a href="#"><img class="smallpreview" alt="" src="images/smallcam.png"></a>
-<a href="#"><img class="smallpreview" alt="" src="images/smallcam.png"></a>
-<a href="#"><img class="smallpreview" alt="" src="images/smallcam.png"></a>
-</li>
-</ul>
+<% @shares[5..8].each do |s| %>
+<%= link_to image_tag(s.user.profile_image, :class => "smallpreview" ), s.user %>
+<% end unless @shares[9..12].nil? %>
+</li></ul>
 </div>
 </div>
 </div>

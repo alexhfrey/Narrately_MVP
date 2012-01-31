@@ -17,7 +17,7 @@ class SharesController < ApplicationController
  
    
   
-  @share = Shares.new(:user_id => params[:user_id], :project_id => params[:project_id])
+  @share = Share.new(:user_id => params[:user_id], :project_id => params[:project_id])
   
   if @share.save 
 	redirect_to current_user

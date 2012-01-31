@@ -13,10 +13,10 @@
 
 <ul class="featprod grayprod cat">
 <li>
-<img class="fimg2" alt="" src="images/demo-img2.jpg">
-<span class="smalltitle"><a href="product.html">Some title here</a></span>
-<span class="smalldesc">Item no.: 1422</span>
-<span class="green">$square</span>
+<% if @first_project %>
+<span class="smalltitle"><%=link_to @first_project.project_title, @first_project %></span>
+<%= link_to image_tag(@first_project.project_image.url, :class => "fimg2", :width => "400", :height => "240"), @first_project%>
+<% end %>
 </li>
 </ul>
 </div>
@@ -28,24 +28,14 @@
 <div class="lines"></div>
 <div class="productdata">
 <ul class="featprod grayprod cat">
+
+<% @shares.first(3).each do |s| %>
 <li>
-<img class="fimg2" alt="" src="images/demo-img2.jpg">
-<span class="smalltitle"><a href="product.html">Some title here</a></span>
-<span class="smalldesc">Item no.: 1422</span>
-<span class="green">$square</span>
+<%= link_to image_tag(s.project.project_image.url, :class => "fimg2", :width => "200", :height => "135"), s.project%>
+<span class="smalltitle"><%= link_to s.project.project_title, s.project %></span>
 </li>
-<li>
-<img class="fimg2" alt="" src="images/demo-img2.jpg">
-<span class="smalltitle"><a href="product.html">Some title here</a></span>
-<span class="smalldesc">Item no.: 1422</span>
-<span class="green">$square</span>
-</li>
-<li>
-<img class="fimg2" alt="" src="images/demo-img2.jpg">
-<span class="smalltitle"><a href="product.html">Some title here</a></span>
-<span class="smalldesc">Item no.: 1422</span>
-<span class="green">$square</span>
-</li>
+<% end %>
+
 </ul>
 
 
@@ -80,7 +70,9 @@ creative professional..
 <div class="categorybox">
 <div class="authordata">
 <div class="grid_4">
-<img src="http://www.socialearth.org/wp-content/uploads/2012/01/facebook.jpg" alt="" title="facebook" width="220" height="220" class="alignnone size-full wp-image-16236" />
+<% if @user.profile_image %>
+<%= image_tag @user.profile_image, :title=> "facebook", :width=> "220", :height=> "220", :class=> "alignnone size-full wp-image-16236" %>
+<% end %>
 <h2><%= @user.name %></h2>
 <p>
 This is my under 200 character bio. 
