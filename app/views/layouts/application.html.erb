@@ -34,23 +34,22 @@
 
 <ul class="menu1">
 <% page = request.fullpath %>
-<li><a href="index.html" <%= if page.include? "home" 
-								print('class="active"') 
+<li><%= link_to "Share Your Work", signup_path, :class => if page.include? "signup" 
+								"active"
 								else 
-								end %> >Home<span>&nbsp;</span></a></li>
-<li><a href="create.html" <%= if page.include? "new" 
-								print('class="active"') 
-								else 
-								end %> >Share Your Work</a>
+								""
+								end  %> 
 </li>
-<li><a href="discover.html"> <%= if page.include? "discover" 
-									print('class="active"') 
-									else 
-									end %> Discover Great Work</a></li>
-<li><a href="howitworks.html"> <%= if page.include? "howitworks" 
-									print('class="active"') 
-									else 
-									end %> How it Works</a></li>
+<li><%= link_to "Discover Great Work", "/discover", :class =>  if page.include? "discover" 
+																"active"
+																else 
+																"" 
+																end %> </li>
+<li><%= link_to "How it works", about_path, :class =>   if page.include? "about" 
+															"active"
+															else
+															""
+															end %> </li>
 </ul>
 
 <ul>

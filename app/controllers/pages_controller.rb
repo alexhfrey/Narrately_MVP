@@ -4,6 +4,10 @@ class PagesController < ApplicationController
 	redirect_to current_user 
   end
   end
+  
+  def about
+  end
+  
   def connect
   if (current_user) 
 	redirect_to "projects#new"
