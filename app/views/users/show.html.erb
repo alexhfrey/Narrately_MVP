@@ -34,7 +34,7 @@
 <%= link_to image_tag(s.project.project_image.url, :class => "fimg2", :width => "200", :height => "135"), s.project%>
 <span class="smalltitle"><%= link_to s.project.project_title, s.project %></span>
 </li>
-<% end %>
+<% end unless @shares.nil?%>
 
 </ul>
 
