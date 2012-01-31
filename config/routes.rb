@@ -4,7 +4,7 @@ MVP1::Application.routes.draw do
  
   resources :users, :only => [:show] 
   
-  resources :projects, :only => [:new, :create, :show] do
+  resources :projects, :only => [:new, :create, :show, :index] do
 		member do
 			get 'confirmation'
 		end
@@ -15,6 +15,10 @@ MVP1::Application.routes.draw do
   match '/signout' => "sessions#destroy", :as => :signout
   match '/signup',  :to => 'users#new'	
   match '/signin', :to => 'sessions#new'
+  match '/discover', :to => 'projects#index'
+  match '/about', :to=> 'pages#about'
+  match '/discover', :to=> 'pages#index'
+  
   
   
   

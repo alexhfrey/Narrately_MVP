@@ -4,6 +4,9 @@ class ProjectsController < ApplicationController
 	@project = @user.projects.build
 	
   end
+  
+  def index
+  end
 
   def create
 	@user = current_user
