@@ -4,7 +4,7 @@ class SharesController < ApplicationController
   @project = Project.find(params[:project_id])
   @title = @project.project_title
   @image = @project.project_image.url
-  @type = @project.type
+  @type = @project.tag1
   
   if current_user.nil?
 	session[:redirect] = params[:project_id]
