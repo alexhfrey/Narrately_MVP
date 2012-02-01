@@ -12,6 +12,7 @@ gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'bcrypt-ruby'
 gem 'omniauth-identity'
+gem 'twitter'
 
 gem 'aws-s3'
 gem 'aws-sdk'
