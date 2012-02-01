@@ -9,14 +9,20 @@
 twttr.ready(function(twttr) {
 twttr.events.bind('tweet', function(event) {
 	var f = document.forms[0];
-	var handle = event.data.screen_name;
-	var tweet_id = event.data.tweet_id;
 	document.getElementById("medium").value = "Twitter";
-	document.getElementById("handle").value = handle;
-	document.getElementById("share_id").value = tweet_id;
 	f.submit();
 	}
-); });
+);	 });
+	FB.Event.subscribe('edge.create',
+    function(response) {
+		var f = document.forms[0];
+       document.getElementById("medium").value = "Facebook";
+	   f.submit();
+	   
+    }
+);
+
+
 </script>
 <h1>Share and get rewards</h1>
 <%= form_tag(project_shares_path(@project), :method => "post") do %> 
@@ -27,3 +33,4 @@ twttr.events.bind('tweet', function(event) {
 <p>Find me in app/views/actions/new.html.erb</p>
 
 <a href= <%= "https://twitter.com/share?url=" + @query %> class="twitter-share-button" data-lang="en" >Tweet</a>
+<div class="fb-like" data-send="false" data-width="450" data-show-faces="true" data-action="recommend"></div>
