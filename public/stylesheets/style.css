@@ -213,6 +213,24 @@ margin-top:25px;
 background:url(/images/buynowhover.png) no-repeat;
 color:#FFF!important;}
 
+.getstarted {
+display:block;
+width:199px;
+height:46px;
+background:url(../images/getstarted.png);
+color:#FFF;
+font-weight:bold;
+font-size:23px;
+text-decoration:none;
+    line-height: 41px;
+    text-align: center;
+	text-shadow:1px 0px 0px #c51b00;
+margin-top:25px;	
+}
+.getstarted:hover {
+background:url(/images/getstartedhover.png) no-repeat;
+color:#FFF!important;}
+
 
 .shareit { 
 display:block;
@@ -364,7 +382,7 @@ width:223px;
 height:203px;
 background:url(../images/productframe.png);
 margin-left:0px;
-margin-right:16px;}
+margin-right:11px;}
 .fimg {
     margin-left: 6px;
     margin-top: 6px;}	
