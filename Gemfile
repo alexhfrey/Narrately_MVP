@@ -7,13 +7,12 @@ gem 'rails', '3.0.9'
 
 gem 'sqlite3'
 gem 'paperclip', :path => 'vendor/GEMS/paperclip'
-
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'bcrypt-ruby'
 gem 'omniauth-identity'
 gem 'twitter'
-
+gem 'koala'
 gem 'aws-s3'
 gem 'aws-sdk'
 

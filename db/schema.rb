@@ -23,7 +23,6 @@ ActiveRecord::Schema.define(:version => 20120201022437) do
   create_table "projects", :force => true do |t|
     t.integer  "user_id"
     t.string   "project_title"
-    t.string   "project_image"
     t.text     "description"
     t.string   "file1"
     t.string   "file2"
@@ -33,14 +32,14 @@ ActiveRecord::Schema.define(:version => 20120201022437) do
     t.integer  "promotion_limit"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.datetime "output_file_updated_at"
-    t.integer  "output_file_file_size"
-    t.string   "output_file_file_name"
     t.string   "output_file_content_type"
-    t.datetime "project_image_updated_at"
-    t.integer  "project_image_file_size"
-    t.string   "project_image_file_name"
+    t.datetime "output_file_updated_at"
+    t.string   "output_file_file_name"
+    t.integer  "output_file_file_size"
     t.string   "project_image_content_type"
+    t.datetime "project_image_updated_at"
+    t.string   "project_image_file_name"
+    t.integer  "project_image_file_size"
   end
 
   create_table "shares", :force => true do |t|
@@ -64,6 +63,10 @@ ActiveRecord::Schema.define(:version => 20120201022437) do
     t.string   "password"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "avatar_content_type"
+    t.datetime "avatar_updated_at"
+    t.string   "avatar_file_name"
+    t.integer  "avatar_file_size"
     t.string   "provider"
     t.string   "uid"
   end

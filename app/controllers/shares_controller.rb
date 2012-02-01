@@ -1,11 +1,16 @@
 class SharesController < ApplicationController
   def new
+  ###Define stuff for facebook open graph
   @project = Project.find(params[:project_id])
+  @title = @project.project_title
+  @image = @project.project_image.url
+  @type = @project.type
   
   if current_user.nil?
 	session[:redirect] = params[:project_id]
 	redirect_to signin_path 
   end
+  
   @user = current_user
   share_page = "http://www.narrately.com/projects/" + params[:project_id]
   tweet_text = "Check out the great new project I found on @Narrately"
