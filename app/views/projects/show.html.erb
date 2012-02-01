@@ -23,7 +23,7 @@
 <h4>Supporter Props</h4>
 <div class="grid_10">
 <% @tweets.each do |t| %>
-<div><%= Twitter.oembed(t.id).html.html_safe%> </div>
+<div><%= Twitter.oembed(t.id).html.html_safe %> </div>
 <% end %>
 
 </div>
