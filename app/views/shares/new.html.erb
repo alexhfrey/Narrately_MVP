@@ -9,14 +9,19 @@
 twttr.ready(function(twttr) {
 twttr.events.bind('tweet', function(event) {
 	var f = document.forms[0];
+	var handle = event.data.screen_name;
+	var tweet_id = event.data.tweet_id;
+	document.getElementById("medium").value = "Twitter";
+	document.getElementById("handle").value = handle;
+	document.getElementById("share_id").value = tweet_id;
 	f.submit();
 	}
 ); });
 </script>
 <h1>Share and get rewards</h1>
 <%= form_tag(project_shares_path(@project), :method => "post") do %> 
-	<%= hidden_field_tag(:project_id, @project.id )%>
-	<%= hidden_field_tag(:user_id, @user.id) %>
+	<%= hidden_field_tag(:project_id, @project.id )%>	
+	<%= hidden_field_tag(:medium, nil )%>
 <% end %>
 
 <p>Find me in app/views/actions/new.html.erb</p>

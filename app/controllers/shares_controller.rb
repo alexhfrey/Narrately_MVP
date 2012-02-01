@@ -14,11 +14,10 @@ class SharesController < ApplicationController
   end
 
   def create
+  @user = current_user
+  medium = params[:medium]
+  @share = Share.new(:user_id => params[:user_id], :project_id => params[:project_id], :medium => medium)
  
-   
-  
-  @share = Share.new(:user_id => params[:user_id], :project_id => params[:project_id])
-  
   if @share.save 
 	redirect_to current_user
    else

@@ -22,12 +22,15 @@
 <div class="productdata">
 <h4>Supporter Props</h4>
 <div class="grid_10">
-Tweets.....tweets......and more tweets</div>
+<% @tweets.each do |t| %>
+<div><%= Twitter.oembed(t.id).html.html_safe%> </div>
+<% end %>
+
 </div>
 </div>
 </div>
 
-
+</div>
 <div class="grid_4 righthome">
 
 
@@ -44,7 +47,7 @@ Tweets.....tweets......and more tweets</div>
 <% if @promotions_clear %>
 	<%= link_to "Share it!", new_project_share_path(@project), :class => "shareit" %>
 <% else %>
-	<%= link_to "Buy it!", @project.purchase_link, :class => "shareit" %>
+	<%= link_to "Buy it!", 'http://' + @project.purchase_link, :class => "shareit" %>
 	<% end %>
 
 

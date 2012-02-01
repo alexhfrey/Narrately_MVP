@@ -42,6 +42,8 @@ class ProjectsController < ApplicationController
 	else
   end
   
+  ##Tweets
+  @tweets = Twitter.search("narrately.com/projects/" + @project.id.to_s)
   
   
  end
