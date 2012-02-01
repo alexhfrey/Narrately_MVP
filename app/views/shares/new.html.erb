@@ -1,3 +1,15 @@
+<div class="container_16 padding50">
+<div class="grid_16">
+</div>
+
+
+<div class="grid_11 singleleft">
+<div class="myprojectbox">
+<div class="bigtitle">1. Awesome</div>
+<div class="lines"></div>
+<div class="productdata">
+
+
 <script type="text/javascript" charset="utf-8">
   window.twttr = (function (d,s,id) {
     var t, js, fjs = d.getElementsByTagName(s)[0];
@@ -18,12 +30,50 @@ twttr.events.bind('tweet', function(event) {
 	}
 ); });
 </script>
-<h1>Share and get rewards</h1>
+<p>Great- just one step left to claim your reward. Share on Twitter or Facebook:</p>
 <%= form_tag(project_shares_path(@project), :method => "post") do %> 
 	<%= hidden_field_tag(:project_id, @project.id )%>	
 	<%= hidden_field_tag(:medium, nil )%>
 <% end %>
 
-<p>Find me in app/views/actions/new.html.erb</p>
-
 <a href= <%= "https://twitter.com/share?url=" + @query %> class="twitter-share-button" data-lang="en" >Tweet</a>
+
+</ul>
+</div>
+</div>
+
+
+<div class="mysharesbox">
+<div class="bigtitle">2. Your Reward</div>
+<div class="lines"></div>
+<div class="productdata">
+<ul class="featprod carousels">
+<li>
+<img src="images/demo-img1.jpg" alt="" class="fimg" />
+<span class="smalltitle"><a href="product.html">Nikon Camera</a></span>
+<span class="smalldesc">Item no.: 1422</span>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+
+
+<div class="grid_4 righthome">
+
+<div class="categorybox">
+<div class="authordata">
+<div class="grid_4">
+<br/>
+<h2>How it Works</h2>
+<p>1. Support the project by sharing it with friends</p>
+<p>2. Return to Narrately to receive your reward</p>
+<p>3. Repeat with other projects!</p>
+</div>
+</div>
+</div>
+</div>
+
+
+</div>
