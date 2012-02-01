@@ -1207,19 +1207,22 @@ height:20px;
 	margin-bottom:19px;}
 	.fullprod {
 	width:960px;}
+    
 	.onsale {
-	    background: url("images/circle-yellow.png") repeat scroll 0 0 transparent;
+    background: url(../images/circle-yellow.png) repeat scroll 0 0 transparent;
     color: #4d4c4c;
     display: inline;
-    font-size: 24px;
+    font-size: 28px;
     height: 78px;
     line-height: 75px;
-    margin-left: 35px;
-    margin-top: px;
+    margin-left: 50px;
+    margin-top: -55px;
     position: absolute;
     text-align: center;
     width: 78px;}
-	.oldprice {
+	
+    
+    .oldprice {
 	    color: #4d4c4c;
     display: block;
     float: left;
@@ -1233,6 +1236,19 @@ height:20px;
     alink: text-decoration: none; 
     }
     
+    .allgone {
+    background: url(../images/circle-gray.png) repeat scroll 0 0 transparent;
+    color: #4d4c4c;
+    display: inline;
+    font-size: 28px;
+    height: 78px;
+    line-height: 75px;
+    margin-left: 50px;
+    margin-top: -55px;
+    position: absolute;
+    text-align: center;
+    width: 78px;}
+    
     .onsaleleft {
     background: url(../images/circle-yellow.png) repeat scroll 0 0 transparent;
     color: #4d4c4c;
@@ -1245,6 +1261,7 @@ height:20px;
     margin-bottom: 5px;
     text-align: center;
     width: 78px;}
+    
     
 	.saleleft {
 	color: #4d4c4c;
