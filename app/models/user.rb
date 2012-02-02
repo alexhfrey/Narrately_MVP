@@ -7,6 +7,9 @@ create! do |user|
 	user.uid = auth["uid"]
 	user.name = auth["info"]["name"]
 	user.email = auth["info"]["email"]
+	if provider == "facebook"
+		user.token = auth['credentials']['token']
+	end
 end
 end
 
@@ -14,6 +17,6 @@ def self.update_image(old_user)
 	if old_user.provider.include?("facebook")
 		old_user.profile_image = 'http://graph.facebook.com/' + old_user.uid + '/picture?type=large'
 		old_user.save
-	end
+	end unless old_user.provider.nil?
 end
 end

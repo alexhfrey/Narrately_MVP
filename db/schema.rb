@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120201022437) do
+ActiveRecord::Schema.define(:version => 20120201214650) do
 
   create_table "identities", :force => true do |t|
     t.string   "name"
@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(:version => 20120201022437) do
     t.integer  "avatar_file_size"
     t.string   "provider"
     t.string   "uid"
+    t.string   "token"
   end
 
 end

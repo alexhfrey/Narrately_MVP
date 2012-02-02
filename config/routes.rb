@@ -4,11 +4,13 @@ MVP1::Application.routes.draw do
  
   resources :users, :only => [:show] 
   
+  
   resources :projects, :only => [:new, :create, :show, :index] do
 		member do
 			get 'confirmation'
 		end
 		resources :shares, :only => [:new, :create]
+		resources :facebook_post, :only => [:new]
    end
   
   match "/auth/:provider/callback" => "sessions#create"

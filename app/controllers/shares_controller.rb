@@ -4,7 +4,8 @@ class SharesController < ApplicationController
   @project = Project.find(params[:project_id])
   @title = @project.project_title
   @image = @project.project_image.url
-  @type = @project.tag1
+  @type = "book"
+  
   
   if current_user.nil?
 	session[:redirect] = params[:project_id]
@@ -13,8 +14,9 @@ class SharesController < ApplicationController
   
   @user = current_user
   share_page = "http://www.narrately.com/projects/" + params[:project_id]
+  @url = share_page
   tweet_text = "Check out the great new project I found on @Narrately"
-  via = "Narrately"
+	via = "Narrately"
   @query = URI::escape(share_page) + "&text=" + URI::escape(tweet_text) + "&via=" + via
   end
 
