@@ -18,7 +18,7 @@ has_attached_file :output_file, :storage => :s3, :bucket => 'narrately.com',
 						
 						}
 					
-has_attached_file :project_image, #:styles => { :medium => "300x300"  }, 
+has_attached_file :project_image, :styles => { :medium => "300x300"  }, 
 					 :storage => :s3, :bucket => 'narrately.com',
 					:s3_credentials => {
 						:access_key_id => 'AKIAJ7LLMIQJP57FAP3Q',
