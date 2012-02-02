@@ -32,28 +32,7 @@
 </ul>
 
 
-<span class="pending"><span class="oldprice">PENDING</span></span>
-<span class="projecttitle"><href="product.html">Adidas shoes</span>
-</li>
-<li>
-<img src="../images/demo-img3.png" alt="" class="fimg" />
-<span class="live"><span class="oldprice">LEFT</span>8</span>
-<span class="projecttitle"><href="product.html">Adidas shoes</span>
-</li><li>
-<img src="../images/demo-img3.png" alt="" class="fimg" />
-<span class="goalmet"><span class="oldprice">GOAL</span>MET</span>
-<span class="projecttitle"><href="product.html">Adidas shoes</span>
-</li>
-</ul>
 
-<ul class="featprod grayprod cat">
-<li>
-<% if @first_project %>
-<span class="smalltitle"><%=link_to @first_project.project_title, @first_project %></span>
-<%= link_to image_tag(@first_project.project_image.url(:large), :class => "fimg2", :width => "400", :height => "240"), @first_project%>
-<% end %>
-</li>
-</ul>
 </div>
 </div>
 
