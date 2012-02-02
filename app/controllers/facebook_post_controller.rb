@@ -8,7 +8,7 @@ def new
 			@graph.put_object("me", "feed", :message => "Testing Narrately Wall Posts", 
 				:picture => @project.project_image.url, :link => "http://www.narrately.com/projects/" + @project.id.to_s,
 							:caption => "This is the caption", :name => "This is the name", 
-							:description => "This is the description. This is the description. THis is the description." 
+							:description => "This is the description. This is the description. THis is the description." )
 			@shr = Share.new(:user_id => @user.id, :project_id => @project.id, :medium => "facebook")
 			@shr.save
 			redirect_path = @user
