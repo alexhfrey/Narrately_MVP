@@ -5,11 +5,29 @@
 
 <div class="grid_11 singleleft">
 <div class="myprojectbox">
-<div class="bigtitle">My Projects</div>
+<div class="bigtitle">My Projects</div><%= link_to "Launch a new project with Narrately", new_project_path %>
+
 <div class="lines"></div>
-<div class="productdata">
+
+<div class="grid_12">
 <p>I have <%= @user.projects.length %> projects on Narrately </p>
-<%= link_to "Launch a new project with Narrately", new_project_path %>
+
+<ul class="mycreatedprojects">
+<li>
+<img src="../images/demo-img3.png" alt="" class="fimg" />
+<span class="pending"><span class="oldprice">PENDING</span></span>
+<span class="projecttitle"><href="product.html">Adidas shoes</span>
+</li>
+<li>
+<img src="../images/demo-img3.png" alt="" class="fimg" />
+<span class="live"><span class="oldprice">LEFT</span>8</span>
+<span class="projecttitle"><href="product.html">Adidas shoes</span>
+</li><li>
+<img src="../images/demo-img3.png" alt="" class="fimg" />
+<span class="goalmet"><span class="oldprice">GOAL</span>MET</span>
+<span class="projecttitle"><href="product.html">Adidas shoes</span>
+</li>
+</ul>
 
 <ul class="featprod grayprod cat">
 <li>
@@ -26,7 +44,31 @@
 <div class="mysharesbox">
 <div class="bigtitle">My Shares</div>
 <div class="lines"></div>
-<div class="productdata">
+<div class="grid_12">
+
+<ul class="mysharedprojects">
+<li>
+<img src="../images/demo-img3.png" alt="" class="fimg" />
+<span class="youveshared"><span class="oldprice">SHARED</span></span>
+<span class="projecttitle"><href="">Adidas shoes my titles..</></span>
+</li>
+<li>
+<img src="../images/demo-img3.png" alt="" class="fimg" />
+<span class="youveshared"><span class="oldprice">SHARED</span></span>
+<span class="projecttitle"><href="">Adidas shoes my titles..</></span>
+</li>
+<li>
+<img src="../images/demo-img3.png" alt="" class="fimg" />
+<span class="youveshared"><span class="oldprice">SHARED</span></span>
+<span class="projecttitle"><href="">Adidas shoes my titles..</></span>
+</li>
+<li>
+<img src="../images/demo-img3.png" alt="" class="fimg" />
+<span class="youveshared"><span class="oldprice">SHARED</span></span>
+<span class="projecttitle"><href="">Adidas shoes my titles..</></span>
+</li>
+</ul>
+
 <ul class="featprod grayprod cat">
 
 <% @shares.first(3).each do |s| %>
@@ -38,33 +80,14 @@
 
 </ul>
 
-
-<ul class="griditems">
-<li>
-<span class="gridimg">
-<a href="#"><img src="images/gridcam.png" alt="" /></a>
-</span>
-<span class="griddetails">
-<span class="gridtitle">Nikon Camera <span>Item no.: 1442</span></span>
-<span class="gridcontent">
-The 30-inch Apple Cinema HD Display delivers an amazing 
-2560 x 1600 pixel resolution. Designed specifically for the 
-creative professional..
-</span>
-<span class="gridprice">
-<span class="onsale"><span class="oldprice">$6314</span>$199</span>
-</span>
-</span>
-<span class="gridadd"><a href="#">Add to cart</a></span>
-<span class="gridcompare"><a href="#">Add to compare list</a></span>
-</li>
-</ul>
-
-</div>
 </div>
 </div>
 
 
+
+
+
+</div>
 <div class="grid_4 righthome">
 
 <div class="categorybox">
