@@ -10,11 +10,28 @@
 <div class="lines"></div>
 
 <div class="grid_12">
-<p>I have <%= @user.projects.length %> projects on Narrately </p>
+
 
 <ul class="mycreatedprojects">
 <li>
-<img src="../images/demo-img3.png" alt="" class="fimg" />
+
+
+<% @projects.each do |p| %>
+<li>
+<%= link_to image_tag(p.project.project_image.url(:medium), :class => "fimg2"), p.project %>
+<% p.left = p.promotion_limit - p.shares.length %>
+	<% if p.left > && p.active   %>
+	<span class="live"><span class="oldprice">LEFT</span><%= p.left %></span>
+	<% elsif left == 0 && p.active %>
+	<span class="goalmet"><span class="oldprice">GOAL</span>MET</span>
+	<% else %>
+	<span class ="pending"><span class="oldprice">PENDING</span></span>
+<%= link_to @project.title, @project, :class => "projecttitle" %>
+</li>
+<% end unless @projects.nil?%>
+</ul>
+
+
 <span class="pending"><span class="oldprice">PENDING</span></span>
 <span class="projecttitle"><href="product.html">Adidas shoes</span>
 </li>
