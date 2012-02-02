@@ -18,7 +18,7 @@ has_attached_file :output_file, :storage => :s3, :bucket => 'narrately.com',
 						
 						}
 					
-has_attached_file :project_image, :styles => { :medium => "300x300"  }, 
+has_attached_file :project_image, :styles => { :large => "610x360", :medium => "248x162"  }, 
 					 :storage => :s3, :bucket => 'narrately.com',
 					:s3_credentials => {
 						:access_key_id => 'AKIAJ7LLMIQJP57FAP3Q',
@@ -27,7 +27,7 @@ has_attached_file :project_image, :styles => { :medium => "300x300"  },
 
 validates :project_image, :presence => true
 validates_attachment_content_type :output_file, :content_type=>['application/pdf'], :message => "File must be in PDF format"
-validates_attachment_content_type :project_image, :content_type=>['image/jpeg'], :message => "Cover image must be in JPEG format"
+validates_attachment_content_type :project_image, :content_type=>['image/jpeg', 'image/png'], :message => "Cover image must be in JPEG format"
 validates_attachment_size :project_image, :less_than=> 2.megabytes, :message => "Cover image must be less than 2 MB"
 
 end
