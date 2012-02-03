@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120203073753) do
+ActiveRecord::Schema.define(:version => 20120202232725) do
 
   create_table "identities", :force => true do |t|
     t.string   "name"
@@ -33,14 +33,14 @@ ActiveRecord::Schema.define(:version => 20120203073753) do
     t.integer  "promotion_limit"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.datetime "output_file_updated_at"
-    t.integer  "output_file_file_size"
     t.string   "output_file_file_name"
     t.string   "output_file_content_type"
-    t.datetime "project_image_updated_at"
-    t.integer  "project_image_file_size"
+    t.integer  "output_file_file_size"
+    t.datetime "output_file_updated_at"
     t.string   "project_image_file_name"
     t.string   "project_image_content_type"
+    t.integer  "project_image_file_size"
+    t.datetime "project_image_updated_at"
     t.boolean  "active"
   end
 
@@ -50,7 +50,6 @@ ActiveRecord::Schema.define(:version => 20120203073753) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "medium"
-    t.string   "referral"
   end
 
   create_table "users", :force => true do |t|

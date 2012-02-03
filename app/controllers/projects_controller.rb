@@ -22,6 +22,9 @@ class ProjectsController < ApplicationController
   end
 
   def show
+  if params[:referral] 
+		session[:referral] = params[:referral]
+  end
   @project = Project.find(params[:id])
   @creator = @project.user
   @shares = @project.shares

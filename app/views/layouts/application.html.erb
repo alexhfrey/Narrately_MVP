@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<%= javascript_include_tag :defaults, "rails.validations" %>
 <%= stylesheet_link_tag "reset.css" %>
 <%= stylesheet_link_tag "text.css" %>
 <%= stylesheet_link_tag "style.css" %>
@@ -89,9 +90,7 @@
 </div>
 
 </div></div></div>
-<div><% flash.each do |key, value| %>
-          <div class="flash <%= key %>"><%= value %></div>
-        <% end %> </div>
+
 <!--end header -->
 
 

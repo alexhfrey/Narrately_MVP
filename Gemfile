@@ -15,6 +15,8 @@ gem 'twitter'
 gem 'koala'
 gem 'aws-s3'
 gem 'aws-sdk'
+gem 'jquery-rails'
+gem 'client_side_validations'
 
 group :development do
 	gem 'annotate', '2.4.0'

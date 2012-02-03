@@ -80,3 +80,13 @@ form.inline p { margin-bottom:0; }
 .notice a          { color: #514721; }
 .success a         { color: #264409; }
 .info a            { color: #205791; }
+
+.ajax {
+	display:inline; 
+}
+.ajax .message {
+	color: #D00;
+	padding-left: 5px;
+	font-size: 12px;
+	}
+

@@ -41,7 +41,7 @@ twttr.events.bind('tweet', function(event) {
 <% end %>
 
 <a href= <%= "https://twitter.com/share?url=" + @query %> class="twitter-share-button" data-lang="en" >Tweet</a>
-<%= link_to "Post on Facebook!", new_project_facebook_post_path(@project) %>
+<a href = <%= @facebook_link %>  >Post on facebook </a>
 
 </ul>
 </div>
