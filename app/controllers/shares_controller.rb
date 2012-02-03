@@ -13,11 +13,21 @@ class SharesController < ApplicationController
   end
   
   @user = current_user
-  share_page = "http://www.narrately.com/projects/" + params[:project_id]
+  share_page = "http://#{request.host}:#{request.port}" + "/projects/" + params[:project_id] + "?referral=" 
   @url = share_page
   tweet_text = "Check out the great new project I found on @Narrately"
 	via = "Narrately"
-  @query = URI::escape(share_page) + "&text=" + URI::escape(tweet_text) + "&via=" + via
+  @query = URI::escape(share_page + "t_" + ) + "&text=" + URI::escape(tweet_text) + "&via=" + via
+  
+  @facebook_link = "https://www.facebook.com/dialog/feed?app_id=" + '242735669136491' + '&link=' + 
+  CGI::escape(share_page) + '&picture=' + CGI::escape(@project.project_image.url) + '&name=' + CGI::escape(@project.project_title) + '&caption=' +
+  CGI::escape('Another Great Project on Narrately') +
+  '&description=' + CGI::escape(@project.description) +
+  '&user_message=' + CGI::escape("Check out the great new project I found on Narrately") + '&redirect_uri=' + CGI::escape(share_page) + '/facebook_post/new'
+  
+  
+  
+
   end
 
   def create
