@@ -17,7 +17,7 @@ class SharesController < ApplicationController
   @url = share_page
   tweet_text = "Check out the great new project I found on @Narrately"
 	via = "Narrately"
-  @query = URI::escape(share_page + "t_" + ) + "&text=" + URI::escape(tweet_text) + "&via=" + via
+  @query = share_page + "&text=" + URI::escape(tweet_text) + "&via=" + via
   
   @facebook_link = "https://www.facebook.com/dialog/feed?app_id=" + '242735669136491' + '&link=' + 
   CGI::escape(share_page) + '&picture=' + CGI::escape(@project.project_image.url) + '&name=' + CGI::escape(@project.project_title) + '&caption=' +
