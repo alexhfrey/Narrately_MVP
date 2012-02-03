@@ -1,4 +1,6 @@
 <%= stylesheet_link_tag "blueprint/src/forms.css" %>
+
+
 <div class="container_16 padding50">
 <div class="grid_16">
 </div>
@@ -16,39 +18,33 @@
 </div>
 
 <div class="projectbox">
-<div class="createform">
-<div class="container showgrid">
 
+<%= form_for(@project, :html => { :multipart => true }, :validate => true, :class => "inline") do |f| %>
 
-<div class = "container">
-
-<div class="span-12">
-<%= form_for(@project, :html => { :multipart => true }, :validate => true) do |f| %>
-
- 
+ <fieldset>
 
  <h2>1. Project Details</h2>
 <p>Let your fans know what you're working on - include some basic info here</p>
-<hr>  
+ 
 
-  <div class = "field"><p>
+  <p>
 	<%= f.hidden_field :user_id, :value => @user.id %>
-   </p></div>
-  <div class = "field">
+   </p>
+  <p>
     <%= f.label :name, "Project name" %><br />
-    <%= f.text_field :project_title, :class => "title" %> <br/>
- </div>
-  <div class = "field">
+    <%= f.text_field :project_title, :class => "title" %> 
+ </p>
+ <p style = "clear:left">
     <%= f.label :description, "Project Description" %><br />
-    <%= f.text_area :description,  :class => "text" %>
- </div>
-  <div class="field"> 
+    <%= f.text_area :description %>
+ </p>
+  <p> 
   <%= f.label :project_image, "Project Cover Image" %>
   <%= f.file_field :project_image %>
-  </div>
-   <div class = "field">
+  </p>
+   <p>
 	<%= select_tag(:tag, options_for_select([['Romance', 1], ['Mystery', 2], ['Business', 3]])) %>
-  </div>
+  </p>
   <h2>2. Reward Details</h2>
 <p>This is the reward your fans will receive when they share your work- make it count!</p>
 <hr>
@@ -73,21 +69,23 @@
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
-<% end %>
 
-</div>
+  </fieldset>
+  <% end %>
 
-</div>
-</div>
-</fieldset>
-</form>
+
+
+
+
+
+
 
       <div class="span-12 last"></div>
 
       <div class="span-24 last">
       </div>
-</div>
-</div>
+ </div>
+
 </div>
 
 
