@@ -61,9 +61,9 @@ text-decoration: none;
     text-decoration: none;
 	line-height: 26px;}
 .active {
-background:url(../images/activebg.png) repeat;}
+background:url(../images/activebg123.png) repeat;}
 .active span {
-    background: url("images/activebg2.png") repeat scroll 0 0 transparent;
+    background: url("images/activebg123.png") repeat scroll 0 0 transparent;
     display: block;
     height: 10px;
     width: 70px;
@@ -669,6 +669,21 @@ padding-left:10px;
 padding-top:10px;
 padding-right:10px;
 padding-bottom:10px;}
+
+.discoverbox {
+background:#FFF;
+width:920px;
+border-right:1px solid #c2cbd2;
+border-bottom:1px solid #c2cbd2;
+border-radius:5px;
+margin-top:5px;
+float:left;
+padding-left:10px;
+padding-top:10px;
+padding-right:10px;
+padding-bottom:10px;}
+
+
 .loginbox {
 background:#FFF;
 width:740px;
