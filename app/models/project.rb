@@ -3,12 +3,12 @@ belongs_to :user
 has_many :shares
 
 validates :description, :length => { :minimum => 100, :maximum => 1000, 
-						:message => "Project description must be between 50 and 500 characters"}
+						:message => "must be between 50 and 500 characters"}
 
 validates :promotion_limit, :presence => true
 
 validates :project_title, :length => { :minimum => 10, :maximum => 100, 
-							:message => "Project title must be between 10 and 100 characters"}
+							:message => "must be between 10 and 100 characters"}
 						
 						
 has_attached_file :output_file, :storage => :s3, :bucket => 'narrately.com',

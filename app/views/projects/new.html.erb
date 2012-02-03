@@ -1,7 +1,8 @@
+<%= stylesheet_link_tag "blueprint/src/forms.css" %>
 <div class="container_16 padding50">
 <div class="grid_16">
 </div>
-
+<%= render 'shared/error_messages' %>
 <div class="grid_11 singleleft">
 
 <div class="createwelcome">
@@ -20,14 +21,15 @@
 
 
 <div class = "container">
-<h2>1. Project Details</h2>
-<p>Let your fans know what you're working on - include some basic info here</p>
-<hr>
+
 <div class="span-12">
 <%= form_for(@project, :html => { :multipart => true }) do |f| %>
-<fieldset>
- <%= render 'shared/error_messages' %>
-  
+
+ 
+
+ <h2>1. Project Details</h2>
+<p>Let your fans know what you're working on - include some basic info here</p>
+<hr>  
 
   <div class = "field"><p>
 	<%= f.hidden_field :user_id, :value => @user.id %>
@@ -72,7 +74,7 @@
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
-</fieldset>
+
 </div>
 
 </div>
