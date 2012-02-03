@@ -13,22 +13,23 @@
 
 
 <ul class="mycreatedprojects">
-<li>
+
 
 
 <% @projects.each do |p| %>
 <li>
-<%= link_to image_tag(p.project.project_image.url(:medium), :class => "fimg2"), p.project %>
-<% p.left = p.promotion_limit - p.shares.length %>
-	<% if p.left > && p.active   %>
-	<span class="live"><span class="oldprice">LEFT</span><%= p.left %></span>
+<%= link_to image_tag(p.project_image.url(:medium), :class => "fimg2"), p %>
+<% left = p.promotion_limit - p.shares.length %>
+	<% if left > 0 && p.active   %>
+	<span class="live"><span class="oldprice">LEFT</span><%= left %></span>
 	<% elsif left == 0 && p.active %>
 	<span class="goalmet"><span class="oldprice">GOAL</span>MET</span>
 	<% else %>
 	<span class ="pending"><span class="oldprice">PENDING</span></span>
-<%= link_to @project.title, @project, :class => "projecttitle" %>
+	<% end %>
+<%= link_to p.project_title, p, :class => "projecttitle" %>
 </li>
-<% end unless @projects.nil?%>
+<% end unless @projects.nil? %>
 </ul>
 
 
