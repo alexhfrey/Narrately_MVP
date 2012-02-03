@@ -5,38 +5,32 @@
 
 <div class="grid_11 singleleft">
 <div class="myprojectbox">
-<div class="bigtitle">My Projects</div><%= link_to "Launch a new project with Narrately", new_project_path %>
-
+<div class="bigtitle">My Projects</div>
 <div class="lines"></div>
-
 <div class="grid_12">
-<p>I have <%= @user.projects.length %> projects on Narrately </p>
-
 <ul class="mycreatedprojects">
+
+
+<% @projects.each do |p| %>
 <li>
-<img src="../images/demo-img3.png" alt="" class="fimg" />
-<span class="pending"><span class="oldprice">PENDING</span></span>
-<span class="projecttitle"><href="product.html">Adidas shoes</span>
+<%= link_to image_tag(p.project_image.url, :class => "fimg2", :size => "248x162"), p %>
+<% left = p.promotion_limit - p.shares.length %>
+	<% if left > 0 && p.active   %>
+	<span class="live"><span class="oldprice">LEFT</span><%= left %></span>
+	<% elsif left == 0 && p.active %>
+	<span class="goalmet"><span class="oldprice">GOAL</span>MET</span>
+	<% else %>
+	<span class ="pending"><span class="oldprice">PENDING</span></span>
+	<% end %>
+<%= link_to p.project_title, p, :class => "projecttitle" %>
+
+
 </li>
-<li>
-<img src="../images/demo-img3.png" alt="" class="fimg" />
-<span class="live"><span class="oldprice">LEFT</span>8</span>
-<span class="projecttitle"><href="product.html">Adidas shoes</span>
-</li><li>
-<img src="../images/demo-img3.png" alt="" class="fimg" />
-<span class="goalmet"><span class="oldprice">GOAL</span>MET</span>
-<span class="projecttitle"><href="product.html">Adidas shoes</span>
-</li>
+<% end unless @projects.nil? %>
 </ul>
 
-<ul class="featprod grayprod cat">
-<li>
-<% if @first_project %>
-<span class="smalltitle"><%=link_to @first_project.project_title, @first_project %></span>
-<%= link_to image_tag(@first_project.project_image.url(:large), :class => "fimg2", :width => "400", :height => "240"), @first_project%>
-<% end %>
-</li>
-</ul>
+
+
 </div>
 </div>
 
@@ -45,39 +39,16 @@
 <div class="bigtitle">My Shares</div>
 <div class="lines"></div>
 <div class="grid_12">
-
 <ul class="mysharedprojects">
-<li>
-<img src="../images/demo-img3.png" alt="" class="fimg" />
-<span class="youveshared"><span class="oldprice">SHARED</span></span>
-<span class="projecttitle"><href="">Adidas shoes my titles..</></span>
-</li>
-<li>
-<img src="../images/demo-img3.png" alt="" class="fimg" />
-<span class="youveshared"><span class="oldprice">SHARED</span></span>
-<span class="projecttitle"><href="">Adidas shoes my titles..</></span>
-</li>
-<li>
-<img src="../images/demo-img3.png" alt="" class="fimg" />
-<span class="youveshared"><span class="oldprice">SHARED</span></span>
-<span class="projecttitle"><href="">Adidas shoes my titles..</></span>
-</li>
-<li>
-<img src="../images/demo-img3.png" alt="" class="fimg" />
-<span class="youveshared"><span class="oldprice">SHARED</span></span>
-<span class="projecttitle"><href="">Adidas shoes my titles..</></span>
-</li>
-</ul>
 
-<ul class="featprod grayprod cat">
-
-<% @shares.first(3).each do |s| %>
+<% @shares.each do |s| %>
 <li>
-<%= link_to image_tag(s.project.project_image.url, :class => "fimg2", :width => "200", :height => "135"), s.project%>
-<span class="smalltitle"><%= link_to s.project.project_title, s.project %></span>
+<% p = s.project %>
+<%= link_to image_tag(p.project_image.url,:class => "fimg", :size => "248x162"), p %>
+<span class="youveshared"><span class="oldprice">SHARED</span></span>	
+<%= link_to p.project_title, p, :class => "projecttitle" %>
 </li>
-<% end unless @shares.nil?%>
-
+<% end unless @projects.nil? %>
 </ul>
 
 </div>
