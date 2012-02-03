@@ -13,7 +13,7 @@ class SharesController < ApplicationController
   end
   
   @user = current_user
-  share_page = "http://#{request.host}:#{request.port}" + "/projects/" + params[:project_id] + "?referral=" 
+  share_page = "http://#{request.host}:#{request.port}" + "/projects/" + params[:project_id] + "?referral=fb_" + @user.id.to_s + '_' + @project.id.to_s 
   @url = share_page
   tweet_text = "Check out the great new project I found on @Narrately"
 	via = "Narrately"
@@ -23,7 +23,7 @@ class SharesController < ApplicationController
   CGI::escape(share_page) + '&picture=' + CGI::escape(@project.project_image.url) + '&name=' + CGI::escape(@project.project_title) + '&caption=' +
   CGI::escape('Another Great Project on Narrately') +
   '&description=' + CGI::escape(@project.description) +
-  '&user_message=' + CGI::escape("Check out the great new project I found on Narrately") + '&redirect_uri=' + CGI::escape(share_page) + '/facebook_post/new'
+  'message=' + CGI::escape("Check out the great new project I found on Narrately") + '&redirect_uri=' + CGI::escape(share_page) + '/facebook_post/new'
   
   
   
