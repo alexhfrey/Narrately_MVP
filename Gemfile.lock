@@ -124,6 +124,9 @@ GEM
       thor (~> 0.14.4)
     rake (0.8.7)
     rdoc (3.8)
+    simple_form (1.5.2)
+      actionpack (~> 3.0)
+      activemodel (~> 3.0)
     simple_oauth (0.1.5)
     sqlite3 (1.3.3)
     sqlite3 (1.3.3-x86-mingw32)
@@ -156,5 +159,6 @@ DEPENDENCIES
   omniauth-twitter
   paperclip!
   rails (= 3.0.9)
+  simple_form
   sqlite3
   twitter

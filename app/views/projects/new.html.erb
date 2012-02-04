@@ -1,4 +1,4 @@
-<%= stylesheet_link_tag "blueprint/src/forms.css" %>
+<%= stylesheet_link_tag "bootstrap.css" %>
 
 
 <div class="container_16 padding50">
@@ -18,59 +18,24 @@
 </div>
 
 <div class="projectbox">
+<fieldset class = "control-group ">
+	
 
-<%= form_for(@project, :html => { :multipart => true }, :validate => true, :class => "inline") do |f| %>
-
- <fieldset>
-
- <h2>1. Project Details</h2>
-<p>Let your fans know what you're working on - include some basic info here</p>
+<%= simple_form_for @project, :validate => true do |f| %>
+	<h2>1. Project Details</h2>
+	<p>Let your fans know what you're working on - include some basic info here</p>
  
-
-  <p>
 	<%= f.hidden_field :user_id, :value => @user.id %>
-   </p>
-  <p>
-    <%= f.label :name, "Project name" %><br />
-    <%= f.text_field :project_title, :class => "title" %> 
- </p>
- <p style = "clear:left">
-    <%= f.label :description, "Project Description" %><br />
-    <%= f.text_area :description %>
- </p>
-  <p> 
-  <%= f.label :project_image, "Project Cover Image" %>
-  <%= f.file_field :project_image %>
-  </p>
-   <p>
-	<%= select_tag(:tag, options_for_select([['Romance', 1], ['Mystery', 2], ['Business', 3]])) %>
-  </p>
-  <h2>2. Reward Details</h2>
-<p>This is the reward your fans will receive when they share your work- make it count!</p>
-<hr>
-  <p>
-    <%= f.label :promotion_limit %><br />
-    <%= f.text_field :promotion_limit %>
-  </p><br/>
-  
-  <div class="field"> 
-  <%= f.label :output_file, "Reward File" %>
-  <%= f.file_field :output_file %>
-  </div>
-<br/>  
-<h2>3. Purchase Details</h2>
-<p>Once your reward limit is hit- then fans will be able to purchase your product.</p>
-<hr>
-<p>
-    <%= f.label :purchase_link %><br />
-    <%= f.text_field :purchase_link %>
-  </p><br/>
-  
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
+ 
+    <%= f.input :project_title, :label => "Project name",  :input_html => { :class => 'text'} %>
 
-  </fieldset>
+    <%= f.input :description, :error => "Doesn't work"%>
+ 
+	<%= f.input :project_image %>
+ 
+   
+	<%= f.input :tag1, :collection => ['romance', 'mystery', 'business'] %>
+
   <% end %>
 
 
@@ -80,12 +45,9 @@
 
 
 
-      <div class="span-12 last"></div>
+    
 
-      <div class="span-24 last">
-      </div>
- </div>
-
+</div>
 </div>
 
 

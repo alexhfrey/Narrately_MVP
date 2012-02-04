@@ -16,6 +16,7 @@ gem 'koala'
 gem 'aws-s3'
 gem 'aws-sdk'
 gem 'jquery-rails'
+gem 'simple_form'
 gem 'client_side_validations'
 
 group :development do
