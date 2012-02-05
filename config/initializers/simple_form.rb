@@ -6,6 +6,7 @@ SimpleForm.setup do |config|
 SimpleForm.form_class = nil
 SimpleForm.wrapper_class = 'control-group'
 SimpleForm.wrapper_error_class = 'error'
+
 SimpleForm.error_class = 'help-inline'
 
   # Default tag used on hints.

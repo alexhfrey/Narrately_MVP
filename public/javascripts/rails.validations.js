@@ -39,6 +39,7 @@
             var element = $(this);
             clientSideValidations.callbacks.element.pass(element, function() {
               removeError(element);
+			  
             }, eventData) })
         // Checkboxes - Live events don't support filter
         .end().find('[data-validate]:checkbox')
@@ -60,6 +61,9 @@
         });
 
       var addError = function(element, message) {
+        clientSideValidations.formBuilders[settings.type].add(element, settings, message);
+      }
+	  var addSuccess = function(element) {
         clientSideValidations.formBuilders[settings.type].add(element, settings, message);
       }
 
@@ -351,18 +355,29 @@ var clientSideValidations = {
       add: function(element, settings, message) {
         if (element.data('valid') !== false) {
           var wrapper = element.closest(settings.wrapper_tag);
+		  wrapper.removeClass("success");
           wrapper.addClass(settings.wrapper_error_class);
+		  var hintElement = wrapper.find('span.hint');
+		  hintElement.remove();
+		  var successElement = wrapper.find('span.success');
+		  successElement.remove();
           var errorElement = $('<' + settings.error_tag + ' class="' + settings.error_class + '">' + message + '</' + settings.error_tag + '>');
           wrapper.append(errorElement);
         } else {
+	
           element.parent().find(settings.error_tag + '.' + settings.error_class).text(message);
+		  var successElement = $('<' + 'span' + ' class="success">' + 'Looks great!' + '</span>');
+		wrapper.append(successElement); 
         }
       },
       remove: function(element, settings) {
         var wrapper = element.closest(settings.wrapper_tag + '.' + settings.wrapper_error_class);
         wrapper.removeClass(settings.wrapper_error_class);
+		wrapper.addClass("success");
         var errorElement = wrapper.find(settings.error_tag + '.' + settings.error_class);
         errorElement.remove();
+		var successElement = $('<' + 'span' + ' class="success">' + 'Looks great!' + '</span>');
+		wrapper.append(successElement); 
       }
 
     },
