@@ -13,7 +13,7 @@ SimpleForm.error_class = 'help-inline'
   # config.hint_tag = :span
 
   # CSS class to add to all hint tags.
-  # config.hint_class = :hint
+   config.hint_class = 'help-inline'
 
   # CSS class used on errors.
   # config.error_class = :error
