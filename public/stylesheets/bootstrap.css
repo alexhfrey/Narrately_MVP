@@ -2401,6 +2401,16 @@ button.btn.small, input[type="submit"].btn.small {
 .nav-collapse.collapse {
   height: auto;
 }
+
+.brand {
+  background:url(../images/logo.png);
+  display: block;
+  z-index: 1;
+}
+
+.imgA1 { position:absolute; top: 25px; left: 25px; z-index: 1; } 
+
+
 .navbar .brand:hover {
   text-decoration: none;
 }

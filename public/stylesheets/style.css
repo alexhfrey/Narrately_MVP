@@ -35,11 +35,13 @@ display:none;}
 display:none;}
 .search:hover {
 background:url(../images/searchhover.png) no-repeat;}
+
 .menu1 {
 list-style:none;
 float:left;
 margin-top:20px;
 width:770px;}
+
 .menu1 li {
 float:left;
 margin-left:0px;
@@ -49,20 +51,23 @@ a {
 outline: medium none !important;
 text-decoration: none; 
 }
+
 .menu1 li a {
     color: #4E5A66;
     display: block;
     font-size: 14px;
     height: 40px;
     margin-top: -13px;
-    padding-left: 15px;
+    padding-left: 0px;
     padding-right: 15px;
     padding-top: 10px;
     text-decoration: none;
 	line-height: 26px;}
-.active {
+
+.active1 {
 background:url(../images/activebg123.png) repeat;}
-.active span {
+
+.active1 span {
     background: url("images/activebg123.png") repeat scroll 0 0 transparent;
     display: block;
     height: 10px;
@@ -92,13 +97,13 @@ outline: medium none !important;}
     display: block;
     font-size: 12px;
     height: 40px;
-    margin-top: -13px;
+    margin-top: 7px;
     padding-left: 15px;
     padding-right: 15px;
     padding-top: 10px;
     text-decoration: none;
 	line-height: 26px;}
-.active {
+.active1 {
 background:url(../images/activebg.png) repeat;}
 .active span {
     background: url("images/activebg2.png") repeat scroll 0 0 transparent;
@@ -184,17 +189,25 @@ white-space:normal;
 }
 .leftpart img {
 margin-top:20px;}
-.rightpart h1 {
+
+.rightpart h1 
+{
 color:#38414b;
-font-size:36px;
+font-size:50px;
 width:300px;
-margin-top:90px;
+margin-top:50px;
+margin-bottom:15px;
 text-shadow:1px 1px 1px #FFF;
-line-height:40px;}
+line-height:54px;
+
+}
+
 .pdesc {
 color:#7e8a97;
 width:300px;
-font-size:16px;}
+font-size:20px;
+line-height:22px;
+}
 .padd {
 display:block;
 width:182px;
@@ -360,7 +373,7 @@ font-size:28px;
 color:#363d47;
 text-shadow:1px 1px 1px #FFF;
 font-weight:normal;
-margin-top:5px;
+margin-top:10px;
 float:left;}
 
 .title31 {
@@ -455,15 +468,16 @@ font-size:14px;
     width: 200px;
 	margin-left:6px;
 	margin-top:5px;}	
+
 .smalltitle a {
 color:#303740;
 text-decoration:none;
 }	
+
 .smalldesc {
 font-size:12px;
 color:#707780;
 margin-left:6px;}	
-
 
 .mysharedprojects {
 list-style:none;
@@ -484,13 +498,62 @@ border-radius: 7px 7px 7px 7px;
 box-shadow: 4px 4px 1px #C0C0C0;
 -moz-box-shadow: 4px 4px 1px #C0C0C0;
 -webkit-box-shadow: 4px 4px 1px #C0C0C0;
-margin-left:15px;
+margin-left:5px;
 margin-right:15px;
 margin-bottom: 25px;}
 
+.howitworksline {
+list-style:none;
+margin-top:10px;
+float:left;}
+
+.howitworksline li {
+display:block;
+float:left;
+width:235px;
+height:245px;
+border-style: solid; 
+border-width:0px; 
+border-color:#D4D4D4; 
+border-radius: 7px 7px 7px 7px;
+-moz-border-radius: 7px 7px 7px 7px;
+margin-left:15px;
+margin-right:10px;
+margin-bottom: 25px;
+padding: 10px;}
+
+.howitworkstitle {
+display: block; 
+width: 224px;
+height: 42px;
+font-weight: bold; 
+color: #000000;
+font-size: 20px;
+text-decoration:none;
+    line-height: 42px;
+margin-top: 2px;
+padding-bottom: 5px; 
+text-align: middle;
+}
+
+
+.hiwimg1 {
+margin-left: 9px;
+margin-top: 9px;
+margin-bottom: 15px;
+align: middle;}	
+
+    
+.howitworks123 {
+list-style:none;
+margin-top:10px;
+float:left;}
+
+
 .featuredprojects {
 list-style:none;
-margin-top:-15px;
+margin-top:5px;
+margin-left:-2px;
 float:left;}
 
 .featuredprojects li {
@@ -705,7 +768,7 @@ margin: 0px auto;
 }
 .cleanloginbox {
 background:#FFF;
-height:330px;
+height:430px;
 border-right:1px solid #c2cbd2;
 border-bottom:1px solid #c2cbd2;
 border-radius:10px;
@@ -948,7 +1011,8 @@ height:20px;
 	float:left;
 	margin-top:7px;
 	margin-left:30px;}
-	.bigtitle {
+	
+    .bigtitle {
 	font-family:'Ubuntu';
 	font-weight:bold;
 	font-size:27px;
@@ -957,7 +1021,8 @@ height:20px;
     margin-left: 28px;
     width: 740px;
 	margin-top: 10px;
-    margin-bottom: 10px;}
+    margin-bottom: 25px;}
+    
     .logintitle {
 	font-family:'Ubuntu';
 	font-weight:bold;
@@ -965,11 +1030,10 @@ height:20px;
 	color:#38414b;
 	float:center;
     margin-left: 28px;
-	margin-top: 10px;
-    margin-bottom: 20px;
     width: 50%;
     margin: 0px auto;
-    margin-bottom: 10px;}
+    margin-top: 10px;
+    margin-bottom: 15px;}
     
     .logininfo {
 	margin-top: 10px;
@@ -1540,41 +1604,64 @@ height:20px;
 	.productimages .onsale {
 	    margin-left: 250px!important;
     margin-top: 15px!important;}
-	.psimages {
+	
+    .psimages {
 	float:left;
 	width:88px;
 	height:75px;
 	background:url(../images/psimages.png) no-repeat;
 	margin-top:15px;
 	margin-right:14px;}
-	.psimages img {
-	    margin-left: 5px;
+	
+    .psimages img {
+	margin-left: 5px;
     margin-top: 5px;}
-	.productdata {
+	
+    .productdata {
 	float:left;
 	width:600px;
     margin-top: 20px;
     margin-left: 20px;
     margin-bottom: 20px;
     }
+    
+    .howitworkstext {
+	float:left;
+	width:800px;
+    margin-top: 20px;
+    margin-left: 30px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    line-height: 22px;  
+    }
+    
     .createform {
 	float:left;
 	width:600px;
     padding-left: 10px;
     clear: both;}
+    
     .authordata {
 	float:left;
 	width:250px;
-    padding-left:5px;}
+    padding-left:6px;
+    padding-top: 5px;
+    margin-top: 5px;
+    }
      .sharebox {
 	float:left;
 	width:250px;
-    padding-left:0px;}
+    padding-left:10px;
+    padding-top: 5px;
+}
+    
+    
     .howitworkscreate {
 	float:left;
 	width:250px;
     padding-left:5px;}
-	.infospan {
+    
+	.infospan2 {
 	color:#707780;
 	font-size:18px;
 	height:34px;
@@ -1582,7 +1669,8 @@ height:20px;
 	border-bottom:1px dashed #c2cbd3;
 	margin-left:0px;
 	line-height:34px;}
-	.infospan span {
+	
+    .infospan2 span {
     float: right;
     padding-right: 50px;
     width: 100px;
@@ -2594,6 +2682,7 @@ body {
 	width: 600px;
 	margin: 0 auto;
 	background: #f3f3f3;
+    padding-top: 60px;
 }
 h1 {
 	text-shadow: 1px 1px 1px #fff;

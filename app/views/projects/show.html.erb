@@ -1,3 +1,5 @@
+<%= stylesheet_link_tag "bootstrap.css" %>
+
 <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,400italic,700' rel='stylesheet' type='text/css'>
 
 
@@ -36,15 +38,16 @@
 
 <div class="categorybox">
 <div class="sharebox">
-<h6>Endorse & Earn Reward</h6>
+<h3>Endorse & Earn Reward</h3>
 <div class="grid_4">
 <a href="confirm.html"><span class="onsaleleft"><span class="saleleft">LEFT:</span><%= @promotions_left %></span></a>
 
-<div class="infospan">Reward: <span>Free Book</span></div>
+<div class="infospan2"><h4>Reward: <span>Free Book</span></h4></div>
 
-<div class="infospan">Total:<span><%= @project.promotion_limit %></span></div>
-<div class="infospan">Left:<span><%= @promotions_left %></span></div>
+<div class="infospan2">Total:<span><%= @project.promotion_limit %></span></div>
+<div class="infospan2">Left:<span><%= @promotions_left %></span></div>
 <% if @promotions_clear %>
+
 	<%= link_to "Share it!", new_project_share_path(@project), :class => "shareit" %>
 <% else %>
 	<%= link_to "Buy it!", 'http://' + @project.purchase_link, :class => "shareit" %>
@@ -59,7 +62,7 @@
 
 <div class="categorybox">
 <div class="authordata">
-<h6>About Author</h6>
+<h3>About Author</h3>
 <div class="grid_4">
 <%= image_tag @creator.profile_image, :title=> "facebook", :width=> 220, :height=>220, :class=> "alignnone size-full wp-image-16236" unless @creator.profile_image.nil? %>
 <h5><%= link_to @creator.name, @creator %></h5>
