@@ -1657,7 +1657,7 @@ table .span12 {
   filter: alpha(opacity=40);
   cursor: pointer;
 }
-.btn {
+.btn, .radio .optional .btn {
   display: inline-block;
   padding: 4px 10px 4px;
   font-size: 13px;

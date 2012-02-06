@@ -28,33 +28,24 @@
 	
 
 	<%= f.hidden_field :user_id, :value => @user.id %>
+   <p> <%= f.input :project_title, :hint => "Tip: Use a catchy title between 10-100 characters" , :label => "Project name",  :input_html => { :class => 'text'} %> </p>
+   <p><%= f.input :description, :hint => "Tip: Be interesting... and use 100-1000 characters" %> </p>   
+   <p><%= f.input :tag1, :collection => ['Book', 'Food', 'Special Offer'], :as => :radio, :label => "Type", :input_html => {:class => "btn"} %> </p>	       
+ 	<p><%= f.input :project_image	%> </p>
+
+   
+<h2>2. Reward Details</h2>
+<p>This is the reward your fans will receive when they share your work- make it count!</p>
+ <p><%= f.input :promotion_limit, :hint => "Tip: The number of rewards you want to give" %> </p>
+ <p> <%= f.input :output_file, :hint => "Tip: Eligible fans will get a link to download this" %> </p><br>
  
-    <%= f.input :project_title, :hint => "Tip: Use a catchy title between 10-100 characters" , :label => "Project name",  :input_html => { :class => 'text'} %>
-   
 
-   <%= f.input :description, :hint => "Tip: Be interesting... and use 100-1000 characters" %>
-   
-   <%= f.input :tag1, :collection => ['Book', 'Food', 'Special Offer'], :as => :radio, :class => "btn" %>
-	
-	<%# <a href="" class="btn">Art</a>   <a href="" class="btn">eBook</a>    <a href="" class="btn">Music</a>   <a href="" class="btn">Education</a>    <a href="" class="btn">Fitness</a>    <a href="" class="btn">Food</a> %>
+<h2>3. Purchase Details </h2>
+<p>Once your reward limit is hit, fans will be able to purchase your product</p>
+<p><%= f.input :purchase_link, :hint => "Tip: Enter the full address of a site selling your product" %></p>
+ <p> <%= f.submit :class => "btn btn-success btn-large"	 %> </p>
 
-	
-
-        
- <p class="submit">
-<a href="" class="btn btn-large">Upload Picture</a>
-</p> 
-	<%= f.input :project_image%>
-
-   
-
-  <% end %>
-
-<p class="submit">
-<a href="" class="btn btn-success btn-large">Submit</a>
-</p>
-
-
+ <% end %>
 
     
 
