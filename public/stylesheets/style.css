@@ -259,7 +259,8 @@ text-decoration:none;
 	text-shadow:1px 0px 0px #c51b00;
 margin-top:15px;	
 margin-bottom: 10px;
-margin-left: 3px;  
+margin-left: 20px;  
+clear: both; 
 }
 .shareit:hover {
 background:url(../images/shareithover.png) no-repeat;
@@ -1513,7 +1514,7 @@ height:20px;
     font-size: 30px;
     height: 78px;
     line-height: 75px;
-    margin-left: 65px;
+    margin-left: 85px;
     margin-top: 0px;
     margin-bottom: 5px;
     text-align: center;
@@ -1652,7 +1653,7 @@ height:20px;
 	float:left;
 	width:250px;
     padding-left:10px;
-    padding-top: 5px;
+    padding-top: 10px;
 }
     
     
@@ -1668,6 +1669,7 @@ height:20px;
 	width:100%;
 	border-bottom:1px dashed #c2cbd3;
 	margin-left:0px;
+    margin-bottom: 5px; 
 	line-height:34px;}
 	
     .infospan2 span {
