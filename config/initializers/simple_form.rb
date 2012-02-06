@@ -6,13 +6,14 @@ SimpleForm.setup do |config|
 SimpleForm.form_class = nil
 SimpleForm.wrapper_class = 'control-group'
 SimpleForm.wrapper_error_class = 'error'
+
 SimpleForm.error_class = 'help-inline'
 
   # Default tag used on hints.
   # config.hint_tag = :span
 
   # CSS class to add to all hint tags.
-  # config.hint_class = :hint
+   config.hint_class = 'help-inline'
 
   # CSS class used on errors.
   # config.error_class = :error

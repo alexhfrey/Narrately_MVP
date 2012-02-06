@@ -750,6 +750,7 @@ textarea[readonly] {
 }
 .control-group.error > label, .control-group.error .help-block, .control-group.error .help-inline {
   color: #b94a48;
+  
 }
 .control-group.error input, .control-group.error select, .control-group.error textarea {
   color: #b94a48;
@@ -768,6 +769,7 @@ textarea[readonly] {
 }
 .control-group.success > label, .control-group.success .help-block, .control-group.success .help-inline {
   color: #468847;
+ 
 }
 .control-group.success input, .control-group.success select, .control-group.success textarea {
   color: #468847;
@@ -1655,7 +1657,7 @@ table .span12 {
   filter: alpha(opacity=40);
   cursor: pointer;
 }
-.btn {
+.btn, .radio .optional .btn {
   display: inline-block;
   padding: 4px 10px 4px;
   font-size: 13px;
@@ -3061,6 +3063,7 @@ a.thumbnail:hover {
   color: #ffffff;
   text-transform: uppercase;
   background-color: #999999;
+ 
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;

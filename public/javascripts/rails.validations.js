@@ -39,6 +39,7 @@
             var element = $(this);
             clientSideValidations.callbacks.element.pass(element, function() {
               removeError(element);
+			  
             }, eventData) })
         // Checkboxes - Live events don't support filter
         .end().find('[data-validate]:checkbox')
@@ -62,6 +63,7 @@
       var addError = function(element, message) {
         clientSideValidations.formBuilders[settings.type].add(element, settings, message);
       }
+	 
 
       var removeError = function(element) {
         clientSideValidations.formBuilders[settings.type].remove(element, settings);
@@ -316,82 +318,38 @@ var clientSideValidations = {
     }
   },
   formBuilders: {
-    'ActionView::Helpers::FormBuilder': {
-      add: function(element, settings, message) {
-        if (element.data('valid') !== false && jQuery('label.message[for="' + element.attr('id') + '"]')[0] == undefined) {
-          var inputErrorField = jQuery(settings.input_tag),
-              labelErrorField = jQuery(settings.label_tag),
-              label = jQuery('label[for="' + element.attr('id') + '"]:not(.message)');
-
-          if (element.attr('autofocus')) { element.attr('autofocus', false) };
-          element.before(inputErrorField);
-          inputErrorField.find('span#input_tag').replaceWith(element);
-          inputErrorField.find('label.message').attr('for', element.attr('id'));
-          labelErrorField.find('label.message').attr('for', element.attr('id'));
-          label.replaceWith(labelErrorField);
-          labelErrorField.find('label#label_tag').replaceWith(label);
-        }
-        jQuery('label.message[for="' + element.attr('id') + '"]').text(message);
-      },
-      remove: function(element, settings) {
-        var errorFieldClass = jQuery(settings.input_tag).attr('class'),
-            inputErrorField = element.closest('.' + errorFieldClass),
-            label = jQuery('label[for="' + element.attr('id') + '"]:not(.message)'),
-            labelErrorField = label.closest('.' + errorFieldClass);
-
-        if (inputErrorField[0]) {
-          inputErrorField.find('#' + element.attr('id')).detach();
-          inputErrorField.replaceWith(element);
-          label.detach();
-          labelErrorField.replaceWith(label);
-        }
-      }
-    },
+    
     'SimpleForm::FormBuilder': {
       add: function(element, settings, message) {
         if (element.data('valid') !== false) {
           var wrapper = element.closest(settings.wrapper_tag);
+		  wrapper.removeClass("success");
           wrapper.addClass(settings.wrapper_error_class);
-          var errorElement = $('<' + settings.error_tag + ' class="' + settings.error_class + '">' + message + '</' + settings.error_tag + '>');
-          wrapper.append(errorElement);
+		  var hintElement = wrapper.find('span.help-inline');
+		  hintElement.remove();
+		  
+		  if (wrapper.find('span.help-inline').length == 0) {
+			var errorElement = $('<' + settings.error_tag + ' class="' + settings.error_class + '">' + message + '</' + settings.error_tag + '>');
+			wrapper.append(errorElement); };
         } else {
+	
           element.parent().find(settings.error_tag + '.' + settings.error_class).text(message);
+		  var successElement = $('<' + 'span' + ' class="success">' + 'Looks great!' + '</span>');
+		wrapper.append(successElement); 
         }
       },
       remove: function(element, settings) {
-        var wrapper = element.closest(settings.wrapper_tag + '.' + settings.wrapper_error_class);
+        var wrapper = element.closest(settings.wrapper_tag );
         wrapper.removeClass(settings.wrapper_error_class);
+		wrapper.addClass("success");
         var errorElement = wrapper.find(settings.error_tag + '.' + settings.error_class);
         errorElement.remove();
+		var successElement = $('<' + 'span' + ' class="help-inline">' + 'Looks great!' + '</span>');
+		wrapper.append(successElement); 
       }
 
-    },
-    'Formtastic::FormBuilder': {
-      add: function(element, settings, message) {
-        if (element.data('valid') !== false) {
-          var wrapper = element.closest('li');
-          wrapper.addClass('error');
-          var errorElement = $('<p class="' + settings.inline_error_class + '">' + message + '</p>');
-          wrapper.append(errorElement);
-        } else {
-          element.parent().find('p.' + settings.inline_error_class).text(message);
-        }
-      },
-      remove: function(element, settings) {
-        var wrapper = element.closest('li.error');
-        wrapper.removeClass('error');
-        var errorElement = wrapper.find('p.' + settings.inline_error_class);
-        errorElement.remove();
-      }
-    },
-    'NestedForm::Builder': {
-      add: function(element, settings, message) {
-        clientSideValidations.formBuilders['ActionView::Helpers::FormBuilder'].add(element, settings, message);
-      },
-      remove: function(element, settings, message) {
-        clientSideValidations.formBuilders['ActionView::Helpers::FormBuilder'].remove(element, settings, message);
-      }
     }
+   
   },
   callbacks: {
     element: {
