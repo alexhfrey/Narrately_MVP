@@ -14,7 +14,7 @@ class ProjectsController < ApplicationController
   def update
   @project = Project.find(params[:id])
 
-  if @project.update_attributes(params[:project])
+  if @project.update_attributes(:x1 => params[:x1], :y1 => params[:y1] + params[:height], :width => params[:width], :height => params[:height])
     flash[:notice] = "Successfully updated user."
    
   else
@@ -29,7 +29,7 @@ class ProjectsController < ApplicationController
 	
 	if @project.save
 		flash[:success] = "Thanks for your submission! Care to optimize your project image?"		
-		render 'crop'
+		redirect_to :action => 'crop', :id => @project.id
 	else 
 		flash[:error] = "A few minor issues..."
 		render 'new'

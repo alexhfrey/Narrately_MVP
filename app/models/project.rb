@@ -11,10 +11,7 @@ after_update :reprocess_image, :if => :cropping?
   end
 
   
-  def reprocess_image
-    project_image.reprocess!
-  end
-
+  
 
 validates :description, :length => { :minimum => 100, :maximum => 1000, 
 						:message => "must be between 50 and 500 characters"}
@@ -45,5 +42,11 @@ validates :project_image, :presence => true
 validates_attachment_content_type :output_file, :content_type=>['application/pdf'], :message => "File must be in PDF format"
 validates_attachment_content_type :project_image, :content_type=>['image/jpeg', 'image/png'], :message => "Cover image must be in JPEG format"
 validates_attachment_size :project_image, :less_than=> 2.megabytes, :message => "Cover image must be less than 2 MB"
+
+private
+def reprocess_image
+    project_image.reprocess!
+  end
+
 
 end
