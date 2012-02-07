@@ -3,7 +3,7 @@ module Paperclip
   class Cropper < Thumbnail
     def transformation_command
       if crop_command
-        crop_command + super.sub(/ -crop \S+/, '')
+        crop_command + super.join(' ').sub(/ -crop \S+/, '').split(' ')
       else
         super
       end
@@ -12,7 +12,7 @@ module Paperclip
     def crop_command
       target = @attachment.instance
       if target.cropping?
-        " -crop #{target.width}x#{target.height}+#{target.x1}+#{target.y1}"
+        ["-crop", "#{target.width}x#{target.height}+#{target.x1}+#{target.y1}"]
       end
     end
   end
