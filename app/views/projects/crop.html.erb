@@ -35,45 +35,39 @@
 	<style type="text/css">
 
 		label { 
-
 			clear: left;
-
 			margin-left: 50px;
-
 			float: left;
-
 			width: 5em;
-
 		}
-
-		
 
 		#testWrap {
-
-			width: 500px;
-
 			float: left;
-
 			margin: 20px 0 0 50px; /* Just while testing, to make sure we return the correct positions for the image & not the window */
-
 		}
-
 		
-
+		
 		#previewArea {
 
 			margin: 20px; 0 0 20px;
-
+			overflow:hidden;
 			float: left;
-
+			max-width:none;
 		}
+		.previewArea {
 
+			margin: 20px; 0 0 20px;
+			overflow:hidden;
+			float: left;
+			max-width:none;
+		}
 		
-
+		
+		.previewArea img {
+			max-width:none;
+		}	
 		#results {
-
 			clear: both;
-
 		}
 
 	</style>
@@ -83,12 +77,10 @@
 		Select the piece of the image you want
 	</p>
 	<div id="testWrap" >
-		<%= image_tag @project.project_image.url, :id => "testImage" %>
-		
-
+		<%= image_tag @project.project_image.url,  :id => "testImage" %>		
 	</div>
 
-	<div id="previewArea"></div>
+	<div id="previewArea" class ="previewArea"></div>
 
 	<div id ="results">
 	<%= form_for @project, :url => {:action => 'update'} do |f|%>
