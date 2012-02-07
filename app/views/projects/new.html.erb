@@ -20,7 +20,7 @@
 <div class="projectbox">
 <fieldset class = "control-group">
 
-<%= simple_form_for @project, :validate => true do |f| %>
+<%= simple_form_for @project, :validate => true, :html => { :multipart => true } do |f| %>
 	<h2>1. Project Details</h2>
 	<p>Your project is unqiue- tell your fans why it's so special!</p>
 	<hr>
