@@ -14,7 +14,7 @@ class ProjectsController < ApplicationController
   def update
   @project = Project.find(params[:id])
 
-  if @project.update_attributes(:x1 => params[:x1], :y1 => params[:y1] + params[:height], :width => params[:width], :height => params[:height])
+  if @project.update_attributes(:x1 => params[:x1], :y1 => params[:y1], :width => params[:width], :height => params[:height])
     flash[:notice] = "Successfully updated user."
    
   else
