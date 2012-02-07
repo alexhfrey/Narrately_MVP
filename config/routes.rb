@@ -5,9 +5,10 @@ MVP1::Application.routes.draw do
   resources :users, :only => [:show] 
   
   
-  resources :projects, :only => [:new, :create, :show, :index, :update] do
+  resources :projects, :only => [:new, :create, :show, :index, :update, :edit] do
 		member do
 			get 'confirmation'
+			get 'crop'
 		end
 		resources :shares, :only => [:new, :create]
 		resources :facebook_post, :only => [:new]
@@ -20,7 +21,7 @@ MVP1::Application.routes.draw do
   match '/discover', :to => 'projects#index'
   match '/about', :to=> 'pages#about'
   match '/discover', :to=> 'pages#index'
-  match '/crop', :to => 'pages#crop'
+  
   
   
   

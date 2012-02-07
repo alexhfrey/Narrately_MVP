@@ -8,6 +8,9 @@ class ProjectsController < ApplicationController
   def index
   end
   
+  def edit
+  end
+  
   def update
   @project = Project.find(params[:id])
 

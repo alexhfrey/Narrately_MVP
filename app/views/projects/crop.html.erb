@@ -79,11 +79,11 @@
 
 	
 
-	<%= form_for(@project) do |form|%>
+	<%= form_for @project do |form|%>
 	<% for attribute in [:x1, :y1, :x2, :y2, :height, :width] %>
     <%= form.text_field attribute, :id => attribute, :name => attribute %>
   <% end %>
-  <p><%= form.submit %></p>
+  <p><%= form.submit "Update" %></p>
 <% end %>
 
 	
