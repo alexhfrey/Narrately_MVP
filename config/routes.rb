@@ -5,7 +5,7 @@ MVP1::Application.routes.draw do
   resources :users, :only => [:show] 
   
   
-  resources :projects, :only => [:new, :create, :show, :index] do
+  resources :projects, :only => [:new, :create, :show, :index, :update] do
 		member do
 			get 'confirmation'
 		end
@@ -20,6 +20,7 @@ MVP1::Application.routes.draw do
   match '/discover', :to => 'projects#index'
   match '/about', :to=> 'pages#about'
   match '/discover', :to=> 'pages#index'
+  match '/crop', :to => 'pages#crop'
   
   
   

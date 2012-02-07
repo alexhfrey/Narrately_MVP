@@ -2,6 +2,20 @@ class Project < ActiveRecord::Base
 belongs_to :user
 has_many :shares
 
+attr_accessor :x1, :y1, :x2, :y2, :width, :height
+
+after_update :reprocess_image, :if => :cropping?
+
+  def cropping?
+    !x1.blank? && !y1.blank? && !width.blank? && !height.blank?
+  end
+
+  
+  def reprocess_image
+    project_image.reprocess!
+  end
+
+
 validates :description, :length => { :minimum => 100, :maximum => 1000, 
 						:message => "must be between 50 and 500 characters"}
 
@@ -18,7 +32,9 @@ has_attached_file :output_file, :storage => :s3, :bucket => 'narrately.com',
 						
 						}
 					
-has_attached_file :project_image, :styles => { :large => "610x360", :medium => "248x162"  }, 
+has_attached_file :project_image, 
+	 :styles =>  {  :medium => "248x162#"  }, 
+	:processors => [:cropper],
 					 :storage => :s3, :bucket => 'narrately.com',
 					:s3_credentials => {
 						:access_key_id => 'AKIAJ7LLMIQJP57FAP3Q',

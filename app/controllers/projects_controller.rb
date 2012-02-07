@@ -7,18 +7,34 @@ class ProjectsController < ApplicationController
   
   def index
   end
+  
+  def update
+  @project = Project.find(params[:id])
+
+  if @project.update_attributes(params[:project])
+    flash[:notice] = "Successfully updated user."
+   
+  else
+    render  'crop'
+  end
+
+  end
 
   def create
 	@user = current_user
 	@project = @user.projects.build(params[:project])
 	
 	if @project.save
-		flash[:success] = "Thanks for your submission!"
-		render :confirmation
+		flash[:success] = "Thanks for your submission! Care to optimize your project image?"		
+		render 'crop'
 	else 
 		flash[:error] = "A few minor issues..."
 		render 'new'
 	end
+  end
+  def crop
+  @project = Project.find(params[:id])
+  
   end
 
   def show
@@ -32,7 +48,7 @@ class ProjectsController < ApplicationController
   User.update_image(@creator)                   #for testing purposes
   # for testing purposes
   if @project.promotion_limit.nil?
-	@project.promotion_limit = 10
+	@project.promotion_limit = 20
   end
   ###
    

@@ -6,11 +6,17 @@ class PagesController < ApplicationController
   end
   
   def about
+  
   end
   
   def connect
   if (current_user) 
 	redirect_to "projects#new"
   end
-end
+  end
+  
+  def crop
+  end
+	
+  
 end
