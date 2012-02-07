@@ -8,11 +8,11 @@
 <div class="grid_11 singleleft">
 
 <div class="createwelcome">
-<div class="productdata">
+<div class="formwelcome">
 <div class="bigtitle">We help creatives promote their work</div>
 <div class="grid_top">
-<p>Narrately is a social marketing platform which helps authors connect with their fans and promote their books</p>
-<p>Display three step process here</p>
+<p>Snowball is a  crowdmarketing platform which helps creatives leverage social media to promote their project. We help authors, entrepreneurs, teachers, artists, and other creative types leverage social media to promote their work via crowdmarketing.</p>
+<p>We're excited to help promote your project- tell us a little bit about it below.</p>
 </div>
 </div>
 </div>
@@ -22,26 +22,27 @@
 
 <%= simple_form_for @project, :validate => true do |f| %>
 	<h2>1. Project Details</h2>
-	<p>Let your fans know what you're working on - include some basic info here</p>
-	
-	
-	
+	<p>Your project is unqiue- tell your fans why it's so special!</p>
+	<hr>
 
 	<%= f.hidden_field :user_id, :value => @user.id %>
-   <p> <%= f.input :project_title, :hint => "Tip: Use a catchy title between 10-100 characters" , :label => "Project name",  :input_html => { :class => 'text'} %> </p>
+	<p><%= f.input :tag1, :collection => ['Book', 'Food', 'Special Offer'], :as => :radio, :label => "Project Category", :input_html => {:class => "btn"} %> </p>	       
+	
+   <p> <%= f.input :project_title, :hint => "Tip: Use a catchy title between 10-100 characters now now" , :label => "Project name",  :input_html => { :class => 'text'} %> </p>
    <p><%= f.input :description, :hint => "Tip: Be interesting... and use 100-1000 characters" %> </p>   
-   <p><%= f.input :tag1, :collection => ['Book', 'Food', 'Special Offer'], :as => :radio, :label => "Type", :input_html => {:class => "btn"} %> </p>	       
  	<p><%= f.input :project_image	%> </p>
 
    
 <h2>2. Reward Details</h2>
-<p>This is the reward your fans will receive when they share your work- make it count!</p>
- <p><%= f.input :promotion_limit, :hint => "Tip: The number of rewards you want to give" %> </p>
- <p> <%= f.input :output_file, :hint => "Tip: Eligible fans will get a link to download this" %> </p><br>
+<p>This is the reward your fans will receive when they share your work- make it something they want!</p>
+<hr>
+ <p><%= f.input :promotion_limit, :hint => "Tip: The number of rewards you want to give" , :label => "Reward Limit" %> </p>
+ <p> <%= f.input :output_file, :hint => "Tip: Eligible fans will get a link to download this" , :label => "Reward File" %> </p><br>
  
 
 <h2>3. Purchase Details </h2>
-<p>Once your reward limit is hit, fans will be able to purchase your product</p>
+<p>Once your reward limit is reached, fans will be able to purchase your product. If you sell the product, include the purchase link here.</p>
+<hr>
 <p><%= f.input :purchase_link, :hint => "Tip: Enter the full address of a site selling your product" %></p>
  <p> <%= f.submit :class => "btn btn-success btn-large"	 %> </p>
 
@@ -58,19 +59,22 @@
 <div class="categorybox">
 <div class="howitworkscreate">
 <h6>How it Works</h6>
+<br />
 <div class="grid_4">
-<b>Step 1:</b>
+<b>Step 1: Submit</b>
+<br />
+<p>Complete the submission form. It typically takes under 2 minutes. </p>
+<b>Step 2: Review</b>
+<br />
 <p>
-This is my under 200 character bio. 
-Keeping it short!</p>
-<b>Step 2:</b>
-<p>
-This is my under 200 character bio. 
-Keeping it short!</p>
-<b>Step 3:</b>
-<p>
-This is my under 200 character bio. 
-Keeping it short!</p>
+Once submitted, the team here at Snowball will review the project and offer any sugesstions. We'll review it as soon as possible- typically under 24 hours.</p>
+<b>Step 3: Publish</b>
+<br />
+<p>Once approved, the project will be published on the site. At that point you'll be able to share the project with your fans. Of cousre, Snowball will tweet it like mad.</p>
+<br />
+Other questions? Take a look at our <a href="#">FAQs page.</a>
+<br />
+<br />
 </div>
 </div>
 </div>
