@@ -1,46 +1,50 @@
+<link href="assets/css/bootstrap.css" rel="stylesheet">
+<%= javascript_include_tag "bootstrap-carousel.js" %>      
 
 <div class="container_16">
-	<div class="grid_16">
-		<div class="sliderinner">
-			<ul>
-			<li>
-			<div class="leftpart">
-				<img src="images/slider2.png" alt="" />
-		</div>
-		<div class="rightpart">
 
-			<h1>Build a Movement</h1>
-			<div class="pdesc">Snowball is a crowdmarketing platform for creative projects.</div>
-			<%= link_to "Get Started", signup_path, :class => "getstarted" %>
-		</div>
-		</li>
+<div class="grid_16">
 
-		<li>
-		<div class="leftpart">
-			<img src="images/slider2.png" alt="" />
-		</div>
-		<div class="rightpart">
-			<h1>Customer Powered Marketing</h1>
-			<div class="pdesc">Let customers tell the story about your creative project.</div>
-			<a class="padd" href="#">See Example ></a>
-		</div>
-		</li>
 
-<li>
+<div class="sliderinner">
+
+<!-- intro and call to action- left side -->
 <div class="leftpart">
-<img src="images/slider2.png" alt="" />
+<h1>Build a Movement</h1>
+<div class="pdesc">Snowball is a tool which helps you build buzz about your project or campaign.</div>
+<%= link_to "Get Started", signup_path, :class => "getstarted" %>
+<p>(It's Free and takes under 2 minutes)</p>
 </div>
+			
+<!-- Feautred projects- right side -->
+
 <div class="rightpart">
-<h1>Narrately helps creative types</h1>
-<div class="pdesc">We help authors, musicians, and entrepreneurs leverage word of mouth marketing to build a following.</div>
-<a class="padd" href="howitworks.html">How it Works ></a>
+<ul class="featuredprojectshp">
+
+<a href="#">
+<li>
+<img src="images/trees.jpg" alt="" class="fimg" />
+<div class="hmtextfeat">
+<span class="hmbackers"><span class="hmbackersnum">Backers</span><span class="hmbackersnumb">30</span>
+
+</span>
+<p>Exploring the wild mountains</p>
+<p3>Reward: Free book</p3>
 </div>
 </li>
+</a>
+
 </ul>
+</div>
+
+
+
+			
 </div>
 </div>
 </div>
 <div class="clear"></div>
+
 
 <div class="featuredproducts">
 <div class="container_16">
@@ -67,6 +71,9 @@
 </li>
 </ul>
 
+	
+</div>
+</div>
 </div>
 </div>
 </div>

@@ -178,13 +178,29 @@ text-indent:32px!important;}
 height:432px;
 width:100%;
 float:left;}*/
+
 .leftpart {
-margin-left:70px;
+margin-left:30px;
+margin-top: 20px; 
 float:left;
 width:405px;}
+
+.leftpart h1 
+{
+color:#38414b;
+font-size:50px;
+width:300px;
+margin-top:10px;
+margin-bottom:15px;
+text-shadow:1px 1px 1px #FFF;
+line-height:54px;
+
+}
+
 .rightpart {
 float:left;
 width:465px;
+margin-top:30px;
 white-space:normal;
 }
 .leftpart img {
@@ -203,7 +219,7 @@ line-height:54px;
 }
 
 .pdesc {
-color:#7e8a97;
+color:#5F5A59;
 width:300px;
 font-size:20px;
 line-height:22px;
@@ -562,6 +578,30 @@ display:block;
 float:left;
 width:268px;
 height:245px;
+background:url(../images/featureimgbg.png) repeat;
+border-style: solid; 
+border-width:1px; 
+border-color:#D4D4D4; 
+border-radius: 7px 7px 7px 7px;
+-moz-border-radius: 7px 7px 7px 7px;
+box-shadow: 4px 4px 1px #C0C0C0;
+-moz-box-shadow: 4px 4px 1px #C0C0C0;
+-webkit-box-shadow: 4px 4px 1px #C0C0C0;
+margin-left:0px;
+margin-right:42px;
+margin-bottom: 25px;}
+
+.featuredprojectshp {
+list-style:none;
+margin-top:5px;
+margin-left:-2px;
+float:left;}
+
+.featuredprojectshp li {
+display:block;
+float:left;
+width:270px;
+height:290px;
 background:url(../images/featureimgbg.png) repeat;
 border-style: solid; 
 border-width:1px; 
@@ -973,7 +1013,7 @@ height:20px;
 	margin-left:0px!important;
 	display:inline-block;
 	white-space: nowrap;
-	width:940px;}
+	width:475px;}
 	.sliderinner {
 	    overflow: hidden;
     position: relative;
@@ -1435,7 +1475,49 @@ height:20px;
     text-align: center;
     width: 78px;}
 	
+    .hmbackers {
+    background: url(../images/circle-green.png) repeat scroll 0 0       transparent;
+    color: #FFFFFF;
+    text-shadow: 1px 0 0 #C51B00; 
+    display: inline;
+    font-size: 28px;
+    height: 78px;
+    line-height: 75px;
+    margin-left: 380px;
+    margin-top: -10px;
+    position: absolute;
+    text-align: center;
+    width: 78px;}
     
+    .hmbackersnum {
+    color: #4d4c4c;
+    display: block;
+    float: left;
+    font-size: 14px;
+    height: 20px;
+    margin-bottom: -2px;
+    margin-top: -12px;
+    text-align: center;
+    text-decoration: none;
+    width: 78px;
+    alink: text-decoration: none; 
+    }
+    
+    .hmbackersnumb {
+    color: #ffffff;
+    display: block;
+    float: left;
+    font-size: 30px;
+    height: 20px;
+    margin-bottom: -2px;
+    margin-top: 2px;
+    text-align: center;
+    text-decoration: none;
+    width: 78px;
+    alink: text-decoration: none; 
+    }
+
+
     .oldprice {
     color: #4d4c4c;
     display: block;
@@ -1534,6 +1616,55 @@ height:20px;
     width: 78px;
     alink: text-decoration: none; 
     }
+    
+    .hmfeature {
+    background: url(../images/activebg.png) repeat scroll 0 0 transparent;
+    color: #FFFFFF;
+    text-shadow: 1px 0 0 #C51B00; 
+    display: inline;
+    font-size: 28px;
+    height: 58px;
+    line-height: 75px;
+    margin-left: -470px;
+    margin-top: 250px;
+    position: absolute;
+    text-align: center;
+    width: 480px;}
+    
+    .hmtextfeat {
+    width: 480px;
+    height: 58px;
+    margin-left: 0px;
+    margin-top:-80px; 
+    background-color: rgba(0, 0, 0, 0.7);
+    border: solid 1-x black;  
+    z-index: 5; 
+    position: absolute;
+
+    }
+
+    .hmtextfeat p {
+    margin-left: 20px;
+    padding-top: 5px; 
+    font-weight: bold;
+    font-size: 20px; 
+    color: #ffffff; 
+    opacity: 1.0;
+    z-index: 6; 
+    width: 430px; 
+    }
+    
+    .hmtextfeat p3 {
+    margin-left: 20px;
+    padding-top: 5px; 
+    font-weight:;
+    font-size: 15px; 
+    color: #ffffff; 
+    opacity: 1.0;
+    z-index: 6; 
+    }
+
+    
     
 	.navigation {
 	width:100%;
