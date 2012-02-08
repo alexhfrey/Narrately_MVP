@@ -41,7 +41,7 @@ class ProjectsController < ApplicationController
   end
 
   def show
-  if params[:referral] 
+  if !current_user && params[:referral]        #if this is a new user and they have a referral code store this for later DB use
 		session[:referral] = params[:referral]
   end
   @project = Project.find(params[:id])
@@ -64,8 +64,7 @@ class ProjectsController < ApplicationController
 	else
   end
   
-  ##Tweets
-  @tweets = Twitter.search("narrately.com/projects/" + @project.id.to_s)
+  
   
   
  end

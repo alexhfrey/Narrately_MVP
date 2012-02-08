@@ -23,6 +23,7 @@ twttr.ready(function(twttr) {
 twttr.events.bind('tweet', function(event) {
 	var f = document.forms[0];
 	document.getElementById("medium").value = "Twitter";
+	document.getElementById("share_id").value = event.data.tweet_id;
 	f.submit();
 	}
 );	 });
@@ -39,9 +40,10 @@ twttr.events.bind('tweet', function(event) {
 	<%= hidden_field_tag(:user_id, @user.id) %>
 	<%= hidden_field_tag(:project_id, @project.id )%>	
 	<%= hidden_field_tag(:medium, nil )%>
+	<%= hidden_field_tag(:share_id, nil) %>
 <% end %>
 
-<a href= <%= "https://twitter.com/share?url=" + @query %> class="" data-lang="en" ><%= image_tag "shareontwitter.png" %></a>
+<%= link_to "https://twitter.com/share?url=" + @query, :class => "twitter-share-button",:style => 'background_image: "/images/shareontwitter.png"'%>
 <a href = <%= @facebook_link %>  > <%= image_tag "shareonfacebook.png" %> </a>
 
 </ul>

@@ -1,6 +1,6 @@
-class AddReferralColumnToActions < ActiveRecord::Migration
+class AddIdColumnToShares < ActiveRecord::Migration
  def self.up
-    add_column :shares, :referral, :string
+    add_column :share, :referral, :string
   end
 
   def self.down
