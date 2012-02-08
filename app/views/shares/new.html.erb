@@ -11,6 +11,11 @@
 
 
 
+
+
+
+
+
 <script type="text/javascript" charset="utf-8">
   window.twttr = (function (d,s,id) {
     var t, js, fjs = d.getElementsByTagName(s)[0];
@@ -19,11 +24,15 @@
     return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
   }(document, "script", "twitter-wjs"));
 
-twttr.ready(function(twttr) {
+twttr.ready(function(twttr) { 
+
+<%# Bind this to tweet event - unfortunately twitter returns no data unless user authorizes app. %>
+<%# Design decision to use JS twitter button (no login) vs. twitter api %>
+
 twttr.events.bind('tweet', function(event) {
 	var f = document.forms[0];
 	document.getElementById("medium").value = "Twitter";
-	document.getElementById("share_id").value = event.data.tweet_id;
+	
 	f.submit();
 	}
 );	 });
@@ -40,10 +49,11 @@ twttr.events.bind('tweet', function(event) {
 	<%= hidden_field_tag(:user_id, @user.id) %>
 	<%= hidden_field_tag(:project_id, @project.id )%>	
 	<%= hidden_field_tag(:medium, nil )%>
-	<%= hidden_field_tag(:share_id, nil) %>
+	
 <% end %>
 
-<%= link_to "https://twitter.com/share?url=" + @query, :class => "twitter-share-button",:style => 'background_image: "/images/shareontwitter.png"'%>
+<a href = "https://twitter.com/share"  class = "twitter-share-button" data-lang="en"
+			data-url = "<%= @twitter_share_page %>" data-via = "Narrately" data-text = "<%= @tweet_text %>"> </a>
 <a href = <%= @facebook_link %>  > <%= image_tag "shareonfacebook.png" %> </a>
 
 </ul>

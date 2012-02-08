@@ -24,7 +24,7 @@
 <div class="productdata">
 <h4>Supporter Props</h4>
 <div class="grid_10">
-<% @shares.select{|s| s.medium == "twitter" && s.share_id}.each do |t| %>
+<% @shares.select{|s| s.medium == "Twitter" && s.share_id}.each do |t| %>
 <div><%= Twitter.oembed(t.share_id).html.html_safe %> </div>
 <% end %>
 
