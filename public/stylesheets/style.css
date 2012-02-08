@@ -567,35 +567,50 @@ margin-top:10px;
 float:left;}
 
 
-.featuredprojects {
+.benefits {
 list-style:none;
-margin-top:5px;
+margin-top:30px;
 margin-left:-2px;
 float:left;}
 
-.featuredprojects li {
+.benefits li {
 display:block;
 float:left;
 width:268px;
 height:245px;
-background:url(../images/featureimgbg.png) repeat;
-border-style: solid; 
-border-width:1px; 
-border-color:#D4D4D4; 
+background-color:;
+border-style: dotted; 
+border-width:px; 
+border-color:;
 border-radius: 7px 7px 7px 7px;
 -moz-border-radius: 7px 7px 7px 7px;
-box-shadow: 4px 4px 1px #C0C0C0;
--moz-box-shadow: 4px 4px 1px #C0C0C0;
--webkit-box-shadow: 4px 4px 1px #C0C0C0;
-margin-left:0px;
-margin-right:42px;
+margin-left:28px;
+margin-right:9px;
 margin-bottom: 25px;}
+
+.benefits li p {
+text-align: center;
+font-size: 15px; 
+padding: 8px;  
+}
+
+.benefitspic {
+margin-left: 70px;
+margin-top: 1px;
+margin-bottom: 1px;
+align: middle;}	
+
 
 .featuredprojectshp {
 list-style:none;
 margin-top:5px;
 margin-left:-2px;
 float:left;}
+
+.featuredprojectshp p {
+font-size: 12px;
+padding-bottom: -5px; 
+}
 
 .featuredprojectshp li {
 display:block;
@@ -613,21 +628,29 @@ box-shadow: 4px 4px 1px #C0C0C0;
 -webkit-box-shadow: 4px 4px 1px #C0C0C0;
 margin-left:0px;
 margin-right:42px;
-margin-bottom: 25px;}
+margin-bottom: 25px;
+margin-top: -8px;
+}
 
 
 .fimg {
 margin-left: 9px;
 margin-top: 9px;}	
 
-.projecttitle {
-color: #0278A7;
+.projecttitlebens {
+color: #413839;
 font-decoration:none;
-font-size:18px;
+font-size:28px;
 display: block;
 width: 250px;
 margin-left:6px;
-margin-top:5px;}	
+margin-top:10px;
+margin-bottom: 15px;
+text-align: center;
+text-shadow:1px 1px 1px #FFF;
+}	
+
+
 
 .smalltitle a {
 color:#303740;
@@ -1017,7 +1040,7 @@ height:20px;
 	.sliderinner {
 	    overflow: hidden;
     position: relative;
-    height: 432px;
+    height: 410px;
     width: 940px;}
 	.sliderinner ul {
 	    position: absolute;
