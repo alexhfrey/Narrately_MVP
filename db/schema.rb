@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120207235601) do
+ActiveRecord::Schema.define(:version => 20120208065117) do
 
   create_table "identities", :force => true do |t|
     t.string   "name"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(:version => 20120207235601) do
   create_table "projects", :force => true do |t|
     t.integer  "user_id"
     t.string   "project_title"
+    t.string   "project_image"
     t.text     "description"
     t.string   "file1"
     t.string   "file2"
@@ -32,14 +33,14 @@ ActiveRecord::Schema.define(:version => 20120207235601) do
     t.integer  "promotion_limit"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "output_file_content_type"
     t.datetime "output_file_updated_at"
-    t.string   "output_file_file_name"
     t.integer  "output_file_file_size"
-    t.string   "project_image_content_type"
+    t.string   "output_file_file_name"
+    t.string   "output_file_content_type"
     t.datetime "project_image_updated_at"
-    t.string   "project_image_file_name"
     t.integer  "project_image_file_size"
+    t.string   "project_image_file_name"
+    t.string   "project_image_content_type"
     t.boolean  "active"
   end
 
@@ -50,7 +51,7 @@ ActiveRecord::Schema.define(:version => 20120207235601) do
     t.datetime "updated_at"
     t.string   "medium"
     t.string   "referral"
-    t.integer  "share_id"
+    t.integer  "share_id",   :limit => 8
   end
 
   create_table "users", :force => true do |t|
@@ -66,10 +67,6 @@ ActiveRecord::Schema.define(:version => 20120207235601) do
     t.string   "password"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "avatar_content_type"
-    t.datetime "avatar_updated_at"
-    t.string   "avatar_file_name"
-    t.integer  "avatar_file_size"
     t.string   "provider"
     t.string   "uid"
     t.string   "token"
