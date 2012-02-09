@@ -1603,18 +1603,58 @@ height:20px;
     width: 78px;}
     
     .youveshared {
-    background: url(../images/circle-shared.png) repeat scroll 0 0 transparent;
+    background: url(../images/circle-shared.png);
     color: #FFFFFF;
     text-shadow: 1px 0 0 #C51B00; 
     display: inline;
     font-size: 28px;
-    height: 78px;
-    line-height: 75px;
-    margin-left: -71px;
-    margin-top: 2px;
-    position: absolute;
+    height: 56px;
+    float: left; 
+    margin-top: -15px;
+    margin-left: 60px; 
+    position: inline;
     text-align: center;
-    width: 78px;}
+    width: 136px;}
+
+    .youvesharedh1 {
+    font-size: 18px; 
+    float:left;
+    text-decoration:none;
+    padding-left: 5px;
+    padding-top: 4px;
+    padding-bottom: 10px; 
+    width: 245px; 
+    }
+
+    .youvenumber {
+    color: #FFFFFF;
+    text-shadow: 1px 0 0 #C51B00; 
+    display: block;
+    float: left;
+    font-size: 20px;
+    height: 28px;
+    margin-top: 7px;
+    margin-left: 93px; 
+    position: absolute;
+    text-decoration: none;
+    width: 78px;
+    alink: text-decoration: none; 
+    }
+    
+    .youveleft {
+    font-size: 14px; 
+    font-weight: bold; 
+    float:left;
+    text-decoration:none;
+    padding-left: 220px;
+    padding-top: 35px;
+    padding-bottom: 0px; 
+    width: 100px; 
+    }
+
+    
+    
+    
     
     .pending {
     background: url(../images/circle-pending.png) repeat scroll 0 0         transparent;
@@ -1637,10 +1677,10 @@ height:20px;
     display: inline;
     font-size: 28px;
     height: 56px;
-    float: right; 
-    margin-top: 190px;
-    margin-left: -105px; 
-    position: absolute;
+    float: left; 
+    margin-top: -15px;
+    margin-left: 60px; 
+    position: inline;
     text-align: center;
     width: 136px;}
     
@@ -1651,7 +1691,7 @@ height:20px;
     padding-left: 5px;
     padding-top: 4px;
     padding-bottom: 10px; 
-    width: 185px; 
+    width: 245px; 
     }
 
     .livenumber {
@@ -1661,8 +1701,8 @@ height:20px;
     float: left;
     font-size: 20px;
     height: 28px;
-    margin-top: 48px;
-    margin-left: 185px; 
+    margin-top: 7px;
+    margin-left: 103px; 
     position: absolute;
     text-decoration: none;
     width: 78px;
