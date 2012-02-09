@@ -1617,7 +1617,7 @@ height:20px;
     width: 78px;}
     
     .pending {
-    background: url(../images/circle-pending.png) repeat scroll 0 0 transparent;
+    background: url(../images/circle-pending.png) repeat scroll 0 0         transparent;
     color: #FFFFFF;
     text-shadow: 1px 0 0 #C51B00; 
     display: inline;
@@ -1651,8 +1651,8 @@ height:20px;
     padding-left: 5px;
     padding-top: 4px;
     padding-bottom: 10px; 
-    width: 255px; 
-}
+    width: 185px; 
+    }
 
     .livenumber {
     color: #FFFFFF;
@@ -1678,6 +1678,7 @@ height:20px;
     padding-top: 35px;
     padding-bottom: 0px; 
     width: 100px; 
+    }
     
     .live p {
     font-size: 13px; 
