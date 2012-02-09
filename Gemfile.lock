@@ -52,14 +52,20 @@ GEM
     bcrypt-ruby (3.0.1)
     bcrypt-ruby (3.0.1-x86-mingw32)
     builder (2.1.2)
+    chunky_png (1.2.5)
     client_side_validations (3.1.4)
     cocaine (0.2.1)
+    compass (0.11.7)
+      chunky_png (~> 1.2)
+      fssm (>= 0.2.7)
+      sass (~> 3.1)
     erubis (2.6.6)
       abstract (>= 1.0.0)
     faraday (0.7.6)
       addressable (~> 2.2)
       multipart-post (~> 1.1)
       rack (~> 1.1)
+    fssm (0.2.8.1)
     hashie (1.2.0)
     httparty (0.8.1)
       multi_json
@@ -124,6 +130,7 @@ GEM
       thor (~> 0.14.4)
     rake (0.8.7)
     rdoc (3.8)
+    sass (3.1.14)
     simple_form (1.5.2)
       actionpack (~> 3.0)
       activemodel (~> 3.0)
@@ -141,6 +148,8 @@ GEM
     tzinfo (0.3.29)
     uuidtools (2.1.2)
     xml-simple (1.1.1)
+    zocial (0.0.3)
+      compass (>= 0.11.5)
 
 PLATFORMS
   ruby
@@ -162,3 +171,4 @@ DEPENDENCIES
   simple_form
   sqlite3
   twitter
+  zocial

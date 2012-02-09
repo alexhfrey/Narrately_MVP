@@ -8,6 +8,8 @@
 <%= stylesheet_link_tag "960.css" %>
 <%= stylesheet_link_tag "style.css" %>
 <%= stylesheet_link_tag "bootstrap.css" %>
+<%= stylesheet_link_tag "zocial.css" %>
+
 <link rel="icon" type="image/png" href="http://narrately.com/images/myicon.png" />
 
 <%= javascript_include_tag :all %>
@@ -54,13 +56,13 @@
 
 <ul class="menu1">
 <% page = request.fullpath %>
-<li><%= link_to "Share Your Work", signup_path, :class => if page.include? "signup" 
+<li><%= link_to "Build", signup_path, :class => if page.include? "signup" 
 								""
 								else 
 								""
 								end  %> 
 </li>
-<li><%= link_to "Discover Great Work", "/discover", :class =>  if page.include? "discover" 
+<li><%= link_to "Back", "/discover", :class =>  if page.include? "discover" 
 																""
 																else 
 																"" 
@@ -84,6 +86,10 @@
 			<%=link_to "Sign Up", signup_path, :class => "menu2li" %> </li>
 			<% end %>
 			
+			<a href = "auth/facebook">
+			<button class='zocial facebook'>
+				<span>Sign up with Facebook</span>
+			</button></a>
 			
 
 </ul>

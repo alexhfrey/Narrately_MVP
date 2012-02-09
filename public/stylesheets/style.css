@@ -53,13 +53,14 @@ text-decoration: none;
 }
 
 .menu1 li a {
-    color: #4E5A66;
+    color: #0278A7;
     display: block;
-    font-size: 14px;
+    font-size: 17px;
     height: 40px;
     margin-top: -13px;
-    padding-left: 0px;
-    padding-right: 15px;
+    font-weight: bold; 
+    padding-left: 10px;
+    padding-right: 20px;
     padding-top: 10px;
     text-decoration: none;
 	line-height: 26px;}

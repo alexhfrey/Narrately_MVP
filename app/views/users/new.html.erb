@@ -9,12 +9,15 @@
 		<a href = "auth/facebook">
 			<button class='zocial facebook'>
 				<span>Sign up with Facebook</span>
+			</button></a>			
+			<a href = "auth/facebook"><%= image_tag "signupfb.png" %> </a>	
+			<a href = "auth/twitter"><%= image_tag "signuptw.png" %> </a>	
+			
+			<a href = "auth/facebook">
+			<button class='zocial facebook'>
+				<span>Sign up with Facebook</span>
 			</button></a>
-			<a href = "auth/twitter">
-			<button class='zocial twitter'>
-				<span>Sign up with Twitter</span>
-			</button>
-		</a>
+		
 		<p div class="p2"><b>- Or -</b></p>
 		Register with your email address:
 		<%= form_tag "/auth/identity/register" do%>
