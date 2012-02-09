@@ -459,6 +459,15 @@ margin-left:15px;
 margin-right:15px;
 margin-bottom: 25px;}
 
+.mycreatedprojectsh1 {
+font-size: 16px; 
+float:left;
+text-decoration:none;
+padding-left: 5px;
+padding-top: 4px;
+width: 220px; 
+}
+
 .featprod {
 list-style:none;
 margin-top:10px;
@@ -480,7 +489,7 @@ margin-left: 6px;
 margin-top: 6px;}
 .smalltitle {
 color:#303740;
-font-decoration:none;
+text-decoration:none;
 font-size:14px;
     display: block;
     width: 200px;
@@ -516,6 +525,29 @@ border-radius: 7px 7px 7px 7px;
 box-shadow: 4px 4px 1px #C0C0C0;
 -moz-box-shadow: 4px 4px 1px #C0C0C0;
 -webkit-box-shadow: 4px 4px 1px #C0C0C0;
+margin-left:5px;
+margin-right:15px;
+margin-bottom: 25px;}
+
+.fbcomment {
+list-style:none;
+margin-top:10px;
+float:left;}
+
+.fbcomment li {
+display:block;
+float:left;
+width:450px;
+height:145px;
+background-color: #ffffff; 
+border-style: solid; 
+border-width:1px; 
+border-color:#D4D4D4; 
+border-radius: 7px 7px 7px 7px;
+-moz-border-radius: 7px 7px 7px 7px;
+box-shadow: 4px 4px 1px #E8E8E8;
+-moz-box-shadow: 4px 4px 1px #E8E8E8;
+-webkit-box-shadow: 4px 4px 1px #E8E8E8;
 margin-left:5px;
 margin-right:15px;
 margin-bottom: 25px;}
@@ -1593,25 +1625,69 @@ height:20px;
     height: 78px;
     line-height: 75px;
     margin-left: -71px;
-    margin-top: 2px;
+    margin-top: 160px;
     position: absolute;
     text-align: center;
     width: 78px;}
     
     .live {
-   background: url(../images/circle-green.png) repeat scroll 0 0 transparent;
+    background: url(../images/circle-green.png);
     color: #FFFFFF;
     text-shadow: 1px 0 0 #C51B00; 
     display: inline;
     font-size: 28px;
-    height: 78px;
-    line-height: 75px;
-    margin-left: -71px;
-    margin-top: 2px;
+    height: 56px;
+    float: right; 
+    margin-top: 190px;
+    margin-left: -105px; 
     position: absolute;
     text-align: center;
-    width: 78px;}
+    width: 136px;}
+    
+    .liveh1 {
+    font-size: 18px; 
+    float:left;
+    text-decoration:none;
+    padding-left: 5px;
+    padding-top: 4px;
+    padding-bottom: 10px; 
+    width: 255px; 
+}
 
+    .livenumber {
+    color: #FFFFFF;
+    text-shadow: 1px 0 0 #C51B00; 
+    display: block;
+    float: left;
+    font-size: 20px;
+    height: 28px;
+    margin-top: 48px;
+    margin-left: 185px; 
+    position: absolute;
+    text-decoration: none;
+    width: 78px;
+    alink: text-decoration: none; 
+    }
+    
+    .liveleft {
+    font-size: 14px; 
+    font-weight: bold; 
+    float:left;
+    text-decoration:none;
+    padding-left: 220px;
+    padding-top: 35px;
+    padding-bottom: 0px; 
+    width: 100px; 
+    
+    .live p {
+    font-size: 13px; 
+    text-decoration:none;
+    padding-left: 25px;
+    padding-top: 0px;
+    padding-bottom: 0px; 
+    width: 100px; 
+    text-align: left; 
+}
     
     .onsaleleft {
     background: url(../images/circle-yellow.png) repeat scroll 0 0 transparent;
