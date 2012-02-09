@@ -20,11 +20,12 @@ class SharesController < ApplicationController
 	@twitter_share_page =  "http://www.narrately.com" + "/projects/" + params[:project_id] + "?referral=twitter_" + @user.id.to_s + '_' + @project.id.to_s 
 	via = "Narrately"
 	
+	@query = URI::escape(@twitter_share_page + '&text=' + @tweet_text + '&via=Narrately')
 	
   fb_share_page = "http://#{request.host}:#{request.port}" + "/projects/" + params[:project_id] 
   referral_tag = "?referral=fb_" + @user.id.to_s + '_' + @project.id.to_s 
   @facebook_link = "https://www.facebook.com/dialog/feed?app_id=" + '242735669136491' + '&link=' + 
-  CGI::escape(fb_share_page) + referral_tag + '&picture=' + CGI::escape(@project.project_image.url) + '&name=' + CGI::escape(@project.project_title) + '&caption=' +
+  CGI::escape(fb_share_page) + referral_tag + '&picture=' + URI::escape(CGI::escape(@project.project_image.url(:medium)),'.') + '&name=' + URI::escape(CGI::escape(@project.project_title),'.') + '&caption=' +
   CGI::escape('Another Great Project on Narrately') +
   '&description=' + CGI::escape(@project.description) +
   '&message=' + CGI::escape("Check out the great new project I found on Narrately") + '&redirect_uri=' + CGI::escape(fb_share_page) + '/facebook_post/new'
@@ -37,12 +38,11 @@ class SharesController < ApplicationController
   def create
   @user = current_user
   medium = params[:medium]
-  share_id = params[:share_id]
-  if medium == "Twitter" 
-	share_id = Twitter.search("narrately.com/projects/" + params[:project_id].to_s).
-		sort_by{|tweet| tweet.created_at }.
-		last.id
-  end
+  
+ 
+   share_id = params[:share_id]
+
+  
   @share = Share.new(:user_id => params[:user_id], :project_id => params[:project_id], :medium => medium, :share_id => share_id)
  
    if @share.save 
