@@ -262,25 +262,39 @@ background:url(/images/getstartedhover.png) no-repeat;
 color:#FFF!important;}
 
 
+.tagit {
+z-index: 20; 
+background:url(../images/tag2.png);
+position: relative; 
+width:300px;
+height:107px;
+margin-left: -17px; 
+text-decoration: none;
+}
+
 .shareit { 
 display:block;
-width:217px;
+width:158px;
 height:62px;
-background:url(../images/sharenow.png);
+background:url(../images/shareitnow.png);
+position: absolute; 
 color:#FFF;
 font-weight:bold;
-font-size:22px;
+font-size:20px;
 text-decoration:none;
     line-height: 53px;
     text-align: center;
 	text-shadow:1px 0px 0px #c51b00;
-margin-top:15px;	
+margin-top:-75px;	
 margin-bottom: 10px;
-margin-left: 20px;  
+margin-left: 90px;  
 clear: both; 
+z-index: 9; 
 }
+
 .shareit:hover {
-background:url(../images/shareithover.png) no-repeat;
+background:url(../images/shareitnowhover.png) no-repeat;
+text-decoration: none;
 color:#FFF!important;}
 
 
@@ -1532,7 +1546,7 @@ height:20px;
     width: 78px;}
 	
     .hmbackers {
-    background: url(../images/circle-green.png) repeat scroll 0 0       transparent;
+    background: url(../images/circle-greenhome.png) repeat scroll 0 0       transparent;
     color: #FFFFFF;
     text-shadow: 1px 0 0 #C51B00; 
     display: inline;
@@ -1731,17 +1745,37 @@ height:20px;
 }
     
     .onsaleleft {
-    background: url(../images/circle-yellow.png) repeat scroll 0 0 transparent;
-    color: #4d4c4c;
+    color: #ffffff;
+    text-shadow: 1px 0 0 #C51B00; 
     display: block;
-    font-size: 30px;
+    font-size: 36px;
     height: 78px;
     line-height: 75px;
     margin-left: 85px;
-    margin-top: 0px;
+    margin-top: 10px;
     margin-bottom: 5px;
     text-align: center;
-    width: 78px;}
+    width: 78px;
+    alink: text-decoration: none; 
+    }
+    
+    .leftonpage {
+    color: #463E3F;
+    text-shadow: 0px 0 0 #C51B00; 
+    display: block;
+    font-size: 36px;
+    height: 78px;
+    line-height: 75px;
+    margin-left: 5px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    padding-top: 15px; 
+    text-align: center;
+    width: 78px;
+    text-decoration: none;
+    alink: text-decoration: none; 
+    }
+
     
     
 	.saleleft {
@@ -1756,6 +1790,7 @@ height:20px;
     text-decoration: none;
     width: 78px;
     alink: text-decoration: none; 
+    text-decoration: none;
     }
     
     .hmfeature {
