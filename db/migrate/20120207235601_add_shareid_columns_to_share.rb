@@ -1,6 +1,6 @@
 class AddShareidColumnsToShare < ActiveRecord::Migration
   def self.up
-    add_column :shares, :share_id, :integer, :limit => 8
+    add_column :shares, :share_id, :string
   end
 
   def self.down

@@ -13,21 +13,21 @@ after_update :reprocess_image, :if => :cropping?
   
   
 
-validates :description, :length => { :minimum => 100, :maximum => 1000, 
-						:message => "must be between 50 and 500 characters"}
+validates :description, :length => { :minimum => 50, :maximum => 1000, 
+						:message => "must be between 50 and 1000 characters"}
 
 validates :promotion_limit, :presence => true
 
-validates :project_title, :length => { :minimum => 10, :maximum => 100, 
-							:message => "must be between 10 and 100 characters"}
+validates :project_title, :length => { :minimum => 5, :maximum => 100, 
+							:message => "must be between 5 and 100 characters"}
 						
 						
 has_attached_file :output_file, :storage => :s3, :bucket => 'narrately.com',
 					:s3_credentials => {
 						:access_key_id => 'AKIAJ7LLMIQJP57FAP3Q',
-						:secret_access_key => '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'
-						
-						}
+						:secret_access_key => 'v27dpNjCVrnJbBhD3SiHxQzsitAgRGrjrxJU9QoZ'						
+						},
+					:s3_permissions => :private
 					
 has_attached_file :project_image, 
 	 :styles =>  {  :medium => "248x146#",
