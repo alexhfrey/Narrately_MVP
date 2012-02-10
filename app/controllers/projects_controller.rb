@@ -51,7 +51,12 @@ class ProjectsController < ApplicationController
   @creator = @project.user
   @shares = @project.shares
   
-  User.update_image(@creator)                   #for testing purposes
+  tweets = @project.shares.select {|p| p.medium == "Twitter"}
+  if tweets.length > 0 
+  if tweets .last .share_id .nil?
+	Share.updateDbWithTwitterIds
+  end 
+  end
   # for testing purposes
   if @project.promotion_limit.nil?
 	@project.promotion_limit = 20

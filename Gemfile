@@ -18,6 +18,7 @@ gem 'aws-sdk'
 gem 'jquery-rails'
 gem 'simple_form'
 gem 'client_side_validations'
+gem 'zocial' 
 
 group :development do
 	gem 'annotate', '2.4.0'

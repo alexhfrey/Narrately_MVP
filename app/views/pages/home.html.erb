@@ -1,72 +1,77 @@
+<link href="assets/css/bootstrap.css" rel="stylesheet">
+<%= javascript_include_tag "bootstrap-carousel.js" %>      
 
 <div class="container_16">
-	<div class="grid_16">
-		<div class="sliderinner">
-			<ul>
-			<li>
-			<div class="leftpart">
-				<img src="images/slider2.png" alt="" />
-		</div>
-		<div class="rightpart">
 
-			<h1>Build a Movement</h1>
-			<div class="pdesc">Snowball is a crowdmarketing platform for creative projects.</div>
-			<%= link_to "Get Started", signup_path, :class => "getstarted" %>
-		</div>
-		</li>
+<div class="grid_16">
 
-		<li>
-		<div class="leftpart">
-			<img src="images/slider2.png" alt="" />
-		</div>
-		<div class="rightpart">
-			<h1>Customer Powered Marketing</h1>
-			<div class="pdesc">Let customers tell the story about your creative project.</div>
-			<a class="padd" href="#">See Example ></a>
-		</div>
-		</li>
 
-<li>
+<div class="sliderinner">
+
+<!-- intro and call to action- left side -->
 <div class="leftpart">
-<img src="images/slider2.png" alt="" />
+<h1>Build a Movement</h1>
+<div class="pdesc">Snowball is a tool which helps you build buzz about your project or campaign.</div>
+<%= link_to "Get Started", signup_path, :class => "getstarted" %>
+<p>(It's Free and takes under 2 minutes)</p>
 </div>
+			
+<!-- Feautred projects- right side -->
+
 <div class="rightpart">
-<h1>Narrately helps creative types</h1>
-<div class="pdesc">We help authors, musicians, and entrepreneurs leverage word of mouth marketing to build a following.</div>
-<a class="padd" href="howitworks.html">How it Works ></a>
+<ul class="featuredprojectshp">
+<p><b>Featured Project:</b></p>
+<a href="#">
+<li>
+<img src="images/trees.jpg" alt="" class="fimg" />
+<div class="hmtextfeat">
+<span class="hmbackers"><span class="hmbackersnum">Backers</span><span class="hmbackersnumb">30</span>
+
+</span>
+<p>Exploring the wild mountains</p>
+<p3>Reward: Free book</p3>
 </div>
 </li>
+</a>
+
 </ul>
+</div>
+
+
+
+			
 </div>
 </div>
 </div>
 <div class="clear"></div>
+
 
 <div class="featuredproducts">
 <div class="container_16">
 <div class="grid_16">
-<h2 class="titlefp">Featured Projects</h2>
-<img src="images/shizzle.png" alt="shizzle" class="shizzlefp" />
 <div class="clear"></div>
-
-<ul class="featuredprojects">
+<ul class="benefits">
 <li>
-<img src="images/demo-img3.png" alt="" class="fimg" />
-<span class="onsale"><span class="oldprice">LEFT</span>8</span>
-<span class="projecttitle"><href="product.html">Nikon Camera Project in SF Title Long!</span>
+<img src="../images/ben1.png" alt="" class="benefitspic"/>
+<span class="projecttitlebens"><href="product.html">Post Your Project</span>
+<p>Easily create a page for your project in under 2 minutes. <%= link_to "Try it out", signup_path, :p => "getstarted" %></p>
+ 
 </li>
 <li>
-<img src="images/demo-img3.png" alt="" class="fimg" />
-<span class="onsale"><span class="oldprice">LEFT</span>1</span>
-<span class="projecttitle"><href="product.html">Special Gift</span>
+<img src="../images/ben2.png" alt="" class="benefitspic"/>
+<span class="projecttitlebens"><href="product.html">Reward Backers</span>
+<p>Incentivize backers to share your project by providing them a reward. Typically a free ebook or coupon.</p>
 </li>
 <li>
-<img src="images/demo-img3.png" alt="" class="fimg" />
-<span class="goalmet"><span class="oldprice">GOAL</span>MET</span>
-<span class="projecttitle"><href="product.html">Adidas shoes</span>
+<img src="../images/ben3.png" alt="" class="benefitspic"/>
+<span class="projecttitlebens"><href="product.html">Generate Buzz</span>
+<p>Your backers generate thousands project generates thousands of impressions on Facebook and Twitter.</p>
 </li>
 </ul>
 
+	
+</div>
+</div>
 </div>
 </div>
 </div>

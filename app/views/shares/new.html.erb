@@ -52,8 +52,7 @@ twttr.events.bind('tweet', function(event) {
 	
 <% end %>
 
-<a href = "https://twitter.com/share"  class = "twitter-share-button" data-lang="en"
-			data-url = "<%= @twitter_share_page %>" data-via = "Narrately" data-text = "<%= @tweet_text %>"> </a>
+<%= link_to image_tag("shareontwitter.png"), "https://twitter.com/intent/tweet?url=" + @query %>
 <a href = <%= @facebook_link %>  > <%= image_tag "shareonfacebook.png" %> </a>
 
 </ul>
