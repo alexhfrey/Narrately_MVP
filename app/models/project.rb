@@ -25,9 +25,9 @@ validates :project_title, :length => { :minimum => 10, :maximum => 100,
 has_attached_file :output_file, :storage => :s3, :bucket => 'narrately.com',
 					:s3_credentials => {
 						:access_key_id => 'AKIAJ7LLMIQJP57FAP3Q',
-						:secret_access_key => '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'
-						
-						}
+						:secret_access_key => 'v27dpNjCVrnJbBhD3SiHxQzsitAgRGrjrxJU9QoZ'						
+						},
+					:s3_permissions => :private
 					
 has_attached_file :project_image, 
 	 :styles =>  {  :medium => "248x146#",

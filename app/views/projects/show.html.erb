@@ -46,11 +46,13 @@
 
 <div class="infospan2">Total:<span><%= @project.promotion_limit %></span></div>
 <div class="infospan2">Left:<span><%= @promotions_left %></span></div>
-<% if @promotions_clear %>
+<% if @promotions_clear && !@shared %>
 
 	<%= link_to "Share it!", new_project_share_path(@project), :class => "shareit" %>
-<% else %>
+<% elsif !@promotions_clear && !@shared %>
 	<%= link_to "Buy it!", 'http://' + @project.purchase_link, :class => "shareit" %>
+	<% else %>
+	<%=	link_to "Download it!", download_project_path(@project), :class => "shareit" %>
 	<% end %>
 
 

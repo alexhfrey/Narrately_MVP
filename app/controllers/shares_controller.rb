@@ -38,11 +38,7 @@ class SharesController < ApplicationController
   @user = current_user
   medium = params[:medium]
   share_id = params[:share_id]
-  if medium == "Twitter" 
-	share_id = Twitter.search("narrately.com/projects/" + params[:project_id].to_s).
-		sort_by{|tweet| tweet.created_at }.
-		last.id
-  end
+ 
   @share = Share.new(:user_id => params[:user_id], :project_id => params[:project_id], :medium => medium, :share_id => share_id)
  
    if @share.save 

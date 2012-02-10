@@ -22,7 +22,10 @@ class ProjectsController < ApplicationController
   end
 
   end
-
+  def download
+	@file_object = Project.find(params[:id])
+	redirect_to @file_object.output_file.expiring_url(10)
+  end
   def create
 	@user = current_user
 	@project = @user.projects.build(params[:project])
@@ -59,13 +62,16 @@ class ProjectsController < ApplicationController
   @promotions_left = @project.promotion_limit - @shares.length
   @promotions_clear = ( @promotions_left > 0 )
   
+  
+  
   if current_user 
 	@promotions_clear = (@promotions_clear && Share.find_by_user_id_and_project_id(current_user.id, @project.id).nil?  )
-	else
+	
   end
-  
-  
-  
+  @shared = false
+  if Share.find_by_user_id_and_project_id(current_user.id, @project.id).present?
+	@shared = true
+  end
   
  end
   def confirmation
