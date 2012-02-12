@@ -13,26 +13,12 @@
 
 <% @projects.each do |p| %>
 <li>
-<%= link_to image_tag(p.project_image.url, :class => "fimg2", :size => "248x162"), p %>
-<% left = p.promotion_limit - p.shares.length %>
-	<% if left > 0 && p.active   %>
-	<span class="live"><span class="oldprice">LEFT</span><%= left %></span>
-	<% elsif left == 0 && p.active %>
-	<span class="goalmet"><span class="oldprice">GOAL</span>MET</span>
-	<% else %>
-	<span class ="pending"><span class="oldprice">PENDING</span></span>
-	<% end %>
-<%= link_to p.project_title, p, :class => "mycreatedprojectsh1" %>
+<%= render :partial => "shared/projects", :locals => { :user => @user, :p => p } %>
 </li>
 <% end unless @projects.nil? %>
 </ul>
-
-
-
 </div>
 </div>
-
-
 <div class="mysharesbox">
 <div class="bigtitle">My Shares</div>
 <div class="lines"></div>
@@ -41,21 +27,13 @@
 
 <% @shares.each do |s| %>
 <li>
-<% p = s.project %>
-<%= link_to image_tag(p.project_image.url,:class => "fimg", :size => "248x162"), p %>
-<span class="youveshared"><span class="oldprice">SHARED</span></span>	
-<%= link_to p.project_title, p, :class => "projecttitle" %>
+<%= render :partial => "shared/projects", :locals => { :user => @user, :p => s.project } %>
 </li>
-<% end unless @projects.nil? %>
+<% end %>
 </ul>
 
 </div>
 </div>
-
-
-
-
-
 </div>
 <div class="grid_4 righthome">
 
@@ -77,6 +55,4 @@ Keeping it short!</p>
 </div>
 </div>
 </div>
-
-
 </div>

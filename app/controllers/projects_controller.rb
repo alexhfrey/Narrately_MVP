@@ -6,6 +6,11 @@ class ProjectsController < ApplicationController
   end
   
   def index
+  @user = current_user
+  if @user.nil? 
+	@user = User.new
+  end
+  
   end
   
   def edit

@@ -2,63 +2,19 @@
 <div class="grid_16">
 </div>
 
-
 <div class="grid_11 singleleft">
 <div class="discoverbox">
 <div class="bigtitle">Discover & Support Great Projects</div>
 <div class="lines"></div>
 
 <ul class="mysharedprojects">
+<% Project.where("promotion_limit > 0") .sort_by {rand} [0..8] .each do |p| %>
 <li>
-<img src="../images/demo-img3.png" alt="" class="fimg" />
-<span class="liveh1"><href="">Adidas shoes my titles..</></span>
-<hr> 
-<td><a class="btn btn-large btn-success" align="middle" href="#">8 LEFT</a></td>
-</li>
-<li>
-<img src="../images/demo-img3.png" alt="" class="fimg" />
-<span class="liveh1"><href="">Adidas shoes my titles..</></span>
-<hr> 
-<td><a class="btn btn-large btn-success" align="middle" href="#">8 LEFT</a></td>
-</li>
-<li>
-<img src="../images/demo-img3.png" alt="" class="fimg" />
-<span class="liveh1"><href="">Adidas shoes my titles..</></span>
-<hr> 
-<td><a class="btn btn-large btn-success" align="middle" href="#">8 LEFT</a></td>
-</li>
-<li>
-<img src="../images/demo-img3.png" alt="" class="fimg" />
-<span class="youvesharedh1"><href="">Adidas shoes my titles..</></span>
-<hr>
-<td><a class="btn btn-info btn-large" align="middle" href="#">DOWNLOAD</a></td>
-</li>
-<li>
-<img src="../images/demo-img3.png" alt="" class="fimg" />
-<span class="youvesharedh1"><href="">Adidas shoes my titles..</></span>
-<hr>
-<td><a class="btn btn-info btn-large" align="middle" href="#">DOWNLOAD</a></td>
-</li>
-<li>
-<img src="../images/demo-img3.png" alt="" class="fimg" />
-<span class="youvesharedh1"><href="">Adidas shoes my titles..</></span>
-<hr>
-<td><a class="btn btn-info btn-large" align="middle" href="#">DOWNLOAD</a></td>
-</li>
-<li>
-<img src="../images/demo-img3.png" alt="" class="fimg" />
-<span class="youvesharedh1"><href="">Adidas shoes my titles..</></span>
-<hr>
-<td><a class="btn btn-large" align="middle" href="#">GOAL MET</a></td>
-</li>
-<li>
-<img src="../images/demo-img3.png" alt="" class="fimg" />
-<span class="youvesharedh1"><href="">Adidas shoes my titles..</></span>
-<hr>
-<td><a class="btn btn-large" align="middle" href="#">GOAL MET</a></td>
-</li>
-</ul>
+<%= render :partial => "shared/projects", :locals => { :user => @user, :p => p } %>
 
+</li>
+<%end%>
+</ul>
 
 <div class="grid_12">
 </div>
