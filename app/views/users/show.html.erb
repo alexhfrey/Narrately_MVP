@@ -13,7 +13,21 @@
 
 <% @projects.each do |p| %>
 <li>
+
 <%= render :partial => "shared/projects", :locals => { :user => @user, :p => p } %>
+=======
+<%= link_to image_tag(p.project_image.url, :class => "fimg2", :size => "248x162"), p %>
+<% left = p.promotion_limit - p.shares.length %>
+<%= link_to p.project_title, p, :class => "mycreatedprojectsh1" %>
+<hr>
+	<% if left > 0 && p.active   %>
+<span class="live"><span class="oldprice">LEFT</span><%= left %></span>
+	<% elsif left == 0 && p.active %>
+	<span class="goalmet"><span class="oldprice">GOAL</span>MET</span>
+	<% else %>	
+	<td><a class="btn btn-info btn-large" align="middle" href="#">DOWNLOAD</a></td>
+	<% end %>
+
 </li>
 <% end unless @projects.nil? %>
 </ul>
