@@ -1,28 +1,11 @@
-<%	state = p.state_for(user.id) %>
-<%	case state %>
-<%	when 'running' %>
-		<%= link_to image_tag(p.project_image.url(:medium), :class=> "fimg"), p %>
-		<span class="liveh1"><%= link_to p.project_title, p %></span>
-		<hr> 
-		<td><%= link_to p.left.to_s + " LEFT", p, :class=> "btn btn-large btn-success" %> </td>
-<%	when 'pending' %>
-		<%= link_to image_tag(p.project_image.url(:medium), :class=> "fimg"), p %>
-		<span class="liveh1"><%= link_to p.project_title, p %></span>
-		<hr> 
-		<td><%= link_to p.left.to_s + " LEFT", p, :class=> "btn btn-large btn-success" %> </td>
-<%	when 'active' %>
-		<%= link_to image_tag(p.project_image.url(:medium), :class=> "fimg"), p %>
-		<span class="liveh1"><%= link_to p.project_title, p %></span>
-		<hr> 
-		<td><%= link_to p.left.to_s + " LEFT", p, :class=> "btn btn-large btn-success" %> </td>
-<%	when 'goal met' %>
-		<%= link_to image_tag(p.project_image.url(:medium), :class=> "fimg"), p %>
-		<span class="liveh1"><%= link_to p.project_title, p %></span>
-		<hr> 
-		<td><%= link_to p.left.to_s + " LEFT", p, :class=> "btn btn-large btn-success" %> </td>
-<%	when 'shared'  %>
-		<%= link_to image_tag(p.project_image.url(:medium), :class=> "fimg"), p %>
-		<span class="liveh1"><%= link_to p.project_title, p %></span>
-		<hr> 
-		<td><%= link_to p.left.to_s + " LEFT", p, :class=> "btn btn-large btn-success" %> </td>
-<% end %>
+<%= link_to image_tag(p.project_image.url(:medium), :class => "fimg2"), p %>
+<%= link_to p.project_title, p, :class => "mycreatedprojectsh1" %>
+<hr>
+<div class="boxregdata">
+<%left = p.left
+  taken = p.shares.length
+ %>
+<span class="boxlistdata"><%= left %><span class="boxlistcat"> Rewards Left</span></span>
+<span class="boxlistdata2"><%= taken %><span class="boxlistcat2"> Backers</span></span>
+<span class="boxlistdata3"><%= number_to_percentage 100 * taken / p.promotion_limit, :precision => 0 %> <span class="boxlistcat3">% Progress</span></span>
+</div>

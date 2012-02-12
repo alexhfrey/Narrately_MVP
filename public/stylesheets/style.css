@@ -1666,7 +1666,88 @@ height:20px;
     width: 100px; 
     }
 
+     .boxlistdata {
+    color: #6E6A6B;
+    display: inline;
+    font-size: 18px;
+    height: 78px;
+    line-height: 35px;
+    margin-left: 20px;
+    margin-top: 2px;
+    margin-right: 20px; 
+    position: absolute;
+    text-align: center;
+    width: 58px;}
     
+    .boxlistcat {
+    color: #6E6A6B;
+    display: block;
+    float: left;
+    font-size: 12px;
+    height: 12px;
+    margin-bottom: -2px;
+    margin-top: -15px;
+    margin-left: -10px;
+    text-align: center;
+    text-decoration: none;
+    width: 90px;
+    alink: text-decoration: none; 
+    }
+    
+    .boxlistdata2 {
+    color: #6E6A6B;
+    display: inline;
+    font-size: 18px;
+    height: 78px;
+    line-height: 35px;
+    margin-left: 105px;
+    margin-top: 2px;
+    position: absolute;
+    text-align: center;
+    width: 58px;}
+    
+    .boxlistcat2 {
+    color: #6E6A6B;
+    display: block;
+    float: left;
+    font-size: 12px;
+    height: 12px;
+    margin-bottom: -2px;
+    margin-top: -15px;
+    margin-left: -10px; 
+    text-align: center;
+    text-decoration: none;
+    width: 90px;
+    alink: text-decoration: none; 
+    }
+
+    
+    .boxlistdata3 {
+    color: #6E6A6B;
+    display: inline;
+    font-size: 18px;
+    height: 78px;
+    line-height: 35px;
+    margin-left: 190px;
+    margin-top: 2px;
+    position: absolute;
+    text-align: center;
+    width: 58px;}
+    
+    .boxlistcat3 {
+    color: #6E6A6B;
+    display: block;
+    float: left;
+    font-size: 12px;
+    height: 12px;
+    margin-bottom: -2px;
+    margin-top: -15px;
+    margin-left: -18px; 
+    text-align: center;
+    text-decoration: none;
+    width: 90px;
+    alink: text-decoration: none; 
+    }
     
     
     
@@ -1777,7 +1858,83 @@ height:20px;
     }
 
     
+      .boxregdata {
+    float: left; 
+    width: 270px; 
+    height: 80px; 
+    margin-top: -20px; 
+    }
     
+	 .boxbackers {
+    color: #565051;
+    text-shadow: 0px 0 0 #C51B00; 
+    display: inline;
+    font-size: 20px;
+    height: 30px;
+    line-height: 50px;
+    margin-left: 40px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-top: 0px; 
+    text-align: center;
+    width: 55px;
+    text-decoration: none;
+    alink: text-decoration: none; 
+    }
+    
+    .boxbackerstitle {
+	color: #736F6E;
+    display: inline;
+    font-size: 11px;
+    height: 12px;
+    font-size: 12px; 
+    margin-bottom: 1px;
+    margin-left: 40px;
+    padding-right: 0px;
+    margin-top: -10px;
+    text-align: center;
+    text-decoration: none;
+    width: 55px;
+    alink: text-decoration: none; 
+    text-decoration: none;
+    }
+
+    .boxbackers2 {
+    color: #565051;
+    text-shadow: 0px 0 0 #C51B00; 
+    display: inline;
+    font-size: 20px;
+    height: 30px;
+    line-height: 50px;
+    margin-left: 40px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-top: 0px; 
+    text-align: center;
+    width: 55px;
+    text-decoration: none;
+    alink: text-decoration: none; 
+    }
+
+    .boxbackers3 {
+    color: #565051;
+    text-shadow: 0px 0 0 #C51B00; 
+    display: inline;
+    font-size: 20px;
+    height: 30px;
+    line-height: 50px;
+    margin-left: 40px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-top: 0px; 
+    text-align: center;
+    width: 55px;
+    text-decoration: none;
+    alink: text-decoration: none; 
+    }
+
+
+	
 	.saleleft {
 	color: #4d4c4c;
     display: block;
