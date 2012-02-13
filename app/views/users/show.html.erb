@@ -2,8 +2,33 @@
 <div class="grid_16">
 </div>
 
-
+<% if current_user == @user %> 
 <div class="grid_11 singleleft">
+<div class="myrewardsbox">
+<div class="bigtitle">My Rewards</div>
+<div class="lines"></div>
+<div class="grid_12">
+<div class="alert">
+  <a class="close">×</a>
+  <strong>Note:</strong> The My Rewards section is private.
+</div>
+<ul class="mysharedprojects">
+<% @shares .collect {|u| u.project } .each do |s| %>
+<li>
+<%= image_tag s.project_image.url(:medium) %>
+<span class="liveh1"><%= link_to s.project_title, s %></span>
+<hr> 
+<div class="boxdownload">
+<span class="btn btn-success" align="center"><%= link_to "Download", download_project_path(s) %></span>
+</div>
+</li>
+<% end %>
+</ul>
+
+</div>
+</div>
+<% end %>
+
 <div class="myprojectbox">
 <div class="bigtitle">My Projects</div>
 <div class="lines"></div>

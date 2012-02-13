@@ -1,6 +1,10 @@
 class ProjectsController < ApplicationController
+before_filter :require_permission, :only => :download
   def new
 	@user = current_user
+	if @user.nil?
+		redirect_to login_path
+	end
 	@project = @user.projects.build
 	
   end
@@ -28,8 +32,27 @@ class ProjectsController < ApplicationController
 
   end
   def download
+	
 	@file_object = Project.find(params[:id])
 	redirect_to @file_object.output_file.expiring_url(10)
+  end
+  
+  def require_permission
+	@user = current_user
+	path = nil
+	if @user.nil?
+		flash[:notice] = "You must be logged in to access rewards."
+		path = login_path 
+	else
+		@project = Project.find(params[:id])
+		unless @project.shares.collect {|s| s.user } .include?(@user)
+			flash[:notice] = "You must share the project before you can claim any rewards."
+			 path = @project
+		end
+	end
+	unless path.nil? 
+	redirect_to path 
+  end
   end
   def create
 	@user = current_user
@@ -69,20 +92,14 @@ class ProjectsController < ApplicationController
   ###
    
   
-  @promotions_left = @project.promotion_limit - @shares.length
-  @promotions_clear = ( @promotions_left > 0 )
-  
+ 
+  @promotions_clear = ( @project.left > 0 )
   
   
   if current_user 
-	@promotions_clear = (@promotions_clear && Share.find_by_user_id_and_project_id(current_user.id, @project.id).nil?  )
-	
+	@promotions_clear = (@promotions_clear && Share.find_by_user_id_and_project_id(current_user.id, @project.id).nil?  )	
   end
-  @shared = false
-  if Share.find_by_user_id_and_project_id(current_user.id, @project.id).present?
-	@shared = true
-  end
-  
+   
  end
   def confirmation
   end

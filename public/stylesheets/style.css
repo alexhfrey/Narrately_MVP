@@ -543,6 +543,19 @@ margin-left:5px;
 margin-right:15px;
 margin-bottom: 25px;}
 
+.boxdata {
+list-style:none;
+margin-top:-15px;
+float:left;}
+
+.boxdata li {
+display:absolute;
+float:left;
+width:50px;
+height:45px;
+margin-left:5px;
+margin-right:5px;
+margin-bottom: 5px;}
 .fbcomment {
 list-style:none;
 margin-top:10px;
@@ -805,6 +818,43 @@ padding-left:10px;
 padding-top:10px;
 padding-right:10px;
 padding-bottom:10px;}
+
+.myrewardsbox {
+background:#FFF;
+width:640px;
+width:640px;
+border-right:1px solid #c2cbd2;
+border-bottom:1px solid #c2cbd2;
+border-radius:5px;
+margin-top:5px;
+float:left;
+padding-left:10px;
+padding-top:10px;
+padding-right:10px;
+padding-bottom:10px;}
+
+.myrewardsprojects {
+list-style:none;
+margin-top:10px;
+float:left;}
+
+.myrewardprojects li {
+display:block;
+float:left;
+width:268px;
+height:245px;
+background:url(../images/featureimgbg.png) repeat;
+border-style: solid; 
+border-width:1px; 
+border-color:#D4D4D4; 
+border-radius: 7px 7px 7px 7px;
+-moz-border-radius: 7px 7px 7px 7px;
+box-shadow: 4px 4px 1px #C0C0C0;
+-moz-box-shadow: 4px 4px 1px #C0C0C0;
+-webkit-box-shadow: 4px 4px 1px #C0C0C0;
+margin-left:5px;
+margin-right:15px;
+margin-bottom: 25px;}
 
 .myprojectbox {
 background:#FFF;
@@ -1664,7 +1714,7 @@ height:20px;
     padding-top: 35px;
     padding-bottom: 0px; 
     width: 100px; 
-    }
+    }
 
      .boxlistdata {
     color: #6E6A6B;
@@ -1748,7 +1798,7 @@ height:20px;
     width: 90px;
     alink: text-decoration: none; 
     }
-    
+   
     
     
     .pending {
@@ -1857,7 +1907,21 @@ height:20px;
     alink: text-decoration: none; 
     }
 
-    
+	.saleleft {
+	color: #4d4c4c;
+    display: block;
+    float: left;
+    font-size: 12px;
+    height: 20px;
+    margin-bottom: 0px;
+    margin-top: -15px;
+    text-align: center;
+    text-decoration: none;
+    width: 78px;
+    alink: text-decoration: none; 
+    text-decoration: none;
+    }
+   
       .boxregdata {
     float: left; 
     width: 270px; 
@@ -1933,23 +1997,13 @@ height:20px;
     alink: text-decoration: none; 
     }
 
-
-	
-	.saleleft {
-	color: #4d4c4c;
-    display: block;
-    float: left;
-    font-size: 12px;
-    height: 20px;
-    margin-bottom: 0px;
-    margin-top: -15px;
-    text-align: center;
-    text-decoration: none;
-    width: 78px;
-    alink: text-decoration: none; 
-    text-decoration: none;
+ .boxdownload {
+    float: left; 
+    width: 270px; 
+    height: 80px; 
+    margin-top: -5px;
+    margin-left: 90px;  
     }
-    
     .hmfeature {
     background: url(../images/activebg.png) repeat scroll 0 0 transparent;
     color: #FFFFFF;

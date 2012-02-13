@@ -10,12 +10,6 @@
 <div class="productdata">
 
 
-
-
-
-
-
-
 <script type="text/javascript" charset="utf-8">
   window.twttr = (function (d,s,id) {
     var t, js, fjs = d.getElementsByTagName(s)[0];
@@ -37,10 +31,6 @@ twttr.events.bind('tweet', function(event) {
 	}
 );	 });
 	
-	   
- 
-
-
 
 </script>
 <p>Great- just one step left to claim your reward. Share on Twitter or Facebook:</p>
@@ -66,9 +56,7 @@ twttr.events.bind('tweet', function(event) {
 <div class="productdata">
 <ul class="mysharedprojects">
 <li>
-<img src="../images/demo-img3.png" alt="" class="sshare" />
-<span class="youveshared"><span class="oldprice">SHARED</span></span>
-<span class="projecttitle"><href="">Adidas shoes my titles..</></span>
+<%= render :partial => "shared/projects", :locals => { :user => @user, :p => @project } %>
 </li>
 </ul>
 
