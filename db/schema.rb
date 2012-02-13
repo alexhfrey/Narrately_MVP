@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120209192001) do
+ActiveRecord::Schema.define(:version => 20120213194059) do
 
   create_table "identities", :force => true do |t|
     t.string   "name"
@@ -73,6 +73,8 @@ ActiveRecord::Schema.define(:version => 20120209192001) do
     t.string   "provider"
     t.string   "uid"
     t.string   "token"
+    t.text     "biography"
+    t.string   "category"
   end
 
 end

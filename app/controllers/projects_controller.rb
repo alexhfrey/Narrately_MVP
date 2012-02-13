@@ -22,14 +22,15 @@ before_filter :require_permission, :only => :download
   
   def update
   #Right now this is being used by the cropping view
+  @user = current_user
   @project = Project.find(params[:id])
 
   if @project.update_attributes(:x1 => params[:x1], :y1 => params[:y1], :width => params[:width], :height => params[:height])
     flash[:notice] = "Successfully updated user."
-	redirect_to @project
+	redirect_to edit_user_path(@user)
    
   else
-    render  'crop'
+    render  'edit'
   end
 
   end
