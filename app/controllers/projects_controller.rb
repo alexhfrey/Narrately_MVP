@@ -21,10 +21,12 @@ before_filter :require_permission, :only => :download
   end
   
   def update
+  #Right now this is being used by the cropping view
   @project = Project.find(params[:id])
 
   if @project.update_attributes(:x1 => params[:x1], :y1 => params[:y1], :width => params[:width], :height => params[:height])
     flash[:notice] = "Successfully updated user."
+	redirect_to @project
    
   else
     render  'crop'
@@ -68,6 +70,7 @@ before_filter :require_permission, :only => :download
   end
   def crop
   @project = Project.find(params[:id])
+  
   
   end
 
