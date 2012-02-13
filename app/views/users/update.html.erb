@@ -1,10 +1,8 @@
 <%= stylesheet_link_tag "bootstrap.css" %>
 
-
 <div class="container_16 padding50">
 <div class="grid_16">
 </div>
-<%= render 'shared/error_messages' %>
 <div class="grid_11 singleleft">
 
 <div class="createwelcome">
@@ -20,35 +18,18 @@
 <div class="projectbox">
 <fieldset class = "control-group">
 
-<%= simple_form_for @project, :validate => true, :html => { :multipart => true } do |f| %>
-
 	<h2>1. Project Details</h2>
 	<p>Your project is unqiue- tell your fans why it's so special!</p>
 	<hr>
-
-	<%= f.hidden_field :user_id, :value => @user.id %>
-	<p><%= f.input :tag1, :collection => ['Book', 'Food', 'Special Offer'], :as => :radio, :label => "Project Category", :input_html => {:class => "btn"} %> </p>	       
-	
-   <p> <%= f.input :project_title, :hint => "Tip: Choose a catchy and descriptive title between 10-100 characters." , :label => "Project name",  :input_html => { :class => 'text'} %> </p>
-   <p><%= f.input :description, :hint => "Tip: Explain what your project is about. Be interesting give your fans an insight into what you've been working on. Between 100-1000 characters." %> </p>   
- 	<p><%= f.input :project_image	%> </p>
 
    
 <h2>2. Reward Details</h2>
 <p>This is the reward your fans will receive when they share your work- make it something they want!</p>
 <hr>
- <p><%= f.input :promotion_limit, :hint => "Tip: The number of rewards you want to give away." , :label => "Reward Limit" %> </p>
- <p> <%= f.input :output_file, :hint => "Tip: Eligible fans will be able to download this. Examples include ebook and digital coupon. Please use PDF and epub files." , :label => "Reward File" %> </p><br>
  
-
 <h2>3. Purchase Details </h2>
 <p>Once your reward limit is reached, fans will be able to purchase your product. If you sell the product, include the purchase link here.</p>
 <hr>
-<p><%= f.input :purchase_link, :hint => "Tip: Enter the full address of a site selling your product" %></p>
- <p> <%= f.submit :class => "btn btn-success btn-large"	 %> </p>
-
- <% end %>
-
     
 
 </div>
