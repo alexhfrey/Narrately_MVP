@@ -611,11 +611,11 @@ input[type="hidden"] {
   display: none;
 }
 .radio, .checkbox {
-  padding-left: 18px;
+  padding-left: 0px;
 }
 .radio input[type="radio"], .checkbox input[type="checkbox"] {
   float: left;
-  margin-left: -18px;
+  margin-left: 0px;
 }
 .controls > .radio:first-child, .controls > .checkbox:first-child {
   padding-top: 5px;

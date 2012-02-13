@@ -1,6 +1,9 @@
 class User < ActiveRecord::Base
 has_many :projects
 has_many :shares
+validates :biography, :length =>  {:maximum => 140}
+						
+						
 
 def self.create_with_omniauth(auth)
 create! do |user|

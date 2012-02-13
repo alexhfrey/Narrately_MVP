@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120213194059) do
+ActiveRecord::Schema.define(:version => 20120213200817) do
 
   create_table "identities", :force => true do |t|
     t.string   "name"
@@ -41,6 +41,8 @@ ActiveRecord::Schema.define(:version => 20120213194059) do
     t.string   "project_image_file_name"
     t.integer  "project_image_file_size"
     t.boolean  "active"
+    t.text     "promotion_description"
+    t.string   "promotion_type"
   end
 
   create_table "shares", :force => true do |t|

@@ -63,11 +63,11 @@ else
 		if active.nil?
 			'pending'
 		else
-			'running'
+			'running' #User is the creator, promotion is running
 		end
 	else
 		if shares.find{ |u| u.user_id == id_var }.empty? #Has not shared
-			'active'
+			'active' #User is not the creator, promotion is active
 		else 
 			'shared'
 		end
