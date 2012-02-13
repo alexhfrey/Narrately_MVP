@@ -22,7 +22,7 @@
 
 <div class="projectshare">
 <div class="productdata">
-<h4>Supporter Props</h4>
+<h4>Support from Backers</h4>
 <div class="grid_10">
 <% @shares.select{|s| s.medium == "Twitter" && s.share_id.present?}.each do |t| %>
 <div><%= Twitter.oembed(t.share_id.to_i).html.html_safe %> </div>
@@ -108,7 +108,7 @@ Keeping it short!</p>
 </div>
 <div class="categories-widget">
 <div class="categorybox sellers">
-<h6>Supporters</h6>
+<h3>Backers</h3>
 <ul>
 <li>
 <% @shares.first(4).each do  |s| %>
