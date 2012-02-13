@@ -582,22 +582,27 @@ margin-bottom: 25px;}
 .howitworksline {
 list-style:none;
 margin-top:10px;
+margin-left: 0px; 
+padding-bottom: 20px; 
+width: 650px; 
 float:left;}
 
 .howitworksline li {
 display:block;
 float:left;
-width:235px;
+width:195px;
 height:245px;
 border-style: solid; 
 border-width:0px; 
 border-color:#D4D4D4; 
 border-radius: 7px 7px 7px 7px;
 -moz-border-radius: 7px 7px 7px 7px;
-margin-left:15px;
+margin-left:0px;
 margin-right:10px;
 margin-bottom: 25px;
-padding: 10px;}
+padding-right:5px; 
+padding-bottom: 20px;
+padding-top: 10px;}
 
 .howitworkstitle {
 display: block; 
@@ -612,6 +617,11 @@ margin-top: 2px;
 padding-bottom: 5px; 
 text-align: middle;
 }
+
+.howitworksline p {
+font-size: 14px;
+}
+
 
 
 .hiwimg1 {
@@ -2156,10 +2166,14 @@ height:20px;
 	float:left;
 	width:800px;
     margin-top: 20px;
-    margin-left: 30px;
+    margin-left: 0px;
     margin-bottom: 20px;
     font-size: 20px;
     line-height: 22px;  
+    }
+    
+    .howitworkstext p {
+    font-size: 14px; 
     }
     
     .createform {
@@ -2197,6 +2211,36 @@ height:20px;
 	margin-left:0px;
     margin-bottom: 5px; 
 	line-height:34px;}
+    
+     .whatissnow {
+	float:left;
+	width:600px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    line-height: 22px;  
+    }
+    
+    .whatcanyoudo {
+    list-style:none;
+    margin-left: 0px; 
+    width:610px;
+    float:left;}
+    
+    .wcydtext {
+    width:300px;
+    float: left;
+    padding-right: 15px;  
+    }
+    
+    .wcydtext2 {
+    width:300px;
+    float: right;
+    margin-left: 0px;
+    padding-right: 25px;   
+    }
+    
 	
     .infospan2 span {
     float: right;
