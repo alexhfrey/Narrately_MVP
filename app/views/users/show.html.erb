@@ -2,11 +2,8 @@
 <div class="grid_16">
 </div>
 
-
-
+<% if current_user == @user %> 
 <div class="grid_11 singleleft">
-
-
 <div class="myrewardsbox">
 <div class="bigtitle">My Rewards</div>
 <div class="lines"></div>
@@ -16,89 +13,58 @@
   <strong>Note:</strong> The My Rewards section is private.
 </div>
 <ul class="mysharedprojects">
+<% @shares .collect {|u| u.project } .each do |s| %>
 <li>
-<img src="../images/demo-img3.png" alt="" class="fimg" />
-<span class="liveh1"><href="">Adidas shoes my titles..</></span>
+<%= image_tag s.project_image.url(:medium) %>
+<span class="liveh1"><%= link_to s.project_title, s %></span>
 <hr> 
 <div class="boxdownload">
-<span class="btn btn-success" align="center">Download</a></span>
+<span class="btn btn-success" align="center"><%= link_to "Download", download_project_path(s) %></span>
 </div>
 </li>
-
+<% end %>
 </ul>
 
 </div>
 </div>
-
-
-
+<% end %>
 
 <div class="myprojectbox">
 <div class="bigtitle">My Projects</div>
 <div class="lines"></div>
 <div class="grid_12">
-<div class="alert">
-  <a class="close">×</a>
-  <strong>Note:</strong> The My Projects section is public.
-</div>
 <ul class="mycreatedprojects">
-
-
 <% @projects.each do |p| %>
 <li>
-<%= link_to image_tag(p.project_image.url, :class => "fimg2", :size => "248x162"), p %>
-<% left = p.promotion_limit - p.shares.length %>
-<%= link_to p.project_title, p, :class => "mycreatedprojectsh1" %>
-<hr>
-<div class="boxregdata">
-<span class="boxlistdata">8 <span class="boxlistcat">Rewards Left</span></span>
-<span class="boxlistdata2">12 <span class="boxlistcat2">Backers</span></span>
-<span class="boxlistdata3">60% <span class="boxlistcat3">Progress</span></span>
-</div>
+<%= render :partial => "shared/projects", :locals => { :user => @user, :p => p } %>
 </li>
 <% end unless @projects.nil? %>
+
 </ul>
-
-
-
 </div>
 </div>
-
-
 <div class="mysharesbox">
 <div class="bigtitle">My Shares</div>
 <div class="lines"></div>
 <div class="grid_12">
-<div class="alert">
-  <a class="close">×</a>
-  <strong>Note:</strong> The My Shares section is public.
-</div>
 <ul class="mysharedprojects">
 
 <% @shares.each do |s| %>
 <li>
-<% p = s.project %>
-<%= link_to image_tag(p.project_image.url,:class => "fimg", :size => "248x162"), p %>
-<span class="youveshared"><span class="oldprice">SHARED</span></span>	
-<%= link_to p.project_title, p, :class => "projecttitle" %>
+<%= render :partial => "shared/projects", :locals => { :user => @user, :p => s.project } %>
 </li>
-<% end unless @projects.nil? %>
+<% end %>
 </ul>
 
 </div>
 </div>
-
-
-
-
-
 </div>
 <div class="grid_4 righthome">
 
 <div class="categorybox">
 <div class="authordata">
 <div class="grid_4">
-<% if @user.profile_image %>
+<% if @user.profile_image.present? %>
 <%= image_tag @user.profile_image, :title=> "facebook", :width=> "220", :height=> "220", :class=> "alignnone size-full wp-image-16236" %>
 <% end %>
 <h2><%= @user.name %></h2>
@@ -113,6 +79,4 @@ Keeping it short!</p>
 </div>
 </div>
 </div>
-
-
 </div>

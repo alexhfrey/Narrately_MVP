@@ -58,7 +58,10 @@
 <div class="sharebox">
 <h3>Share & Get Reward</h3>
 <div class="tagit">
-<a href= <%= new_project_share_path(@project)%>><span class="leftonpage"><span class="saleleft">LEFT:</span><%= @promotions_left %></span></a>
+<a href= <%= if @promotions_clear 
+				new_project_share_path(@project) 
+               else 'http://' + @project.purchase_link 
+			   end %>><span class="leftonpage"><span class="saleleft">LEFT:</span><%= @project.left %></span></a>
 <% if @promotions_clear %>
 <%= link_to "Share Now!", new_project_share_path(@project), :class => "shareit" %>
 <% else %>
@@ -71,16 +74,8 @@
 <div class="infospan2">Reward: <span>Free Book</span></div>
 
 <div class="infospan2">Total:<span><%= @project.promotion_limit %></span></div>
-<div class="infospan2">Left:<span><%= @promotions_left %></span></div>
+<div class="infospan2">Left:<span><%= @project.left %></span></div>
 
-<% if @promotions_clear && !@shared %>
-
-	<%= link_to "Share it!", new_project_share_path(@project), :class => "shareit" %>
-<% elsif !@promotions_clear && !@shared %>
-	<%= link_to "Buy it!", 'http://' + @project.purchase_link, :class => "shareit" %>
-	<% else %>
-	<%=	link_to "Download it!", download_project_path(@project), :class => "shareit" %>
-	<% end %>
 
 
 
@@ -113,7 +108,7 @@ Keeping it short!</p>
 <li>
 <% @shares.first(4).each do  |s| %>
 <%= link_to image_tag(s.user.profile_image, :class => "smallpreview" ), s.user %>
-<% end %>
+<% end %> 
 </li>
 
 <li>

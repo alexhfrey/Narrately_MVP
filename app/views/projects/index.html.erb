@@ -2,96 +2,19 @@
 <div class="grid_16">
 </div>
 
-
 <div class="grid_11 singleleft">
 <div class="discoverbox">
 <div class="bigtitle">Discover & Support Great Projects</div>
 <div class="lines"></div>
 
 <ul class="mysharedprojects">
+<% Project.where("promotion_limit > 0") .sort_by {rand} [0..8] .each do |p| %>
 <li>
-<img src="../images/demo-img3.png" alt="" class="fimg" />
-<span class="liveh1"><href="">Adidas shoes my titles..</></span>
-<hr> 
-<div class="boxregdata">
-<span class="boxlistdata">8 <span class="boxlistcat">Rewards Left</span></span>
-<span class="boxlistdata2">12 <span class="boxlistcat2">Backers</span></span>
-<span class="boxlistdata3">60% <span class="boxlistcat3">Progress</span></span>
-</div>
+<%= render :partial => "shared/projects", :locals => { :user => @user, :p => p } %>
+
 </li>
-
-
-
-<li>
-<img src="../images/demo-img3.png" alt="" class="fimg" />
-<span class="liveh1"><href="">Adidas shoes my titles..</></span>
-<hr> 
-<div class="boxregdata">
-<span class="boxlistdata">0 <span class="boxlistcat">Rewards Left</span></span>
-<span class="boxlistdata2">20 <span class="boxlistcat2">Backers</span></span>
-<span class="boxlistdata3">100% <span class="boxlistcat3">Progress</span></span>
-</div>
-</li>
-
-
-<li>
-<img src="../images/demo-img3.png" alt="" class="fimg" />
-<span class="liveh1"><href="">Adidas shoes my titles..</></span>
-<hr> 
-<div class="boxregdata">
-<span class="boxlistdata">8 <span class="boxlistcat">Rewards Left</span></span>
-<span class="boxlistdata2">12 <span class="boxlistcat2">Backers</span></span>
-<span class="boxlistdata3">60% <span class="boxlistcat3">Progress</span></span>
-</div>
-</li>
-
-<li>
-<img src="../images/demo-img3.png" alt="" class="fimg" />
-<span class="liveh1"><href="">Adidas shoes my titles..</></span>
-<hr>
-<div class="boxregdata">
-<span class="boxlistdata">8 <span class="boxlistcat">Rewards Left</span></span>
-<span class="boxlistdata2">12 <span class="boxlistcat2">Backers</span></span>
-<span class="boxlistdata3">60% <span class="boxlistcat3">Progress</span></span>
-</div></li>
-<li>
-<img src="../images/demo-img3.png" alt="" class="fimg" />
-<span class="liveh1"><href="">Adidas shoes my titles..</></span>
-<hr>
-<div class="boxregdata">
-<span class="boxlistdata">8 <span class="boxlistcat">Rewards Left</span></span>
-<span class="boxlistdata2">12 <span class="boxlistcat2">Backers</span></span>
-<span class="boxlistdata3">60% <span class="boxlistcat3">Progress</span></span>
-</div></li>
-<li>
-<img src="../images/demo-img3.png" alt="" class="fimg" />
-<span class="liveh1"><href="">Adidas shoes my titles..</></span>
-<hr>
-<div class="boxregdata">
-<span class="boxlistdata">8 <span class="boxlistcat">Rewards Left</span></span>
-<span class="boxlistdata2">12 <span class="boxlistcat2">Backers</span></span>
-<span class="boxlistdata3">60% <span class="boxlistcat3">Progress</span></span>
-</div></li>
-<li>
-<img src="../images/demo-img3.png" alt="" class="fimg" />
-<span class="liveh1"><href="">Adidas shoes my titles..</></span>
-<hr>
-<div class="boxregdata">
-<span class="boxlistdata">8 <span class="boxlistcat">Rewards Left</span></span>
-<span class="boxlistdata2">12 <span class="boxlistcat2">Backers</span></span>
-<span class="boxlistdata3">60% <span class="boxlistcat3">Progress</span></span>
-</div></li>
-<li>
-<img src="../images/demo-img3.png" alt="" class="fimg" />
-<span class="liveh1"><href="">Adidas shoes my titles..</></span>
-<hr>
-<div class="boxregdata">
-<span class="boxlistdata">8 <span class="boxlistcat">Rewards Left</span></span>
-<span class="boxlistdata2">12 <span class="boxlistcat2">Backers</span></span>
-<span class="boxlistdata3">60% <span class="boxlistcat3">Progress</span></span>
-</div></li>
+<%end%>
 </ul>
-
 
 <div class="grid_12">
 </div>

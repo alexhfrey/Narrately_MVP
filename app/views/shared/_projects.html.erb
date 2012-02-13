@@ -1,0 +1,11 @@
+<%= link_to image_tag(p.project_image.url(:medium), :class => "fimg2"), p %>
+<%= link_to p.project_title, p, :class => "mycreatedprojectsh1" %>
+<hr>
+<div class="boxregdata">
+<%left = p.left
+  taken = p.shares.length
+ %>
+<span class="boxlistdata"><%= left %><span class="boxlistcat"> Rewards Left</span></span>
+<span class="boxlistdata2"><%= taken %><span class="boxlistcat2"> Backers</span></span>
+<span class="boxlistdata3"><%= number_to_percentage 100 * taken / p.promotion_limit, :precision => 0 %> <span class="boxlistcat3">% Progress</span></span>
+</div>

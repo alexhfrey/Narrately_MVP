@@ -45,6 +45,35 @@ validates_attachment_content_type :output_file, :content_type=>['application/pdf
 validates_attachment_content_type :project_image, :content_type=>['image/jpeg', 'image/png'], :message => "Cover image must be in JPEG format"
 validates_attachment_size :project_image, :less_than=> 2.megabytes, :message => "Cover image must be less than 2 MB"
 
+def left
+	promotion_limit - shares.length
+end
+
+def state_for(id_var)
+#goal met, active, shared, pending, or running
+
+if left == 0
+	if shares.find{ |u| u.user_id == id_var }.empty? #Has not shared
+	'goal met'
+	else
+	'shared'
+	end
+else
+	if user.id == id_var #This means current user is the creator
+		if active.nil?
+			'pending'
+		else
+			'running'
+		end
+	else
+		if shares.find{ |u| u.user_id == id_var }.empty? #Has not shared
+			'active'
+		else 
+			'shared'
+		end
+	end		
+end
+end
 private
 def reprocess_image
     project_image.reprocess!

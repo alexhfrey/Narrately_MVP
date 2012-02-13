@@ -82,15 +82,15 @@
 
 	<div id="previewArea" class ="previewArea"></div>
 
-	<div id ="results">
+	<div id ="results" style = "padding-bottom: 20 px;">
 	<%= form_for @project, :url => {:action => 'update'} do |f|%>
 	
-   <%= f.text_field :x1, :name => 'x1', :id=> 'x1' %>
-    <%= f.text_field :y1, :name => 'y1', :id => 'y1' %>
-	 <%= f.text_field :x2, :name => 'x2', :id => 'x2' %>
-	  <%= f.text_field :y2, :name => 'y2', :id => 'y2' %>
-	   <%= f.text_field :height, :name => 'height', :id => 'height' %>
-	    <%= f.text_field :width, :name => 'width', :id => 'width' %>
+   <%= f.hidden_field :x1, :name => 'x1', :id=> 'x1' %>
+    <%= f.hidden_field :y1, :name => 'y1', :id => 'y1' %>
+	 <%= f.hidden_field :x2, :name => 'x2', :id => 'x2' %>
+	  <%= f.hidden_field :y2, :name => 'y2', :id => 'y2' %>
+	   <%= f.hidden_field :height, :name => 'height', :id => 'height' %>
+	    <%= f.hidden_field :width, :name => 'width', :id => 'width' %>
  
   <p><%= f.submit "Update" %></p>
 <% end %>
