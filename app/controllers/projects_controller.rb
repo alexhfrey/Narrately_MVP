@@ -45,7 +45,7 @@ before_filter :require_permission, :only => :download
 	path = nil
 	if @user.nil?
 		flash[:notice] = "You must be logged in to access rewards."
-		path = login_path 
+		path = signin_path 
 	else
 		@project = Project.find(params[:id])
 		unless @project.shares.collect {|s| s.user } .include?(@user)

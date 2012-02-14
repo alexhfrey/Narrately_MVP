@@ -1,5 +1,15 @@
 <%= stylesheet_link_tag "bootstrap.css" %>
+<script type = "text/javascript">
+function setValue(button) {
 
+$('#project_tag1').val(button.attr('name'));
+$('.btn-primary').removeClass('btn-primary');
+button.addClass('btn-primary');
+
+return false;
+}
+
+</script>
 
 <div class="container_16 padding50">
 <div class="grid_16">
@@ -26,8 +36,18 @@
 	<p>Your project is unqiue- tell your fans why it's so special!</p>
 	<hr>
 
-	<%= f.hidden_field :user_id, :value => @user.id %>
-	<p><%= f.input :tag1, :collection => ['Book', 'Music', 'Fitness', 'Art', 'Food', 'Conference/Event'], :as => :radio, :label => "Project Category", :input_html => {:class => "btn"} %> </p>	       
+	<%= f.hidden_field :user_id, :value => @user.id, :label => "Project Category" %>
+	<p><%= f.hidden_field :tag1 %> </p>	   
+	<label>Project Category</label>
+	<a class = "btn btn-primary" name = "Book"  onClick="setValue($(this))">Book</a>
+	<a class = "btn"  name = "Fitness" onClick="setValue($(this))">Fitness</a>
+	<a class = "btn"  name = "Music" onClick="setValue($(this))">Music</a>
+	<a class = "btn"  name = "Art" onClick="setValue($(this))">Art</a>
+	<a class = "btn"  name = "Food" onClick ="setValue($(this))">Food</a>
+	<span class = "help-inline">Tip: Pick the category that best fits what you're promoting.</span>
+	
+
+	    
 	
    <p> <%= f.input :project_title, :hint => "Tip: Choose a catchy and descriptive title between 5-100 characters." , :label => "Project name",  :input_html => { :class => 'text'} %> </p>
    <p><%= f.input :description, :hint => "Tip: Explain what your project is about. Be interesting give your fans an insight into what you've been working on. Between 50-1000 characters." %> </p>   
