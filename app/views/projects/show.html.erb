@@ -14,7 +14,9 @@
 
 
 <div class="productdata">
-<h6>About This Project</h6>
+<h3>Project Category: eBooks</h3>
+<br>
+<h3>About This Project</h3>
 <%= @project.description %>
 </div>
 </div>
@@ -22,7 +24,7 @@
 
 <div class="projectshare">
 <div class="productdata">
-<h4>Support from Backers</h4>
+<h3>Support from Backers</h3>
 <div class="grid_10">
 <% @shares.select{|s| s.medium == "Twitter" && s.share_id.present?}.each do |t| %>
 <div><%= Twitter.oembed(t.share_id.to_i).html.html_safe %> </div>
@@ -75,7 +77,7 @@
 
 <div class="infospan2">Total:<span><%= @project.promotion_limit %></span></div>
 <div class="infospan2">Left:<span><%= @project.left %></span></div>
-
+<div class="infospan3"><b>Details:</b><span> Rewards details here-> not too long ;)</span></div>
 
 
 
