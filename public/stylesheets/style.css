@@ -582,25 +582,22 @@ margin-bottom: 25px;}
 .howitworksline {
 list-style:none;
 margin-top:10px;
-margin-left: 0px; 
-padding-bottom: 20px; 
+margin-left: -27px; 
+padding-bottom: 0px; 
 width: 650px; 
 float:left;}
 
 .howitworksline li {
 display:block;
 float:left;
-width:195px;
+width:173px;
 height:245px;
 border-style: solid; 
-border-width:0px; 
-border-color:#D4D4D4; 
-border-radius: 7px 7px 7px 7px;
--moz-border-radius: 7px 7px 7px 7px;
-margin-left:0px;
-margin-right:10px;
+text-align: center; 
+margin-left: 25px;
+margin-right: 0px;
 margin-bottom: 25px;
-padding-right:5px; 
+padding-right: 0px; 
 padding-bottom: 20px;
 padding-top: 10px;}
 
@@ -623,10 +620,15 @@ font-size: 14px;
 }
 
 
-
 .hiwimg1 {
 margin-left: 9px;
-margin-top: 9px;
+margin-top: 0px;
+margin-bottom: 15px;
+align: middle;}	
+
+.hiwimg2 {
+margin-left: 0px;
+margin-top: 0px;
 margin-bottom: 15px;
 align: middle;}	
 
@@ -2118,26 +2120,15 @@ height:20px;
     width: 150px;}
 	.productimages {
 	width:600px;
-	height:391px;
+	height:350px;
 	float:left;}
-	.errorbox {
-	width:940px;
-	padding-top:15px;
-	padding-bottom:15px;
-	margin: auto;
-	
-	background-color: #ffffff;
-	}
-	.errorbox .div { margin: auto; }
-	
-	}
 	.mainimg {
 	width:610px;
-	height:401px;
+	height:360px;
 	background-color: #F2F2F2;
 	float:left;
-    margin-left: 15px;
-    margin-right: 15px;}
+    margin-left: 20px;
+    margin-right: 20px;}
 	.mainimg img {
     margin-left: 5px;
     margin-top: 5px;}
@@ -2175,8 +2166,8 @@ height:20px;
     
     .howitworkstext {
 	float:left;
-	width:800px;
-    margin-top: 20px;
+	width:600px;
+    margin-top: 0px;
     margin-left: 0px;
     margin-bottom: 20px;
     font-size: 20px;
@@ -2225,7 +2216,7 @@ height:20px;
     
      .whatissnow {
 	float:left;
-	width:600px;
+	width:583px;
     margin-top: 20px;
     margin-left: 20px;
     margin-bottom: 20px;
@@ -2235,21 +2226,22 @@ height:20px;
     
     .whatcanyoudo {
     list-style:none;
-    margin-left: 0px; 
-    width:610px;
+    margin-left: 0px;
+    margin-right: 10px;  
+    width:585px;
     float:left;}
     
     .wcydtext {
-    width:300px;
+    width:290px;
     float: left;
-    padding-right: 15px;  
+    padding-right: 0px;  
     }
     
     .wcydtext2 {
-    width:300px;
+    width:270px;
     float: right;
     margin-left: 0px;
-    padding-right: 25px;   
+    padding-right: 5px;   
     }
     
 	
