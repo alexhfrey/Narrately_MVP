@@ -14,7 +14,7 @@
 
 
 <div class="productdata">
-<h3>Project Category: eBooks</h3>
+<h3>Project Category: <%= @project.tag1 %></h3>
 <br>
 <h3>About This Project</h3>
 <%= @project.description %>
@@ -73,11 +73,11 @@
 
 <div class="grid52">
 
-<div class="infospan2">Reward: <span>Free Book</span></div>
+<div class="infospan2">Reward: <span><%= @project.promotion_type %></span></div>
 
 <div class="infospan2">Total:<span><%= @project.promotion_limit %></span></div>
 <div class="infospan2">Left:<span><%= @project.left %></span></div>
-<div class="infospan3"><b>Details:</b><span> Rewards details here-> not too long ;)</span></div>
+<div class="infospan3"><b>Details:</b><span><%= @project.promotion_description %></span></div>
 
 
 
