@@ -11,6 +11,13 @@ create! do |user|
 	user.uid = auth["uid"]
 	user.name = auth["info"]["name"]
 	user.email = auth["info"]["email"]
+	if session[:referral].first(2) == "fb" || session[:referral].first(4) == "twit"]
+		refer = session[:referral].split('_')
+		user.referral_source = 'share'
+		user.referral_campaign = Share.find_by_project_id_and_user_id(:user_id => refer[2].to_i, :project_id => refer[3].to_i)
+		
+		
+		end
 	if user.provider == "facebook"
 		user.token = auth['credentials']['token'] #Store token info for later use
 	end

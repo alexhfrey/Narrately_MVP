@@ -3,7 +3,7 @@ before_filter :require_permission, :only => :download
   def new
 	@user = current_user
 	if @user.nil?
-		redirect_to login_path
+		redirect_to signin_path and return
 	end
 	@project = @user.projects.build
 	
