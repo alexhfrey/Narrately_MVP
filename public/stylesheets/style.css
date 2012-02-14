@@ -3453,3 +3453,13 @@ a.purple:active {
 a.purple span {
 	border: 1px solid #fd2be7;
 }
+
+.flasherror, .flashalert, .flashnotice, .flashsuccess, .flashinfo {padding:0.8em;margin-bottom:1em;border:2px solid #ddd;}
+.flasherror, .flashalert {background:#fbe3e4;color:#8a1f11;border-color:#fbc2c4;}
+.flashnotice {background:#fff6bf;color:#514721;border-color:#ffd324;}
+.flashsuccess {background:#e6efc2;color:#264409;border-color:#c6d880;}
+.flashinfo {background:#d5edf8;color:#205791;border-color:#92cae4;}
+.flasherror a, .flashalert a {color:#8a1f11;}
+.flashnotice a {color:#514721;}
+.flashsuccess a {color:#264409;}
+.flashinfo a {color:#205791;}
