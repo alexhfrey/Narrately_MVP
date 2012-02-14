@@ -942,7 +942,7 @@ margin: 0px auto;
 }
 .cleanloginbox {
 background:#FFF;
-height:430px;
+height:250px;
 border-right:1px solid #c2cbd2;
 border-bottom:1px solid #c2cbd2;
 border-radius:10px;
@@ -952,7 +952,7 @@ padding-left:10px;
 padding-top:10px;
 padding-right:10px;
 padding-bottom:10px;
-width: 50%;    
+width: 60%;    
 margin: 0px auto;
 margin-top: 20px;
 margin-bottom: 30px;
@@ -1204,7 +1204,7 @@ height:20px;
 	color:#38414b;
 	float:center;
     margin-left: 28px;
-    width: 50%;
+    width: 80%;
     margin: 0px auto;
     margin-top: 10px;
     margin-bottom: 15px;}
