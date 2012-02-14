@@ -51,7 +51,7 @@ return false;
 	
    <p> <%= f.input :project_title, :hint => "Tip: Choose a catchy and descriptive title between 5-100 characters." , :label => "Project name",  :input_html => { :class => 'text'} %> </p>
    <p><%= f.input :description, :hint => "Tip: Explain what your project is about. Be interesting give your fans an insight into what you've been working on. Between 50-1000 characters." %> </p>   
- 	<p><%= f.input :project_image	%> </p>
+ 	<p><%= f.input :project_image, :validate => false	%> </p>
 
    
 <h2>2. Reward Details</h2>
