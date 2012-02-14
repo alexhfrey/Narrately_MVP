@@ -1,8 +1,20 @@
 <%= stylesheet_link_tag "bootstrap.css" %>
 
-<div class="container_16 padding50">
-<div class="grid_16">
-</div>
+<script type = "text/javascript">
+function setValue(button, target) {
+
+$(target).val(button.attr('name'));
+button.closest('p').find('.btn-primary').removeClass('btn-primary');
+button.addClass('btn-primary');
+
+return false;
+}
+
+</script>
+
+
+
+
 <div class="grid_11 singleleft">
 
 
@@ -17,8 +29,18 @@
 	<hr>
 	
 <p><%= f.input :biography, :label => "Short bio", :hint => "Tell us about yourself in under 140 characters" %> </p>   
-<p> <%= f.input :category, :collection => ['Author', 'Artist', 'Entrepreneur', 'Musician', 'Organization', 'Teacher/Instructor'], :as => :radio, :label => "I am a...", :hint => "Which best describes you?" %>
-<hr> 
+<p> 
+<%= f.hidden_field :category %>
+	<label>I am a...</label>
+	<a class = "btn btn-primary" name = "Author"  onClick="setValue($(this), '#category')">Author</a>
+	<a class = "btn"  name = "Artist" onClick="setValue($(this), '#category')">Artist</a>
+	<a class = "btn"  name = "Entrepreneur" onClick="setValue($(this), '#category')">Entrepreneur</a>
+	<a class = "btn"  name = "Musician" onClick="setValue($(this), '#category')">Musician</a>
+	<a class = "btn"  name = "Organization" onClick="setValue($(this), '#category')">Organization</a>
+	<a class = "btn"  name = "Teacher/Instructor" onClick="setValue($(this), '#category')">Teacher/Instructor</a>
+	
+	
+	<hr> 
 <p> <%= f.submit :class => "btn btn-success btn-large"	 %> </p>
 
  
@@ -56,4 +78,3 @@ Other questions? Take a look at our <a href="#">FAQs page.</a>
 </div>
 
 
-</div>
