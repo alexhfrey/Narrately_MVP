@@ -62,7 +62,7 @@
 
 <ul class="menu1">
 <% page = request.fullpath %>
-<li><%= link_to "Build", signup_path, :class => if page.include? "signup" 
+<li><%= link_to "Build", new_project_path, :class => if page.include? "signup" 
 								""
 								else 
 								""
