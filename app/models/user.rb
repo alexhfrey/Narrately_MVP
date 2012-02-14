@@ -9,15 +9,27 @@ create! do |user|
 	user.name = auth["info"]["name"]
 	user.email = auth["info"]["email"]
 	if user.provider == "facebook"
-		user.token = auth['credentials']['token']
+		user.token = auth['credentials']['token'] #Store token info for later use
 	end
 end
 end
 
-def self.update_image(old_user)
-	if old_user.provider.include?("facebook")
-		old_user.profile_image = 'http://graph.facebook.com/' + old_user.uid + '/picture?type=large'
-		old_user.save
-	end unless old_user.provider.nil?
+def update_from_facebook
+	if token
+		@graph = Koala::Facebook::API.new(token)
+		fb = @graph.get_object(fb_uid)
+	else #If we don't have a token then see if user happens to be logged in elsewhere
+		#@oauth = Koala::Facebook::OAuth.new(api_id, app_secret)
+		#@fb_uid = @oauth.get_user_from_cookies(cookies)
+		@graph = Koala::Facebook::API.new
+		fb = @graph.get_object("me")
+	end	
+	if fb.present?
+		name = fb.name
+		fb_uid = fb.id
+		email = fb.email
+		profile_image = fb.picture
+			
+	end 
 end
 end

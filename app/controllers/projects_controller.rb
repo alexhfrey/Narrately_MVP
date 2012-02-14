@@ -97,8 +97,6 @@ before_filter :require_permission, :only => :download
   
  
   @promotions_clear = ( @project.left > 0 )
-  
-  
   if current_user 
 	@promotions_clear = (@promotions_clear && Share.find_by_user_id_and_project_id(current_user.id, @project.id).nil?  )	
   end
