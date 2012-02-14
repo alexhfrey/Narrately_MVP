@@ -58,7 +58,7 @@
 
 <div class="categorybox">
 <div class="sharebox">
-<h3>Share & Get Reward</h3>
+<div class="sharetitle">Share & Get Reward</div>
 <div class="tagit">
 <a href= <%= if @promotions_clear 
 				new_project_share_path(@project) 
@@ -89,7 +89,7 @@
 
 <div class="categorybox">
 <div class="authordata">
-<h3>About Creator</h3>
+<div class="authordatatitle">About Creator</div>
 <div class="grid_4">
 <%= image_tag @creator.profile_image, :title=> "facebook", :width=> 220, :height=>220, :class=> "alignnone size-full wp-image-16236" unless @creator.profile_image.nil? %>
 <h3><%= link_to @creator.name, @creator %></h3>
@@ -106,7 +106,7 @@ Keeping it short!</p>
 </div>
 <div class="categories-widget">
 <div class="categorybox sellers">
-<h3>Backers</h3>
+<div class="backerstitle">Backers</div>
 <ul>
 <li>
 <% @shares.first(4).each do  |s| %>
