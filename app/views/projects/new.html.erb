@@ -36,8 +36,8 @@ return false;
 	<p>Your project is unqiue- tell your fans why it's so special!</p>
 	<hr>
 
-	<%= f.hidden_field :user_id, :value => @user.id, :label => "Project Category" %>
-	<p><%= f.hidden_field :tag1 %> 
+	<%= f.hidden_field :user_id, :value => @user.id%>
+	<p><%= f.hidden_field :tag1, :value => "Book" %> 
 	<label>Project Category</label>
 	<a class = "btn btn-primary" name = "Book"  onClick="setValue($(this), '#project_tag1')">Book</a>
 	<a class = "btn"  name = "Fitness" onClick="setValue($(this), '#project_tag1')">Fitness</a>
@@ -59,7 +59,7 @@ return false;
 <p>This is the reward your fans will receive when they share your work- make it something they want!</p>
 <hr>
 <p> 
-<%= f.hidden_field :promotion_type %>
+<%= f.hidden_field :promotion_type, :value => "Coupon" %>
 	<label>Promotion Type</label>
 	<a class = "btn btn-primary" name = "Coupon"  onClick="setValue($(this), '#project_promotion_type')">Coupon</a>
 	<a class = "btn"  name = "E-book" onClick="setValue($(this), '#project_promotion_type')">E-book</a>
