@@ -1,9 +1,9 @@
 <%= stylesheet_link_tag "bootstrap.css" %>
 <script type = "text/javascript">
-function setValue(button) {
+function setValue(button, target) {
 
-$('#project_tag1').val(button.attr('name'));
-$('.btn-primary').removeClass('btn-primary');
+$(target).val(button.attr('name'));
+button.closest('p').find('.btn-primary').removeClass('btn-primary');
 button.addClass('btn-primary');
 
 return false;
@@ -37,14 +37,15 @@ return false;
 	<hr>
 
 	<%= f.hidden_field :user_id, :value => @user.id, :label => "Project Category" %>
-	<p><%= f.hidden_field :tag1 %> </p>	   
+	<p><%= f.hidden_field :tag1 %> 
 	<label>Project Category</label>
-	<a class = "btn btn-primary" name = "Book"  onClick="setValue($(this))">Book</a>
-	<a class = "btn"  name = "Fitness" onClick="setValue($(this))">Fitness</a>
-	<a class = "btn"  name = "Music" onClick="setValue($(this))">Music</a>
-	<a class = "btn"  name = "Art" onClick="setValue($(this))">Art</a>
-	<a class = "btn"  name = "Food" onClick ="setValue($(this))">Food</a>
-	<span class = "help-inline">Tip: Pick the category that best fits what you're promoting.</span>
+	<a class = "btn btn-primary" name = "Book"  onClick="setValue($(this), '#project_tag1')">Book</a>
+	<a class = "btn"  name = "Fitness" onClick="setValue($(this), '#project_tag1')">Fitness</a>
+	<a class = "btn"  name = "Music" onClick="setValue($(this), '#project_tag1')">Music</a>
+	<a class = "btn"  name = "Art" onClick="setValue($(this), '#project_tag1')">Art</a>
+	<a class = "btn"  name = "Food" onClick ="setValue($(this), '#project_tag1')">Food</a>
+	<a class = "btn" name = "Event" onClick ="setValue($(this), '#project_tag1')">Event</a>
+	<span class = "help-inline">Tip: Pick the category that best fits what you're promoting.</span> </p>
 	
 
 	    
@@ -57,7 +58,15 @@ return false;
 <h2>2. Reward Details</h2>
 <p>This is the reward your fans will receive when they share your work- make it something they want!</p>
 <hr>
-<p> <%= f.input :promotion_type, :collection => ['Coupon', 'E-book', 'Special Offer'], :as => :radio %> </p>
+<p> 
+<%= f.hidden_field :promotion_type %>
+	<label>Promotion Type</label>
+	<a class = "btn btn-primary" name = "Coupon"  onClick="setValue($(this), '#project_promotion_type')">Coupon</a>
+	<a class = "btn"  name = "E-book" onClick="setValue($(this), '#project_promotion_type')">E-book</a>
+	<a class = "btn"  name = "Special Offer" onClick="setValue($(this), '#project_promotion_type')">Special Offer</a>
+	
+	<span class = "help-inline">Tip: Pick the category that best fits the reward you are offerring.</span> </p>
+	
  <p> <%= f.input :promotion_description, :hint => "Enter a short, under 50 character description of what you are offering" %>
  <p><%= f.input :promotion_limit, :hint => "Tip: The number of rewards you want to give away.", :label => "Reward Limit" %> </p>
  <p> <%= f.input :output_file, :hint => "Tip: Eligible fans will be able to download this. Examples include ebook and digital coupon. Please use PDF and epub files." , :label => "Reward File" %> </p><br>
