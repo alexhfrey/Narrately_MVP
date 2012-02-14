@@ -477,7 +477,7 @@ margin-bottom: 25px;}
 font-size: 16px; 
 float:left;
 text-decoration:none;
-padding-left: 5px;
+padding-left: 10px;
 padding-top: 4px;
 width: 220px; 
 }
@@ -781,7 +781,7 @@ background:url(../images/shizzle2.png) repeat-x;
 	margin-right:10px;
 	margin-bottom:8px;}
 	.fimg2 {
-	margin-left:6px;
+	margin-left:10px;
 	margin-top:11px;}
 	.gray {
 	background:url(../images/circle-gray.png);
