@@ -1,0 +1,80 @@
+<%= stylesheet_link_tag "bootstrap.css" %>
+
+<script type = "text/javascript">
+function setValue(button, target) {
+
+$(target).val(button.attr('name'));
+button.closest('p').find('.btn-primary').removeClass('btn-primary');
+button.addClass('btn-primary');
+
+return false;
+}
+
+</script>
+
+
+
+
+<div class="grid_11 singleleft">
+
+
+<div class="projectbox">
+<fieldset class = "control-group">
+<%= simple_form_for @user, :validate => true, :html => { :multipart => true } do |f| %>
+<div class="alert alert-success">
+<strong>Well Done!</strong> We'll review your project soon! Now tell us a little about yourself.
+</div>
+
+	<h2>Tell Us a Little About Yourself</h2>
+	<hr>
+	
+<p><%= f.input :biography, :label => "Short bio", :hint => "Tell us about yourself in under 140 characters" %> </p>   
+<p> 
+<%= f.hidden_field :category %>
+	<label>I am a...</label>
+	<a class = "btn btn-primary" name = "Author"  onClick="setValue($(this), '#category')">Author</a>
+	<a class = "btn"  name = "Artist" onClick="setValue($(this), '#category')">Artist</a>
+	<a class = "btn"  name = "Entrepreneur" onClick="setValue($(this), '#category')">Entrepreneur</a>
+	<a class = "btn"  name = "Musician" onClick="setValue($(this), '#category')">Musician</a>
+	<a class = "btn"  name = "Organization" onClick="setValue($(this), '#category')">Organization</a>
+	<a class = "btn"  name = "Teacher/Instructor" onClick="setValue($(this), '#category')">Teacher/Instructor</a>
+	
+	
+	<hr> 
+<p> <%= f.submit :class => "btn btn-success btn-large"	 %> </p>
+
+ 
+<% end %>    
+
+</fieldset>
+</div>
+</div>
+
+
+
+<div class="grid_4 righthome">
+<div class="categorybox">
+<div class="howitworkscreate">
+<h6>How it Works</h6>
+<br />
+<div class="grid_4">
+<b>Step 1: Submit</b>
+<br />
+<p>Complete the submission form. It typically takes under 2 minutes. </p>
+<b>Step 2: Review</b>
+<br />
+<p>
+Once submitted, the team here at Snowball will review the project and offer any sugesstions. We'll review it as soon as possible- typically under 24 hours.</p>
+<b>Step 3: Publish</b>
+<br />
+<p>Once approved, the project will be published on the site. At that point you'll be able to share the project with your fans. Of cousre, Snowball will tweet it like mad.</p>
+<br />
+Other questions? Take a look at our <a href="#">FAQs page.</a>
+<br />
+<br />
+</div>
+</div>
+</div>
+</div>
+
+

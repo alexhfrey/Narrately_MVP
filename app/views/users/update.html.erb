@@ -1,0 +1,64 @@
+<%= stylesheet_link_tag "bootstrap.css" %>
+
+<div class="container_16 padding50">
+<div class="grid_16">
+</div>
+<div class="grid_11 singleleft">
+
+<div class="createwelcome">
+<div class="formwelcome">
+<div class="bigtitle">We help creatives promote their work</div>
+<div class="grid_top">
+<p>Snowball is a  crowdmarketing platform which helps creatives leverage social media to promote their project. We help authors, entrepreneurs, teachers, artists, and other creative types leverage social media to promote their work via crowdmarketing.</p>
+<p>We're excited to help promote your project- tell us a little bit about it below.</p>
+</div>
+</div>
+</div>
+
+<div class="projectbox">
+<fieldset class = "control-group">
+<%= simple_form_for @user, :validate => true, :html => { :multipart => true } do |f| %>
+
+	<h2>1. Project Details</h2>
+	<p>Your project is unqiue- tell your fans why it's so special!</p>
+	<hr>
+
+	
+   <p><%= f.input :biography, :label => "Short bio", :hint => "Tell us about yourself in under 140 characters" %> </p>   
+	<p> <%= f.input :category, :collection => ['Author', 'Artist', 'Entrepreneur', 'Musician', 'Organization', 'Teacher/Instructor'], :as => :radio, :label => "I am a...", :hint => "Which best describes you?" %>
+
+ 
+<% end %>    
+</fieldset>
+</div>
+</div>
+
+
+
+<div class="grid_4 righthome">
+<div class="categorybox">
+<div class="howitworkscreate">
+<h6>How it Works</h6>
+<br />
+<div class="grid_4">
+<b>Step 1: Submit</b>
+<br />
+<p>Complete the submission form. It typically takes under 2 minutes. </p>
+<b>Step 2: Review</b>
+<br />
+<p>
+Once submitted, the team here at Snowball will review the project and offer any sugesstions. We'll review it as soon as possible- typically under 24 hours.</p>
+<b>Step 3: Publish</b>
+<br />
+<p>Once approved, the project will be published on the site. At that point you'll be able to share the project with your fans. Of cousre, Snowball will tweet it like mad.</p>
+<br />
+Other questions? Take a look at our <a href="#">FAQs page.</a>
+<br />
+<br />
+</div>
+</div>
+</div>
+</div>
+
+
+</div>

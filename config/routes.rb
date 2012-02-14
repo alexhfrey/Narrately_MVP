@@ -2,7 +2,7 @@ MVP1::Application.routes.draw do
  
   
  
-  resources :users, :only => [:show] 
+  resources :users, :only => [:show, :update, :edit] 
   
   
   resources :projects, :only => [:new, :create, :show, :index, :update, :edit] do

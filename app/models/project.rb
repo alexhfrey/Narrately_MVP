@@ -30,8 +30,8 @@ has_attached_file :output_file, :storage => :s3, :bucket => 'narrately.com',
 					:s3_permissions => :private
 					
 has_attached_file :project_image, 
-	 :styles =>  {  :medium => "248x146#",
-					:large => "610x360"
+	 :styles =>  {  :medium => "248x162#",
+					:large => "600x391"
 					}, 
 	:processors => [:cropper],
 					 :storage => :s3, :bucket => 'narrately.com',
@@ -63,11 +63,11 @@ else
 		if active.nil?
 			'pending'
 		else
-			'running'
+			'running' #User is the creator, promotion is running
 		end
 	else
 		if shares.find{ |u| u.user_id == id_var }.empty? #Has not shared
-			'active'
+			'active' #User is not the creator, promotion is active
 		else 
 			'shared'
 		end

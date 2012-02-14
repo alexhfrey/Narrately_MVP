@@ -3,15 +3,15 @@
 <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,400italic,700' rel='stylesheet' type='text/css'>
 
 
-<div class="container_16 padding50">
+
 
 <div class="grid_11 singleleft">
 <div class="projectbox">
 <div class="bigtitle"><%= @project.project_title %></div>
 <div class="lines"></div>
-<div class="productimages">
+
 <div class="mainimg" ><%= image_tag @project.project_image.url(:large) %> </div>
-</div>
+
 
 <div class="productdata">
 <h6>About This Project</h6>
@@ -87,7 +87,7 @@
 
 <div class="categorybox">
 <div class="authordata">
-<h3>About Author</h3>
+<h3>About Creator</h3>
 <div class="grid_4">
 <%= image_tag @creator.profile_image, :title=> "facebook", :width=> 220, :height=>220, :class=> "alignnone size-full wp-image-16236" unless @creator.profile_image.nil? %>
 <h3><%= link_to @creator.name, @creator %></h3>
@@ -125,5 +125,3 @@ Keeping it short!</p>
 </div>
 </div>
 
-
-</div>
