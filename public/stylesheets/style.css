@@ -2120,6 +2120,17 @@ height:20px;
 	width:600px;
 	height:391px;
 	float:left;}
+	.errorbox {
+	width:940px;
+	padding-top:15px;
+	padding-bottom:15px;
+	margin: auto;
+	
+	background-color: #ffffff;
+	}
+	.errorbox .div { margin: auto; }
+	
+	}
 	.mainimg {
 	width:610px;
 	height:401px;

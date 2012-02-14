@@ -26,7 +26,7 @@ before_filter :require_permission, :only => :download
   @project = Project.find(params[:id])
 
   if @project.update_attributes(:x1 => params[:x1], :y1 => params[:y1], :width => params[:width], :height => params[:height])
-    flash[:notice] = "Successfully updated user."
+    flash[:success] = "Successfully updated user."
 	redirect_to edit_user_path(@user)
    
   else
@@ -62,10 +62,10 @@ before_filter :require_permission, :only => :download
 	@project = @user.projects.build(params[:project])
 	
 	if @project.save
-		flash[:success] = "Thanks for your submission! Care to optimize your project image?"		
+		flash[:success] = "Thanks for your submission! Now you can optimize your project image"		
 		redirect_to :action => 'crop', :id => @project.id
 	else 
-		flash[:error] = "A few minor issues..."
+		flash[:error] = "We don't like to be alarmists, but there were a few things missing in your form"
 		render 'new'
 	end
   end
