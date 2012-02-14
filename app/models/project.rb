@@ -30,8 +30,8 @@ has_attached_file :output_file, :storage => :s3, :bucket => 'narrately.com',
 					:s3_permissions => :private
 					
 has_attached_file :project_image, 
-	 :styles =>  {  :medium => "248x146#",
-					:large => "610x360"
+	 :styles =>  {  :medium => "248x162#",
+					:large => "600x391"
 					}, 
 	:processors => [:cropper],
 					 :storage => :s3, :bucket => 'narrately.com',
