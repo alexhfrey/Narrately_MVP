@@ -24,8 +24,8 @@ def update_from_facebook
 	else #If we don't have a token then see if user happens to be logged in elsewhere
 		#@oauth = Koala::Facebook::OAuth.new(api_id, app_secret)
 		#@fb_uid = @oauth.get_user_from_cookies(cookies)
-		@graph = Koala::Facebook::API.new
-		fb = @graph.get_object("me")
+		#@graph = Koala::Facebook::API.new
+		#fb = @graph.get_object("me")
 	end	
 	if fb.present?
 		name = fb.name
