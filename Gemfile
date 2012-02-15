@@ -20,6 +20,7 @@ gem 'simple_form'
 gem 'client_side_validations'
 gem 'zocial' 
 gem 'thin'
+gem 's3_swf_upload', :git => 'git://github.com/nathancolgate/s3-swf-upload-plugin'
 
 group :development do
 	gem 'annotate', '2.4.0'
