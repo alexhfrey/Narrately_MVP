@@ -2160,10 +2160,12 @@ height:20px;
 	float:left;
     margin-left: 20px;
     margin-right: 20px;}
+    
 	.mainimg img {
     margin-left: 5px;
     margin-top: 5px;}
-	.productimages .onsale {
+	
+    .productimages .onsale {
 	    margin-left: 250px!important;
     margin-top: 15px!important;}
 	
