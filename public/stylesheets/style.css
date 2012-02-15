@@ -3,12 +3,13 @@ background:url(../images/bodybg.png) repeat;
 font-family:'Ubuntu';
 }
 .header {
-background:url(../images/headerbg.png) repeat-x;
-height:111px;
+background:;
+height:65px;
 width:100%;
 }
 .logo img {
 margin-top:5px;}
+
 .loginregister {
 display:block;
 height:29px;
@@ -53,6 +54,35 @@ text-decoration: none;
 }
 
 .menu1 li a {
+    color: #0278A7;
+    display: block;
+    font-size: 17px;
+    height: 40px;
+    margin-top: -13px;
+    font-weight: bold; 
+    padding-left: 10px;
+    padding-right: 20px;
+    padding-top: 10px;
+    text-decoration: none;
+	line-height: 26px;}
+    
+.menutop {
+list-style:none;
+float:left;
+margin-top:10px;
+width:670px;}
+
+.menutop li {
+float:left;
+margin-left:0px;
+background: #ffffff;
+}
+a {
+outline: medium none !important;
+text-decoration: none; 
+}
+
+.menutop li a {
     color: #0278A7;
     display: block;
     font-size: 17px;

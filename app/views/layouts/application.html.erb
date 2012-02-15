@@ -11,6 +11,15 @@
 <%= stylesheet_link_tag "bootstrap.css" %>
 <%= stylesheet_link_tag "zocial.css" %>
 <%= stylesheet_link_tag "style.css" %>
+
+<%= javascript_include_tag "bootstrap-dropdown.js" %>
+
+<script type = "text/javascript">
+$('.dropdown-toggle').dropdown()
+</script>
+
+
+
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
@@ -53,15 +62,13 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 <div class="header">
-<div class="container_16">
-<div class="grid_10 logo">
-<%=link_to image_tag("logo.png"), root_path %></a>
-</div>
-<div class="grid_6">
-</div>
-<div class="grid_16 menu">
 
-<ul class="menu1">
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <ul class="nav">
+      <div class="grid_10 logo">
+<%=link_to image_tag("logo.png"), root_path %></a></div>
 <% page = request.fullpath %>
 <li><%= link_to "Build", new_project_path, :class => if page.include? "signup" 
 								""
@@ -69,6 +76,7 @@
 								""
 								end  %> 
 </li>
+
 <li><%= link_to "Back", "/discover", :class =>  if page.include? "discover" 
 																""
 																else 
@@ -82,19 +90,32 @@
 </ul>
 
 <ul>
-<ul class="menu2">
-<li><%= if current_user 
-			link_to "logout", signout_path, :class => "menu2li" else end %>
-			<%= if current_user.nil?  
-			link_to "Login", signin_path, :class => "menu2li" else end%>
-			</li>
-			<% if current_user.nil? %>
-			<li>
-			<%=link_to "Sign Up", signup_path, :class => "menu2li" %> </li>
-			<% end %>
-			
 
+<ul class="nav pull-right">
+<li id="fat-menu" class="dropdown">
+<% if current_user  %>
+<a href="#" class="dropdown-toggle" data-toggle="dropdown">Welcome Erik<b class="caret"></b></a>
+<ul class="dropdown-menu">
+<li><a href="#">View Profile</a></li>
+<li><a href="#">Edit Profile</a></li>
+<li><%= link_to "logout", signout_path %></li>
+<li class="divider"></li>
 </ul>
+</li>
+<% else %> 
+<li><%= link_to "Login", signin_path %></li>
+<li><%=link_to "Sign Up", signup_path, :class => "menu2li" %> </li>
+<% end %>
+</ul> 
+
+    </div>
+  </div>
+</div>
+
+<div class="container_16">
+<div class="grid_6">
+</div>
+<div class="grid_16 menu">
 </div>
 </div>
 
@@ -126,8 +147,8 @@
 <div class="grid_13">
 <ul class="footermenu">
 <li><a href="http://www.facebook.com/narrately">Facebook</a></li>
-<li><a href="http://www.twitter.com/narrately">Twitter</a></li>
-<li><a href="http://narrately.tumblr.com/">Tumblr</a></li>
+<li><a href="http://www.twitter.com/snowballchirps">Twitter</a></li>
+<li><a href="http://snowballroll.tumblr.com/">Tumblr</a></li>
 </ul>
 </div>
 <span class="copyline"> &copy; Narrately, Inc.</span>
