@@ -18,18 +18,14 @@ end
 end
 
 def update_from_facebook
+    fb = nil
 	if token
 		@graph = Koala::Facebook::API.new(token)
 		fb = @graph.get_object(fb_uid)
-	else #If we don't have a token then see if user happens to be logged in elsewhere
-		@oauth = Koala::Facebook::OAuth.new('242735669136491', 'ea405d01fda59ee513e230cf3a779d0f')
-		
-		@graph = Koala::Facebook::API.new(@oauth)
-	
-	end	
+	end
 	if fb.present?
 		name = fb.name
-		fb_uid = fb.id
+		facebook_id = fb.id
 		email = fb.email
 		profile_image = fb.picture
 			

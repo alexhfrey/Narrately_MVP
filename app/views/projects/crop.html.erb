@@ -2,16 +2,8 @@
 
 	<script src="https://ajax.googleapis.com/ajax/libs/scriptaculous/1.9.0/scriptaculous.js" type="text/javascript"></script>
 	<%= javascript_include_tag "jsCropperUI-1.2.2/cropper/cropper.js" %>
-	<script type="text/javascript" charset="utf-8">
-
-
-<div class="grid_16">
-</div>
-
-<div class="grid_11 singleleft">
-<div class="discoverbox">
-<div class="bigtitle">Crop Your Project Image</div>
-<div class="lines"></div>
+	
+<script type="text/javascript" charset="utf-8">
 
 
 
@@ -43,6 +35,15 @@
 		);
 
 	</script>
+
+<div class="grid_16">
+</div>
+
+<div class="grid_11 singleleft">
+<div class="discoverbox">
+<div class="bigtitle">Crop Your Project Image</div>
+<div class="lines"></div>
+
 	<style type="text/css">
 
 		label { 
@@ -100,10 +101,12 @@
 	  <%= f.hidden_field :y2, :name => 'y2', :id => 'y2' %>
 	   <%= f.hidden_field :height, :name => 'height', :id => 'height' %>
 	    <%= f.hidden_field :width, :name => 'width', :id => 'width' %>
+
  
   <p><%= f.submit "Update", :class => "btn btn-success btn-large" %></p>
   
 <% end %>
+		</div>
 </div>
 </div>
-</div>
+
