@@ -3,6 +3,8 @@ before_filter :require_permission, :only => :download
   def new
 	@user = current_user
 	if @user.nil?
+	flash[:notice] = "Please login to post a project."
+
 		redirect_to signin_path and return
 	end
 	@project = @user.projects.build

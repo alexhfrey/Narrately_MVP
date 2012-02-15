@@ -41,6 +41,7 @@ class SharesController < ApplicationController
   @share = Share.new(:user_id => params[:user_id], :project_id => params[:project_id], :medium => medium, :share_id => share_id)
  
    if @share.save 
+   flash[:success] = "Success, thanks for sharing! Your reward is below."
 	redirect_to current_user
    else
 	render 'new'
