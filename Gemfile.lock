@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/nathancolgate/s3-swf-upload-plugin
+  revision: d408bdd3ba2a04b0080bee2db5f534cb34e442b5
+  specs:
+    s3_swf_upload (0.3.2)
+
 PATH
   remote: vendor/GEMS/paperclip
   specs:
@@ -174,6 +180,7 @@ DEPENDENCIES
   omniauth-twitter
   paperclip!
   rails (= 3.0.9)
+  s3_swf_upload!
   simple_form
   sqlite3
   thin
