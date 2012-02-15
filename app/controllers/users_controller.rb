@@ -9,7 +9,7 @@ class UsersController < ApplicationController
  
   def show
 	@user = User.find(params[:id])
-	@user.update_from_facebook
+	#@user.update_from_facebook
 	@projects = @user.projects
 	@shares = @user.shares
   end
