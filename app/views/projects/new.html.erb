@@ -21,8 +21,7 @@ return false;
 <div class="formwelcome">
 <div class="bigtitle">We help creatives promote their work</div>
 <div class="grid_top">
-<p>Snowball is a  crowdmarketing platform which helps creatives leverage social media to promote their project. We help authors, entrepreneurs, teachers, artists, and other creative types leverage social media to promote their work via crowdmarketing.</p>
-<p>We're excited to help promote your project- tell us a little bit about it below.</p>
+<p>Snowball is a  crowdmarketing platform which helps creatives leverage social media to promote their project. We're excited to help promote your project- tell us a little bit about it below.</p>
 </div>
 </div>
 </div>
@@ -52,7 +51,7 @@ return false;
 	
    <p> <%= f.input :project_title, :hint => "Tip: Choose a catchy and descriptive title between 5-100 characters." , :label => "Project name",  :input_html => { :class => 'text'} %> </p>
    <p><%= f.input :description, :hint => "Tip: Explain what your project is about. Be interesting give your fans an insight into what you've been working on. Between 50-1000 characters." %> </p>   
- 	<p><%= f.input :project_image, :validate => false	%> </p>
+ 	<p><%= f.input :project_image, :hint => "Tip: Ideal dimensions: 600px x 400px. Jpeg and PNG accepted." , :validate => false	%> </p>
 
    
 <h2>2. Reward Details</h2>

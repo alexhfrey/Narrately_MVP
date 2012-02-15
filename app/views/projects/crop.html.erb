@@ -4,6 +4,17 @@
 	<%= javascript_include_tag "jsCropperUI-1.2.2/cropper/cropper.js" %>
 	<script type="text/javascript" charset="utf-8">
 
+
+<div class="grid_16">
+</div>
+
+<div class="grid_11 singleleft">
+<div class="discoverbox">
+<div class="bigtitle">Crop Your Project Image</div>
+<div class="lines"></div>
+
+
+
 		// setup the callback function
 		function onEndCrop( coords, dimensions ) {
 			$( 'x1' ).value = coords.x1;
@@ -71,8 +82,6 @@
 		}
 
 	</style>
-
-	<h2>Crop your project image</h2>
 	<p>
 		Select the piece of the image you want
 	</p>
@@ -92,6 +101,9 @@
 	   <%= f.hidden_field :height, :name => 'height', :id => 'height' %>
 	    <%= f.hidden_field :width, :name => 'width', :id => 'width' %>
  
-  <p><%= f.submit "Update" %></p>
+  <p><%= f.submit "Update" :class => "btn btn-success btn-large" %></p>
+  
 <% end %>
+</div>
+</div>
 </div>
