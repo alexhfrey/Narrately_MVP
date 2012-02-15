@@ -64,10 +64,10 @@ $('.dropdown-toggle').dropdown()
 <div class="header">
 
 <div class="navbar">
-  <div class="navbar-inner">
-    <div class="container">
-      <ul class="nav">
-      <div class="grid_10 logo">
+<div class="navbar-inner">
+<div class="container">
+<ul class="nav">
+<div class="grid_10 logo">
 <%=link_to image_tag("logo.png"), root_path %></a></div>
 <% page = request.fullpath %>
 <li><%= link_to "Build", new_project_path, :class => if page.include? "signup" 
@@ -94,10 +94,12 @@ $('.dropdown-toggle').dropdown()
 <ul class="nav pull-right">
 <li id="fat-menu" class="dropdown">
 <% if current_user  %>
-<a href="#" class="dropdown-toggle" data-toggle="dropdown">Welcome Erik<b class="caret"></b></a>
+<a href="#" class="dropdown-toggle" data-toggle="dropdown">Welcome <%= current_user.name.split(" ").first %>
+
+<b class="caret"></b></a>
 <ul class="dropdown-menu">
-<li><a href="#">View Profile</a></li>
-<li><a href="#">Edit Profile</a></li>
+<li><%= link_to "View Profile", current_user %></li>
+<li><%= link_to "Edit Profile", edit_user_path(current_user) %></li>
 <li><%= link_to "logout", signout_path %></li>
 <li class="divider"></li>
 </ul>
@@ -108,16 +110,10 @@ $('.dropdown-toggle').dropdown()
 <% end %>
 </ul> 
 
-    </div>
-  </div>
+</div>
+</div>
 </div>
 
-<div class="container_16">
-<div class="grid_6">
-</div>
-<div class="grid_16 menu">
-</div>
-</div>
 
 </div></div></div>
 
