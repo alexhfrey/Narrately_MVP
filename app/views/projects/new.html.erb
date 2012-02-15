@@ -21,8 +21,7 @@ return false;
 <div class="formwelcome">
 <div class="bigtitle">We help creatives promote their work</div>
 <div class="grid_top">
-<p>Snowball is a  crowdmarketing platform which helps creatives leverage social media to promote their project. We help authors, entrepreneurs, teachers, artists, and other creative types leverage social media to promote their work via crowdmarketing.</p>
-<p>We're excited to help promote your project- tell us a little bit about it below.</p>
+<p>Snowball is a  crowdmarketing platform which helps creatives leverage social media to promote their project. We're excited to help promote your project- tell us a little bit about it below.</p>
 </div>
 </div>
 </div>
@@ -36,8 +35,8 @@ return false;
 	<p>Your project is unqiue- tell your fans why it's so special!</p>
 	<hr>
 
-	<%= f.hidden_field :user_id, :value => @user.id, :label => "Project Category" %>
-	<p><%= f.hidden_field :tag1 %> 
+	<%= f.hidden_field :user_id, :value => @user.id%>
+	<p><%= f.hidden_field :tag1, :value => "Book" %> 
 	<label>Project Category</label>
 	<a class = "btn btn-primary" name = "Book"  onClick="setValue($(this), '#project_tag1')">Book</a>
 	<a class = "btn"  name = "Fitness" onClick="setValue($(this), '#project_tag1')">Fitness</a>
@@ -52,14 +51,14 @@ return false;
 	
    <p> <%= f.input :project_title, :hint => "Tip: Choose a catchy and descriptive title between 5-100 characters." , :label => "Project name",  :input_html => { :class => 'text'} %> </p>
    <p><%= f.input :description, :hint => "Tip: Explain what your project is about. Be interesting give your fans an insight into what you've been working on. Between 50-1000 characters." %> </p>   
- 	<p><%= f.input :project_image, :validate => false	%> </p>
+ 	<p><%= f.input :project_image, :hint => "Tip: Ideal dimensions: 600px x 400px. Jpeg and PNG accepted." , :validate => false	%> </p>
 
    
 <h2>2. Reward Details</h2>
 <p>This is the reward your fans will receive when they share your work- make it something they want!</p>
 <hr>
 <p> 
-<%= f.hidden_field :promotion_type %>
+<%= f.hidden_field :promotion_type, :value => "Coupon" %>
 	<label>Promotion Type</label>
 	<a class = "btn btn-primary" name = "Coupon"  onClick="setValue($(this), '#project_promotion_type')">Coupon</a>
 	<a class = "btn"  name = "E-book" onClick="setValue($(this), '#project_promotion_type')">E-book</a>
@@ -67,7 +66,7 @@ return false;
 	
 	<span class = "help-inline">Tip: Pick the category that best fits the reward you are offerring.</span> </p>
 	
- <p> <%= f.input :promotion_description, :hint => "Enter a short, under 50 character description of what you are offering" %>
+ <p> <%= f.input :promotion_description, :hint => "Enter a short, under 50 character description of what you are offering" %></p>
  <p><%= f.input :promotion_limit, :hint => "Tip: The number of rewards you want to give away.", :label => "Reward Limit" %> </p>
  <p> <%= f.input :output_file, :hint => "Tip: Eligible fans will be able to download this. Examples include ebook and digital coupon. Please use PDF and epub files." , :label => "Reward File" %> </p><br>
  

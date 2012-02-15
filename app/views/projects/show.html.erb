@@ -14,7 +14,9 @@
 
 
 <div class="productdata">
-<h6>About This Project</h6>
+<h3>Project Category: <%= @project.tag1 %></h3>
+<br>
+<h3>About This Project</h3>
 <%= @project.description %>
 </div>
 </div>
@@ -22,7 +24,7 @@
 
 <div class="projectshare">
 <div class="productdata">
-<h4>Support from Backers</h4>
+<h3>Support from Backers</h3>
 <div class="grid_10">
 <% @shares.select{|s| s.medium == "Twitter" && s.share_id.present?}.each do |t| %>
 <div><%= Twitter.oembed(t.share_id.to_i).html.html_safe %> </div>
@@ -56,7 +58,7 @@
 
 <div class="categorybox">
 <div class="sharebox">
-<h3>Share & Get Reward</h3>
+<div class="sharetitle">Share & Get Reward</div>
 <div class="tagit">
 <a href= <%= if @promotions_clear 
 				new_project_share_path(@project) 
@@ -71,11 +73,11 @@
 
 <div class="grid52">
 
-<div class="infospan2">Reward: <span>Free Book</span></div>
+<div class="infospan2">Reward: <span><%= @project.promotion_type %></span></div>
 
 <div class="infospan2">Total:<span><%= @project.promotion_limit %></span></div>
 <div class="infospan2">Left:<span><%= @project.left %></span></div>
-
+<div class="infospan3"><b>Details:</b><span><%= @project.promotion_description %></span></div>
 
 
 
@@ -87,13 +89,14 @@
 
 <div class="categorybox">
 <div class="authordata">
-<h3>About Creator</h3>
+<div class="authordatatitle">About Creator</div>
 <div class="grid_4">
 <%= image_tag @creator.profile_image, :title=> "facebook", :width=> 220, :height=>220, :class=> "alignnone size-full wp-image-16236" unless @creator.profile_image.nil? %>
 <h3><%= link_to @creator.name, @creator %></h3>
 <p>
 This is my under 200 character bio. 
 Keeping it short!</p>
+<p><b>I am a:</b> Author</p>
 <ul>
 <li><a href="https://www.facebook.com/alex.h.frey">Facebook</a></li>
 <li><a href="https://twitter.com/#!/alexhfrey">Twitter</a></li>
@@ -103,7 +106,7 @@ Keeping it short!</p>
 </div>
 <div class="categories-widget">
 <div class="categorybox sellers">
-<h3>Backers</h3>
+<div class="backerstitle">Backers</div>
 <ul>
 <li>
 <% @shares.first(4).each do  |s| %>
