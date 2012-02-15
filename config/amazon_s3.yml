@@ -13,8 +13,8 @@ test:
   acl: public-read
   
 production:
-  bucket: 
-  access_key_id: 
-  secret_access_key: 
-  max_file_size: 10485760
+  bucket: narrately.com
+  access_key_id: AKIAJ7LLMIQJP57FAP3Q
+  secret_access_key: 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
+  max_file_size: 31285760
   acl: public-read
