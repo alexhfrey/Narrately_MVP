@@ -21,7 +21,8 @@ def update_from_facebook
     fb = nil
 	if token
 		@graph = Koala::Facebook::API.new(token)
-		fb = @graph.get_object(fb_uid)
+		uid = facebook_id || "me"
+		fb = @graph.get_object("me")
 	end
 	if fb.present?
 		name = fb.name
