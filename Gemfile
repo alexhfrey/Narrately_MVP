@@ -19,7 +19,7 @@ gem 'jquery-rails'
 gem 'simple_form'
 gem 'client_side_validations'
 gem 'zocial' 
-gem 's3_swf_upload', :git => 'git://github.com/nathancolgate/s3-swf-upload-plugin'
+gem 'thin'
 
 group :development do
 	gem 'annotate', '2.4.0'

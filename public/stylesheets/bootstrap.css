@@ -2341,18 +2341,20 @@ button.btn.small, input[type="submit"].btn.small {
 .navbar-inner {
   padding-left: 20px;
   padding-right: 20px;
-  background-color: #2c2c2c;
-  background-image: -moz-linear-gradient(top, #333333, #222222);
-  background-image: -ms-linear-gradient(top, #333333, #222222);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#333333), to(#222222));
-  background-image: -webkit-linear-gradient(top, #333333, #222222);
-  background-image: -o-linear-gradient(top, #333333, #222222);
-  background-image: linear-gradient(top, #333333, #222222);
+  padding-top: 9px;
+  padding-bottom: 3px;
+  background-color: #0278A7;
+  background-image: -moz-linear-gradient(top, #005A89, #006E9D);
+  background-image: -ms-linear-gradient(top, #005A89, #006E9D);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#005A89), to(#006E9D));
+  background-image: -webkit-linear-gradient(top, #005A89, #006E9D);
+  background-image: -o-linear-gradient(top, #005A89, #006E9D);
+  background-image: linear-gradient(top, #005A89, #006E9D);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#333333', endColorstr='#222222', GradientType=0);
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#005A89', endColorstr='#006E9D', GradientType=0);
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
   -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
@@ -2363,16 +2365,16 @@ button.btn.small, input[type="submit"].btn.small {
   padding: 7px 10px;
   margin-left: 5px;
   margin-right: 5px;
-  background-color: #2c2c2c;
-  background-image: -moz-linear-gradient(top, #333333, #222222);
-  background-image: -ms-linear-gradient(top, #333333, #222222);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#333333), to(#222222));
-  background-image: -webkit-linear-gradient(top, #333333, #222222);
-  background-image: -o-linear-gradient(top, #333333, #222222);
-  background-image: linear-gradient(top, #333333, #222222);
+  background-color: #0278A7;
+  background-image: -moz-linear-gradient(top, #005A89, #006E9D);
+  background-image: -ms-linear-gradient(top, #005A89, #006E9D);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#005A89), to(#006E9D));
+  background-image: -webkit-linear-gradient(top, #005A89, #006E9D);
+  background-image: -o-linear-gradient(top, #005A89, #006E9D);
+  background-image: linear-gradient(top, #005A89, #006E9D);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#333333', endColorstr='#222222', GradientType=0);
-  border-color: #222222 #222222 #000000;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#005A89', endColorstr='#006E9D', GradientType=0);
+  border-color: #006E9D #006E9D #000000;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.075);
@@ -2384,7 +2386,7 @@ button.btn.small, input[type="submit"].btn.small {
 .btn-navbar.active,
 .btn-navbar.disabled,
 .btn-navbar[disabled] {
-  background-color: #222222;
+  background-color: #006E9D;
 }
 .btn-navbar:active, .btn-navbar.active {
   background-color: #080808 \9;
@@ -2545,15 +2547,17 @@ button.btn.small, input[type="submit"].btn.small {
 }
 .navbar .nav > li > a {
   float: none;
-  padding: 10px 10px 11px;
+  padding: 13px 10px 11px;
   line-height: 19px;
-  color: #999999;
+  font-size: 13px;
+  font-weight: bold;  
+  color: #ffffff;
   text-decoration: none;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  text-shadow: 1px 1px 1px #004675;
 }
 .navbar .nav > li > a:hover {
   background-color: transparent;
-  color: #ffffff;
+  color: #004675;
   text-decoration: none;
 }
 .navbar .nav .active > a, .navbar .nav .active > a:hover {
@@ -3383,7 +3387,7 @@ a.thumbnail:hover {
   visibility: hidden;
 }
 
-.flasherror, .flashalert, .flashnotice, .flashsuccess, .flashinfo {padding:0.8em;margin-bottom:1em;border:2px solid #ddd; padding-top: 5px;}
+.flasherror, .flashalert, .flashnotice, .flashsuccess, .flashinfo {padding:0.8em;margin-bottom:1em;border:2px solid #ddd; padding-top: 5px; margin-top: 10px;}
 
 .flasherror, .flashalert {background:#fbe3e4;color:#8a1f11;border-color:#fbc2c4;}
 
