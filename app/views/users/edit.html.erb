@@ -21,11 +21,8 @@ return false;
 <div class="projectbox">
 <fieldset class = "control-group">
 <%= simple_form_for @user, :validate => true, :html => { :multipart => true } do |f| %>
-<div class="alert alert-success">
-<strong>Well Done!</strong> We'll review your project soon! Now tell us a little about yourself.
-</div>
 
-	<h2>Tell Us a Little About Yourself</h2>
+	<h2>Edit Profile</h2>
 	<hr>
 	
 <p><%= f.input :biography, :label => "Short bio", :hint => "Tell us about yourself in under 140 characters" %> </p>   
@@ -52,29 +49,5 @@ return false;
 
 
 
-<div class="grid_4 righthome">
-<div class="categorybox">
-<div class="howitworkscreate">
-<h6>How it Works</h6>
-<br />
-<div class="grid_4">
-<b>Step 1: Submit</b>
-<br />
-<p>Complete the submission form. It typically takes under 2 minutes. </p>
-<b>Step 2: Review</b>
-<br />
-<p>
-Once submitted, the team here at Snowball will review the project and offer any sugesstions. We'll review it as soon as possible- typically under 24 hours.</p>
-<b>Step 3: Publish</b>
-<br />
-<p>Once approved, the project will be published on the site. At that point you'll be able to share the project with your fans. Of cousre, Snowball will tweet it like mad.</p>
-<br />
-Other questions? Take a look at our <a href="#">FAQs page.</a>
-<br />
-<br />
-</div>
-</div>
-</div>
-</div>
 
 

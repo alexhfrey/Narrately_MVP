@@ -76,6 +76,7 @@ before_filter :require_permission, :only => :download
 	end
   end
   def crop
+  flash[:success] = "Well Done! We'll review your project soon. Now tell us a little about yourself."
   @project = Project.find(params[:id])
   
   
