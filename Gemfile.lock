@@ -1,9 +1,3 @@
-GIT
-  remote: git://github.com/nathancolgate/s3-swf-upload-plugin
-  revision: d408bdd3ba2a04b0080bee2db5f534cb34e442b5
-  specs:
-    s3_swf_upload (0.3.2)
-
 PATH
   remote: vendor/GEMS/paperclip
   specs:
@@ -58,6 +52,8 @@ GEM
     bcrypt-ruby (3.0.1)
     bcrypt-ruby (3.0.1-x86-mingw32)
     builder (2.1.2)
+    carrierwave (0.5.8)
+      activesupport (~> 3.0)
     chunky_png (1.2.5)
     client_side_validations (3.1.4)
     cocaine (0.2.1)
@@ -172,6 +168,7 @@ DEPENDENCIES
   aws-s3
   aws-sdk
   bcrypt-ruby
+  carrierwave
   client_side_validations
   jquery-rails
   koala
@@ -180,7 +177,6 @@ DEPENDENCIES
   omniauth-twitter
   paperclip!
   rails (= 3.0.9)
-  s3_swf_upload!
   simple_form
   sqlite3
   thin
