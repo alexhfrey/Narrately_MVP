@@ -46,34 +46,37 @@
 
 	<style type="text/css">
 
-		label { 
-			clear: left;
-			margin-left: 50px;
-			float: left;
-			width: 5em;
-		}
-
 		#testWrap {
 			float: left;
-			margin: 20px 0 0 50px; /* Just while testing, to make sure we return the correct positions for the image & not the window */
+			margin: 10px 5px 5px 20px; /* Just while testing, to make sure we return the correct positions for the image & not the window */
 		}
 		
+		.testwrap h3 {
+		float: left
+		font-size: 20px; 
+		}
 		
 		#previewArea {
 
-			margin: 20px; 0 0 20px;
+			margin: 10px; 0 0 20px;
 			overflow:hidden;
 			float: left;
-			max-width:none;
+			width: 265px;
+			height: 320px;
 		}
 		.previewArea {
 
-			margin: 20px; 0 0 20px;
+			margin: 10px; 0 0 0px;
 			overflow:hidden;
 			float: left;
-			max-width:none;
+			width:265px;
+			height: 320px;
 		}
 		
+		.previewArea h3 {
+		text-align: left
+		font-size: 20px; 
+		}
 		
 		.previewArea img {
 			max-width:none;
@@ -83,18 +86,18 @@
 		}
 
 	</style>
-	<p>
-		Select the piece of the image you want
-	</p>
-	<div id="testWrap" >
-		<%= image_tag @project.project_image.url,  :id => "testImage" %>		
-	</div>
-
-	<div id="previewArea" class ="previewArea"></div>
-
-	<div id ="results" style = "padding-bottom: 20 px;">
-	<%= form_for @project, :url => {:action => 'update'} do |f|%>
 	
+
+	<div id="testWrap" >
+	<%= image_tag @project.file1.url, :id => "testImage" %>
+	</div>
+	
+	<div id="previewArea" class ="previewArea"></div>
+	<div id ="results" style = "padding-bottom: 20 px;">
+
+	<%= form_for @project, :url => {:action => 'update'} do |f|%>
+	<%= f.submit "Update", :class => "btn btn-success btn-large"%>
+
    <%= f.hidden_field :x1, :name => 'x1', :id=> 'x1' %>
     <%= f.hidden_field :y1, :name => 'y1', :id => 'y1' %>
 	 <%= f.hidden_field :x2, :name => 'x2', :id => 'x2' %>
@@ -103,10 +106,9 @@
 	    <%= f.hidden_field :width, :name => 'width', :id => 'width' %>
 
  
-  <p><%= f.submit "Update", :class => "btn btn-success btn-large" %></p>
   
 <% end %>
-		</div>
+</div>
 </div>
 </div>
 

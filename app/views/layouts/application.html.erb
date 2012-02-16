@@ -9,7 +9,6 @@
 <%= stylesheet_link_tag "960.css" %>
 
 <%= stylesheet_link_tag "bootstrap.css" %>
-<%= stylesheet_link_tag "zocial.css" %>
 <%= stylesheet_link_tag "style.css" %>
 
 <%= javascript_include_tag "bootstrap-dropdown.js" %>
@@ -63,7 +62,7 @@ $('.dropdown-toggle').dropdown()
 }(document, 'script', 'facebook-jssdk'));</script>
 <div class="header">
 
-<div class="navbar">
+<div class="navbar navbar-fixed-top">
 <div class="navbar-inner">
 <div class="container">
 <ul class="nav">
@@ -95,7 +94,6 @@ $('.dropdown-toggle').dropdown()
 <li id="fat-menu" class="dropdown">
 <% if current_user  %>
 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Welcome <%= current_user.name.split(" ").first %>
-
 <b class="caret"></b></a>
 <ul class="dropdown-menu">
 <li><%= link_to "View Profile", current_user %></li>
@@ -123,7 +121,6 @@ $('.dropdown-toggle').dropdown()
 <% flash.each do |key, value| %>
           <div class="flash<%= key %>"><%= value %></div>
         <% end %>
-
       
 
 

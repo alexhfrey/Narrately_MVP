@@ -4,14 +4,10 @@
 <div class="bigtitle">My Rewards</div>
 <div class="lines"></div>
 <div class="grid_12">
-<div class="alert">
-  <a class="close">×</a>
-  <strong>Note:</strong> The My Rewards section is private.
-</div>
 <ul class="mysharedprojects">
 <% @shares .collect {|u| u.project } .each do |s| %>
 <li>
-<%= image_tag s.project_image.url(:medium) %>
+<%= image_tag s.file1.medium.url.to_s %>
 <span class="liveh1"><%= link_to s.project_title, s %></span>
 <hr> 
 <div class="boxdownload">

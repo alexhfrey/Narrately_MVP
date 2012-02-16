@@ -11,7 +11,7 @@ after_update :reprocess_image, :if => :cropping?
   end
 
   
-  
+mount_uploader :file1, CoverUploader  
 
 validates :description, :length => { :minimum => 50, :maximum => 1000, 
 						:message => "must be between 50 and 1000 characters"}
@@ -76,8 +76,9 @@ end
 end
 private
 def reprocess_image
-    project_image.reprocess!
-  end
+    file1.recreate_versions!
+	
+ end
 
 
 end

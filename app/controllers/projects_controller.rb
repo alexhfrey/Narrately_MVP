@@ -3,6 +3,8 @@ before_filter :require_permission, :only => :download
   def new
 	@user = current_user
 	if @user.nil?
+	flash[:notice] = "Please login to post a project."
+
 		redirect_to signin_path and return
 	end
 	@project = @user.projects.build
@@ -26,7 +28,11 @@ before_filter :require_permission, :only => :download
   @project = Project.find(params[:id])
 
   if @project.update_attributes(:x1 => params[:x1], :y1 => params[:y1], :width => params[:width], :height => params[:height])
-    flash[:success] = "Successfully updated user."
+    @project.file1.x1 = params[:x1]
+	@project.file1.y1 = params[:y1]
+	@project.file1.width = params[:width]
+	@project.file1.height = params[:height]
+	flash[:success] = "Successfully updated user."
 	redirect_to edit_user_path(@user)
    
   else
