@@ -10,7 +10,6 @@
 
 <%= stylesheet_link_tag "bootstrap.css" %>
 <%= stylesheet_link_tag "style.css" %>
-
 <%= javascript_include_tag "bootstrap-dropdown.js" %>
 
 <script type = "text/javascript">
@@ -69,7 +68,7 @@ $('.dropdown-toggle').dropdown()
 <div class="grid_10 logo">
 <%=link_to image_tag("logo.png"), root_path %></a></div>
 <% page = request.fullpath %>
-<li><%= link_to "Build", new_project_path, :class => if page.include? "signup" 
+<li><%= link_to "Post", new_project_path, :class => if page.include? "signup" 
 								""
 								else 
 								""
@@ -132,14 +131,13 @@ $('.dropdown-toggle').dropdown()
 <div class="grid_13">
 <ul class="footermenu">
 <li><%= link_to "Home", root_path %></li>
-<li><%= link_to "Create", signup_path %></li>
-<li><%= link_to "How it Works", about_path %></a></li>
-<li><a href="contact.html">Contact us</a></li>
+<li><%= link_to "About Us", aboutus_path %></li>
+<li><%= link_to "What is Snowball?", about_path %></a></li>
 </ul>
 </div>
 <div class="grid_13">
 <ul class="footermenu">
-<li><a href="https://www.facebook.com/pages/Snowball/235883943160126?ref=ts">Facebook</a></li>
+<li><a href="http://www.facebook.com/pages/Snowball/235883943160126?ref=ts">Facebook</a></li>
 <li><a href="http://www.twitter.com/snowballchirps">Twitter</a></li>
 <li><a href="http://snowballroll.tumblr.com/">Tumblr</a></li>
 </ul>
@@ -155,3 +153,5 @@ $('.dropdown-toggle').dropdown()
 <!-- end .container_16 -->
 </body>
 </html>
+
+
