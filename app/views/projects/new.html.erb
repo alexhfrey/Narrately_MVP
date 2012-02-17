@@ -51,8 +51,8 @@ return false;
 	    
 	
    <p> <%= f.input :project_title, :hint => "Tip: Choose a catchy and descriptive title between 5-100 characters." , :label => "Project name",  :input_html => { :class => 'text'} %> </p>
-   <p><%= f.input :description, :hint => "Tip: Explain what your project is about. Be interesting give your fans an insight into what you've been working on. Between 50-1000 characters." %> </p>   
- 	<p><%= f.input :file1, :label => "Cover Image", :hint => "Tip: Ideal dimensions: 600px x 400px. Jpeg and PNG accepted." , :validate => false	%> </p>
+   <p><%= f.input :description, :hint => "Tip: Explain what your project is about. Be interesting and give your fans an insight into what you've been working on. Between 50-1000 characters." %> </p>   
+ 	<p><%= f.input :file1, :label => "Cover Image", :hint => "Tip: Ideal dimensions: 600px x 400px. JPEG and PNG accepted. Maximum size of 2 MB." , :validate => false	%> </p>
       <%= f.hidden_field :file1_cache %>
 
 <h2>2. Reward Details</h2>
@@ -69,8 +69,8 @@ return false;
 	
  <p> <%= f.input :promotion_description, :hint => "Enter a short, under 50 character description of what you are offering" %></p>
  <p><%= f.input :promotion_limit, :hint => "Tip: The number of rewards you want to give away.", :label => "Reward Limit" %> </p>
- <p> <%= f.input :file2, :label => "Reward", :hint => "Tip: Eligible fans will be able to download this. Examples include ebook and digital coupon. Please use PDF and epub files." , :label => "Reward File" %> </p><br>
- 
+ <p> <%= f.input :file2, :label => "Reward", :hint => "Tip: Maximum file size of 10 MB. Eligible fans will be able to download this. Examples include ebooks and digital coupon. Please use PDF and epub files." , :label => "Reward File" %> </p><br>
+	<%= f.hidden_field :file2_cache %>
 
 <h2>3. Purchase Details </h2>
 <p>Once your reward limit is reached, fans will be able to purchase your product. If you sell the product, include the purchase link here.</p>
