@@ -9,7 +9,11 @@ class UsersController < ApplicationController
  
   def show
 	@user = User.find(params[:id])
-	@user.update_from_facebook
+	if @user.provider == "facebook"
+		@user.profile_image = "http://graph.facebook.com/" + @user.uid + "/picture"
+		@user.save
+	end
+	
 	@projects = @user.projects
 	@shares = @user.shares
   end
