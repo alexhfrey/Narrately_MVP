@@ -22,11 +22,6 @@ gem 'zocial'
 gem 'thin'
 gem 'rmagick'
 gem 'fog'
-
-
-
-
-
 gem 'carrierwave'
 
 group :development do
