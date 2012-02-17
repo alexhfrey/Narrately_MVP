@@ -24,9 +24,7 @@ def update_from_facebook
 		fb = @graph.get_object("me")
 	end
 	if fb.present?
-		name = fb[:name]
-		facebook_id = fb.id
-		email = fb[:email]
+		
 		profile_image = fb.picture
 			
 	end 
