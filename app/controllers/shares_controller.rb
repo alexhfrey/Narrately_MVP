@@ -16,10 +16,10 @@ class SharesController < ApplicationController
   @user = current_user
  
   
-  @tweet_text = "Check out the great project I found on @SnowballChirps"
+  @tweet_text = "I just backed " + @project.title.first(20) + " a great new " + @project.category + " endeavor I found on Snowball"
   #twitter_share_page =  "http://#{request.host}:#{request.port}" + "/projects/" + params[:project_id] + "?referral=twitter_" + @user.id.to_s + '_' + @project.id.to_s 
   @twitter_share_page =  "http://www.getsnowball.com" + "/projects/" + params[:project_id] + "?referral=twitter_" + @user.id.to_s + '_' + @project.id.to_s 
-  via = "Narrately"
+  via = "SnowballChirps"
 	
   @query = URI::escape(@twitter_share_page + '&text=' + @tweet_text + '&via=Narrately')
 	
