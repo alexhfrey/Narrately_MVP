@@ -31,7 +31,10 @@ class CoverUploader < CarrierWave::Uploader::Base
 	
 end
   
-   
+   def cache_dir
+  "#{RAILS_ROOT}/tmp/uploads"
+	end
+
    
   # include CarrierWave::MiniMagick
 
