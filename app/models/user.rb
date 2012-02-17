@@ -11,9 +11,8 @@ create! do |user|
 	user.uid = auth["uid"]
 	user.name = auth["info"]["name"]
 	user.email = auth["info"]["email"]
-	if user.provider == "facebook"
-		user.token = auth['credentials']['token'] #Store token info for later use
-	end
+	user.token = auth['credentials']['token'] #Store token info for later use
+	
 end
 end
 
