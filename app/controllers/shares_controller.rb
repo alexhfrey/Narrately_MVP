@@ -25,7 +25,7 @@ class SharesController < ApplicationController
 	
   fb_share_page = "http://#{request.host}:#{request.port}" + "/projects/" + params[:project_id] 
   referral_tag = "?referral=fb_" + @user.id.to_s + '_' + @project.id.to_s 
-  @facebook_link = "https://www.facebook.com/dialog/feed?app_id=" + '242735669136491' + '&link=' + 
+  @facebook_link = "https://www.facebook.com/dialog/feed?app_id=" + '173481316095568' + '&link=' + 
   CGI::escape(fb_share_page) + referral_tag + '&picture=' + URI::escape(CGI::escape(@project.file1_url(:medium)),'.') + '&name=' + URI::escape(CGI::escape(@project.project_title),'.') + '&caption=' +
   CGI::escape('Another Great Project on Narrately') +
   '&description=' + CGI::escape(@project.description) +
