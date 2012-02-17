@@ -26,6 +26,7 @@ gem 'fog'
 
 
 
+
 gem 'carrierwave'
 
 group :development do

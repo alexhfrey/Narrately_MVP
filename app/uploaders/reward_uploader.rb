@@ -1,49 +1,19 @@
 # encoding: utf-8
 
-class CoverUploader < CarrierWave::Uploader::Base
-  
- 
-  
-  include CarrierWave::RMagick
+class RewardUploader < CarrierWave::Uploader::Base
+
   # Include RMagick or MiniMagick support:
- attr_accessor :x1, :y1, :x2, :y2, :width, :height
-   
-   process :resize_to_fit => [600, 600]
-   process :cropit
-   
-   version :medium do
-		
-		process :resize_to_fill => [248, 162]
-	end
-   version :large do
-		
-		process :resize_to_fill => [600, 391]
-	end
-   
-  
-  def cropit
-	return unless model.cropping?
-    manipulate! do |img|
-       
-		img.crop(model.x1.to_i,model.y1.to_i,model.width.to_i,model.height.to_i)
-        
-    end
-	
-end
-  
-   
-   
+  # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
-  #storage :file
-    storage :s3
+  storage :s3
+  # storage :fog
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
-    "project_images"
-	# {model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+    "output_files"
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:

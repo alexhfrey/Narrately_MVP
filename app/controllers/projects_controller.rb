@@ -8,7 +8,8 @@ before_filter :require_permission, :only => :download
 		redirect_to signin_path and return
 	end
 	@project = @user.projects.build
-	
+	 #uploader = @project.file1
+     #@uploader.success_action_redirect = new_project_url
   end
   
   def index
