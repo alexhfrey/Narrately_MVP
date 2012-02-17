@@ -17,15 +17,11 @@ end
 end
 
 def update_from_facebook
-    fb = nil
 	if token
 		@graph = Koala::Facebook::API.new(token)
-		uid = facebook_id || "me"
-		fb = @graph.get_object("me")
-	end
-	if fb.present?
-		
+		fb = @graph.get_object("me")		
 		profile_image = fb.picture
+		self.save
 			
 	end 
 end
