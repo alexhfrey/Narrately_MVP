@@ -27,9 +27,9 @@ class SharesController < ApplicationController
   referral_tag = "?referral=fb_" + @user.id.to_s + '_' + @project.id.to_s 
   @facebook_link = "https://www.facebook.com/dialog/feed?app_id=" + '173481316095568' + '&link=' + 
   CGI::escape(fb_share_page) + referral_tag + '&picture=' + URI::escape(CGI::escape(@project.file1_url(:medium)),'.') + '&name=' + URI::escape(CGI::escape(@project.project_title),'.') + '&caption=' +
-  CGI::escape('Another Great Project on Narrately') +
+  CGI::escape('Another Great Project on Snowball') +
   '&description=' + CGI::escape(@project.description) +
-  '&message=' + CGI::escape("Check out the great new project I found on Narrately") + '&redirect_uri=' + CGI::escape(fb_share_page) + '/facebook_post/new'
+  '&message=' + CGI::escape("Check out the great new project I found on Snowball") + '&redirect_uri=' + CGI::escape(fb_share_page) + '/facebook_post/new'
   end
 
   def create
