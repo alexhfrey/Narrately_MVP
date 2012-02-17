@@ -35,6 +35,7 @@ else
 		user = User.create_with_omniauth(auth)
 		session[:user_id] = user.id
 		redirect_path = new_project_path
+		flash[:success] = "Thanks for signing up for Snowball. We're anxious to hear more about you're doing!"
 	end
 	
 	if session[:redirect]
