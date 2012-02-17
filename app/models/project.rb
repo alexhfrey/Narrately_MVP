@@ -14,6 +14,18 @@ after_update :reprocess_image, :if => :cropping?
 mount_uploader :file1, CoverUploader  
 mount_uploader :file2, RewardUploader
 
+
+validates :file1,
+          :presence => true, 
+		  :file_size => {
+			:maximum => 2.megabytes.to_i
+		}
+validates :file2, 
+		  :presence => true,
+		  :file_size => {
+			:maximum => 10.megabytes.to_i
+		}
+
 validates :description, :length => { :minimum => 50, :maximum => 1000, 
 						:message => "must be between 50 and 1000 characters"}
 
