@@ -92,12 +92,11 @@
   <%= image_tag @creator.profile_image, :title=> "facebook", :width=> 220, :height=>220, :class=> "alignnone size-full wp-image-16236" unless @creator.profile_image.nil? %>
   <h3><%= link_to @creator.name, @creator %></h3>
   <p>
-  This is my under 200 character bio. 
-  Keeping it short!</p>
+  @creator.biography</p>
   <p><b>I am a:</b> Author</p>
   <ul>
- <li><a href="https://www.facebook.com/alex.h.frey">Facebook</a></li>
- <li><a href="https://twitter.com/#!/alexhfrey">Twitter</a></li>
+ <li><%= link_to "Facebook", "http://www.facebook.com/" %></li>
+ <li><%= link_to "Twitter", @creator.twitter_handle.sub('@', '') %> </li>
  </ul>
  </div>
  </div>
@@ -118,7 +117,7 @@
  <% end unless @shares[5..8].nil? %>
  </li>
  <li>
- <% @shares[5..8].each do |s| %>
+ <% @shares[9..12].each do |s| %>
  <%= link_to image_tag(s.user.profile_image, :class => "smallpreview" ), s.user %>
  <% end unless @shares[9..12].nil? %>
  </li></ul>
