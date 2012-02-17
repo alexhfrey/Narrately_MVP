@@ -44,7 +44,7 @@ before_filter :require_permission, :only => :download
   def download
 	
 	@file_object = Project.find(params[:id])
-	redirect_to @file_object.output_file.expiring_url(10)
+	redirect_to @file_object.file2_url
   end
   
   def require_permission

@@ -1,129 +1,128 @@
-  1 <%= stylesheet_link_tag "bootstrap.css" %>
-  2 
-  3 <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,400italic,700' rel='stylesheet' type='text/css'>
-  4 
-  5 
-  6 
-  7 
-  8 <div class="grid_11 singleleft">
-  9 <div class="projectbox">
- 10 <div class="bigtitle"><%= @project.project_title %></div>
- 11 <div class="lines"></div>
- 12 
- 13 <div class="mainimg" ><%= image_tag @project.file1_url(:large) unless @project.file1.nil?%> </div>
- 14 
- 15 
- 16 <div class="productdata">
- 17 <h3>Project Category: <%= @project.tag1 %></h3>
- 18 <br>
- 19 <h3>About This Project</h3>
- 20 <%= @project.description %>
- 21 </div>
- 22 </div>
- 23 
- 24 
- 25 <div class="projectshare">
- 26 <div class="productdata">
- 27 <h3>Support from Backers</h3>
- 28 <div class="grid_10">
- 29 <% @shares.select{|s| s.medium == "Twitter" && s.share_id.present?}.each do |t| %>
- 30 <div><%= Twitter.oembed(t.share_id.to_i).html.html_safe %> </div>
- 31 <% end %>
- 32 
- 33 <% @shares.select{|s| s.medium == "facebook" && s.share_id.present?}.each do |t| %>
- 34 <ul class = "fbcomment">
- 35 	<li>
- 36 	<div id = "profileImage" style = "margin-top:10px; margin-left:10px; float:left; width:50px; height:200px;" > 
- 37 	<%= link_to image_tag(t.user.profile_image, :size => "50x50"), "http://facebook.com/" + t.user.facebook_id.to_s %> </div>
- 38 	<div id = "fbpostcontainer" style = "float:left; margin-left:10px; width:420px;" >
- 39 		<%=image_tag "facebookicon.png", :style=>"float:right; padding-top:8px"%>
- 40 		<div id = "name" style = "margin-left:15px; margin-top:12px; font-size:14px; font-weight:bold;"><%=t.user.name%> </div>
- 41 		<div id = "post_title" style = "clear:both; margin-top:10 px; margin-left:15px; font-weight:bold;"><%=@project.project_title%> </div>
- 42 		<div id = "post_image" style = "float:left; margin-top:10px; margin-left:10px;">
- 43 			<%= image_tag @project.project_image.url(:medium), :size => "100x68" %>
- 44 		</div>
- 45 		<div id = "postdescription" style = "float:left; margin-top: 8px; margin-left:10px; width:300px;"> <%=@project.description.first(120) + '...' %></div>
- 46 		</div>
- 47 </li>
- 48 <%end %>
- 49 
- 50 </div>
- 51 </div>
- 52 </div>
- 53 
- 54 </div>
- 55 
- 56 <div class="grid_4 righthome">
- 57 
- 58 <div class="categorybox">
- 59 <div class="sharebox">
- 60 <div class="sharetitle">Share & Get Reward</div>
- 61 <div class="tagit">
- 62 <a href= <%= if @promotions_clear 
- 63 				new_project_share_path(@project) 
- 64                else 'http://' + @project.purchase_link 
- 65 			   end %>><span class="leftonpage"><span class="saleleft">LEFT:</span><%= @project.left %></span></a>
- 66 <% if @promotions_clear %>
- 67 <%= link_to "Share Now!", new_project_share_path(@project), :class => "shareit" %>
- 68 <% else %>
- 69 <%= link_to "Buy Now!", 'http://' + @project.purchase_link, :class => "shareit" %>
- 70 	<% end %>
- 71 </div>
- 72 
- 73 <div class="grid52">
- 74 
- 75 <div class="infospan2">Reward: <span><%= @project.promotion_type %></span></div>
- 76 
- 77 <div class="infospan2">Total:<span><%= @project.promotion_limit %></span></div>
- 78 <div class="infospan2">Left:<span><%= @project.left %></span></div>
- 79 <div class="infospan3"><b>Details:</b><span><%= @project.promotion_description %></span></div>
- 80 
- 81 
- 82 
- 83 </div>
- 84 </div>
- 85 </div>
- 86 
- 87 
- 88 
- 89 <div class="categorybox">
- 90 <div class="authordata">
- 91 <div class="authordatatitle">About Creator</div>
- 92 <div class="grid_4">
- 93 <%= image_tag @creator.profile_image, :title=> "facebook", :width=> 220, :height=>220, :class=> "alignnone size-full wp-image-16236" unless @creator.profile_image.nil? %>
- 94 <h3><%= link_to @creator.name, @creator %></h3>
- 95 <p>
- 96 This is my under 200 character bio. 
- 97 Keeping it short!</p>
- 98 <p><b>I am a:</b> Author</p>
- 99 <ul>
-100 <li><a href="https://www.facebook.com/alex.h.frey">Facebook</a></li>
-101 <li><a href="https://twitter.com/#!/alexhfrey">Twitter</a></li>
-102 </ul>
-103 </div>
-104 </div>
-105 </div>
-106 <div class="categories-widget">
-107 <div class="categorybox sellers">
-108 <div class="backerstitle">Backers</div>
-109 <ul>
-110 <li>
-111 <% @shares.first(4).each do  |s| %>
-112 <%= link_to image_tag(s.user.profile_image, :class => "smallpreview" ), s.user %>
-113 <% end %> 
-114 </li>
-115 
-116 <li>
-117 <% @shares[5..8].each do |s| %>
-118 <%= link_to image_tag(s.user.profile_image, :class => "smallpreview" ), s.user %>
-119 <% end unless @shares[5..8].nil? %>
-120 </li>
-121 <li>
-122 <% @shares[5..8].each do |s| %>
-123 <%= link_to image_tag(s.user.profile_image, :class => "smallpreview" ), s.user %>
-124 <% end unless @shares[9..12].nil? %>
-125 </li></ul>
-126 </div>
-127 </div>
-128 </div>
-129 
+   <%= stylesheet_link_tag "bootstrap.css" %>
+   
+   <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,400italic,700' rel='stylesheet' type='text/css'>
+   
+   
+   
+   
+   <div class="grid_11 singleleft">
+   <div class="projectbox">
+ <div class="bigtitle"><%= @project.project_title %></div>
+  <div class="lines"></div>
+  
+  <div class="mainimg" ><%= if @project.file1.present? 
+			image_tag @project.file1_url(:large) 
+			end %> </div>
+  
+  
+  <div class="productdata">
+  <h3>Project Category: <%= @project.tag1 %></h3>
+  <br>
+  <h3>About This Project</h3>
+  <%= @project.description %>
+  </div>
+  </div>
+  
+  
+  <div class="projectshare">
+  <div class="productdata">
+  <h3>Support from Backers</h3>
+  <div class="grid_10">
+  <% @shares.select{|s| s.medium == "Twitter" && s.share_id.present?}.each do |t| %>
+  <div><%= Twitter.oembed(t.share_id.to_i).html.html_safe %> </div>
+  <% end %>
+  
+  <% @shares.select{|s| s.medium == "facebook" && s.share_id.present?}.each do |t| %>
+  <ul class = "fbcomment">
+  	<li>
+  	<div id = "profileImage" style = "margin-top:10px; margin-left:10px; float:left; width:50px; height:200px;" > 
+  	<%= link_to image_tag(t.user.profile_image, :size => "50x50"), "http://facebook.com/" + t.user.facebook_id.to_s %> </div>
+  	<div id = "fbpostcontainer" style = "float:left; margin-left:10px; width:420px;" >
+ 		<%=image_tag "facebookicon.png", :style=>"float:right; padding-top:8px"%>
+  		<div id = "name" style = "margin-left:15px; margin-top:12px; font-size:14px; font-weight:bold;"><%=t.user.name%> </div>
+  		<div id = "post_title" style = "clear:both; margin-top:10 px; margin-left:15px; font-weight:bold;"><%=@project.project_title%> </div>
+  		<div id = "post_image" style = "float:left; margin-top:10px; margin-left:10px;">
+  			<%= image_tag @project.project_image.url(:medium), :size => "100x68" %>
+  		</div>
+  		<div id = "postdescription" style = "float:left; margin-top: 8px; margin-left:10px; width:300px;"> <%=@project.description.first(120) + '...' %></div>
+  		</div>
+  </li>
+  <%end %>
+  
+  </div>
+  </div>
+  </div>
+  
+  </div>
+  
+  <div class="grid_4 righthome">
+  
+  <div class="categorybox">
+  <div class="sharebox">
+  <div class="sharetitle">Share & Get Reward</div>
+  <div class="tagit">
+  
+  <% if @promotions_clear %>
+  <%= link_to "Share Now!", new_project_share_path(@project), :class => "shareit" %>
+  <% else %>
+  <%= link_to "Buy Now!", 'http://' + @project.purchase_link, :class => "shareit" %>
+  	<% end %>
+  </div>
+  
+  <div class="grid52">
+  
+  <div class="infospan2">Reward: <span><%= @project.promotion_type %></span></div>
+  
+  <div class="infospan2">Total:<span><%= @project.promotion_limit %></span></div>
+  <div class="infospan2">Left:<span><%= @project.left %></span></div>
+  <div class="infospan3"><b>Details:</b><span><%= @project.promotion_description %></span></div>
+  
+  
+  
+  </div>
+  </div>
+  </div>
+  
+  
+  
+  <div class="categorybox">
+  <div class="authordata">
+  <div class="authordatatitle">About Creator</div>
+  <div class="grid_4">
+  <%= image_tag @creator.profile_image, :title=> "facebook", :width=> 220, :height=>220, :class=> "alignnone size-full wp-image-16236" unless @creator.profile_image.nil? %>
+  <h3><%= link_to @creator.name, @creator %></h3>
+  <p>
+  This is my under 200 character bio. 
+  Keeping it short!</p>
+  <p><b>I am a:</b> Author</p>
+  <ul>
+ <li><a href="https://www.facebook.com/alex.h.frey">Facebook</a></li>
+ <li><a href="https://twitter.com/#!/alexhfrey">Twitter</a></li>
+ </ul>
+ </div>
+ </div>
+ </div>
+ <div class="categories-widget">
+ <div class="categorybox sellers">
+ <div class="backerstitle">Backers</div>
+ <ul>
+ <li>
+ <% @shares.first(4).each do  |s| %>
+ <%= link_to image_tag(s.user.profile_image, :class => "smallpreview" ), s.user %>
+ <% end %> 
+ </li>
+ 
+ <li>
+ <% @shares[5..8].each do |s| %>
+ <%= link_to image_tag(s.user.profile_image, :class => "smallpreview" ), s.user %>
+ <% end unless @shares[5..8].nil? %>
+ </li>
+ <li>
+ <% @shares[5..8].each do |s| %>
+ <%= link_to image_tag(s.user.profile_image, :class => "smallpreview" ), s.user %>
+ <% end unless @shares[9..12].nil? %>
+ </li></ul>
+ </div>
+ </div>
+ </div>
+ 

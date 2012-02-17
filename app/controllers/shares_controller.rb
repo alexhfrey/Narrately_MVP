@@ -3,7 +3,7 @@ class SharesController < ApplicationController
   ###Define stuff for facebook open graph
   @project = Project.find(params[:project_id])
   @title = @project.project_title
-  @image = @project.project_image.url
+  @image = @project.file1_url(:medium)
   @type = "book"
   
   #If there is not user logged in, store redirect parameter into sessions and then send to login
@@ -25,7 +25,7 @@ class SharesController < ApplicationController
   fb_share_page = "http://#{request.host}:#{request.port}" + "/projects/" + params[:project_id] 
   referral_tag = "?referral=fb_" + @user.id.to_s + '_' + @project.id.to_s 
   @facebook_link = "https://www.facebook.com/dialog/feed?app_id=" + '242735669136491' + '&link=' + 
-  CGI::escape(fb_share_page) + referral_tag + '&picture=' + URI::escape(CGI::escape(@project.project_image.url(:medium)),'.') + '&name=' + URI::escape(CGI::escape(@project.project_title),'.') + '&caption=' +
+  CGI::escape(fb_share_page) + referral_tag + '&picture=' + URI::escape(CGI::escape(@project.file1_url(:medium)),'.') + '&name=' + URI::escape(CGI::escape(@project.project_title),'.') + '&caption=' +
   CGI::escape('Another Great Project on Narrately') +
   '&description=' + CGI::escape(@project.description) +
   '&message=' + CGI::escape("Check out the great new project I found on Narrately") + '&redirect_uri=' + CGI::escape(fb_share_page) + '/facebook_post/new'
