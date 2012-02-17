@@ -26,7 +26,7 @@
 <div class="bigtitle">My Projects</div>
 <div class="lines"></div>
 <div class="grid_12">
-<ul class="mycreatedprojects">
+<ul class="mysharedprojects">
 <% @projects.each do |p| %>
 <li>
 <%= render :partial => "shared/projects", :locals => { :user => @user, :p => p } %>

@@ -1852,6 +1852,12 @@ table .span12 {
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
+
+.btn-success a:link {
+text-decoration: none;
+color: #ffffff;  
+}
+
 .btn-success:hover,
 .btn-success:active,
 .btn-success.active,
