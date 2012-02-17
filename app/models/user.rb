@@ -16,13 +16,5 @@ create! do |user|
 end
 end
 
-def update_from_facebook
-	if token
-		@graph = Koala::Facebook::API.new(token)
-		fb = @graph.get_object("me")		
-		profile_image = fb.picture
-		self.save
-			
-	end 
-end
+
 end
