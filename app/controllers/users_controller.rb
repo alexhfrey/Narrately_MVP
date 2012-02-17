@@ -16,7 +16,8 @@ class UsersController < ApplicationController
 	
 	if @user.provider == "twitter"
 		tw = Twitter.user(@user.uid.to_i)
-		@user.profile_image = Twitter.profile_image(@user.id.to_i,:size => 'bigger')
+		@user.twitter_handle = tw.screen_name
+		@user.profile_image = Twitter.profile_image(@user.twitter_handle, :size => 'bigger')
 		@user.save
 	end
 	
