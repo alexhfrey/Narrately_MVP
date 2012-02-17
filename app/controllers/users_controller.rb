@@ -10,7 +10,13 @@ class UsersController < ApplicationController
   def show
 	@user = User.find(params[:id])
 	if @user.provider == "facebook"
-		@user.profile_image = "http://graph.facebook.com/" + @user.uid + "/picture"
+		@user.profile_image = "http://graph.facebook.com/" + @user.uid + "/picture?type=large"
+		@user.save
+	end
+	
+	if @user.provider == "twitter"
+		tw = Twitter.user(@user.uid)
+		@user.profile_image = tw.profile_image(:size => 'bigger')
 		@user.save
 	end
 	
