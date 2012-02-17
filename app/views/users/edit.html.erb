@@ -27,16 +27,16 @@ return false;
 	
 <p><%= f.input :biography, :label => "Short bio", :hint => "Tell us about yourself in under 140 characters" %> </p>   
 <p> 
-<%= f.hidden_field :category %>
+<%= f.hidden_field :category, :value => "Author" %>
 	<label>I am a...</label>
-	<a class = "btn btn-primary" name = "Author"  onClick="setValue($(this), '#category')">Author</a>
-	<a class = "btn"  name = "Artist" onClick="setValue($(this), '#category')">Artist</a>
-	<a class = "btn"  name = "Entrepreneur" onClick="setValue($(this), '#category')">Entrepreneur</a>
-	<a class = "btn"  name = "Musician" onClick="setValue($(this), '#category')">Musician</a>
-	<a class = "btn"  name = "Organization" onClick="setValue($(this), '#category')">Organization</a>
-	<a class = "btn"  name = "Teacher/Instructor" onClick="setValue($(this), '#category')">Teacher/Instructor</a> </p>
+	<a class = "btn btn-primary" name = "Author"  onClick="setValue($(this), '#user_category')">Author</a>
+	<a class = "btn"  name = "Artist" onClick="setValue($(this), '#user_category')">Artist</a>
+	<a class = "btn"  name = "Entrepreneur" onClick="setValue($(this), '#user_category')">Entrepreneur</a>
+	<a class = "btn"  name = "Musician" onClick="setValue($(this), '#user_category')">Musician</a>
+	<a class = "btn"  name = "Organization" onClick="setValue($(this), '#user_category')">Organization</a>
+	<a class = "btn"  name = "Teacher/Instructor" onClick="setValue($(this), '#user_category')">Teacher/Instructor</a> </p>
 <%= f.input :twitter_handle, :hint => "Tell us where to find you on twitter (@...)" %>
-<%# f.input :facebook_id, :label => "Facebook page", :hint => "Have a facebook page? Share the link with your fans." %>
+<% f.input :facebook_id, :label => "Facebook page", :hint => "Have a facebook page? Share the link with your fans." %>
 
 	
 	<hr> 
