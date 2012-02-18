@@ -42,7 +42,7 @@
   		<div id = "name" style = "margin-left:15px; margin-top:12px; font-size:14px; font-weight:bold;"><%=t.user.name%> </div>
   		<div id = "post_title" style = "clear:both; margin-top:10 px; margin-left:15px; font-weight:bold;"><%=@project.project_title%> </div>
   		<div id = "post_image" style = "float:left; margin-top:10px; margin-left:10px;">
-  			<%= image_tag @project.project_image_url(:medium), :size => "100x68" %>
+  			<%= image_tag @project.file1_url(:medium), :size => "100x68" %>
   		</div>
   		<div id = "postdescription" style = "float:left; margin-top: 8px; margin-left:10px; width:300px;"> <%=@project.description.first(120) + '...' %></div>
   		</div>
