@@ -1,3 +1,12 @@
+PATH
+  remote: vendor/GEMS/paperclip
+  specs:
+    paperclip (2.5.0)
+      activerecord (>= 2.3.0)
+      activesupport (>= 2.3.2)
+      cocaine (>= 0.0.2)
+      mime-types
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -40,11 +49,13 @@ GEM
       json (~> 1.4)
       nokogiri (>= 1.4.4)
       uuidtools (~> 2.1)
+    bcrypt-ruby (3.0.1)
     builder (2.1.2)
     carrierwave (0.5.8)
       activesupport (~> 3.0)
     chunky_png (1.2.5)
     client_side_validations (3.1.4)
+    cocaine (0.2.1)
     compass (0.11.7)
       chunky_png (~> 1.2)
       fssm (>= 0.2.7)
@@ -105,6 +116,8 @@ GEM
       rack
     omniauth-facebook (1.2.0)
       omniauth-oauth2 (~> 1.0.0)
+    omniauth-identity (1.0.0)
+      omniauth (~> 1.0)
     omniauth-oauth (1.0.0)
       oauth
       omniauth (~> 1.0)
@@ -170,13 +183,16 @@ DEPENDENCIES
   annotate (= 2.4.0)
   aws-s3
   aws-sdk
+  bcrypt-ruby
   carrierwave
   client_side_validations
   fog
   jquery-rails
   koala
   omniauth-facebook
+  omniauth-identity
   omniauth-twitter
+  paperclip!
   rails (= 3.0.9)
   rmagick
   simple_form
