@@ -91,8 +91,8 @@
   <div class="grid_4">
   <%= link_to image_tag(@creator.profile_image, :title=> "facebook", :width=> 220, :height=>220, :class=> "alignnone size-full wp-image-16236"), @creator  %>
   <h3><%= link_to @creator.name, @creator %></h3>
-  <p>@creator.biography</p>
-  <p><b>I am a:</b> @creator.category</p>
+  <p><%=@creator.biography %></p>
+  <p><b>I am a:</b> <%= @creator.category %></p>
   <ul>
  <li><%= link_to "Facebook", "http://www.facebook.com/" %></li>
  <li><%= link_to "Twitter", @creator.twitter_handle.sub('@', '') %> </li>
