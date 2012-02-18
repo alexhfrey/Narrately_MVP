@@ -93,16 +93,11 @@ before_filter :require_permission, :only => :download
   
   tweets = @project.shares.select {|p| p.medium == "Twitter"}
   if tweets.length > 0 
-  if tweets .last .share_id .nil?
-	Share.updateDbWithTwitterIds
-  end 
+	if tweets .last .share_id .nil?
+		Share.updateDbWithTwitterIds
+	end 
   end
-  # for testing purposes
-  if @project.promotion_limit.nil?
-	@project.promotion_limit = 20
-  end
-  ###
-   
+    
   
  
   @promotions_clear = ( @project.left > 0 )
