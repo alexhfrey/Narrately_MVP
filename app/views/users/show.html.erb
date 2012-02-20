@@ -8,7 +8,7 @@
 <ul class="mysharedprojects">
 <% @shares .collect {|u| u.project } .each do |s| %>
 <li>
-<%= image_tag s.file1_url(:medium).to_s, :class => "fimg2"%>
+<%= image_tag s.file1.url(:medium).to_s, :class => "fimg2" %>
 <span class="liveh1"><%= link_to s.project_title, s %></span>
 <hr> 
 <div class="boxdownload">
