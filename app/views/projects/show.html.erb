@@ -95,7 +95,9 @@
   <p><b>I am a:</b> <%= @creator.category %></p>
   <ul>
  <li><%= link_to "Facebook", "http://www.facebook.com/" %></li>
+ <% if @creator.twitter_handle.present? %>
  <li><%= link_to "Twitter", @creator.twitter_handle.sub('@', '') %> </li>
+ <% end %>
  </ul>
  </div>
  </div>
