@@ -1,5 +1,5 @@
 <div class="grid_11 singleleft">
-<% if current_user == @user %> 
+<% if @current_user == @user %> 
 
 <div class="myrewardsbox">
 <div class="bigtitle">My Rewards</div>
@@ -8,7 +8,7 @@
 <ul class="mysharedprojects">
 <% @shares .collect {|u| u.project } .each do |s| %>
 <li>
-<%= image_tag s.file1.medium.url.to_s %>
+<%= image_tag s.file1_url(:medium).to_s, :class => "fimg2"%>
 <span class="liveh1"><%= link_to s.project_title, s %></span>
 <hr> 
 <div class="boxdownload">
@@ -23,7 +23,7 @@
 <% end %>
 
 <div class="myprojectbox">
-<div class="bigtitle"><%= @current_user.first_name%>'s Projects</div>
+<div class="bigtitle"><%= @user.first_name%>'s Projects</div>
 <div class="lines"></div>
 <div class="grid_12">
 <ul class="mysharedprojects">
@@ -37,7 +37,7 @@
 </div>
 </div>
 <div class="mysharesbox">
-<div class="bigtitle"><%= @current_user.first_name%>'s Shares</div>
+<div class="bigtitle"><%= @user.first_name%>'s Shares</div>
 <div class="lines"></div>
 <div class="grid_12">
 <ul class="mysharedprojects">
