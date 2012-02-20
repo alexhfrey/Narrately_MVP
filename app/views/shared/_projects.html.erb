@@ -1,7 +1,7 @@
 <%= if(p.file1.present?) 
 link_to image_tag(p.file1.url(:medium), :class => "fimg2"), p
 end %>
-<%= link_to p.project_title.first(25) + "...", p, :class => "mycreatedprojectsh1" %>
+<%= link_to p.project_title.first(30) + "...", p, :class => "mycreatedprojectsh1" %>
 <hr>
 <div class="boxregdata">
 <%left = p.left
