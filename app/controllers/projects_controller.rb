@@ -33,7 +33,7 @@ before_filter :require_permission, :only => :download
 	@project.file1.y1 = params[:y1]
 	@project.file1.width = params[:width]
 	@project.file1.height = params[:height]
-	flash[:success] = "Successfully updated user."
+	flash[:success] = "Well Done! We'll review your project soon. Now tell us a little about yourself."
 	redirect_to edit_user_path(@user)
    
   else
@@ -76,7 +76,7 @@ before_filter :require_permission, :only => :download
 	end
   end
   def crop
-  flash[:success] = "Well Done! We'll review your project soon. Now tell us a little about yourself."
+  flash[:success] = "Your project has been submitted. Please finalize your cover image."
   @project = Project.find(params[:id])
   
   
