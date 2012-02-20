@@ -67,7 +67,7 @@ return false;
 	
 	<span class = "help-inline">Tip: Pick the category that best fits the reward you are offerring.</span> </p>
 	
- <p> <%= f.input :promotion_description, :hint => "Enter a short, under 50 character description of what you are offering" %></p>
+ <p> <%= f.input :promotion_description, :input_html => {:size => "15x6"}, :hint => "Enter a short, under 100 character description of what you are offering" %></p>
  <p><%= f.input :promotion_limit, :hint => "Tip: The number of rewards you want to give away.", :label => "Reward Limit" %> </p>
  <p> <%= f.input :file2, :label => "Reward", :hint => "Tip: Maximum file size of 10 MB. Eligible fans will be able to download this. Examples include ebooks and digital coupon. Please use PDF and epub files." , :label => "Reward File" %> </p><br>
 	<%= f.hidden_field :file2_cache %>

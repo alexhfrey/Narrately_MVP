@@ -34,6 +34,8 @@ validates :promotion_limit, :presence => true
 
 validates :project_title, :length => { :minimum => 5, :maximum => 100, 
 							:message => "must be between 5 and 100 characters"}
+							
+validates :promotion_description, :length => {:maximum => 100} 
 						
 						
 

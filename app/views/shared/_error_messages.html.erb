@@ -2,7 +2,7 @@
   <div id="error_explanation" class="flasherror">
     <h2><%= pluralize(@project.errors.count, "error") %> 
         prohibited this form from being saved:</h2>
-    <p>There were problems with the following fields:</p>
+    <p>Please fix the following fields:</p>
     <ul>
     <% @project.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>

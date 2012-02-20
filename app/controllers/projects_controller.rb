@@ -72,7 +72,6 @@ before_filter :require_permission, :only => :download
 		flash[:success] = "Thanks for your submission! Now you can optimize your project image"		
 		redirect_to :action => 'crop', :id => @project.id
 	else 
-		flash[:error] = "We don't like to be alarmists, but there were a few things missing in your form"
 		render 'new'
 	end
   end
