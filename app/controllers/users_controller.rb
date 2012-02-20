@@ -9,6 +9,7 @@ class UsersController < ApplicationController
  
   def show
 	@user = User.find(params[:id])
+	@current_user = current_user
 	if @user.provider == "facebook"
 		@user.profile_image = "http://graph.facebook.com/" + @user.uid + "/picture?type=large"
 		@user.save

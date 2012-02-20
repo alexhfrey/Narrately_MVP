@@ -23,7 +23,7 @@
 <% end %>
 
 <div class="myprojectbox">
-<div class="bigtitle">My Projects</div>
+<div class="bigtitle"><%= @current_user.first_name%>'s Projects</div>
 <div class="lines"></div>
 <div class="grid_12">
 <ul class="mysharedprojects">
@@ -37,7 +37,7 @@
 </div>
 </div>
 <div class="mysharesbox">
-<div class="bigtitle">My Shares</div>
+<div class="bigtitle"><%= @current_user.first_name%>'s Shares</div>
 <div class="lines"></div>
 <div class="grid_12">
 <ul class="mysharedprojects">

@@ -4,7 +4,10 @@ has_many :shares
 validates :biography, :length =>  {:maximum => 140}
 						
 						
-
+def first_name
+name.split[0]
+end
+						
 def self.create_with_omniauth(auth)
 create! do |user|
 	user.provider = auth["provider"]
