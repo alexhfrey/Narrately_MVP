@@ -513,7 +513,7 @@ float:left;
 text-decoration:none;
 padding-left: 10px;
 padding-top: 4px;
-width: 220px; 
+width: 250px; 
 }
 
 .mycreatedprojectsh1 a:hover {
@@ -1893,10 +1893,10 @@ height:20px;
     float:left;
     color: #ffffff; 
     text-decoration:none;
-    padding-left: 5px;
+    padding-left: 10px;
     padding-top: 4px;
     padding-bottom: 10px; 
-    width: 245px; 
+    width: 250px; 
     hover: none; 
     a:link: text-decoration: none; 
     }
