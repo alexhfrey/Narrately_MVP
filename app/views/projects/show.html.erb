@@ -11,7 +11,7 @@
   <div class="lines"></div>
   
   <div class="mainimg" ><%= if @project.file1.present? 
-			image_tag @project.file1_url(:large) 
+			image_tag @project.file1_url(:large).to_s 
 			end %> </div>
   
   
