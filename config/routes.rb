@@ -11,6 +11,7 @@ MVP1::Application.routes.draw do
 		member do
 			get 'confirmation'
 			get 'crop'
+			put 'cropped'
 			get 'download'
 		end
 		resources :shares, :only => [:new, :create]

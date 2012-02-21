@@ -7,7 +7,10 @@
    
    <div class="grid_11 singleleft">
    <div class="projectbox">
- <div class="bigtitle"><%= @project.project_title %></div>
+ <div class="bigtitle"><%= @project.project_title %></div> 
+ <% if @user == @creator %>
+ <span><%= link_to "Edit Project", edit_project_path(@project) %></span>
+ <% end %>
   <div class="lines"></div>
   
   <div class="mainimg" ><%= if @project.file1.present? 

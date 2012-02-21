@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
-before_filter :require_permission, :only => :download
+before_filter :owns_project, :only => [:edit, :update]
+before_filter :eligible_for_reward, :only => :download
   def new
 	@user = current_user
 	if @user.nil?
@@ -21,19 +22,44 @@ before_filter :require_permission, :only => :download
   end
   
   def edit
+  @project = Project.find(params[:id])
+  @user = current_user
   end
   
   def update
+  @project = Project.find(params[:id])
+  if @project.update_attributes(params[:project])
+    
+	
+	
+	if params[:project][:file1].present?
+	flash[:success] = "Looks great. Please crop your image appropriately below."
+	session[:redirect] = "Update"
+	redirect_to :action => 'crop', :id => @project.id and return
+	else
+	flash[:success] = "Your project has been updated, thanks!"
+	redirect_to @project
+	end
+   
+  else
+    render  'edit'
+  end
+  end
+  
+  def cropped
   #Right now this is being used by the cropping view
   @user = current_user
   @project = Project.find(params[:id])
    ratio = @project.crop_ratio
   if @project.update_attributes(:x1 => params[:x1].to_f * ratio, :y1 => params[:y1].to_f * ratio, :width => params[:width].to_f * ratio, :height => params[:height].to_f * ratio)
     
-	
+	if session[:redirect].present?
+	session[:redirect] = nil
+	redirect_to @project and return
+	else
 	flash[:success] = "Well Done! We'll review your project soon. Now tell us a little about yourself."
 	redirect_to edit_user_path(@user)
-   
+   end
   else
     render  'edit'
   end
@@ -45,7 +71,18 @@ before_filter :require_permission, :only => :download
 	redirect_to @file_object.file2_url
   end
   
-  def require_permission
+  def owns_project
+	@user = current_user
+	@project = Project.find(params[:id])
+	if @user == @project.user
+	flash[:success] = "You can edit your project below"
+	else
+	flash[:error] = "You must be the owner of this project to edit it."
+	redirect_to @project
+	end
+   end
+  
+  def eligible_for_reward
 	@user = current_user
 	path = nil
 	if @user.nil?
@@ -74,7 +111,7 @@ before_filter :require_permission, :only => :download
 	end
   end
   def crop
-  flash[:success] = "Your project has been submitted. Please finalize your cover image."
+  
   @project = Project.find(params[:id])
   
   
@@ -87,6 +124,7 @@ before_filter :require_permission, :only => :download
   @project = Project.find(params[:id])
   @creator = @project.user
   @shares = @project.shares
+  @user = current_user
   
   tweets = @project.shares.select {|p| p.medium == "Twitter"}
   if tweets.length > 0 
