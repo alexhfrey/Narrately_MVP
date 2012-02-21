@@ -35,6 +35,7 @@ return false;
 	<a class = "btn"  name = "Musician" onClick="setValue($(this), '#user_category')">Musician</a>
 	<a class = "btn"  name = "Organization" onClick="setValue($(this), '#user_category')">Organization</a>
 	<a class = "btn"  name = "Teacher/Instructor" onClick="setValue($(this), '#user_category')">Teacher/Instructor</a> </p>
+	<%= f.input :email, :hint => "We will never share your email." %> 
 <%= f.input :twitter_handle, :hint => "Tell us where to find you on twitter (@...)" %>
 <% f.input :facebook_id, :label => "Facebook page", :hint => "Have a facebook page? Share the link with your fans." %>
 
