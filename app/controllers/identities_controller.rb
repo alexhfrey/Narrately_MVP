@@ -1,2 +1,0 @@
-class IdentitiesController < ApplicationController
-end
