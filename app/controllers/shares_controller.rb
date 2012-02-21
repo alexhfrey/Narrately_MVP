@@ -18,7 +18,7 @@ class SharesController < ApplicationController
   
   @tweet_text = 'I just backed "' + @project.project_title.first(50) + '" on Snowball'
   #twitter_share_page =  "http://#{request.host}:#{request.port}" + "/projects/" + params[:project_id] + "?referral=twitter_" + @user.id.to_s + '_' + @project.id.to_s 
-  @twitter_share_page =  "http://www.getsnowball.com" + "/projects/" + params[:project_id] + "?referral=twitter_" + @user.id.to_s + '_' + @project.id.to_s 
+  @twitter_share_page =  "http://www.mysnowball.com" + "/projects/" + params[:project_id] + "?referral=twitter_" + @user.id.to_s + '_' + @project.id.to_s 
   via = "SnowballChirps"
 	
   @query = URI::escape(@twitter_share_page + '&text=' + @tweet_text + '&via=' + via)
