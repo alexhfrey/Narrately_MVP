@@ -47,6 +47,16 @@ def left
 	promotion_limit - shares.length
 end
 
+def crop_ratio
+    img = Magick::Image::read(self.file1_url).first
+    @geometry = {:width => img.columns, :height => img.rows }
+	if @geometry[:height] > @geometry[:width]
+		@geometry[:height].to_f / 600
+	else
+		@geometry[:width].to_f / 600
+	end
+  end
+
 def state_for(id_var)
 #goal met, active, shared, pending, or running
 

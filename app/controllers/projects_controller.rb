@@ -27,12 +27,10 @@ before_filter :require_permission, :only => :download
   #Right now this is being used by the cropping view
   @user = current_user
   @project = Project.find(params[:id])
-
-  if @project.update_attributes(:x1 => params[:x1], :y1 => params[:y1], :width => params[:width], :height => params[:height])
-    @project.file1.x1 = params[:x1]
-	@project.file1.y1 = params[:y1]
-	@project.file1.width = params[:width]
-	@project.file1.height = params[:height]
+   ratio = @project.crop_ratio
+  if @project.update_attributes(:x1 => params[:x1].to_f * ratio, :y1 => params[:y1].to_f * ratio, :width => params[:width].to_f * ratio, :height => params[:height].to_f * ratio)
+    
+	
 	flash[:success] = "Well Done! We'll review your project soon. Now tell us a little about yourself."
 	redirect_to edit_user_path(@user)
    

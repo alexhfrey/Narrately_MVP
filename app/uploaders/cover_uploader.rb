@@ -3,21 +3,29 @@
 class CoverUploader < CarrierWave::Uploader::Base
   
  
+   def extension_white_list
+    %w(jpg jpeg gif png)
+  end
   
   include CarrierWave::RMagick
   # Include RMagick or MiniMagick support:
  attr_accessor :x1, :y1, :x2, :y2, :width, :height
    
-   process :resize_to_fit => [600, 600]
-   process :cropit
+   version :uploaded do
+		process :resize_to_fit => [600, 600]
+	end
    
    version :medium do
-		
+		process :cropit
 		process :resize_to_fill => [248, 162]
 	end
+   
+   
+   
    version :large do
+		process :cropit
+		process :resize_to_fit => [600, 391]
 		
-		process :resize_to_fill => [600, 391]
 	end
    
   
@@ -25,7 +33,7 @@ class CoverUploader < CarrierWave::Uploader::Base
 	return unless model.cropping?
     manipulate! do |img|
        
-		img.crop(model.x1.to_i,model.y1.to_i,model.width.to_i,model.height.to_i)
+		img = img.crop(model.x1.to_i,model.y1.to_i,model.width.to_i,model.height.to_i)
         
     end
 	
