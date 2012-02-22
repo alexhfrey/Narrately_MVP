@@ -1,0 +1,25 @@
+/* - - - - - - - - - - - - - - - - - - - - -
+
+ Title : Snowball Email Form
+ Author : EE
+ URL : http://
+
+ Last Updated : Jan 20
+
+- - - - - - - - - - - - - - - - - - - - - */
+
+.embed .wufoo .info 
+{
+  display:none;
+}
+
+#saveForm {
+position: relative;
+top: -70px;
+left: 255px;
+}
+
+.embed .wufoo .label .desc
+{
+  display:none;
+}
