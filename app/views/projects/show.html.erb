@@ -99,7 +99,7 @@
   <p><b>I am a:</b> <%= @creator.category %></p>
   <ul>
   <% if @creator.facebook_page.present? %>
- <li><%= link_to "Facebook", @creator.facebook_page %></li>
+ <li><a href="<%= @creator.facebook_page %>" >Facebook</a></li>
  <% end %>
  <% if @creator.twitter_handle.present? %>
  <li><%= link_to "Twitter", "http://twitter.com/#!/" + @creator.twitter_handle.sub('@', '') %> </li>

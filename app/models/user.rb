@@ -16,7 +16,7 @@ def add_to_mailchimp
 if email.present?
 gb = Gibbon.new("d6986d50ea90033e826ab23c38eb1c1b-us4")
 gb.listSubscribe(:email_address => self.email, :double_optin => false, :id => '34a1789213',
-	:update_existing => true, :replace_interests => false)
+	:update_existing => true, :replace_interests => false, :send_welcome => true)
 else return
 end
 end
@@ -25,7 +25,7 @@ def add_to_chimp_backers
 if email.present?
 gb = Gibbon.new("d6986d50ea90033e826ab23c38eb1c1b-us4")
 mergevars = {"Groupings" => [{"name" => 'User type', "groups" => 'Backers'}]}
-gb.listSubscribe(:email_address => self.email, :double_optin => false, :id => '34a1789213', :merge_vars => mergevars, :update_existing => true, :replace_interests => false)
+gb.listSubscribe(:email_address => self.email, :double_optin => false, :id => '34a1789213', :merge_vars => mergevars, :update_existing => true, :replace_interests => false, :send_welcome => true)
 else return
 end
 end
