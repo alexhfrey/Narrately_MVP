@@ -20,6 +20,7 @@ gem 'thin'
 gem 'rmagick'
 gem 'fog'
 gem 'carrierwave'
+gem 'gibbon'
 
 group :development do
 	gem 'annotate', '2.4.0'

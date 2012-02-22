@@ -104,8 +104,11 @@ before_filter :eligible_for_reward, :only => :download
 	@project = @user.projects.build(params[:project])
 	
 	if @project.save
+	@project.user.add_to_chimp_creators
 		flash[:success] = "Thanks for your submission! Now you can optimize your project image"		
 		redirect_to :action => 'crop', :id => @project.id
+		#add check to see if this was users first project
+		@project.user.add_to_chimp_creators
 	else 
 		render 'new'
 	end

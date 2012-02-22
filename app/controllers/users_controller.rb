@@ -32,8 +32,13 @@ class UsersController < ApplicationController
   
   def update
   @user = current_user
+  if params[:user][:email] != @user.email #Add email to general list if email has been changed
+	@user.email = params[:user][:email]
+	@user.add_to_mailchimp
+  end
   if @user.update_attributes(params[:user])
     flash[:notice] = "Successfully updated user."
+	
 	redirect_to @user
   end
 
