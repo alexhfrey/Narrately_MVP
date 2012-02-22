@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120222190338) do
+ActiveRecord::Schema.define(:version => 20120222215058) do
 
   create_table "identities", :force => true do |t|
     t.string   "name"
@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(:version => 20120222190338) do
     t.string   "token"
     t.text     "biography"
     t.string   "category"
+    t.string   "facebook_page"
   end
 
 end
