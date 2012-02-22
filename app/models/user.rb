@@ -18,6 +18,7 @@ if facebook_page.first(4) != "http"
 	'http://www.' + facebook_page
 	else
 	'http://' + facebook_page
+	end
 else
 facebook_page
 end
