@@ -65,8 +65,8 @@
 <%= @user.biography %></p>
 <p><b>I am a:</b> <%= @user.category %></p>
 <ul>
-<% if @user.facebook_id.present? %>
-<li><%= link_to "Facebook", @user.facebook_page.to_s %></li>
+<% if @user.facebook_page.present? %>
+<li><%= link_to "Facebook", @user.facebook_page %></li>
 <% end %>
 <% if @user.twitter_handle.present? %>
 <li><%= link_to "Twitter", 'http://www.twitter.com/#!/' + @user.twitter_handle.sub('@', '')%> </li>
