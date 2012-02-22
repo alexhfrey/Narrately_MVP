@@ -69,7 +69,7 @@
 <li><%= link_to "Facebook", @user.facebook_id.to_s %></li>
 <% end %>
 <% if @user.twitter_handle.present? %>
-<li><%= link_to "Twitter", 'www.twitter.com/#!/' + @user.twitter_handle.sub('@', '')%> </li>
+<li><%= link_to "Twitter", 'http://www.twitter.com/#!/' + @user.twitter_handle.sub('@', '')%> </li>
 <% end %>
 </ul>
 </div>

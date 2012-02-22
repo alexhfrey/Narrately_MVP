@@ -128,8 +128,10 @@ before_filter :eligible_for_reward, :only => :download
   @creator = @project.user
   @shares = @project.shares
   @user = current_user
-  if @project.shares.last.twittercode.nil?
-	@project.updateShares
+  if @project.shares.present?
+	if @project.shares.last.twittercode.nil?
+		@project.updateShares
+	end
   end
   
 
