@@ -11,6 +11,17 @@ before_create :add_to_mailchimp
 def first_name
 name.split[0]
 end
+
+def facebook_page_link
+if facebook_page.first(4) != "http"
+	if facebook_page.first(3) != "www"
+	'http://www.' + facebook_page
+	else
+	'http://' + facebook_page
+else
+facebook_page
+end
+end
 	
 def add_to_mailchimp
 if email.present?
