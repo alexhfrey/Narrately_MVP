@@ -8,7 +8,7 @@ validates :project_id, :presence => true
 
 def add_user_to_mailchimp
 #Add logic here checking if it is their first share, eventually
-current_user.add_to_chimp_backers
+user.add_to_chimp_backers
 end
 
 def self.updateDbWithTwitterIds
