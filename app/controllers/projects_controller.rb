@@ -128,15 +128,11 @@ before_filter :eligible_for_reward, :only => :download
   @creator = @project.user
   @shares = @project.shares
   @user = current_user
-  
-  tweets = @project.shares.select {|p| p.medium == "Twitter"}
-  if tweets.length > 0 
-	if tweets .last .share_id .nil?
-		Share.updateDbWithTwitterIds
-	end 
+  if @project.shares.last.twittercode.nil?
+	@project.updateShares
   end
-    
   
+
  
   @promotions_clear = ( @project.left > 0 )
   if current_user 

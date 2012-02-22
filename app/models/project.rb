@@ -82,6 +82,12 @@ else
 	end		
 end
 end
+
+def updateShares
+shares.select{ |s| s.medium == "Twitter" && s.twittercode.nil? } .each do |shs|
+  shs.updateDbWithTwitterIds
+  end 
+end
 private
 def reprocess_image
     file1.recreate_versions!

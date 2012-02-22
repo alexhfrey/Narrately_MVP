@@ -31,8 +31,8 @@
   <div class="productdata">
   <h3>Support from Backers</h3>
   <div class="grid_10">
-  <% @shares.select{|s| s.medium == "Twitter" && s.share_id.present?}.each do |t| %>
-  <div><%= Twitter.oembed(t.share_id.to_i).html.html_safe %> </div>
+  <% @shares.select{|s| s.medium == "Twitter" && s.twittercode.present?}.each do |t| %>
+  <div><%= t.twittercode.html_safe %> </div>
   <% end %>
   
   <% @shares.select{|s| s.medium == "facebook" && s.share_id.present?}.each do |t| %>
@@ -98,9 +98,11 @@
   <p><%=@creator.biography %></p>
   <p><b>I am a:</b> <%= @creator.category %></p>
   <ul>
- <li><%= link_to "Facebook", "http://www.facebook.com/" %></li>
+  <% if @creator.facebook_id.present? %>
+ <li><%= link_to "Facebook", @creator.facebook_id %></li>
+ <% end %>
  <% if @creator.twitter_handle.present? %>
- <li><%= link_to "Twitter", @creator.twitter_handle.sub('@', '') %> </li>
+ <li><%= link_to "Twitter", "http://twitter.com/#!/" + @creator.twitter_handle.sub('@', '') %> </li>
  <% end %>
  </ul>
  </div>
