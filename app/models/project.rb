@@ -5,7 +5,6 @@ has_many :shares
 
 attr_accessor :x1, :y1, :x2, :y2, :width, :height
 
-after_update :reprocess_image, :if => :cropping?
 
   def cropping?
     !x1.blank? && !y1.blank? && !width.blank? && !height.blank?
@@ -88,7 +87,7 @@ shares.select{ |s| s.medium == "Twitter" && s.twittercode.nil? } .each do |shs|
   shs.updateDbWithTwitterIds
   end 
 end
-private
+
 def reprocess_image
     file1.recreate_versions!
 	

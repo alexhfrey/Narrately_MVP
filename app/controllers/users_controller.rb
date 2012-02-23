@@ -15,11 +15,15 @@ class UsersController < ApplicationController
 		@user.save
 	end
 	
+	
 	if @user.provider == "twitter"
+		begin
 		tw = Twitter.user(@user.uid.to_i)
 		@user.twitter_handle = tw.screen_name
 		@user.profile_image = Twitter.profile_image(@user.twitter_handle, :size => 'bigger')
 		@user.save
+		rescue
+		end
 	end
 	
 	@projects = @user.projects

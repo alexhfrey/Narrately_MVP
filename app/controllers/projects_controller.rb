@@ -52,7 +52,7 @@ before_filter :eligible_for_reward, :only => :download
   @project = Project.find(params[:id])
    ratio = @project.crop_ratio
   if @project.update_attributes(:x1 => params[:x1].to_f * ratio, :y1 => params[:y1].to_f * ratio, :width => params[:width].to_f * ratio, :height => params[:height].to_f * ratio)
-    
+    @project.reprocess_image
 	if session[:redirect].present?
 	session[:redirect] = nil
 	redirect_to @project and return
