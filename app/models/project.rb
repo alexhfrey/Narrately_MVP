@@ -85,6 +85,7 @@ end
 def updateShares
 shares.select{ |s| s.medium == "Twitter" && s.twittercode.nil? } .each do |shs|
   shs.updateDbWithTwitterIds
+  shs.save
   end 
 end
 
