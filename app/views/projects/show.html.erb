@@ -67,10 +67,11 @@
   
   <% if @promotions_clear %>
   <%= link_to "Share Now!", new_project_share_path(@project), :class => "shareit" %>
-  <span class="leftonpage"><span class="saleleft">LEFT:</span><%= @project.left %></span>
+ 
   <% else %>
   <%= link_to "Buy Now!", 'http://' + @project.purchase_link, :class => "shareit" %>
   	<% end %>
+	 <span class="leftonpage"><span class="saleleft">LEFT:</span><%= @project.left %></span>
   </div>
   
   <div class="grid52">
