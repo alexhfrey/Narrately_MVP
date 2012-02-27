@@ -26,7 +26,12 @@ $('.dropdown-toggle').dropdown()
 
 
 <meta charset="utf-8" />
-<title>Snowball</title>
+<title><% if @title.present? %>
+			<%= @title %>
+			<% else %>
+			Snowball
+			<% end %> 
+</title>
 <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,400italic,700' rel='stylesheet' type='text/css'>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 
@@ -43,6 +48,7 @@ $('.dropdown-toggle').dropdown()
 <meta property="og:image" content="<%= @image %>"/>
 <meta property="og:site_name" content="Narrately" />
 <meta property="fb:admins" content="1168571871" />
+<meta property="og:description" content= <%= @description %>
 <% end %>
 
 <script type="text/javascript">
