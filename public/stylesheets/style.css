@@ -1240,7 +1240,9 @@ height:20px;
     margin-left: 22px;
     width: 550px;
 	margin-top: 10px;
-    margin-bottom: 25px;}
+    margin-bottom: 25px;
+    line-height: 25px; 
+    }
     
     .logintitle {
 	font-family:'Ubuntu';
