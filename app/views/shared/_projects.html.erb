@@ -9,5 +9,10 @@ end %>
  %>
 <span class="boxlistdata"><%= left %><span class="boxlistcat"> Rewards Left</span></span>
 <span class="boxlistdata2"><%= taken %><span class="boxlistcat2"> Backers</span></span>
-<span class="boxlistdata3"><%= number_to_percentage 100 * taken / p.promotion_limit, :precision => 0 %> <span class="boxlistcat3">% Complete</span></span>
+<span class="boxlistdata3"><% if p.promotion_limit > 0 %>
+								<%= number_to_percentage 100 * taken / p.promotion_limit, :precision => 0 %> 
+								<% else %>
+								0
+								<% end %>
+								<span class="boxlistcat3">% Complete</span></span>
 </div>
