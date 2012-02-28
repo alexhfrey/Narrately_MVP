@@ -130,7 +130,7 @@ before_filter :eligible_for_reward, :only => :download
   @user = current_user
   @title = @project.project_title
   @url = @project.file1_url(:medium)
-  @description = @project.description
+  @description = @project.description.html_safe
   if @project.shares.present?
 	if @project.shares.last.twittercode.nil?
 		@project.updateShares
