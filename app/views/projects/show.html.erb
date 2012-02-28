@@ -26,7 +26,7 @@
   <h3>Project Category: <%= @project.tag1 %></h3>
   <br>
   <h3>About This Project</h3>
-  <%= @project.description %>
+   <%= simple_format(@project.description)%>
   </div>
   </div>
   
@@ -76,7 +76,7 @@
   <%= link_to "Share Now!", new_project_share_path(@project), :class => "shareit" %>
  
   <% else %>
-  <%= link_to "Buy Now!", 'http://' + @project.purchase_link, :class => "shareit" %>
+  <%= link_to "Buy Now!", 'http://' + url_for(@project.purchase_link), :class => "shareit" %>
   	<% end %>
 	 <span class="leftonpage"><span class="saleleft">LEFT:</span><%= @project.left %></span>
   </div>
