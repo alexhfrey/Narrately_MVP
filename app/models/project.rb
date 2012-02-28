@@ -37,9 +37,12 @@ validates :project_title, :length => { :minimum => 5, :maximum => 100,
 validates :promotion_description, :length => {:maximum => 100} 
 
 def video_link						
-"http://www.youtube.com/embed/" + CGI::parse(@project.video.split('?')[1])["v"].first						
+if video.include? ".be"  #check and see if this is the shortened version
+	"http://www.youtube.com/embed/" + video.split('.be/')[1]
+else
+"http://www.youtube.com/embed/" + CGI::parse(video.split('?')[1])["v"].first						
 end
-
+end
 #validates_attachment_content_type :output_file, :content_type=>['application/pdf'], :message => "File must be in PDF format"
 #validates_attachment_content_type :project_image, :content_type=>['image/jpeg', 'image/png'], :message => "Cover image must be in JPEG format"
 #validates_attachment_size :project_image, :less_than=> 2.megabytes, :message => "Cover image must be less than 2 MB"
