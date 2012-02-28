@@ -76,7 +76,7 @@
   <%= link_to "Share Now!", new_project_share_path(@project), :class => "shareit" %>
  
   <% else %>
-  <%= link_to "Buy Now!", 'http://' + url_for(@project.purchase_link), :class => "shareit" %>
+  <%= link_to "Buy Now!", url_for(@project.purchase_link), :class => "shareit" %>
   	<% end %>
 	 <span class="leftonpage"><span class="saleleft">LEFT:</span><%= @project.left %></span>
   </div>
