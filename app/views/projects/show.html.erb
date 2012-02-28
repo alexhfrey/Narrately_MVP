@@ -15,7 +15,7 @@
   
   <div class="mainimg" >
 			<% if @project.video.present? %>
-					<iframe width="600" height="391" src="http://www.youtube.com/embed/<%= CGI::parse(@project.video.split('?')[1])["v"] %>" frameborder="0" allowfullscreen > </iframe>
+					<iframe width="600" height="391" src="http://www.youtube.com/embed/<%= CGI::parse(@project.video.split('?')[1])["v"].first %>" frameborder="0" allowfullscreen > </iframe>
 					<% else %>
 					
   			<%= image_tag @project.file1_url(:large) %>
