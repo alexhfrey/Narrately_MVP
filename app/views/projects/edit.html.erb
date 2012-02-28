@@ -46,8 +46,8 @@ return false;
    <p> <%= f.input :project_title, :hint => "Tip: Choose a catchy and descriptive title between 5-100 characters." , :label => "Project name",  :input_html => { :class => 'text'} %> </p>
    <p><%= f.input :description, :hint => "Tip: Explain what your project is about. Be interesting and give your fans an insight into what you've been working on. Between 50-1000 characters." %> </p>   
  	<p><%= f.input :file1, :label => "Change Cover Image", :required => false, :input_html => { :validate => false }, :value => @project.file1_url, :hint => "Tip: Ideal dimensions: 600px x 400px. JPEG and PNG accepted. Maximum size of 2 MB." , :validate => false	%> </p>
-	<%= image_tag @project.file1_url(:medium) %>
-      <%= f.hidden_field :file1_cache %>
+	<p> <%= image_tag @project.file1_url(:medium) %>
+      <%= f.hidden_field :file1_cache %> </p>
 	   <p> <%= f.input :video, :label => "Optional youtube video", :hint => "If you have a move trailer for your project, enter the youtube link here (must be youtube)" %> </p>
 
 <h2>2. Reward Details</h2>

@@ -3,7 +3,7 @@ class Project < ActiveRecord::Base
 belongs_to :user
 has_many :shares
 
-attr_accessor :x1, :y1, :x2, :y2, :width, :height
+attr_accessor :x1, :y1, :x2, :y2, :width, :height, :video
 
 
   def cropping?
