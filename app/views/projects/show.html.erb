@@ -54,7 +54,7 @@
   			<%= image_tag @project.file1_url(:medium), :size => "100x68" %>
 			
   		</div>
-  		<div id = "postdescription" style = "float:left; margin-top: 8px; margin-left:10px; width:300px;"> <%=@project.description.first(120) + '...' %></div>
+  		<div id = "postdescription" style = "float:left; margin-top: 8px; margin-left:10px; width:300px;"> <%=simple_format(@project.description.first(120)) + '...' %></div>
   		</div>
   </li>
   <%end %>
