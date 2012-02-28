@@ -48,6 +48,7 @@ return false;
  	<p><%= f.input :file1, :label => "Change Cover Image", :required => false, :input_html => { :validate => false }, :value => @project.file1_url, :hint => "Tip: Ideal dimensions: 600px x 400px. JPEG and PNG accepted. Maximum size of 2 MB." , :validate => false	%> </p>
 	<%= image_tag @project.file1_url(:medium) %>
       <%= f.hidden_field :file1_cache %>
+	   <p> <%= f.input :video, :label => "Optional youtube video", :hint => "If you have a move trailer for your project, enter the youtube link here (must be youtube)" %> </p>
 
 <h2>2. Reward Details</h2>
 <p>This is the reward your fans will receive when they share your work- make it something they want!</p>
