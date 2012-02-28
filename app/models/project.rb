@@ -35,8 +35,10 @@ validates :project_title, :length => { :minimum => 5, :maximum => 100,
 							:message => "must be between 5 and 100 characters"}
 							
 validates :promotion_description, :length => {:maximum => 100} 
-						
-						
+
+def video_link						
+"http://www.youtube.com/embed/" + CGI::parse(@project.video.split('?')[1])["v"].first						
+end
 
 #validates_attachment_content_type :output_file, :content_type=>['application/pdf'], :message => "File must be in PDF format"
 #validates_attachment_content_type :project_image, :content_type=>['image/jpeg', 'image/png'], :message => "Cover image must be in JPEG format"
