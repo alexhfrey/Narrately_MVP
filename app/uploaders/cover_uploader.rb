@@ -33,7 +33,7 @@ class CoverUploader < CarrierWave::Uploader::Base
 	return unless model.cropping?
     manipulate! do |img|
        
-		img = img.crop(model.x1.to_i,model.y1.to_i,model.width.to_i,model.height.to_i)
+		img = img.crop(model.x1.to_i, model.y1.to_i, model.width.to_i, model.height.to_i)
         
     end
 	

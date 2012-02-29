@@ -1,6 +1,6 @@
 class AddValueToProject < ActiveRecord::Migration
   def self.up
-    add_column :projects, :promotion_value, :float
+    add_column :projects, :promotion_value, :string
   end
 
   def self.down
