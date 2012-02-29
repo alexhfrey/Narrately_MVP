@@ -1005,7 +1005,7 @@ margin-bottom: 30px;
 
 .projectcreatebox {
 background:#FFF;
-height:1670px;
+height:1660px;
 border-right:1px solid #c2cbd2;
 border-bottom:1px solid #c2cbd2;
 border-radius:10px;
@@ -1020,6 +1020,25 @@ margin: 0px auto;
 margin-top: 20px;
 margin-bottom: 30px;
 }
+
+.projecteditbox {
+background:#FFF;
+height:1870px;
+border-right:1px solid #c2cbd2;
+border-bottom:1px solid #c2cbd2;
+border-radius:10px;
+margin-top:5px;
+float:center;
+padding-left:10px;
+padding-top:10px;
+padding-right:10px;
+padding-bottom:10px;
+width: 70%;    
+margin: 0px auto;
+margin-top: 20px;
+margin-bottom: 30px;
+}
+
 
 .helptext {
 font-size: 13px;
