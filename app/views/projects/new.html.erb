@@ -59,7 +59,7 @@ return false;
 	</p>
 
  <p> <%= f.input :promotion_description, :label => "What are you giving away?", :input_html => {:size => "15x5"}%></p><p class="helptext">In exchange for sharing your project, this is what fans will receive</p>
- <p> <%= f.input :promotion_value, :label => "What is the value of the reward?", :input_html => {:style => "width:100px; height: 30px"}, :type => "text"%></p>
+ <p> <%= f.input :promotion_value, :as => :currency, :label => "What is the value of the reward ($)?", :input_html => {:style => "width:100px; height: 30px"}, :type => "text"%></p>
  <p> <%= f.input :file2, :required => false, :label => "Add the reward file"%> </p><p class="helptext">Examples include ebooks, digital coupon, etc. Please keep the file size below 10 MB.</p>
 <%= f.hidden_field :file2_cache %>
 <p><%= f.input :purchase_link, :label => "Link to purchase"%></p><p class="helptext">Once the rewards are gone, fans will be able to purchase your product if you sell it online</p>
