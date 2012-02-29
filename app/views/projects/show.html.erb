@@ -89,15 +89,12 @@
   </div>
   
   <div class="grid52">
-  
-  <div class="infospan2">Reward: <span><%= @project.promotion_type %></span></div>
-  
-  <div class="infospan2">Total:<span><%= @project.promotion_limit %></span></div>
-  <div class="infospan2">Left:<span><%= @project.left %></span></div>
-  <div class="infospan3"><b>Details:</b><span><%= @project.promotion_description %></span></div>
-  
-  
-  
+
+  <div class="infospan3"><b>What's the reward:</b>
+  <br>
+  <span><%= @project.promotion_description %></span></div>  
+    <div class="infospan2"><b>Rewards Left:</b><span> <%= @project.left %>/<%= @project.promotion_limit %></span></div>
+  <div class="infospan2"><b>Reward Value:</b><span><%= @project.promotion_value %></span></div>
   </div>
   </div>
   </div>

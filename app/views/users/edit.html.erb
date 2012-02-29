@@ -25,19 +25,19 @@ return false;
 	<h2>Edit Profile</h2>
 	<hr>
 	
-<p><%= f.input :biography, :label => "Short bio", :hint => "Tell us about yourself in under 140 characters" %> </p>   
+<p><%= f.input :biography, :input_html => {:size => "20x6"}, :label => "Short bio" %> </p>   
 <p> 
 <%= f.hidden_field :category, :value => "Author" %>
 	<label>I am a...</label>
-	<a class = "btn btn-primary" name = "Author"  onClick="setValue($(this), '#user_category')">Author</a>
-	<a class = "btn"  name = "Artist" onClick="setValue($(this), '#user_category')">Artist</a>
-	<a class = "btn"  name = "Entrepreneur" onClick="setValue($(this), '#user_category')">Entrepreneur</a>
-	<a class = "btn"  name = "Musician" onClick="setValue($(this), '#user_category')">Musician</a>
-	<a class = "btn"  name = "Organization" onClick="setValue($(this), '#user_category')">Organization</a>
-	<a class = "btn"  name = "Teacher/Instructor" onClick="setValue($(this), '#user_category')">Teacher/Instructor</a> </p>
-	<%= f.input :email, :hint => "We will never share your email." %> 
-<%= f.input :twitter_handle, :hint => "Tell us where to find you on twitter (@...)" %>
-<%= f.input :facebook_page, :label => "Facebook page", :hint => "Have a facebook page? Share the link with your fans." %>
+	<a class = "btn <% if @user.category == "Author" %> btn-primary <% end %>" name = "Author"  onClick="setValue($(this), '#user_category')">Author</a>
+	<a class = "btn <% if @user.category == "Artist" %> btn-primary <% end %>"  name = "Artist" onClick="setValue($(this), '#user_category')">Artist</a>
+	<a class = "btn <% if @user.category == "Entrepreneur" %> btn-primary <% end %>"  name = "Entrepreneur" onClick="setValue($(this), '#user_category')">Entrepreneur</a>
+	<a class = "btn <% if @user.category == "Musician" %> btn-primary <% end %>"  name = "Musician" onClick="setValue($(this), '#user_category')">Musician</a>
+	<a class = "btn <% if @user.category == "Organization" %> btn-primary <% end %>"  name = "Organization" onClick="setValue($(this), '#user_category')">Organization</a>
+	<a class = "btn <% if @user.category == "Teacher/Instructor" %> btn-primary <% end %>"  name = "Teacher/Instructor" onClick="setValue($(this), '#user_category')">Teacher/Instructor</a> </p>
+	<%= f.input :email %><p class="helptext">We will never share your email without your consent</p> 
+<%= f.input :twitter_handle %><p class="helptext">Tell us where to find you on twitter (@...)</p>
+<%= f.input :facebook_page, :label => "Facebook page" %><p class="helptext">Have a facebook page? Share the link with your fans.</p>
 
 	
 	<hr> 

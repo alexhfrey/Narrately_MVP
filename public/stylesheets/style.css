@@ -997,12 +997,50 @@ padding-left:10px;
 padding-top:10px;
 padding-right:10px;
 padding-bottom:10px;
-width: 60%;    
+width: 70%;    
 margin: 0px auto;
 margin-top: 20px;
 margin-bottom: 30px;
-
 }
+
+.projectcreatebox {
+background:#FFF;
+height:1670px;
+border-right:1px solid #c2cbd2;
+border-bottom:1px solid #c2cbd2;
+border-radius:10px;
+margin-top:5px;
+float:center;
+padding-left:10px;
+padding-top:10px;
+padding-right:10px;
+padding-bottom:10px;
+width: 70%;    
+margin: 0px auto;
+margin-top: 20px;
+margin-bottom: 30px;
+}
+
+.helptext {
+font-size: 13px;
+color: #808080; 
+font-style: italic; 
+}
+
+
+.bluetitle {
+font-size: 35px;
+color: #005A89; 
+font-weight: bold;
+padding-top: 25px; 
+}
+
+.titlepromo {
+font-size: 14px;
+color: #808080; 
+padding-top: 5px;  
+}
+
 .categorybox ul {
 list-style:none;
 margin:20px;}
@@ -2286,22 +2324,30 @@ height:20px;
     padding-left:5px;}
     
 	.infospan2 {
-	color:#707780;
-	font-size:17px;
+	color:#000000;
+	font-size:15px;
 	height:34px;
-	width:100%;
-	border-bottom:1px dashed #c2cbd3;
+	width:290px;
 	margin-left:0px;
     margin-bottom: 5px; 
-	line-height:34px;}
+	line-height:30px;}
     
     .infospan3 {
-	color:#707780;
-	font-size:14px;
-	height:70px;
-	width:100%;
+	color:#000000;
+	font-size:15px;
+	height:80px;
+	width:240px;
 	margin-left:0px;
     margin-bottom: 5px; 
+	line-height:17px;}
+    
+     .infospan4 {
+	color:#000000;
+	font-size:15px;
+	height:20px;
+	width:100%;
+	margin-left:0px;
+    margin-bottom: 2px; 
 	line-height:17px;}
     
      .whatissnow {
@@ -2337,16 +2383,18 @@ height:20px;
 	
     .infospan2 span {
     float: right;
-    padding-right: 50px;
+    padding-right: 80px;
     width: 100px;
-	color:#4d4c4c;}
+	color:#005A89;}
 	.average {
 	width:294px;
 	height:37px;
-	background:url(../images/average.png) no-repeat;
 	margin-top:15px;
 	margin-bottom:10px;
-	margin-left:15px;}
+	margin-left:5px;
+    font-weight: bold;
+}
+    
 	.average img {
 	    float: right;
     margin-right: 55px;

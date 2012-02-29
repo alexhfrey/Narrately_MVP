@@ -123,7 +123,7 @@ a:hover {
 }
 [class*="span"] {
   float: left;
-  margin-left: 20px;
+  margin-left: 4px;
 }
 .span1 {
   width: 60px;
@@ -498,6 +498,8 @@ pre code {
 }
 form {
   margin: 0 0 18px;
+  margin-left: 20px;
+  margin-top: 0px; 
 }
 fieldset {
   padding: 0;
@@ -521,13 +523,13 @@ button,
 select,
 textarea {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: bold;
-  line-height: 18px;
+  line-height: 20px;
 }
 label {
   display: block;
-  padding-top:10px;
+  padding-top:5px;
   margin-bottom: 5px;
   color: #333333;
 }
@@ -536,12 +538,12 @@ textarea,
 select,
 .uneditable-input {
   display: inline-block;
-  width: 310px;
-  height: 18px;
+  width: 400px;
+  height: 28px;
   padding: 4px;
-  margin-bottom: 9px;
-  font-size: 15px;
-  line-height: 18px;
+  margin-bottom: 0px;
+  font-size: 21px;
+  line-height: 25px;
   color: #555555;
   border: 1px solid #ccc;
   -webkit-border-radius: 3px;
@@ -585,7 +587,7 @@ input[type="button"], input[type="reset"], input[type="submit"] {
   height: auto;
 }
 select, input[type="file"] {
-  height: 28px;
+  height: 34px;
   /* In IE7, the height of the select element cannot be changed by height, only font-size */
 
   *margin-top: 4px;
@@ -828,7 +830,7 @@ input:focus:required:invalid:focus, textarea:focus:required:invalid:focus, selec
   display: inline-block;
   *display: inline;
   float: right; 
-  width: 280px; 
+  width: 230px; 
   /* IE7 inline-block hack */
 
   *zoom: 1;
@@ -959,7 +961,7 @@ input:focus:required:invalid:focus, textarea:focus:required:invalid:focus, selec
   vertical-align: middle;
 }
 .control-group {
-  margin-bottom: 9px;
+  margin-bottom: 3px;
 }
 .form-horizontal legend + .control-group {
   margin-top: 18px;

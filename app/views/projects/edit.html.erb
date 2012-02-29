@@ -15,95 +15,62 @@ return false;
 
 <%= render 'shared/error_messages' %>
 
-<div class="grid_11 singleleft">
-
-
-<div class="projectbox">
-
+<div class="projectcreatebox">
 
 <fieldset class = "control-group">
 
 <%= simple_form_for @project, :validate => true, :html => { :multipart => true } do |f| %>
 
-	<h2>1. Project Details</h2>
-	<p>Your project is unqiue- tell your fans why it's so special!</p>
+	<p class="bluetitle">First, tell us about your project</p>
+	<p class="titlepromo">Your project is unique, shine some light on why</p>
 	<hr>
-
-	
 	<p><%= f.hidden_field :tag1, :value => @project.tag1%> 
-	<label>Project Category</label>
-	<a class = "btn<% if @project.tag1 == "Book" %> btn-primary  <% end %>" name = "Book"  onClick="setValue($(this), '#project_tag1')">Book</a>
-	<a class = "btn<% if @project.tag1 == "Fitness" %> btn-primary  <% end %>"  name = "Fitness" onClick="setValue($(this), '#project_tag1')">Fitness</a>
-	<a class = "btn<% if @project.tag1 == "Music" %> btn-primary  <% end %>"  name = "Music" onClick="setValue($(this), '#project_tag1')">Music</a>
-	<a class = "btn<% if @project.tag1 == "Art" %> btn-primary  <% end %>"  name = "Art" onClick="setValue($(this), '#project_tag1')">Art</a>
-	<a class = "btn<% if @project.tag1 == "Food" %> btn-primary  <% end %>"  name = "Food" onClick ="setValue($(this), '#project_tag1')">Food</a>
-	<a class = "btn<% if @project.tag1 == "Event" %> btn-primary  <% end %>" name = "Event" onClick ="setValue($(this), '#project_tag1')">Event</a>
-	<span class = "help-inline">Tip: Pick the category that best fits what you're promoting.</span> </p>
+	<label>What are you promoting?</label>
+	<a class = "btn btn-large<% if @project.tag1 == "Book" %> btn-primary <% end %>" name = "Book"  onClick="setValue($(this), '#project_tag1')">My Book</a>
+	<a class = "btn btn-large<% if @project.tag1 == "Fitness" %> btn-primary <% end %>"  name = "Fitness" onClick="setValue($(this), '#project_tag1')">My Class</a>
+	<a class = "btn btn-large<% if @project.tag1 == "Music" %> btn-primary <% end %>"  name = "Music" onClick="setValue($(this), '#project_tag1')">My Music</a>
+	<a class = "btn btn-large<% if @project.tag1 == "Art" %> btn-primary <% end %>"  name = "Art" onClick="setValue($(this), '#project_tag1')">My Art</a>
+	<a class = "btn btn-large<% if @project.tag1 == "Food" %> btn-primary <% end %>"  name = "Food" onClick ="setValue($(this), '#project_tag1')">My Startup</a>
+	<a class = "btn btn-large<% if @project.tag1 == "Event" %> btn-primary <% end %>" name = "Event" onClick ="setValue($(this), '#project_tag1')">My Event</a>
+	<p class="helptext">Pick the category that best fits what you're promoting.</p>
 	
-
-	    
 	
-   <p> <%= f.input :project_title, :hint => "Tip: Choose a catchy and descriptive title between 5-100 characters." , :label => "Project name",  :input_html => { :class => 'text'} %> </p>
-   <p><%= f.input :description, :hint => "Tip: Explain what your project is about. Be interesting and give your fans an insight into what you've been working on. Between 50-1000 characters." %> </p>   
- 	<p><%= f.input :file1, :label => "Change Cover Image", :required => false, :input_html => { :validate => false }, :value => @project.file1_url, :hint => "Tip: Ideal dimensions: 600px x 400px. JPEG and PNG accepted. Maximum size of 2 MB." , :validate => false	%> </p>
+   <p> <%= f.input :project_title, :label => "Give your project a name",  :input_html => { :class => 'text'} %> </p><p class="helptext">Such as your book title, class name, startup name, etc.</p>
+   <p><%= f.input :description, :label => "Describe your project", :input_html => {:size => "20x11"}%> </p><p class="helptext">Provide more details about your project in 50-1000 characters</p>   
+ <p><%= f.input :file1, :label => "Change your cover image", :required => false, :input_html => { :validate => false }, :value => @project.file1_url , :validate => false%></p><p class="helptext">This is what users will see on your page. Ideal dimensions are 600px x 400px.  We accept JPEG and PNG for now with a maximum size of 2 MB.</p>
 	<p> <%= image_tag @project.file1_url(:medium) %>
-      <%= f.hidden_field :file1_cache %> </p>
-	   <p> <%= f.input :video, :label => "Optional youtube video", :hint => "If you have a move trailer for your project, enter the youtube link here (must be youtube)" %> </p>
+    <%= f.hidden_field :file1_cache %> </p>
 
-<h2>2. Reward Details</h2>
-<p>This is the reward your fans will receive when they share your work- make it something they want!</p>
+<p> <%= f.input :video, :label => "Add a Youtube video (optional)"%> </p><p class="helptext">This is optional, but projects with videos get shared more.</p>      
+
+<p class="bluetitle">Second, tell us about the reward</p>
+<p class="titlepromo"	>This is the reward your fans will receive when they share your project, make it something they want!</p>
 <hr>
 <p> 
-<%= f.hidden_field :promotion_type, :value => @project.promotion_type %>
-	<label>Promotion Type</label>
-	<a class = "btn<% if @project.promotion_type == "Coupon" %> btn-primary <% end %>" name = "Coupon"  onClick="setValue($(this), '#project_promotion_type')">Coupon</a>
-	<a class = "btn<% if @project.promotion_type == "E-book" %> btn-primary <% end %>"  name = "E-book" onClick="setValue($(this), '#project_promotion_type')">E-book</a>
-	<a class = "btn<% if @project.promotion_type == "Special Offer" %> btn-primary <% end %>"  name = "Special Offer" onClick="setValue($(this), '#project_promotion_type')">Special Offer</a>
+<%= f.hidden_field :promotion_limit, :value => @project.promotion_limit %>
+	<label>How many rewards do you want to give away?</label>
+	<a class = "btn btn-large<% if @project.promotion_limit == 10 %> btn-primary <% end %>" name = "10"  onClick="setValue($(this), '#project_promotion_limit')">10</a>
+	<a class = "btn btn-large<% if @project.promotion_limit == 25 %> btn-primary <% end %>"  name = "25" onClick="setValue($(this), '#project_promotion_limit')">25</a>
+	<a class = "btn btn-large<% if @project.promotion_limit == 50 %> btn-primary <% end %>"  name = "50" onClick="setValue($(this), '#project_promotion_limit')">50</a>
+	<a class = "btn btn-large<% if @project.promotion_limit == 75 %> btn-primary <% end %>"  name = "75" onClick="setValue($(this), '#project_promotion_limit')">75</a>
+	<a class = "btn btn-large<% if @project.promotion_limit == 100 %> btn-primary <% end %>"  name = "100" onClick="setValue($(this), '#project_promotion_limit')">100</a>
+	<a class = "btn btn-large<% if @project.promotion_limit == 200 %> btn-primary <% end %>"  name = "200" onClick="setValue($(this), '#project_promotion_limit')">200</a>
+	</p>
 	
-	<span class = "help-inline">Tip: Pick the category that best fits the reward you are offerring.</span> </p>
 	
- <p> <%= f.input :promotion_description, :input_html => {:size => "15x6"}, :hint => "Enter a short, under 100 character description of what you are offering" %></p>
- <p><%= f.input :promotion_limit, :hint => "Tip: The number of rewards you want to give away.", :label => "Reward Limit" %> </p>
- <p> <%= f.input :file2, :label => "Reward", :required => false, :input_html => { :validate => false }, :hint => "Tip: Maximum file size of 10 MB. Eligible fans will be able to download this. Examples include ebooks and digital coupon. Please use PDF and epub files." , :label => "Reward File" %> </p><br>
+ <p> <%= f.input :promotion_description, :label => "What are you giving away?", :input_html => {:size => "15x5"}%></p><p class="helptext">In exchange for sharing your project, this is what fans will receive</p>
+ <p> <%= f.input :promotion_value, :label => "What is the value of the reward?", :input_html => {:style => "width:100px; height: 30px"}, :type => "text"%></p>
+ 
+  <p> <%= f.input :file2, :required => false, :label => "Add the reward file" , :input_html => { :validate => false }%> </p><p class="helptext">Examples include ebooks, digital coupon, etc. Please keep the file size below 10 MB. Eligible fans will be able to download this. </p>
 	<%= f.hidden_field :file2_cache %>
+<p><%= f.input :purchase_link, :label => "Link to purchase"%></p><p class="helptext">Once your rewards are gone, fans will be able to purchase your product if you sell it online</p>
 
-<h2>3. Purchase Details </h2>
-<p>Once your reward limit is reached, fans will be able to purchase your product. If you sell the product, include the purchase link here.</p>
-<hr>
-<p><%= f.input :purchase_link, :hint => "Tip: Enter the full address of a site selling your product" %></p>
  <p> <%= f.submit :class => "btn btn-success btn-large"	 %> </p>
 
  <% end %>
 
-   
 
 </div>
-</div>
 
-
-
-<div class="grid_4 righthome">
-<div class="categorybox">
-<div class="howitworkscreate">
-<h6>How it Works</h6>
-<br />
-<div class="grid_4">
-<b>Step 1: Add Details</b>
-<p>Submit details about your project. </p>
-<b>Step 2: Finalize Image</b>
-<p>
-Finalize the image for your project.</p>
-<b>Step 3: Your Bio</b>
-<p>
-Confirm and edit your bio.
-</p>
-<br />
-Other questions? Take a look at our <a href="/faq">FAQs page.</a>
-<br />
-<br />
-</div>
-</div>
-</div>
-</div>
 
 
