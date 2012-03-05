@@ -50,8 +50,8 @@
   <ul class = "fbcomment">
   	<li>
   	<div id = "profileImage" style = "margin-top:10px; margin-left:10px; float:left; width:50px; height:200px;" > 
-	<% if t.user.facebook_id.present? %>
-  <%= link_to image_tag(t.user.profile_image, :size => "50x50"), "http://facebook.com/" + t.user.facebook_id %> <% end %> </div>
+	
+  <%= link_to image_tag(t.user.profile_image, :size => "50x50"), user %> <% end %> </div>
 	
   	<div id = "fbpostcontainer" style = "float:left; margin-left:10px; width:420px;" >
  		<%=image_tag "facebookicon.png", :style=>"float:right; padding-top:8px"%>
