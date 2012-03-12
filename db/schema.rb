@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120228231007) do
+ActiveRecord::Schema.define(:version => 20120312224923) do
 
   create_table "actions", :force => true do |t|
     t.integer   "user_id"
@@ -28,31 +28,31 @@ ActiveRecord::Schema.define(:version => 20120228231007) do
   end
 
   create_table "projects", :force => true do |t|
-    t.integer  "user_id"
-    t.string   "project_title"
-    t.string   "project_image"
-    t.text     "description"
-    t.string   "file1"
-    t.string   "file2"
-    t.string   "file3"
-    t.string   "purchase_link"
-    t.string   "tag1"
-    t.integer  "promotion_limit"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.datetime "output_file_updated_at"
-    t.integer  "output_file_file_size"
-    t.string   "output_file_file_name"
-    t.string   "output_file_content_type"
-    t.datetime "project_image_updated_at"
-    t.integer  "project_image_file_size"
-    t.string   "project_image_file_name"
-    t.string   "project_image_content_type"
-    t.boolean  "active"
-    t.text     "promotion_description"
-    t.string   "promotion_type"
-    t.string   "video"
-    t.string   "promotion_value"
+    t.integer   "user_id"
+    t.string    "project_title"
+    t.string    "project_image"
+    t.text      "description"
+    t.string    "file1"
+    t.string    "file2"
+    t.string    "file3"
+    t.string    "purchase_link"
+    t.string    "tag1"
+    t.integer   "promotion_limit"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.timestamp "output_file_updated_at"
+    t.integer   "output_file_file_size"
+    t.string    "output_file_file_name"
+    t.string    "output_file_content_type"
+    t.timestamp "project_image_updated_at"
+    t.integer   "project_image_file_size"
+    t.string    "project_image_file_name"
+    t.string    "project_image_content_type"
+    t.boolean   "active"
+    t.text      "promotion_description"
+    t.string    "promotion_type"
+    t.string    "video"
+    t.string    "promotion_value"
   end
 
   create_table "rails_admin_histories", :force => true do |t|
