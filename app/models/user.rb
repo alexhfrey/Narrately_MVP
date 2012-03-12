@@ -59,6 +59,7 @@ create! do |user|
 	user.email = auth["info"]["email"]
 	user.token = auth['credentials']['token'] #Store token info for later use
 	
+	
 end
 end
 

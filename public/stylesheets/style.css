@@ -1,6 +1,6 @@
 body {
 background:url(../images/bodybg.png) repeat;
-font-family:'Ubuntu';
+font-family:'calibri';
 }
 .header {
 background:;
@@ -218,8 +218,8 @@ width:405px;}
 
 .leftpart h1 
 {
-color:#38414b;
-font-size:50px;
+color:000000;
+font-size:55px;
 width:300px;
 margin-top:10px;
 margin-bottom:15px;
@@ -252,7 +252,7 @@ line-height:54px;
 .pdesc {
 color:#5F5A59;
 width:300px;
-font-size:20px;
+font-size:24px;
 line-height:22px;
 }
 .padd {
@@ -420,7 +420,7 @@ display:block;
 text-shadow:1px 0px 0px #FFF;}
 .featuredproducts {
 width:100%;
-background:url(../images/fbg.png) repeat-x;
+background:url(../images/bodybg.png) repeat;
 height:318px;}
 .title {
 font-size:32px;
@@ -624,27 +624,42 @@ margin-right:15px;
 margin-bottom: 25px;
 clear:both;}
 
+.howitworks {
+margin-left:auto;
+margin-right:auto;
+width: 880px;
+}
+
 .howitworksline {
+
 list-style:none;
 margin-top:10px;
 margin-left: -27px; 
 padding-bottom: 0px; 
-width: 650px; 
-float:left;}
+margin-left:auto;
+margin-right:auto;
+width: 830px;
+
+}
 
 .howitworksline li {
+background-color:#ffffff;
 display:block;
 float:left;
-width:173px;
-height:245px;
+width:213px;
+height:215px;
 border-style: solid; 
 text-align: center; 
 margin-left: 25px;
-margin-right: 0px;
+margin-right: 25px;
 margin-bottom: 25px;
-padding-right: 0px; 
+padding-right: 5px; 
+padding-left:5px;
 padding-bottom: 20px;
-padding-top: 10px;}
+padding-top: 10px;
+border-width:1px;
+border-style:solid;
+border-color:#000000;}
 
 .howitworkstitle {
 display: block; 
@@ -2375,7 +2390,7 @@ height:20px;
     margin-top: 20px;
     margin-left: 20px;
     margin-bottom: 20px;
-    font-size: 20px;
+
     line-height: 22px;  
     }
     

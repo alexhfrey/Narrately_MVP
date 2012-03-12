@@ -38,24 +38,24 @@ return false;
 
 	    
 	
-   <p> <%= f.input :project_title, :label => "Give your project a name",  :input_html => { :class => 'text'} %> </p><p class="helptext">Such as your book title, class name, startup name, etc.</p>
+   <p> <%= f.input :project_title, :label => "Give your project a name",  :input_html => { :class => 'text'} %> </p><p class="helptext">Make it catchy and instill urgency to improve conversion. "Free for a limited time", etc.</p>
    <p><%= f.input :description, :label => "Describe your project", :input_html => {:size => "20x11"}%> </p><p class="helptext">Provide more details about your project in 50-1000 characters</p>   
  	<p><%= f.input :file1, :label => "Add a project cover image", :required => false%></p><p class="helptext">This is what users will see on your page. Ideal dimensions are 600px x 400px.  We accept JPEG and PNG for now with a maximum size of 2 MB.</p>
- <p> <%= f.input :video, :label => "Add a Youtube video (optional)"%> </p><p class="helptext">This is optional, but projects with videos get shared more.</p>      
+ <p> <%= f.input :video, :label => "Add a Youtube video (optional)"%> </p><p class="helptext">This is optional, but projects with videos get shared more. Just enter the link here. </p>      
 	 <%= f.hidden_field :file1_cache %>
 
 <p class="bluetitle">Second, tell us about the reward</p>
 <p class="titlepromo"	>This is the reward your fans will receive when they share your project, make it something they want!</p>
 <hr>
 <p> 
-<%= f.hidden_field :promotion_limit, :value => "10" %>
+<%= f.hidden_field :promotion_limit, :value => "25" %>
 	<label>How many rewards do you want to give away?</label>
-	<a class = "btn btn-large btn-primary" name = "10"  onClick="setValue($(this), '#project_promotion_limit')">10</a>
-	<a class = "btn btn-large"  name = "25" onClick="setValue($(this), '#project_promotion_limit')">25</a>
+	<a class = "btn btn-large btn-primary"  name = "25" onClick="setValue($(this), '#project_promotion_limit')">25</a>
 	<a class = "btn btn-large"  name = "50" onClick="setValue($(this), '#project_promotion_limit')">50</a>
 	<a class = "btn btn-large"  name = "75" onClick="setValue($(this), '#project_promotion_limit')">75</a>
 	<a class = "btn btn-large"  name = "100" onClick="setValue($(this), '#project_promotion_limit')">100</a>
 	<a class = "btn btn-large"  name = "200" onClick="setValue($(this), '#project_promotion_limit')">200</a>
+	<a class = "btn btn-large" name = "1000"  onClick="setValue($(this), '#project_promotion_limit')">1000</a>
 	</p>
 
  <p> <%= f.input :promotion_description, :label => "What are you giving away?", :input_html => {:size => "15x5"}%></p><p class="helptext">In exchange for sharing your project, this is what fans will receive</p>

@@ -1,0 +1,7 @@
+=> #<File:data.csv>
+irb(main):037:0> ^C
+irb(main):037:0> 
+irb(main):038:0* ^C
+irb(main):038:0> ^C
+irb(main):038:0> ^C
+irb(main):038:0> 

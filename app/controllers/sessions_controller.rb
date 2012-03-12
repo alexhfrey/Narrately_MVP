@@ -33,6 +33,11 @@ else
 		redirect_path = user
 	else #Direct to New Project signup if this is a new user
 		user = User.create_with_omniauth(auth)
+		if session[:referral]
+			user.referral_source = session[:referral]
+			user.save
+			session[:referral] = nil
+		end
 		session[:user_id] = user.id
 		redirect_path = new_project_path
 		flash[:success] = "Thanks for signing up for Snowball. We're anxious to hear more about you're doing!"
