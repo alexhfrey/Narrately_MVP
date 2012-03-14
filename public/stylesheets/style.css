@@ -868,7 +868,6 @@ float:left;}
 .projectbox {
 background:#FFF;
 width:640px;
-width:640px;
 border-right:1px solid #c2cbd2;
 border-bottom:1px solid #c2cbd2;
 border-radius:5px;
@@ -1310,12 +1309,31 @@ height:20px;
 	color:#38414b;
 	float:left;
     margin-left: 22px;
-    width: 550px;
+    
+	margin-right:22px;
 	margin-top: 10px;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
     line-height: 25px; 
     }
-    
+	
+	.bottomcallout {
+	
+	color:#000000;
+	}
+	
+	.caption {
+	font-family:'Ubuntu';
+	font-style: italic;
+	font-size:18px;
+	color:#363D47;
+	float:left;
+    margin-left: 22px;
+    width: 550px;
+
+    margin-bottom: 10px;
+ 
+    }
+	
     .logintitle {
 	font-family:'Ubuntu';
 	font-weight:bold;
@@ -2279,13 +2297,18 @@ height:20px;
     margin-top: 5px;}
 	
     .productdata {
-	float:left;
-	width:600px;
+	clear:both;
+	
+	font-size:14px;
     margin-top: 20px;
-    margin-left: 20px;
+    padding-left: 20px;
+	padding-right:20px;
     margin-bottom: 20px;
     }
-    
+    .productdescription  p{
+	font-size: 14px;
+	font-family: 'Calibri';
+	}
     .formwelcome {
 	float:left;
 	width:700px;
@@ -2323,7 +2346,7 @@ height:20px;
     }
     
     .sharetitle {
-	font-size: 17px;
+	font-size: 20px;
     line-height: 27px; 
     padding-left:4px;
     font-weight: bold; 
@@ -2369,10 +2392,9 @@ height:20px;
     .infospan3 {
 	color:#000000;
 	font-size:15px;
-	height:80px;
-	width:240px;
+	padding-right:20px;
 	margin-left:0px;
-    margin-bottom: 5px; 
+    margin-bottom: 10px; 
 	line-height:17px;}
     
      .infospan4 {
