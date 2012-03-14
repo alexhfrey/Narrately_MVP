@@ -8,7 +8,8 @@
    <div class="grid_11 singleleft">
    <div class="projectbox">
  <div class="bigtitle"><%= @project.project_title %></div> 
- <div class = "caption"> A <%= @project.tag1 %> project by <%= link_to @creator.name, @creator %> </div>
+ <div class = "caption"> A <%= @project.tag1 %> project by <%= link_to @creator.name, @creator %>, available
+ at <%= link_to @project.purchase_link, @project.purchase_link %> </div>
  <% if @user == @creator %>
  <span><%= link_to "Edit Project", edit_project_path(@project) %></span>
  <% end %>
