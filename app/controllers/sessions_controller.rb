@@ -4,9 +4,7 @@ auth = request.env["omniauth.auth"]
 
 if current_user #logged-in already: just need to update some tokens
 	if auth["provider"] == "facebook"
-		session['fb_auth'] = auth
-		session['fb_access_token'] = auth['credentials']['token']
-		session['fb_error'] = nil
+		
 		@user = current_user
 		@user.token = auth['credentials']['token']
 		@user.save
@@ -23,9 +21,7 @@ else
 	user = User.find_by_provider_and_uid(auth["provider"], auth["uid"])
 	
 	if auth["provider"] == "facebook"
-		session['fb_auth'] = auth
-		session['fb_access_token'] = auth['credentials']['token']
-		session['fb_error'] = nil
+		
 	end
 
 	if user #Direct to Dashboard if an existing user
