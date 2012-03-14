@@ -28,7 +28,7 @@ class SharesController < ApplicationController
   @facebook_link = "https://www.facebook.com/dialog/feed?app_id=" + '173481316095568' + '&link=' + 
   CGI::escape(fb_share_page) + referral_tag + '&picture=' + URI::escape(CGI::escape(@project.file1_url(:medium)),'.') + '&name=' + URI::escape(CGI::escape(@project.project_title),'.') + '&caption=' +
   CGI::escape('Another Great Project on Snowball') +
-  '&description=' + CGI::escape('I supported this project on Snowball and got ') + @project.promotion_description + CGI::escape(' for free. You can too. ') + CGI::escape(@project.description) +
+  '&description=' + CGI::escape('I supported this project on Snowball and got ') + CGI::escape(@project.promotion_description) + CGI::escape(' You can too. ') + CGI::escape(@project.description) +
   '&message=' + CGI::escape("Check out the great new project I found on Snowball") + '&redirect_uri=' + CGI::escape(fb_share_page) + '/facebook_post/new'
   end
 
