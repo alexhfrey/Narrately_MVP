@@ -4,6 +4,14 @@ MVP1::Application.routes.draw do
  
 
 
+  get "action_page/new"
+
+  get "action_page/create"
+
+  get "action_page/show"
+
+  get "selectpost/show"
+
   resources :users, :only => [:show, :update, :edit] 
   
   
@@ -28,7 +36,8 @@ MVP1::Application.routes.draw do
   match '/projects/:id/download', :to=> 'projects#download'
   match '/faq', :to=> 'pages#faq'
   match '/aboutus', :to=> 'pages#aboutus'
-  
+  match '/projects/:id/backers', :to=> 'projects#backers'
+  match '/projects/:id/newaction', :to=> 'action_page#new'
   
   
   

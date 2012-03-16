@@ -10,7 +10,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120312224923) do
+ActiveRecord::Schema.define(:version => 20120315060648) do
+
+  create_table "action_pages", :force => true do |t|
+    t.string   "project_id"
+    t.integer  "actionable_id"
+    t.string   "actionable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "action_taken", :force => true do |t|
+    t.string   "action_page_id"
+    t.string   "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "actions", :force => true do |t|
     t.integer   "user_id"
@@ -19,12 +34,31 @@ ActiveRecord::Schema.define(:version => 20120312224923) do
     t.timestamp "updated_at"
   end
 
+  create_table "fbcomments", :force => true do |t|
+    t.string   "post_id"
+    t.string   "action_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "identities", :force => true do |t|
     t.string    "name"
     t.string    "email"
     t.string    "password_digest"
     t.timestamp "created_at"
     t.timestamp "updated_at"
+  end
+
+  create_table "likes", :force => true do |t|
+    t.string   "post_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "posts", :force => true do |t|
+    t.string   "link"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "projects", :force => true do |t|
@@ -68,6 +102,12 @@ ActiveRecord::Schema.define(:version => 20120312224923) do
 
   add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
 
+  create_table "retweets", :force => true do |t|
+    t.string   "post_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "shares", :force => true do |t|
     t.integer   "user_id"
     t.integer   "project_id"
@@ -77,6 +117,12 @@ ActiveRecord::Schema.define(:version => 20120312224923) do
     t.string    "referral"
     t.string    "share_id"
     t.text      "twittercode"
+  end
+
+  create_table "tweets", :force => true do |t|
+    t.string   "link"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", :force => true do |t|

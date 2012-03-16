@@ -20,9 +20,7 @@ if current_user #logged-in already: just need to update some tokens
 else
 	user = User.find_by_provider_and_uid(auth["provider"], auth["uid"])
 	
-	if auth["provider"] == "facebook"
-		
-	end
+	
 
 	if user #Direct to Dashboard if an existing user
 		session[:user_id] = user.id
@@ -38,7 +36,10 @@ else
 		redirect_path = new_project_path
 		flash[:success] = "Thanks for signing up for Snowball. We're anxious to hear more about you're doing!"
 	end
-	
+	if auth["provider"] == "facebook"
+		user.token = auth["credentials"]["token"]
+		user.save
+	end
 	if session[:redirect]
 		@project = Project.find(session[:redirect])
 		session[:redirect] = nil

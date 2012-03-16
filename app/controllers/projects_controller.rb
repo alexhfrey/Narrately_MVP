@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
 before_filter :owns_project, :only => [:edit, :update]
-before_filter :eligible_for_reward, :only => :download
+before_filter :eligible_for_reward, :only => [:download, :backers]
+
   def new
 	@user = current_user
 	if @user.nil?
@@ -120,6 +121,11 @@ before_filter :eligible_for_reward, :only => :download
   
   end
 
+  def backers
+  @project = Project.find(params[:id])
+  @shares = @project.shares
+  end
+  
   def show
   if !current_user && params[:referral]        #if this is a new user and they have a referral code store this for later DB use
 		session[:referral] = params[:referral]

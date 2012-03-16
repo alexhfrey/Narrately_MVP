@@ -2,6 +2,8 @@ require 'file_size_validator'
 class Project < ActiveRecord::Base
 belongs_to :user
 has_many :shares
+has_many :action_pages
+has_many :action_taken, :through => :action_pages
 
 attr_accessor :x1, :y1, :x2, :y2, :width, :height
 
