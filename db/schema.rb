@@ -89,19 +89,6 @@ ActiveRecord::Schema.define(:version => 20120315060648) do
     t.string    "promotion_value"
   end
 
-  create_table "rails_admin_histories", :force => true do |t|
-    t.text     "message"
-    t.string   "username"
-    t.integer  "item"
-    t.string   "table"
-    t.integer  "month",      :limit => 2
-    t.integer  "year",       :limit => 5
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
-
   create_table "retweets", :force => true do |t|
     t.string   "post_id"
     t.datetime "created_at"

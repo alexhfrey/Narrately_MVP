@@ -327,6 +327,32 @@ background:url(../images/shareitnowhover.png) no-repeat;
 text-decoration: none;
 color:#FFF!important;}
 
+.joinnow { 
+display:block;
+width:158px;
+height:62px;
+background:url(../images/shareitnow.png);
+position: absolute; 
+color:#FFF;
+font-weight:bold;
+font-size:20px;
+text-decoration:none;
+    line-height: 53px;
+    text-align: center;
+	text-shadow:1px 0px 0px #c51b00;
+margin-top: 22px;	
+margin-bottom: 10px;
+margin-left: 30px;  
+clear: both; 
+z-index: 9; 
+}
+
+.joinnow:hover {
+background:url(../images/shareitnowhover.png) no-repeat;
+text-decoration: none;
+color:#FFF!important;}
+
+
 
 .rewardsleft {
 display:block;
@@ -1019,7 +1045,7 @@ margin-bottom: 30px;
 
 .projectcreatebox {
 background:#FFF;
-height:1660px;
+height:1400px;
 border-right:1px solid #c2cbd2;
 border-bottom:1px solid #c2cbd2;
 border-radius:10px;
@@ -1308,7 +1334,7 @@ height:20px;
 	font-size:27px;
 	color:#38414b;
 	float:left;
-    margin-left: 22px;
+    margin-left: 15px;
     
 	margin-right:22px;
 	margin-top: 10px;
@@ -1328,7 +1354,7 @@ height:20px;
 	color:#363D47;
 	float:left;
     margin-left: 22px;
-    width: 550px;
+    width: 150px;
 
     margin-bottom: 10px;
  
@@ -2268,6 +2294,7 @@ height:20px;
 	width:600px;
 	height:350px;
 	float:left;}
+    
 	.mainimg {
 	width:610px;
 	height:401px;
@@ -2279,6 +2306,41 @@ height:20px;
 	.mainimg img {
     margin-left: 5px;
     margin-top: 5px;}
+    
+    .mainimg2 {
+	width:610px;
+	height:401px;
+	background-color: #F2F2F2;
+	float:right;
+    margin-left: 20px;
+    margin-right: 20px;}
+    
+	.mainimg2 img {
+    margin-left: 5px;
+    margin-top: 5px;}
+    
+    .programinfo {
+    font-size: 17px; 
+    line-height: 18px; 
+    padding-right: 10px;
+    padding-left: 10px; 
+    width: 240px; 
+    float: left; 
+    }
+    
+    .programbox {
+background:#FFF;
+width:920px;
+border-right:1px solid #c2cbd2;
+border-bottom:1px solid #c2cbd2;
+border-radius:5px;
+margin-top:5px;
+float:left;
+padding-left:10px;
+padding-top:10px;
+padding-right:10px;
+padding-bottom:10px;}
+
 	
     .productimages .onsale {
 	    margin-left: 250px!important;

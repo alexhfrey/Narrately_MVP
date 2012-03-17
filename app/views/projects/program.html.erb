@@ -3,53 +3,13 @@
    <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,400italic,700' rel='stylesheet' type='text/css'>
    
    
-    <div class="programbox">
-    <div class="bigtitle"><%= @project.project_title %></div> 
-    <% if @user == @creator %><span><%= link_to "Edit Project", edit_project_path(@project) %></span>
- <% end %>
-    <hr>
-    <div class="programinfo">   
-    
-       <%= simple_format(@project.description)%>
-
-     <% if @promotions_clear %>
-  <%= link_to "Join Now", new_project_share_path(@project), :class => "joinnow" %>
- 
-  <% else %>
-  <%= link_to "Join Now", new_project_share_path(@project), :class => "joinnow" %>
-  	<% end %>
-  	</div>
-  	
-  	 <div class="mainimg2" >
-			<% if @project.video.present? %>
-					<% begin %>
-					<% video = @project.video_link %>
-					<iframe width="600" height="391" src= "<%= video %>" frameborder="0" allowfullscreen > </iframe>
-					<% rescue %>
-					<%= image_tag @project.file1_url(:large) %>
-					<% end %>
-					<% else %>
-					
-  			<%= image_tag @project.file1_url(:large) %>
-			<% end %> 
-			
-			</div>
-
-    </div>
-   <div class="grid_11 singleleft"> 
+   
+   
+   <div class="grid_11 singleleft">
    <div class="projectbox">
-   <div class="productdata">
-  <h3>Why Become an Ambassador?</h3>
-     <p>need to add field here</p>
-   <div class = "productdescription"><%= simple_format(@project.description)%> </div>
-   <h3>Believe in the vision? Here's what you can do to help</h3>
-   <div class = "bottomcallout"><b>Be part of the movement.  <%= link_to "Back this project now", new_project_share_path(@project) %> to get 
-   <%= @project.promotion_description %></b>.  Then check back here often for updates and additional actions you can take to help make this vision a reality.  </div>
-  </div>
-  </div>
-  
  <div class="bigtitle"><%= @project.project_title %></div> 
- <div class = "caption"><%= @project.left %> Members</div>
+ <div class = "caption"> A <%= @project.tag1 %> project by <%= link_to @creator.name, @creator %>, available
+ at <%= link_to @project.purchase_link, @project.purchase_link %> </div>
  <% if @user == @creator %>
  <span><%= link_to "Edit Project", edit_project_path(@project) %></span>
  <% end %>
@@ -70,6 +30,15 @@
 			
 			</div>
   
+  
+  <div class="productdata">
+  <h3>About The Vision</h3>
+   <div class = "productdescription"><%= simple_format(@project.description)%> </div>
+   <h3>Believe in the vision? Here's what you can do to help</h3>
+   <div class = "bottomcallout"><b>Be part of the movement.  <%= link_to "Back this project now", new_project_share_path(@project) %> to get 
+   <%= @project.promotion_description %></b>.  Then check back here often for updates and additional actions you can take to help make this vision a reality.  </div>
+  </div>
+  </div>
   
   
   <div class="projectshare">
@@ -110,43 +79,18 @@
   
   <div class="grid_4 righthome">
   
-  
-  
-  
-  
   <div class="categorybox">
- <div class="categories-widget">
- <div class="categorybox sellers">
- <div class="backerstitle">Current Ambassadors</div>
- <ul>
-<% @shares.each_slice(4) { |sl| %>
-<li>
- <% sl.each do  |s| %>
- <%= if s.user.profile_image? 
- link_to image_tag(s.user.profile_image, :class => "smallpreview" ), s.user 
- end %>
- <% end %> 
- </li>
- <% } %>
- 
- </ul>
- </div>
- </div>
-   </div>
- 
- 
- <div class="categorybox">
   <div class="sharebox">
-  <div class="sharetitle">Why Become an Ambass</div>
+  <div class="sharetitle">Back & Get Reward</div>
   <div class="tagit">
   
   <% if @promotions_clear %>
-  <%= link_to "Join Now", new_project_share_path(@project), :class => "shareit" %>
+  <%= link_to "Back it!", new_project_share_path(@project), :class => "shareit" %>
  
   <% else %>
-  <%= link_to "Join Now", new_project_share_path(@project), :class => "shareit" %>
+  <%= link_to "Buy Now!", url_for(@project.purchase_link), :class => "shareit" %>
   	<% end %>
-	 <span class="leftonpage"><span class="saleleft">Members:</span><%= @project.left %></span>
+	 <span class="leftonpage"><span class="saleleft">LEFT:</span><%= @project.left %></span>
   </div>
   
  
@@ -164,9 +108,45 @@ and you receive a link to download the reward for free! </span>
 </div>
 
  
-  </div>
+  </div></div>
+  
+  
+  
+  <div class="categorybox">
+  <div class="authordata">
+  <div class="authordatatitle">About Creator</div>
+  <div class="grid_4">
+  <%= link_to image_tag(@creator.profile_image,  :class=> "alignnone size-full wp-image-16236"), @creator  %>
+  <h3><%= link_to @creator.name, @creator %></h3>
+  <p><%=@creator.biography %></p>
 
+  <ul>
+  <% if @creator.facebook_page.present? %>
+ <li><a href="<%= @creator.facebook_page_link %>" >Facebook</a></li>
+ <% end %>
+ <% if @creator.twitter_handle.present? %>
+ <li><%= link_to "Twitter", "http://twitter.com/#!/" + @creator.twitter_handle.sub('@', '') %> </li>
+ <% end %>
+ </ul>
+ </div>
+ </div>
+ </div>
+ <div class="categories-widget">
+ <div class="categorybox sellers">
+ <div class="backerstitle">Backers</div>
+ <ul>
+<% @shares.each_slice(4) { |sl| %>
+<li>
+ <% sl.each do  |s| %>
+ <%= if s.user.profile_image? 
+ link_to image_tag(s.user.profile_image, :class => "smallpreview" ), s.user 
+ end %>
+ <% end %> 
+ </li>
+ <% } %>
  
- 
+ </ul>
+ </div>
+ </div>
  </div>
  
