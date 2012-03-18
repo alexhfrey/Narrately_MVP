@@ -1,17 +1,29 @@
+<script type = "text/javascript">
+$('#myTab').tab('show'); 
+$(function () {
+    $('.tabs a:last').tab('show')
+  })
+</script>
 
    
    <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,400italic,700' rel='stylesheet' type='text/css'>
-   
-   
+       <div class="programtitle"><%= @project.project_title %> <p><%= @project.left %> Members</p></div> 
+	   <div class="lines"></div>
+
     <div class="programbox">
-    <div class="bigtitle"><%= @project.project_title %></div> 
+
     <% if @user == @creator %><span><%= link_to "Edit Project", edit_project_path(@project) %></span>
  <% end %>
-    <hr>
+    
+<ul class="nav nav-pills">
+  <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
+  <li><a href="#profile" data-toggle="tab">Actions</a></li>
+  <li><a href="http://localhost:3000/projects/9/backers" data-toggle="tab">Members</a></li>
+  <li><a href="#settings" data-toggle="tab">Admin</a></li>
+</ul>
     <div class="programinfo">   
     
        <%= simple_format(@project.description)%>
-
      <% if @promotions_clear %>
   <%= link_to "Join Now", new_project_share_path(@project), :class => "joinnow" %>
  
@@ -47,30 +59,6 @@
    <%= @project.promotion_description %></b>.  Then check back here often for updates and additional actions you can take to help make this vision a reality.  </div>
   </div>
   </div>
-  
- <div class="bigtitle"><%= @project.project_title %></div> 
- <div class = "caption"><%= @project.left %> Members</div>
- <% if @user == @creator %>
- <span><%= link_to "Edit Project", edit_project_path(@project) %></span>
- <% end %>
-  <div class="lines"></div>
-  
-  <div class="mainimg" >
-			<% if @project.video.present? %>
-					<% begin %>
-					<% video = @project.video_link %>
-					<iframe width="600" height="391" src= "<%= video %>" frameborder="0" allowfullscreen > </iframe>
-					<% rescue %>
-					<%= image_tag @project.file1_url(:large) %>
-					<% end %>
-					<% else %>
-					
-  			<%= image_tag @project.file1_url(:large) %>
-			<% end %> 
-			
-			</div>
-  
-  
   
   <div class="projectshare">
   <div class="productdata">
@@ -109,11 +97,6 @@
   </div>
   
   <div class="grid_4 righthome">
-  
-  
-  
-  
-  
   <div class="categorybox">
  <div class="categories-widget">
  <div class="categorybox sellers">
@@ -132,41 +115,6 @@
  </ul>
  </div>
  </div>
-   </div>
- 
- 
- <div class="categorybox">
-  <div class="sharebox">
-  <div class="sharetitle">Why Become an Ambass</div>
-  <div class="tagit">
-  
-  <% if @promotions_clear %>
-  <%= link_to "Join Now", new_project_share_path(@project), :class => "shareit" %>
- 
-  <% else %>
-  <%= link_to "Join Now", new_project_share_path(@project), :class => "shareit" %>
-  	<% end %>
-	 <span class="leftonpage"><span class="saleleft">Members:</span><%= @project.left %></span>
-  </div>
-  
- 
-<div class="infospan3"><b>What this site is about:</b>
-  <span>Projects need passionate fans to thrive. By clicking 'Back it' you are agreeing to
-	support this project by talking it up online and offline.  </span>	
-</div>
-
-<div class="infospan3"><b>What you get:</b>
-<span><%= @project.promotion_description %></span></div>  
-
-<div class ="infospan3"><b>How it works:</b> 
-<span> Just click the green button above and you will be asked to login w/ twitter or FB. Share this link with your friends, 
-and you receive a link to download the reward for free! </span>  
-</div>
-
- 
-  </div>
-
- 
- 
  </div>
+
  
