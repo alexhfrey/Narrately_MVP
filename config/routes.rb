@@ -4,11 +4,23 @@ MVP1::Application.routes.draw do
  
 
 
-  get "action_page/new"
+  
 
-  get "action_page/create"
+  get "fb_comments/new"
 
-  get "action_page/show"
+  get "fb_comments/create"
+
+  get "likes/new"
+
+  get "likes/create"
+
+  get "retweets/new"
+
+  get "retweets/create"
+
+  get "tweets/new"
+
+  get "tweets/create"
 
   get "selectpost/show"
 
@@ -24,7 +36,10 @@ MVP1::Application.routes.draw do
 		end
 		resources :shares, :only => [:new, :create]
 		resources :facebook_post, :only => [:new]
+		resources :action_pages, :only => [:new, :create]
    end
+  
+  
   
   match "/auth/:provider/callback" => "sessions#create"
   match '/signout' => "sessions#destroy", :as => :signout
@@ -37,7 +52,7 @@ MVP1::Application.routes.draw do
   match '/faq', :to=> 'pages#faq'
   match '/aboutus', :to=> 'pages#aboutus'
   match '/projects/:id/backers', :to=> 'projects#backers'
-  match '/projects/:id/newaction', :to=> 'action_page#new'
+
   
   
   

@@ -1,0 +1,34 @@
+<script type = "text/javascript">
+function setValue(button, target) {
+
+$(target).val(button.attr('name'));
+button.closest('p').find('.btn-primary').removeClass('btn-primary');
+button.addClass('btn-primary');
+
+return false;
+}
+
+</script>
+
+<div class="projectcreatebox">
+<fieldset class = "control-group">
+<%= form_tag(project_action_pages_path(@project), :method => "post") do %> 
+	<%= hidden_field_tag(:medium, nil )%>	
+	<p class="bluetitle">The action you want your users to take</p>
+	<hr>
+	<p><%= hidden_field_tag :actionable_type, "like" %> 
+	<label>What is the action?</label>
+	<a class = "btn btn-large btn-primary" name = "like"  onClick="setValue($(this), '#action_page_actionable_type')">Like a FB Post</a>
+	<a class = "btn btn-large"  name = "post" onClick="setValue($(this), '#action_page_actionable_type')">Post to Facebook</a>
+	<a class = "btn btn-large"  name = "retweet" onClick="setValue($(this), '#action_page_actionable_type')">Retweet a twitter post</a>
+	<a class = "btn btn-large"  name = "tweet" onClick="setValue($(this), '#action_page_actionable_type')">Post to Twitter</a>
+	<a class = "btn btn-large"  name = "fb_comment" onClick ="setValue($(this), '#action_page_actionable_type')">Comment on a Facebook Post</a>
+	<a class = "btn btn-large" name = "other" onClick ="setValue($(this), '#action_page_actionable_type')">Other</a>
+	<p class="helptext">Pick the category that best fits what you're promoting.</p>
+	
+ <p> <%= submit_tag :class => "btn btn-success btn-large"	 %> </p>
+ <% end %>
+
+<% @posts .each do |p| %>
+<div> <%= p["message"].first(60) + '...' %> </div>
+<% end %> 
