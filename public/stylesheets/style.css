@@ -891,6 +891,13 @@ border-radius:5px;
 margin-top:5px;
 float:left;}
 
+.memberspage {
+background:#FFF;
+width:400px;
+border-radius:5px;
+margin-top:5px;
+float:left;}
+
 .projectbox {
 background:#FFF;
 width:640px;
@@ -1340,6 +1347,20 @@ height:20px;
 	margin-top: 10px;
     margin-bottom: 10px;
     line-height: 25px; 
+    }
+    
+    .programtitle {
+	font-family:'Ubuntu';
+	font-weight:bold;
+	font-size:27px;
+	color:#38414b;
+	float:none;
+    margin-left: 15px;
+	margin-right:22px;
+	margin-top: 10px;
+    margin-bottom: 10px;
+    line-height: 25px;
+    clear: all; 
     }
 	
 	.bottomcallout {
@@ -2335,6 +2356,7 @@ border-right:1px solid #c2cbd2;
 border-bottom:1px solid #c2cbd2;
 border-radius:5px;
 margin-top:5px;
+margin-left: 10px;
 float:left;
 padding-left:10px;
 padding-top:10px;
