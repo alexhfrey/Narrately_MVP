@@ -1,56 +1,29 @@
-      
-<div class="grid_11 singleleft">
-	<div class="projectbox">
-		<div class="bigtitle">Community Page - <%= @project.project_title %></div> 
-		<div class = "caption"></div>
+<script type = "text/javascript">
+$('#myTab').tab('show'); 
+$(function () {
+    $('.tabs a:last').tab('show')
+  })
+</script>
 
-  <div class="lines"></div>
-  
-  <div class="mainimg" >
-			
-					
-  			<%= image_tag @project.file1_url(:large) %>
-			
-			
-			</div>
-  
-  
-  <div class="productdata">
-  <h3>Community Discussion</h3>
-  <div class="fb-comments" data-href= <%= request.fullpath %> data-num-posts="2" data-width="470">
-  </div>
-  </div>
-  </div>
-  
-  
-  
-  </div>
-  
-  <div class="grid_4 righthome">
-  
-  <div class="categorybox" style = "padding-bottom:10px;">
-  <div class="sharebox">
-  <div class="sharetitle">Actions to take</div>
- 
-  <div class = "grid_4"> We treat our users like owners. Here's what you can do to make our vision a reality (and <b> get cool stuff in the process! </b>) 
-  <ul>
-  <li style = "font-size:16px;"><a href = "www.amazon.com"> Leave a review </a> </li>
-  <li style = "font-size:16px;"><a href = "www.facebook.com"> Like our post  </a> </li>
-  </ul></div> </div> </div>
-  
-  
-  
-  <div class="categorybox">
-  <div class="authordata">
-  <div class="authordatatitle">The Vision</div>
-  
-	<div class = "grid_4"><%= simple_format @project.description %> </div>
- </div>
- </div>
- <div class="categories-widget">
- <div class="categorybox sellers">
- <div class="backerstitle">Backers</div>
- <ul>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,400italic,700' rel='stylesheet' type='text/css'>
+  <div class="programtitle"><%= @project.project_title %> <p><%= @project.left %> Members</p></div> 
+	   <div class="lines"></div>
+	   
+	   <div class="programbox">
+
+    <% if @user == @creator %><span><%= link_to "Edit Project", edit_project_path(@project) %></span>
+ <% end %>
+    
+<ul class="nav nav-pills">
+  <li><a href="#home" data-toggle="tab">Home</a></li>
+  <li><a href="#profile" data-toggle="tab">Actions</a></li>
+  <li class="active"><a href="#members" data-toggle="tab">Members</a></li>
+  <li><a href="#settings" data-toggle="tab">Admin</a></li>
+</ul>
+
+<div class="memberspage">
+<h3>People who support this brand</h3>
+<ul>
 <% @shares.each_slice(4) { |sl| %>
 <li>
  <% sl.each do  |s| %>
@@ -60,9 +33,12 @@
  <% end %> 
  </li>
  <% } %>
- 
  </ul>
  </div>
- </div>
- </div>
+
+    <h3>Why do you love this brand?</h3>
+  <div class="fb-comments" data-href= <%= request.fullpath %> data-num-posts="2" data-width="470"></div>
+    </div> 
+  
+  
  
