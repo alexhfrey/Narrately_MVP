@@ -15,12 +15,13 @@ $(function () {
  <% end %>
     
 <ul class="nav nav-pills">
-  <li><a href="#home" data-toggle="tab">Home</a></li>
-  <li><a href="#profile" data-toggle="tab">Actions</a></li>
-  <li class="active"><a href="#members" data-toggle="tab">Members</a></li>
-  <li><a href="#settings" data-toggle="tab">Admin</a></li>
+  <li><%= link_to "Home", (@project), "data-toggle"=>"tab" %></li>
+  <li><%= link_to "Actions", actions_project_path(@project), "data-toggle"=>"tab" %></li>
+  <li><%= link_to "Members", backers_project_path(@project), "data-toggle"=>"tab" %></li>
+  <% if @user == @creator %>
+  <li><%= link_to "Edit", edit_project_path(@project), "data-toggle"=>"tab" %></li>
+  <% end %>
 </ul>
-
 <div class="memberspage">
 <h3>People who support this brand</h3>
 <ul>
@@ -28,7 +29,7 @@ $(function () {
 <li>
  <% sl.each do  |s| %>
  <%= if s.user.profile_image? 
- link_to image_tag(s.user.profile_image, :class => "smallpreview" ), s.user 
+ link_to image_tag(s.user.profile_square), s.user 
  end %>
  <% end %> 
  </li>

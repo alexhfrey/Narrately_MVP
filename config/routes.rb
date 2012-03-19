@@ -34,6 +34,7 @@ MVP1::Application.routes.draw do
 			put 'cropped'
 			get 'download'
 			get 'actions'
+		    get 'backers' 
 		end
 		resources :shares, :only => [:new, :create]
 		resources :facebook_post, :only => [:new]

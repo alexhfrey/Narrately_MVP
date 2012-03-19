@@ -1,0 +1,29 @@
+<script type = "text/javascript">
+$('#myTab').tab('show'); 
+$(function () {
+    $('.tabs a:last').tab('show')
+  })
+</script>
+
+<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,400italic,700' rel='stylesheet' type='text/css'>
+  <div class="programtitle"><%= @project.project_title %> <p><%= @project.left %> Members</p></div> 
+	   <div class="lines"></div>
+	   
+	   <div class="programbox">
+    
+<ul class="nav nav-pills">
+  <li><%= link_to "Home", (@project), "data-toggle"=>"tab" %></li>
+  <li><%= link_to "Actions", actions_project_path(@project), "data-toggle"=>"tab" %></li>
+  <li><%= link_to "Members", backers_project_path(@project), "data-toggle"=>"tab" %></li>
+  <% if @user == @creator %>
+  <li><%= link_to "Edit", edit_project_path(@project), "data-toggle"=>"tab" %></li>
+  <% end %>
+</ul>
+
+
+    <h3>Why do you love this brand?</h3>
+  <div class="fb-comments" data-href= <%= request.fullpath %> data-num-posts="2" data-width="470"></div>
+    </div> 
+  
+  
+ 

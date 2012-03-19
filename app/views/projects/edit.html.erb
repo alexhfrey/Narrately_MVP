@@ -1,3 +1,9 @@
+<script type = "text/javascript">
+$('#myTab').tab('show'); 
+$(function () {
+    $('.tabs a:last').tab('show')
+  })
+
 <%= stylesheet_link_tag "bootstrap.css" %>
 
 <script type = "text/javascript">
@@ -11,19 +17,24 @@ return false;
 }
 
 </script>
+<div class="programtitle"><%= @project.project_title %> <p><%= @project.left %> Members</p></div>  
+<div class="lines"></div>
 
-
+<div class="programbox">
+<ul class="nav nav-pills">
+  <li><%= link_to "Home", (@project), "data-toggle"=>"tab" %></li>
+  <li><%= link_to "Actions", actions_project_path(@project), "data-toggle"=>"tab" %></li>
+  <li><%= link_to "Members", backers_project_path(@project), "data-toggle"=>"tab" %></li>
+  <% if @user == @creator %>
+  <li><%= link_to "Edit", edit_project_path(@project), "data-toggle"=>"tab" %></li>
+  <% end %>
+</ul>
 <%= render 'shared/error_messages' %>
-
-<div class="projecteditbox">
 
 <fieldset class = "control-group">
 
 <%= simple_form_for @project, :validate => true, :html => { :multipart => true } do |f| %>
 
-	<p class="bluetitle">First, tell us about your project</p>
-	<p class="titlepromo">Your project is unique, shine some light on why</p>
-	<hr>
 	<p><%= f.hidden_field :tag1, :value => @project.tag1%> 
 	<label>What are you promoting?</label>
 	<a class = "btn btn-large<% if @project.tag1 == "Book" %> btn-primary <% end %>" name = "Book"  onClick="setValue($(this), '#project_tag1')">My Book</a>

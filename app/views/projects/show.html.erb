@@ -11,15 +11,13 @@ $(function () {
 	   <div class="lines"></div>
 
     <div class="programbox">
-
-    <% if @user == @creator %><span><%= link_to "Edit Project", edit_project_path(@project) %></span>
- <% end %>
-    
 <ul class="nav nav-pills">
-  <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
-  <li><a href="#profile" data-toggle="tab">Actions</a></li>
-  <li><a href="http://localhost:3000/projects/9/backers" data-toggle="tab">Members</a></li>
-  <li><a href="#settings" data-toggle="tab">Admin</a></li>
+  <li><%= link_to "Home", (@project), "data-toggle"=>"tab" %></li>
+  <li><%= link_to "Actions", actions_project_path(@project), "data-toggle"=>"tab" %></li>
+  <li><%= link_to "Members", backers_project_path(@project), "data-toggle"=>"tab" %></li>
+  <% if @user == @creator %>
+  <li><%= link_to "Edit", edit_project_path(@project), "data-toggle"=>"tab" %></li>
+  <% end %>
 </ul>
     <div class="programinfo">   
     

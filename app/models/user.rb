@@ -63,5 +63,24 @@ create! do |user|
 end
 end
 
+def profile_large
+	if provider == "twitter"
+	""
+	else
+	if uid.present?
+	"http://graph.facebook.com/" + uid + "/picture?type=large"
+	end
+	end
+end 
+
+def profile_square 
+	if provider == "twitter"
+	""
+	else
+	if uid.present?
+		"http://graph.facebook.com/" + uid + "/picture?type=square"
+	end
+	end
+end
 
 end
