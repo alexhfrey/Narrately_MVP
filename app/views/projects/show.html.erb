@@ -7,7 +7,7 @@ $(function () {
 
    
    <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,400italic,700' rel='stylesheet' type='text/css'>
-       <div class="programtitle"><%= @project.project_title %> <p><%= @project.left %> Members</p></div> 
+       <div class="programtitle"><%= @project.project_title %> <p><%= @project.shares.count %> Members</p></div> 
 	   <div class="lines"></div>
 
     <div class="programbox">
@@ -21,7 +21,7 @@ $(function () {
 </ul>
     <div class="programinfo">   
     
-       <%= simple_format(@project.description)%>
+       <%= simple_format(@project.short_description)%>
          <h3>Why Become an Ambassador?</h3>
          <p>
          1. Because you support what we're doing
@@ -30,12 +30,10 @@ $(function () {
          <br>
          3. Access to founders and other supporters 
          </p>
-     <% if @promotions_clear %>
+
   <%= link_to "Join Now", new_project_share_path(@project), :class => "joinnow" %>
  
-  <% else %>
-  <%= link_to "Join Now", new_project_share_path(@project), :class => "joinnow" %>
-  	<% end %>
+
   	</div>
   	
   	 <div class="mainimg2" >

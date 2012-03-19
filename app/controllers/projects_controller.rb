@@ -148,10 +148,7 @@ before_filter :eligible_for_reward, :only => [:download, :backers, :actions]
   end
 
  
-  @promotions_clear = ( @project.left > 0 )
-  if current_user 
-	@promotions_clear = (@promotions_clear && Share.find_by_user_id_and_project_id(current_user.id, @project.id).nil?  )	
-  end
+ 
    
  end
   def confirmation

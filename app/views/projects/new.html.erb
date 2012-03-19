@@ -21,16 +21,16 @@ return false;
 
 <%= simple_form_for @project, :validate => true, :html => { :multipart => true } do |f| %>
 
-	<p class="bluetitle">Create your ambassador program</p>
-	<p class="titlepromo">Start your awesome community ambassador program below</p>
+	<p class="bluetitle">Create your fan club</p>
+	<p class="titlepromo">Start your awesome fan club below</p>
 	<p class="titlepromo">Need some ideas? Here are some great programs: <a href="http://mysnowball.com/projects/8">Noor Kids</a>, <a href="http://www.yogastart.com/">Yoga Start</a>, and <a href="http://mysnowball.com/projects/9">Ivy Bytes</a>.</p>
 	<hr>
 	
    <p> <%= f.input :project_title, :label => "A Catchy Title",  :input_html => { :class => 'text'} %> </p><p class="helptext">A catchy title that describes what your brand stands for.</p>
-   <p> <%= f.input :project_title, :label => "What's the name of your startup?",  :input_html => { :class => 'text'} %> </p><p class="helptext">The name of your organization is you're a business/non-profit. Your name if you're an author.</p>
-   <p><%= f.input :description, :label => "Why is your startup cool?", :input_html => {:size => "15x4"}%> </p><p class="helptext">Keep it around 140 characters!</p>   
+   <p> <%= f.input :brand_name, :label => "What's the name of your brand?",  :input_html => { :class => 'text'} %> </p><p class="helptext">The name of your organization is you're a business/non-profit. Your name if you're an author.</p>
+   <p><%= f.input :short_description, :label => "Why is your brand cool?", :input_html => {:size => "15x4"}%> </p><p class="helptext">Keep it around 140 characters!</p>   
    <p><%= f.input :file1, :label => "Add a large Cover Image", :required => false%></p><p class="helptext">Use a creative photo! Ideal dimensions are 600px x 400px.  We accept JPEG and PNG for now with a maximum size of 2 MB.</p>
-   <p><%= f.input :description, :label => "Describe your ambassador program (Why Join, who should join, etc.)", :input_html => {:size => "20x11"}%> </p><p class="helptext">What does your brand stand for? Top 3 values?</p>   
+   <p><%= f.input :description, :label => "Describe fan club (Why Join, who should join, etc.)", :input_html => {:size => "20x11"}%> </p><p class="helptext">What does your brand stand for? Top 3 values?</p>   
  <p> <%= f.input :video, :label => "Add a Youtube video (optional)"%> </p><p class="helptext">This is optional, but projects with videos get shared more. Just enter the link here. </p>      
 	 <%= f.hidden_field :file1_cache %>
 

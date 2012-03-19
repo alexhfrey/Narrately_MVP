@@ -16,7 +16,7 @@ class SharesController < ApplicationController
   @user = current_user
  
   
-  @tweet_text = 'I backed a cool ' + @project.tag1 + ' project by ' + @project.user.name + ' and got ' + 'a great free PDF' + '. You can too.'
+  @tweet_text = 'I just joined the ' + @project.brand_name + ' fan club on Snowball. You can too. '
   #twitter_share_page =  "http://#{request.host}:#{request.port}" + "/projects/" + params[:project_id] + "?referral=twitter_" + @user.id.to_s + '_' + @project.id.to_s 
   @twitter_share_page =  "http://www.mysnowball.com" + "/projects/" + params[:project_id] + "?referral=twitter_" + @user.id.to_s + '_' + @project.id.to_s 
   via = "SnowballChirps"

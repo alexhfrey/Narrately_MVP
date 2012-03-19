@@ -23,7 +23,7 @@ validates :file1,
 			:maximum => 2.megabytes.to_i
 		}
 validates :file2, 
-		  :presence => true,
+		  
 		  :file_size => {
 			:maximum => 10.megabytes.to_i
 		}
@@ -31,7 +31,7 @@ validates :file2,
 validates :description, :length => { :minimum => 50, :maximum => 1000, 
 						:message => "must be between 50 and 1000 characters"}
 
-validates :promotion_limit, :presence => true
+
 
 validates :project_title, :length => { :minimum => 5, :maximum => 100, 
 							:message => "must be between 5 and 100 characters"}
@@ -49,9 +49,6 @@ end
 #validates_attachment_content_type :project_image, :content_type=>['image/jpeg', 'image/png'], :message => "Cover image must be in JPEG format"
 #validates_attachment_size :project_image, :less_than=> 2.megabytes, :message => "Cover image must be less than 2 MB"
 
-def left
-	promotion_limit - shares.length
-end
 
 def crop_ratio
     img = Magick::Image::read(self.file1_url).first
