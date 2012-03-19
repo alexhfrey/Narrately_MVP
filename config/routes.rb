@@ -33,6 +33,7 @@ MVP1::Application.routes.draw do
 			get 'crop'
 			put 'cropped'
 			get 'download'
+			get 'actions'
 		end
 		resources :shares, :only => [:new, :create]
 		resources :facebook_post, :only => [:new]
@@ -52,7 +53,7 @@ MVP1::Application.routes.draw do
   match '/faq', :to=> 'pages#faq'
   match '/aboutus', :to=> 'pages#aboutus'
   match '/projects/:id/backers', :to=> 'projects#backers'
-
+ 
   
   
   

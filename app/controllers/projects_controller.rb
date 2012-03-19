@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
 before_filter :owns_project, :only => [:edit, :update]
-before_filter :eligible_for_reward, :only => [:download, :backers]
+before_filter :eligible_for_reward, :only => [:download, :backers, :actions]
 
   def new
 	@user = current_user
@@ -143,6 +143,9 @@ before_filter :eligible_for_reward, :only => [:download, :backers]
 	end
   end
   
+  def actions
+	@project = Project.find(params[:id])
+  end
 
  
   @promotions_clear = ( @project.left > 0 )
