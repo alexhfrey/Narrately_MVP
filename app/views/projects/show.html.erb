@@ -24,6 +24,14 @@ $(function () {
     <div class="programinfo">   
     
        <%= simple_format(@project.description)%>
+         <h3>Why Become an Ambassador?</h3>
+         <p>
+         1. Because you support what we're doing
+         <br>
+         2. You'll get free goodies!
+         <br>
+         3. Access to founders and other supporters 
+         </p>
      <% if @promotions_clear %>
   <%= link_to "Join Now", new_project_share_path(@project), :class => "joinnow" %>
  
