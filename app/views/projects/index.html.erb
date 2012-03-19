@@ -1,8 +1,6 @@
-<div class="grid_11 singleleft">
-<div class="discoverbox">
-<div class="bigtitle">Support great startups by joining their ambassador program</div>
+<div class="programtitle">Join a fan club. Get cool stuff.</div>
 <div class="lines"></div>
-
+<div class="discoverbox">
 <ul class="mysharedprojects">
 <% Project.where("promotion_limit > 0") .sort_by {rand} [0..8] .each do |p| %>
 <li>
@@ -12,7 +10,5 @@
 <%end%>
 </ul>
 
-<div class="grid_12">
-</div>
 
 

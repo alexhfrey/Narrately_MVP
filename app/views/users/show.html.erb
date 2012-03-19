@@ -22,24 +22,9 @@
 </div>
 <% end %>
 
-<div class="myprojectbox">
-<div class="bigtitle"><%= @user.first_name%>'s Ambaasador Programs</div>
-<div class="lines"></div>
-<div class="grid_12">
-<ul class="mysharedprojects">
-<% @projects.each do |p| %>
-<li>
-<%= render :partial => "shared/projects", :locals => { :user => @user, :p => p } %>
-</li>
-<% end unless @projects.nil? %>
-
-</ul>
-</div>
-</div>
 <div class="mysharesbox">
-<div class="bigtitle"><%= @user.first_name%>'s Ambassador Memberships</div>
+<div class="bigtitle"><%= @user.first_name%>'s Fan Clubs</div>
 <div class="lines"></div>
-<div class="grid_12">
 <ul class="mysharedprojects">
 
 <% @shares.each do |s| %>
@@ -48,9 +33,20 @@
 </li>
 <% end %>
 </ul>
+</div>
 
+<div class="myprojectbox">
+<div class="bigtitle">Fan Clubs Created By <%= @user.first_name%></div>
+<div class="lines"></div>
+<ul class="mysharedprojects">
+<% @projects.each do |p| %>
+<li>
+<%= render :partial => "shared/projects", :locals => { :user => @user, :p => p } %>
+</li>
+<% end unless @projects.nil? %>
+</ul>
 </div>
-</div>
+
 </div>
 <div class="grid_4 righthome">
 
