@@ -534,17 +534,36 @@ margin-bottom: 25px;}
     }
 
 .mycreatedprojectsh1 {
-font-size: 15px; 
 float:left;
-text-decoration:none;
-padding-left: 10px;
-padding-top: 4px;
-width: 250px; 
+height: 35px;
+width: 291px; 
+line-height: 35px;
+font-size: 19px; 
+color: #ffffff; 
+padding-left: 7px;
+padding-top: 0px;
+padding-right: 0px;
+margin-top: -35px;
+z-index: 3; 
+position: relative; 
 }
 
 .mycreatedprojectsh1 a:hover {
-    text-decoration: none; 
+    text-decoration: underline; 
     }
+    
+.mycreatedprojectsh1box {
+height: 35px;
+width: 298px; 
+float:left;
+background-color: #000000; 
+margin-top: -35px;
+opacity:0.6;
+filter:alpha(opacity=60); /* For IE8 and earlier */
+z-index: 2; 
+position: relative; 
+}
+    
 
 .featprod {
 list-style:none;
@@ -592,20 +611,18 @@ float:left;}
 .mysharedprojects li {
 display:block;
 float:left;
-width:268px;
-height:245px;
-background:url(../images/featureimgbg.png) repeat;
+width:298px;
+height:195px;
+background:#FFFFFE;
 border-style: solid; 
 border-width:0px; 
 border-color:#D4D4D4; 
-border-radius: 7px 7px 7px 7px;
--moz-border-radius: 7px 7px 7px 7px;
 box-shadow: 4px 4px 1px #C0C0C0;
 -moz-box-shadow: 4px 4px 1px #C0C0C0;
 -webkit-box-shadow: 4px 4px 1px #C0C0C0;
-margin-left:5px;
+margin-left:2px;
 margin-right:15px;
-margin-bottom: 25px;}
+margin-bottom: 30px;}
 
 .mysharedprojects li a:hover {
     text-decoration: none; 
@@ -869,8 +886,8 @@ background:url(../images/shizzle2.png) repeat-x;
 	margin-right:10px;
 	margin-bottom:8px;}
 	.fimg2 {
-	margin-left:10px;
-	margin-top:11px;}
+	margin-left:0px;
+	margin-top:0px;}
 	.gray {
 	background:url(../images/circle-gray.png);
 	margin-left:125px;}
@@ -887,7 +904,6 @@ background:#FFF;
 width:252px;
 border-right:1px solid #c2cbd2;
 border-bottom:1px solid #c2cbd2;
-border-radius:5px;
 margin-top:5px;
 float:left;}
 
@@ -903,7 +919,6 @@ background:#FFF;
 width:640px;
 border-right:1px solid #c2cbd2;
 border-bottom:1px solid #c2cbd2;
-border-radius:5px;
 margin-top:5px;
 float:left;
 padding-left:10px;
@@ -916,7 +931,6 @@ width:640px;
 width:640px;
 border-right:1px solid #c2cbd2;
 border-bottom:1px solid #c2cbd2;
-border-radius:5px;
 margin-top:5px;
 float:left;
 padding-left:10px;
@@ -925,12 +939,7 @@ padding-right:10px;
 padding-bottom:10px;}
 
 .myrewardsbox {
-background:#FFF;
 width:640px;
-width:640px;
-border-right:1px solid #c2cbd2;
-border-bottom:1px solid #c2cbd2;
-border-radius:5px;
 margin-top:5px;
 float:left;
 padding-left:10px;
@@ -962,12 +971,7 @@ margin-right:15px;
 margin-bottom: 25px;}
 
 .myprojectbox {
-background:#FFF;
 width:640px;
-width:640px;
-border-right:1px solid #c2cbd2;
-border-bottom:1px solid #c2cbd2;
-border-radius:5px;
 margin-top:5px;
 float:left;
 padding-left:10px;
@@ -976,18 +980,14 @@ padding-right:10px;
 padding-bottom:10px;}
 
 .mysharesbox {
-background:#FFF;
 width:640px;
-width:640px;
-border-right:1px solid #c2cbd2;
-border-bottom:1px solid #c2cbd2;
-border-radius:5px;
 margin-top:5px;
 float:left;
 padding-left:10px;
 padding-top:10px;
 padding-right:10px;
 padding-bottom:10px;}
+
 .createwelcome {
 background:#FFF;
 width:640px;
@@ -1003,17 +1003,14 @@ padding-right:10px;
 padding-bottom:10px;}
 
 .discoverbox {
-background:#FFF;
-width:920px;
-border-right:1px solid #c2cbd2;
-border-bottom:1px solid #c2cbd2;
-border-radius:5px;
+width:960px;
+border-radius:0px;
 margin-top:5px;
 float:left;
-padding-left:10px;
-padding-top:10px;
-padding-right:10px;
-padding-bottom:10px;}
+padding-left:0px;
+padding-top:0px;
+padding-right:0px;
+padding-bottom:0px;}
 
 
 .loginbox {
@@ -1780,7 +1777,7 @@ height:20px;
 	width:960px;}
     
 	.onsale {
-    background: url(../images/circle-green.png) repeat scroll 0 0 transparent;
+    background: url(../images/circle-green.png) repeat scroll 0 0      transparent;
     color: #FFFFFF;
     text-shadow: 1px 0 0 #C51B00; 
     display: inline;
@@ -2349,12 +2346,11 @@ height:20px;
     float: left; 
     }
     
-    .programbox {
+.programbox {
 background:#FFF;
 width:920px;
 border-right:1px solid #c2cbd2;
 border-bottom:1px solid #c2cbd2;
-border-radius:5px;
 margin-top:5px;
 margin-left: 10px;
 float:left;
