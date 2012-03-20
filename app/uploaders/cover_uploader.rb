@@ -17,7 +17,7 @@ class CoverUploader < CarrierWave::Uploader::Base
    
    version :medium do
 		process :cropit
-		process :resize_to_fill => [248, 162]
+		process :resize_to_fill => [298, 195]
 	end
    
    

@@ -1,8 +1,8 @@
-<div class="programtitle">Join a fan club. Get cool stuff.</div>
+<div class="programtitle">Join a fan club. Show your love. Get awesome stuff.</div>
 <div class="lines"></div>
 <div class="discoverbox">
 <ul class="mysharedprojects">
-<% Project.where("promotion_limit > 0") .sort_by {rand} [0..8] .each do |p| %>
+<% Project.all .sort_by {rand} [0..8] .each do |p| %>
 <li>
 <%= render :partial => "shared/projects", :locals => { :user => @user, :p => p } %>
 
