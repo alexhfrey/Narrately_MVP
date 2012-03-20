@@ -145,6 +145,7 @@ before_filter :eligible_for_reward, :only => [:download, :backers, :actions]
   
   def actions
 	@project = Project.find(params[:id])
+	@actions = @project.action_pages
   end
 
  

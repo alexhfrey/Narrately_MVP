@@ -24,6 +24,9 @@ $(function () {
     <h3>Why do you love this brand?</h3>
   <div class="fb-comments" data-href= <%= request.fullpath %> data-num-posts="2" data-width="470"></div>
     </div> 
-  
+  <div>
+	<% @actions.first(3).each do |e| %>
+	<% render :partial => "shared/projects", :locals => { :user => @user, @action => e } %>
+  </div>
   
  
