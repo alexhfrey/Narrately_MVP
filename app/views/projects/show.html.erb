@@ -54,7 +54,18 @@ $(function () {
     </div>
     
 <div class="projectmembers">
-yo yo
+<h3>People who support this brand</h3>
+<ul>
+<% @shares.each_slice(4) { |sl| %>
+<li>
+ <% sl.each do  |s| %>
+ <%= if s.user.profile_image? 
+ link_to image_tag(s.user.profile_square), s.user 
+ end %>
+ <% end %> 
+ </li>
+ <% } %>
+ </ul>
 </div>
     
    <div class="grid_11 singleleft"> 
