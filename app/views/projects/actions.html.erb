@@ -25,8 +25,9 @@ $(function () {
   <div class="fb-comments" data-href= <%= request.fullpath %> data-num-posts="2" data-width="470"></div>
     </div> 
   <div>
-	<% @actions.first(3).each do |e| %>
+	<% @acts .each do |e| %>
 	<% render :partial => "shared/projects", :locals => { :user => @user, @action => e } %>
+	<% end %>
   </div>
   
  
