@@ -17,7 +17,8 @@ return false;
 }
 
 </script>
-<div class="programtitle"><%= @project.project_title %> <p><%= @project.left %> Members</p></div>  
+
+<div class="programtitle"><%= @project.project_title %> <p>Members</p></div>  
 <div class="lines"></div>
 
 <div class="programbox">
@@ -35,46 +36,22 @@ return false;
 
 <%= simple_form_for @project, :validate => true, :html => { :multipart => true } do |f| %>
 
-	<p><%= f.hidden_field :tag1, :value => @project.tag1%> 
-	<label>What are you promoting?</label>
-	<a class = "btn btn-large<% if @project.tag1 == "Book" %> btn-primary <% end %>" name = "Book"  onClick="setValue($(this), '#project_tag1')">My Book</a>
-	<a class = "btn btn-large<% if @project.tag1 == "Fitness" %> btn-primary <% end %>"  name = "Fitness" onClick="setValue($(this), '#project_tag1')">My Class</a>
-	<a class = "btn btn-large<% if @project.tag1 == "Music" %> btn-primary <% end %>"  name = "Music" onClick="setValue($(this), '#project_tag1')">My Music</a>
-	<a class = "btn btn-large<% if @project.tag1 == "Art" %> btn-primary <% end %>"  name = "Art" onClick="setValue($(this), '#project_tag1')">My Art</a>
-	<a class = "btn btn-large<% if @project.tag1 == "Food" %> btn-primary <% end %>"  name = "Food" onClick ="setValue($(this), '#project_tag1')">My Startup</a>
-	<a class = "btn btn-large<% if @project.tag1 == "Event" %> btn-primary <% end %>" name = "Event" onClick ="setValue($(this), '#project_tag1')">My Event</a>
-	<p class="helptext">Pick the category that best fits what you're promoting.</p>
-	
-	
-   <p> <%= f.input :project_title, :label => "Give your project a name",  :input_html => { :class => 'text'} %> </p><p class="helptext">Such as your book title, class name, startup name, etc.</p>
-   <p><%= f.input :description, :label => "Describe your project", :input_html => {:size => "20x11"}%> </p><p class="helptext">Provide more details about your project in 50-1000 characters</p>   
- <p><%= f.input :file1, :label => "Change your cover image", :required => false, :input_html => { :validate => false }, :value => @project.file1_url , :validate => false%></p><p class="helptext">This is what users will see on your page. Ideal dimensions are 600px x 400px.  We accept JPEG and PNG for now with a maximum size of 2 MB.</p>
-	<p> <%= image_tag @project.file1_url(:medium) %>
-    <%= f.hidden_field :file1_cache %> </p>
 
-<p> <%= f.input :video, :label => "Add a Youtube video (optional)"%> </p><p class="helptext">This is optional, but projects with videos get shared more.</p>      
+   <p> <%= f.input :project_title, :label => "A Catchy Title",  :input_html => { :class => 'text'} %> </p><p class="helptext">A catchy title that describes what your brand stands for.</p>
+   <p> <%= f.input :brand_name, :label => "What's the name of your brand?",  :input_html => { :class => 'text'} %> </p><p class="helptext">The name of your organization is you're a business/non-profit. Your name if you're an author.</p>
+   <p><%= f.input :short_description, :label => "Why is your brand cool?", :input_html => {:size => "15x4"}%> </p><p class="helptext">Keep it around 140 characters!</p>   
+   <p><%= f.input :file1, :label => "Change Your Cover Image", :required => false%></p><p class="helptext">Use a creative photo! Ideal dimensions are 600px x 400px.  We accept JPEG and PNG for now with a maximum size of 2 MB.</p>
+   <p> <%= image_tag @project.file1_url(:medium) %>
+     <%= f.hidden_field :file1_cache %> </p>
+   <p><%= f.input :description, :label => "Describe fan club (Why Join, who should join, etc.)", :input_html => {:size => "20x11"}%> </p><p class="helptext">What does your brand stand for? Top 3 values?</p>   
+	
+   <p> <%= f.input :video, :label => "Add a Youtube video (optional)"%> </p><p class="helptext">This is optional, videos tell a great story! Just enter the Youtube link here.</p>      
 
-<p class="bluetitle">Second, tell us about the reward</p>
-<p class="titlepromo"	>This is the reward your fans will receive when they share your project, make it something they want!</p>
-<hr>
-<p> 
-<%= f.hidden_field :promotion_limit, :value => @project.promotion_limit %>
-	<label>How many rewards do you want to give away?</label>
-	<a class = "btn btn-large<% if @project.promotion_limit == 10 %> btn-primary <% end %>" name = "10"  onClick="setValue($(this), '#project_promotion_limit')">10</a>
-	<a class = "btn btn-large<% if @project.promotion_limit == 25 %> btn-primary <% end %>"  name = "25" onClick="setValue($(this), '#project_promotion_limit')">25</a>
-	<a class = "btn btn-large<% if @project.promotion_limit == 50 %> btn-primary <% end %>"  name = "50" onClick="setValue($(this), '#project_promotion_limit')">50</a>
-	<a class = "btn btn-large<% if @project.promotion_limit == 75 %> btn-primary <% end %>"  name = "75" onClick="setValue($(this), '#project_promotion_limit')">75</a>
-	<a class = "btn btn-large<% if @project.promotion_limit == 100 %> btn-primary <% end %>"  name = "100" onClick="setValue($(this), '#project_promotion_limit')">100</a>
-	<a class = "btn btn-large<% if @project.promotion_limit == 200 %> btn-primary <% end %>"  name = "200" onClick="setValue($(this), '#project_promotion_limit')">200</a>
-	</p>
-	
-	
- <p> <%= f.input :promotion_description, :label => "What are you giving away?", :input_html => {:size => "15x5"}%></p><p class="helptext">In exchange for sharing your project, this is what fans will receive</p>
- <p> <%= f.input :promotion_value, :as => :currency, :label => "What is the value of the reward ($)?", :input_html => {:style => "width:100px; height: 30px"}, :type => "text"%></p>
- 
-  <p> <%= f.input :file2, :required => false, :label => "Add the reward file" , :input_html => { :validate => false }%> </p><p class="helptext">Examples include ebooks, digital coupon, etc. Please keep the file size below 10 MB. Eligible fans will be able to download this. </p>
-	<%= f.hidden_field :file2_cache %>
-<p><%= f.input :purchase_link, :label => "Link to purchase"%></p><p class="helptext">Once your rewards are gone, fans will be able to purchase your product if you sell it online</p>
+
+   <p> <%= f.input :file2, :required => false, :label => "Give a reward to new ambassadors (optional)"%> </p><p class="helptext">Examples include ebooks, digital coupon, etc. Please keep the file size below 10 MB.</p>
+   <p> <%= f.input :promotion_description, :label => "What is it you are giving away?", :input_html => {:size => "15x3"}%></p><p class="helptext">In exchange for joining your ambassador program, this is what fans will receive</p>
+   <%= f.hidden_field :file2_cache %>
+<br>
 
  <p> <%= f.submit :class => "btn btn-success btn-large"	 %> </p>
 

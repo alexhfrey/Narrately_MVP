@@ -39,6 +39,7 @@ before_filter :is_page_admin
     if @action.save 
 		action_page = @action.build_action_page(:project_id => @project.id)
 		action_page.save
+		@action.save
 		redirect_to actions_project_path(@project)
 	end
   end
