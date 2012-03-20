@@ -18,15 +18,18 @@ return false;
 	<hr>
 	<p><%= hidden_field_tag :actionable_type, "like" %> 
 	<label>What is the action?</label>
-	<a class = "btn btn-large btn-primary" name = "like"  onClick="setValue($(this), '#action_page_actionable_type')">Like a FB Post</a>
-	<a class = "btn btn-large"  name = "post" onClick="setValue($(this), '#action_page_actionable_type')">Post to Facebook</a>
-	<a class = "btn btn-large"  name = "retweet" onClick="setValue($(this), '#action_page_actionable_type')">Retweet a twitter post</a>
-	<a class = "btn btn-large"  name = "tweet" onClick="setValue($(this), '#action_page_actionable_type')">Post to Twitter</a>
-	<a class = "btn btn-large"  name = "fb_comment" onClick ="setValue($(this), '#action_page_actionable_type')">Comment on a Facebook Post</a>
-	<a class = "btn btn-large" name = "other" onClick ="setValue($(this), '#action_page_actionable_type')">Other</a>
+	<a class = "btn btn-large btn-primary" name = "like"  onClick="setValue($(this), '#actionable_type')">Like a FB Post</a>
+	<a class = "btn btn-large"  name = "post" onClick="setValue($(this), '#actionable_type')">Post to Facebook</a>
+	<a class = "btn btn-large"  name = "retweet" onClick="setValue($(this), '#actionable_type')">Retweet a twitter post</a>
+	<a class = "btn btn-large"  name = "tweet" onClick="setValue($(this), '#actionable_type')">Post to Twitter</a>
+	<a class = "btn btn-large"  name = "fb_comment" onClick ="setValue($(this), '#actionable_type')">Comment on a Facebook Post</a>
+	<a class = "btn btn-large" name = "other" onClick ="setValue($(this), '#actionable_type')">Other</a>
 	<p class="helptext">Pick the category that best fits what you're promoting.</p>
 	
- <p> <%= submit_tag :class => "btn btn-success btn-large"	 %> </p>
+	<p><label>Enter the link that you would like users to share, retweet, like, or comment on. </label>
+	<%= text_field_tag :link %>  </p>
+	
+ <p> <%= submit_tag "Submit", :class => "btn btn-success btn-large"	 %> </p>
  <% end %>
 
 <% @posts .each do |p| %>

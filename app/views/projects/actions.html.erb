@@ -20,9 +20,10 @@ $(function () {
   <% end %>
 </ul>
 
-<div clas="brandactions">
-<ul>
-<li>hello!
-</li>
-</ul>
-</div>
+   
+  <div>
+	<% @actions.first(3).each do |e| %>
+	<% render :partial => "shared/projects", :locals => { :user => @user, @action => e } %>
+  </div>
+ 
+ 
