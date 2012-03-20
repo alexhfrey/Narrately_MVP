@@ -20,10 +20,5 @@ $(function () {
   <% end %>
 </ul>
 
-   
-  <div>
-	<% @actions.first(3).each do |e| %>
-	<% render :partial => "shared/projects", :locals => { :user => @user, @action => e } %>
-  </div>
- 
+ </div>
  
