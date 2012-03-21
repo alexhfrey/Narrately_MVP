@@ -7,7 +7,7 @@ $(function () {
 
    
    <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,400italic,700' rel='stylesheet' type='text/css'>
-       <div class="programtitle"><%= @project.project_title %> <p><%= @project.shares.count %> Members</p></div> 
+       <div class="programtitle"><%= @project.project_title %> <p><%= @project.brand_name %><%= @project.shares.count %> Members</p></div> 
 	   <div class="lines"></div>
 
     <div class="programbox">
@@ -56,14 +56,14 @@ $(function () {
 <div class="projectmembers">
 <h3>People who support this brand</h3>
 <ul>
-<% @shares.each_slice(4) { |sl| %>
-<li>
+<% @shares.each_slice(16) { |sl| %>
+<li class="memberspicture">
  <% sl.each do  |s| %>
  <%= if s.user.profile_image? 
- link_to image_tag(s.user.profile_square), s.user 
- end %>
- <% end %> 
- </li>
+ link_to image_tag(s.user.profile_square), s.user, :class => "memberspicture" 
+ end %> </li> 
+ <% end %>
+
  <% } %>
  </ul>
 </div>
