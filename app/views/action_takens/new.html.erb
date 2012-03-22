@@ -1,0 +1,17 @@
+<div class="projectcreatebox">
+
+<fieldset class = "control-group">
+
+<%= simple_form_for @action_takes do |f| %>
+
+	<p class="bluetitle"><%= @title %></p>
+	<hr>
+	<% if @post %>
+		<p> <%= @post %> </p>
+	<% end %>
+   <p> <%= f.input :message, :label => "Enter your message or comment" %> </p>
+  
+<br>
+ <p> <%= f.submit :class => "btn btn-success btn-large"	 %> </p>
+
+ <% end %>

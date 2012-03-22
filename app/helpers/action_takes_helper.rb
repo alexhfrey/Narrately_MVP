@@ -1,0 +1,2 @@
+module ActionTakesHelper
+end

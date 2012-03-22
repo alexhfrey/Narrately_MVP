@@ -9,9 +9,12 @@ if current_user #logged-in already: just need to update some tokens
 		@user.token = auth['credentials']['token']
 		@user.save
 		a = session[:redirect]
-		session[:redirect] = nil
-		redirect_path = a
-			
+		if session[:redirect]
+			session[:redirect] = nil
+			redirect_path = a
+		else
+			redirect_path = @user
+		end
 	end
 	
 	
@@ -40,7 +43,7 @@ else
 		user.token = auth["credentials"]["token"]
 		user.save
 	end
-	if session[:redirect]
+	if session[:redirect].present?
 		@project = Project.find(session[:redirect])
 		session[:redirect] = nil
 		redirect_path = new_project_share_path(@project) 
