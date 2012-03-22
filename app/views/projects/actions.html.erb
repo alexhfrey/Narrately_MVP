@@ -6,7 +6,7 @@ $(function () {
 </script>
 
 <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,400italic,700' rel='stylesheet' type='text/css'/>
-  <div class="programtitle"><%= @project.project_title %> <p><%= @project.shares.length %> Members</p></div> 
+       <div class="programtitle"><%= @project.project_title %> <p><%= @project.brand_name %> - <%= @project.shares.count %> Members</p></div> 
 	   <div class="lines"></div>
 	   
 	   <div class="programbox">
@@ -24,8 +24,7 @@ $(function () {
   <div class="programtitle">Take an action. Show your love. Get awesome stuff.</div>
 	<div class="lines"></div>
 	<div class="discoverbox">
-	<ul class="mysharedprojects">
-
+	<ul class="brandactions">
 
 	<% @acts .each do |e| %>
 	<li>
