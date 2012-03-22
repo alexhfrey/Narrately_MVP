@@ -1,3 +1,33 @@
-<%= image_tag "search.png", :class => "fimg2" %>
-<div class = "mycreatedprojectsh1"> <%= action.type || "Default Action"  %> </div>
-<div class="mycreatedprojectsh1box"></div>
+<% if action.actionable.class.name == "Post" %>
+<div class="brandactions" style="background-image: url(http://static3.grsites.com/archive/textures/pink/pink079.gif)">
+<%= image_tag "fb_like.png", :class => "fimg3" %>
+<h2>Facebook Stalk Us!</h2>
+<p>text, text, text...........</p><p>text, text, text...........</p></div>
+
+<% elsif action.actionable.class.name == "Like" %>
+<%= image_tag "fb_like.png", :class => "fimg3" %>
+<div class="brandactions"><h2>LIKE..like a Boss</h2></div>
+
+<% elsif action.actionable.class.name == "Fb_comment" %>
+<%= image_tag "circle-greenhome.png", :class => "fimg2" %>
+<div class="brandactions"><h2>TWEET, TWEET....</h2></div>
+
+<% elsif action.actionable.class.name == "Tweet" %>
+<div class="brandactions" style="background-image: url(http://static1.grsites.com/archive/textures/pink/pink037.gif); background-repeat-y;">
+<%= image_tag "twitterbird.png", :class => "fimg3" %>
+<h2>"Tweet this" says that bird...</h2></div>
+
+<% elsif action.actionable.class.name == "Retweet" %>
+<div class="brandactions" style="background-image: url(http://static2.grsites.com/archive/textures/pink/pink052.gif)">
+<%= image_tag "twitterbird.png", :class => "fimg3" %>
+<h2>Retweet Por Favor!</h2></div>
+
+<% elsif action.actionable.class.name == "Other" %>
+<%= image_tag "circle-greenhome.png", :class => "fimg2" %>
+<div class="brandactions"><h2>TWEET, TWEET....</h2></div>
+
+<% else %>
+<%= image_tag "circle-greenhome.png", :class => "fimg2" %>
+<div class="brandactions"><h2><%= action.actionable.class.name %></h2></div>
+
+ <%end %>

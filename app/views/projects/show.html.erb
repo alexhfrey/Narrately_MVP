@@ -7,7 +7,7 @@ $(function () {
 
    
    <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,400italic,700' rel='stylesheet' type='text/css'>
-       <div class="programtitle"><%= @project.project_title %> <p><%= @project.brand_name %><%= @project.shares.count %> Members</p></div> 
+       <div class="programtitle"><%= @project.project_title %> <p><%= @project.brand_name %> - <%= @project.shares.count %> Members</p></div> 
 	   <div class="lines"></div>
 
     <div class="programbox">
@@ -68,7 +68,6 @@ $(function () {
  </ul>
 </div>
     
-   <div class="grid_11 singleleft"> 
    <div class="projectbox">
    <div class="productdata">
   <h3>Why Become an Ambassador?</h3>
@@ -112,29 +111,8 @@ $(function () {
   
   </div>
   </div>
-  </div>
   
   </div>
   
-  <div class="grid_4 righthome">
-  <div class="categorybox">
- <div class="categories-widget">
- <div class="categorybox sellers">
- <div class="backerstitle">Current Ambassadors</div>
- <ul>
-<% @shares.each_slice(4) { |sl| %>
-<li>
- <% sl.each do  |s| %>
- <%= if s.user.profile_image? 
- link_to image_tag(s.user.profile_image, :class => "smallpreview" ), s.user 
- end %>
- <% end %> 
- </li>
- <% } %>
- 
- </ul>
- </div>
- </div>
- </div>
 
  
