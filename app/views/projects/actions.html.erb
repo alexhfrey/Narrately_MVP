@@ -6,20 +6,18 @@ $(function () {
 </script>
 
 <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,400italic,700' rel='stylesheet' type='text/css'/>
+       
+        <div class="namebox">
        <div class="programtitle"><%= @project.project_title %> <p><%= @project.brand_name %> - <%= @project.shares.count %> Members</p></div> 
-	   <div class="lines"></div>
-	   
-	   <div class="programbox">
-    
-<ul class="nav nav-pills">
+	   <ul class="nav nav-tabs">
   <li><%= link_to "Home", (@project), "data-toggle"=>"tab" %></li>
-  <li><%= link_to "Actions", actions_project_path(@project), "data-toggle"=>"tab" %></li>
+  <li class="active"><%= link_to "Actions", actions_project_path(@project), "data-toggle"=>"tab" %></li>
   <li><%= link_to "Members", backers_project_path(@project), "data-toggle"=>"tab" %></li>
   <% if @user == @creator %>
   <li><%= link_to "Edit", edit_project_path(@project), "data-toggle"=>"tab" %></li>
   <% end %>
 </ul>
- </div>
+	   </div>
 
   <div class="programtitle">Take an action. Show your love. Get awesome stuff.</div>
 	<div class="lines"></div>
@@ -31,6 +29,7 @@ $(function () {
 	<%= render :partial => "shared/actions", :locals => {  :action => e } %>
 	</li>
 	<% end %>
+	
   </ul>
   </div>
  

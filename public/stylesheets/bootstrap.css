@@ -2089,7 +2089,7 @@ button.btn.small, input[type="submit"].btn.small {
   margin-top: 5px;
 }
 .nav {
-  margin-left: -20px;
+  margin-left: -10px;
   margin-bottom: 18px;
   list-style: none;
 }
@@ -2098,7 +2098,7 @@ button.btn.small, input[type="submit"].btn.small {
 }
 .nav > li > a:hover {
   text-decoration: none;
-  background-color: #eeeeee;
+  background-color: #0278A7;
 }
 .nav-list {
   padding-left: 14px;
@@ -2145,13 +2145,14 @@ button.btn.small, input[type="submit"].btn.small {
 }
 .nav-tabs > li, .nav-pills > li {
   float: left;
+  background-color: #0088CC;
 }
 .nav-tabs > li > a, .nav-pills > li > a {
   padding-right: 12px;
   padding-left: 12px;
-  margin-right: 2px;
   line-height: 18px;
   font-size: 18px; 
+  color: #ffffff; 
 }
 .nav-tabs {
   border-bottom: 1px solid #ddd;
@@ -2163,16 +2164,15 @@ button.btn.small, input[type="submit"].btn.small {
   padding-top: 9px;
   padding-bottom: 9px;
   border: 1px solid transparent;
-  -webkit-border-radius: 4px 4px 0 0;
-  -moz-border-radius: 4px 4px 0 0;
-  border-radius: 4px 4px 0 0;
 }
 .nav-tabs > li > a:hover {
-  border-color: #eeeeee #eeeeee #dddddd;
+  border-color: #0278A7 #0278A7 #0278A7;
+  color: #ffffff;
 }
 .nav-tabs > .active > a, .nav-tabs > .active > a:hover {
   color: #555555;
   background-color: #ffffff;
+  font-weight: bold;
   border: 1px solid #ddd;
   border-bottom-color: transparent;
   cursor: default;
@@ -2180,6 +2180,7 @@ button.btn.small, input[type="submit"].btn.small {
 .nav-pills > li > a {
   padding-top: 8px;
   padding-bottom: 8px;
+  color: #ffffff;
   margin-top: 2px;
   margin-bottom: 2px;
   -webkit-border-radius: 5px;

@@ -961,7 +961,7 @@ list-style-type: none;}
 
 .projectbox {
 background:#FFF;
-width:640px;
+width:940px;
 border-right:1px solid #c2cbd2;
 border-bottom:1px solid #c2cbd2;
 margin-top:5px;
@@ -997,7 +997,7 @@ padding-bottom: 5px;}
 
 .projectshare {
 background:#FFF;
-width:640px;
+width:940px;
 border-right:1px solid #c2cbd2;
 border-bottom:1px solid #c2cbd2;
 margin-top:5px;
@@ -2404,13 +2404,25 @@ background:#FFF;
 width:940px;
 border-right:1px solid #c2cbd2;
 border-bottom:1px solid #c2cbd2;
-margin-top:5px;
 margin-left: 0px;
 float:left;
 padding-left:10px;
 padding-top:10px;
 padding-right:10px;
 padding-bottom:10px;}
+
+.namebox {
+background:#ffffff;
+width:940px;
+border-right:1px solid #c2cbd2;
+border-bottom:1px solid #ffffff;
+margin-top:0px;
+margin-left: 0px;
+float:none;
+padding-left:10px;
+padding-top:10px;
+padding-right:10px;
+padding-bottom:0px;}
 
 	
     .productimages .onsale {
