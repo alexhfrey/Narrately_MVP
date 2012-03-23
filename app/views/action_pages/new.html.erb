@@ -28,7 +28,8 @@ return false;
 	
 	<p><label>Enter the link that you would like users to share, retweet, like, or comment on. </label>
 	<%= text_field_tag :link %>  </p>
-	
+	<p><label>Enter a prompt to get users to take the action - e.g. "Tweet about our upcoming concert this Friday in San Jose."
+	<%= text_area_tag :prompt %>
  <p> <%= submit_tag "Submit", :class => "btn btn-success btn-large"	 %> </p>
  <% end %>
 

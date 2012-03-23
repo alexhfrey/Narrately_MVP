@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120322214721) do
+ActiveRecord::Schema.define(:version => 20120323023803) do
 
   create_table "action_pages", :force => true do |t|
     t.string   "project_id"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(:version => 20120322214721) do
     t.string   "actionable_type"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "prompt"
   end
 
   create_table "action_takens", :force => true do |t|
