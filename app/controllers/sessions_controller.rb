@@ -1,6 +1,15 @@
 class SessionsController < ApplicationController
 def create
 auth = request.env["omniauth.auth"]
+if auth["provider"] == "twitter" #User must be authorizing tweets
+	@user = current_user
+	@user.twitter_token = auth['credentials']['token']
+	@user.twitter_secret = auth['credentials']['secret']
+	@user.save
+	a = session[:redirect]
+	session[:redirect] = nil
+	redirect_to a and return
+end
 
 if current_user #logged-in already: just need to update some tokens
 	if auth["provider"] == "facebook"
@@ -9,9 +18,12 @@ if current_user #logged-in already: just need to update some tokens
 		@user.token = auth['credentials']['token']
 		@user.save
 		a = session[:redirect]
-		session[:redirect] = nil
-		redirect_path = a
-			
+		if session[:redirect]
+			session[:redirect] = nil
+			redirect_path = a
+		else
+			redirect_path = @user
+		end
 	end
 	
 	
@@ -40,7 +52,7 @@ else
 		user.token = auth["credentials"]["token"]
 		user.save
 	end
-	if session[:redirect]
+	if session[:redirect].present?
 		@project = Project.find(session[:redirect])
 		session[:redirect] = nil
 		redirect_path = new_project_share_path(@project) 

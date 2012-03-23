@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120319214245) do
+ActiveRecord::Schema.define(:version => 20120323023803) do
 
   create_table "action_pages", :force => true do |t|
     t.string   "project_id"
@@ -18,13 +18,15 @@ ActiveRecord::Schema.define(:version => 20120319214245) do
     t.string   "actionable_type"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "prompt"
   end
 
-  create_table "action_taken", :force => true do |t|
+  create_table "action_takens", :force => true do |t|
     t.string   "action_page_id"
     t.string   "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "message"
   end
 
   create_table "actions", :force => true do |t|
@@ -62,34 +64,47 @@ ActiveRecord::Schema.define(:version => 20120319214245) do
   end
 
   create_table "projects", :force => true do |t|
-    t.integer   "user_id"
-    t.string    "project_title"
-    t.string    "project_image"
-    t.text      "description"
-    t.string    "file1"
-    t.string    "file2"
-    t.string    "file3"
-    t.string    "purchase_link"
-    t.string    "tag1"
-    t.integer   "promotion_limit"
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
-    t.timestamp "output_file_updated_at"
-    t.integer   "output_file_file_size"
-    t.string    "output_file_file_name"
-    t.string    "output_file_content_type"
-    t.timestamp "project_image_updated_at"
-    t.integer   "project_image_file_size"
-    t.string    "project_image_file_name"
-    t.string    "project_image_content_type"
-    t.boolean   "active"
-    t.text      "promotion_description"
-    t.string    "promotion_type"
-    t.string    "video"
-    t.string    "promotion_value"
-    t.text      "short_description"
-    t.string    "brand_name"
+    t.integer  "user_id"
+    t.string   "project_title"
+    t.string   "project_image"
+    t.text     "description"
+    t.string   "file1"
+    t.string   "file2"
+    t.string   "file3"
+    t.string   "purchase_link"
+    t.string   "tag1"
+    t.integer  "promotion_limit"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.datetime "output_file_updated_at"
+    t.integer  "output_file_file_size"
+    t.string   "output_file_file_name"
+    t.string   "output_file_content_type"
+    t.datetime "project_image_updated_at"
+    t.integer  "project_image_file_size"
+    t.string   "project_image_file_name"
+    t.string   "project_image_content_type"
+    t.boolean  "active"
+    t.text     "promotion_description"
+    t.string   "promotion_type"
+    t.string   "video"
+    t.string   "promotion_value"
+    t.text     "short_description"
+    t.string   "brand_name"
   end
+
+  create_table "rails_admin_histories", :force => true do |t|
+    t.text     "message"
+    t.string   "username"
+    t.integer  "item"
+    t.string   "table"
+    t.integer  "month",      :limit => 2
+    t.integer  "year",       :limit => 5
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
 
   create_table "retweets", :force => true do |t|
     t.string   "post_id"
@@ -133,6 +148,8 @@ ActiveRecord::Schema.define(:version => 20120319214245) do
     t.text      "biography"
     t.string    "category"
     t.string    "facebook_page"
+    t.string    "twitter_secret"
+    t.string    "twitter_token"
   end
 
 end

@@ -1,0 +1,22 @@
+<div class="projectcreatebox">
+
+<fieldset class = "control-group">
+
+<%= simple_form_for @action_takes do |f| %>
+
+	<p class="bluetitle"><%= @title %></p>
+	<hr>
+	<% if @post %>
+		<p> <%= @post %> </p>
+	<% end %>
+	<% if @length %>
+   <p> <%= f.input :message,  :input_html => {:maxlength => @length, :size => "50x5"}, :label => "Enter your message or comment" %> </p>
+   <% end %>
+   <%= f.input :user_id, :as => :hidden, :value => @user.id %>
+   
+   <%= f.input :action_page_id, :as => :hidden, :value => @action.id %>
+  
+<br>
+ <p> <%= f.submit @button, :class => "btn btn-success btn-large"	 %> </p>
+
+ <% end %>

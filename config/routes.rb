@@ -6,6 +6,8 @@ MVP1::Application.routes.draw do
 
   
 
+  
+
   get "fb_comments/new"
 
   get "fb_comments/create"
@@ -25,7 +27,7 @@ MVP1::Application.routes.draw do
   get "selectpost/show"
 
   resources :users, :only => [:show, :update, :edit] 
-  
+  resources :action_takens, :only => [:new, :create]
   
   resources :projects, :only => [:new, :create, :show, :index, :update, :edit] do
 		member do
@@ -38,7 +40,9 @@ MVP1::Application.routes.draw do
 		end
 		resources :shares, :only => [:new, :create]
 		resources :facebook_post, :only => [:new]
-		resources :action_pages, :only => [:new, :create]
+		resources :action_pages, :only => [:new, :create] 
+			
+		
    end
   
   
@@ -54,7 +58,7 @@ MVP1::Application.routes.draw do
   match '/faq', :to=> 'pages#faq'
   match '/aboutus', :to=> 'pages#aboutus'
   match '/projects/:id/backers', :to=> 'projects#backers'
- 
+
   
   
   

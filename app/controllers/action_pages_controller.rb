@@ -13,6 +13,7 @@ before_filter :is_page_admin
   @project = Project.find(params[:project_id])
   type = params[:actionable_type]
   link = params[:link]
+ 
   if type == "tweet"  
 	@action = Tweet.new
 	@action.link = link
@@ -30,14 +31,15 @@ before_filter :is_page_admin
 	@action.link = link
   elsif type == "fb_comment"
     graph = Koala::Facebook::API.new(@user.token)
-	@action = Fb_comment.new
-	link_split = link.delete('http://', 'https://').split('/')
+	@action = Fbcomment.new
+	link_split = link.split('https://').last.split('/')
 	uid = graph.get_object(link_split.second)["id"] 
 	@action.post_id = uid + '_' + link_split.last
   elsif type == "other"
   end
+  
     if @action.save 
-		action_page = @action.build_action_page(:project_id => @project.id)
+		action_page = @action.build_action_page(:project_id => @project.id, :prompt => params[:prompt])
 		action_page.save
 		@action.save
 		redirect_to actions_project_path(@project)
