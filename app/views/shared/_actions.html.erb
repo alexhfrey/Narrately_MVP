@@ -1,11 +1,15 @@
 
 <% if action.actionable.class.name == "Post" %>
-<div class="brandactions" style="background-image: url(http://static3.grsites.com/archive/textures/pink/pink079.gif)">
+<%= link_to image_tag("fb_like.png", :class => "fimg3"), new_action_taken_path(:id => action.id) %>
+<div class="brandactions"><h2>Something here</h2>
+
+
+
 
 <%= image_tag "facebook-icon.png", :class => "fimg3" %>
 <h2>Facebook Stalk Us!</h2>
 <%= link_to image_tag("fb_like.png", :class => "fimg3"), new_action_taken_path(:id => action.id) %>
-</div>
+<div class="brandactions"><h2>LIKE..like a Boss</h2>
 
 <% elsif action.actionable.class.name == "Like" %>
 <%= link_to image_tag("fb_like.png", :class => "fimg3"), new_action_taken_path(:id => action.id) %>
@@ -13,7 +17,7 @@
 
 <% elsif action.actionable.class.name == "Fb_comment" %>
 <%= image_tag "fb-comments.png", :class => "fimg3" %>
-<div class="brandactions"><h2>We Welcome Comments</h2></div>
+<div class="brandactions"><h2>We Welcome Comments</h2>
 
 <% elsif action.actionable.class.name == "Tweet" %>
 <div class="brandactions" style="background-image: url(http://static1.grsites.com/archive/textures/pink/pink096.jpg); background-repeat-y;">
