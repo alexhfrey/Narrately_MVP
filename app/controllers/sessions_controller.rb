@@ -1,6 +1,15 @@
 class SessionsController < ApplicationController
 def create
 auth = request.env["omniauth.auth"]
+if auth["provider"] == "twitter" #User must be authorizing tweets
+	@user = current_user
+	@user.twitter_token = auth['credentials']['token']
+	@user.twitter_secret = auth['credentials']['secret']
+	@user.save
+	a = session[:redirect]
+	session[:redirect] = nil
+	redirect_to a and return
+end
 
 if current_user #logged-in already: just need to update some tokens
 	if auth["provider"] == "facebook"

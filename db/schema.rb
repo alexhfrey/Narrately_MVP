@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120322190625) do
+ActiveRecord::Schema.define(:version => 20120322214721) do
 
   create_table "action_pages", :force => true do |t|
     t.string   "project_id"
@@ -147,6 +147,8 @@ ActiveRecord::Schema.define(:version => 20120322190625) do
     t.text      "biography"
     t.string    "category"
     t.string    "facebook_page"
+    t.string    "twitter_secret"
+    t.string    "twitter_token"
   end
 
 end
