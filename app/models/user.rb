@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
 
 has_many :projects
 has_many :shares
+has_many :action_takens
 validates :biography, :length =>  {:maximum => 140}
 						
 before_create :add_to_mailchimp

@@ -57,8 +57,8 @@ class ActionTakensController < ApplicationController
 			:oauth_token_secret => @user.twitter_secret
 			
 			)
-	
-		@client.update(@action_takes.message + " " + @action.actionable.link)
+		link = @action.actionable.link + '?referral=' + @user.id.to_s
+		@client.update(@action_takes.message + " " + (@action.actionable.link + '?referral=' + link))
 	
 	elsif @action.actionable.class.name.downcase == "retweet"
 @client = Twitter::Client.new(
@@ -74,7 +74,7 @@ class ActionTakensController < ApplicationController
 		graph.put_comment(@action.actionable.post_id, @action_takes.message)
 	elsif @action.actionable.class.name.downcase == "post"
 		graph = Koala::Facebook::API.new(@user.token)
-		graph.put_wall_post(@action_takes.message, {:link => @action.actionable.link})
+		graph.put_wall_post(@action_takes.message, {:link => @action.actionable.link })
 	elsif @action.actionable.class.name.downcase == "like"
 		graph = Koala::Facebook::API.new(@user.token)
 		graph.put_like(@action.actionable.post_id)

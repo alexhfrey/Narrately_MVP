@@ -12,7 +12,7 @@
 	<% if @length %>
    <p> <%= f.input :message,  :input_html => {:maxlength => @length, :size => "50x5"}, :label => "Enter your message or comment" %> </p>
    <% end %>
-   <%= f.input :user_id, :as => :hidden, :value => @user.id %>
+  <p> <%= f.input :user_id, :as => :hidden, :input_html => {:value => @user.id }%> </p>
    
    <%= f.input :action_page_id, :as => :hidden, :value => @action.id %>
   
