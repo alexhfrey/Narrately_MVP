@@ -16,15 +16,14 @@
 <div class="brandactions"><h2>LIKE..like a Boss</h2>
 
 <% elsif action.actionable.class.name == "Fb_comment" %>
-<%= image_tag "fb-comments.png", :class => "fimg3" %>
+<%= link_to image_tag("fb-comments.png", :class => "fimg3"), new_action_taken_path(:id => action.id)  %>
 <div class="brandactions"><h2>We Welcome Comments</h2>
 
 <% elsif action.actionable.class.name == "Tweet" %>
 <div class="brandactions" style="background-image: url(http://static1.grsites.com/archive/textures/pink/pink096.jpg); background-repeat-y;">
 <%= image_tag "twitterbird.png", :class => "fimg3" %>
 <h2>"Tweet this" says that bird...</h2></div>
-<%= image_tag "circle-greenhome.png", :class => "fimg2" %>
-<div class="brandactions"><h2>TWEET, TWEET....</h2>
+
 
 <% elsif action.actionable.class.name == "Tweet" %>
 <div class="brandactions" style="background-image: url(http://static1.grsites.com/archive/textures/pink/pink037.gif); background-repeat-y;">
