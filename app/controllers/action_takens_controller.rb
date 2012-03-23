@@ -51,8 +51,8 @@ class ActionTakensController < ApplicationController
 	if @action.actionable.class.name.downcase == "tweet"	
 		
 		@client = Twitter::Client.new(
-			:consumer_key => 'im56l5L3UGIDS3kQwJ6JA',
-			:consumer_secret => 'NLZ7dxXWZImUl9CwJJYqHqEvONpCjOAwNYNljPKbJNo',
+			:consumer_key => 'QQIFzq0TTcktuanOGLrgfg',
+			:consumer_secret => '4k136e8TtQptnoKMCL8VZeTjwZZXwCkXQLrBkpFi8',
 			:oauth_token => @user.twitter_token,
 			:oauth_token_secret => @user.twitter_secret
 			
@@ -62,8 +62,8 @@ class ActionTakensController < ApplicationController
 	
 	elsif @action.actionable.class.name.downcase == "retweet"
 @client = Twitter::Client.new(
-			:consumer_key => 'im56l5L3UGIDS3kQwJ6JA',
-			:consumer_secret => 'NLZ7dxXWZImUl9CwJJYqHqEvONpCjOAwNYNljPKbJNo',
+			:consumer_key => 'QQIFzq0TTcktuanOGLrgfg',
+			:consumer_secret => '4k136e8TtQptnoKMCL8VZeTjwZZXwCkXQLrBkpFi8',
 			:oauth_token => @user.twitter_token,
 			:oauth_token_secret => @user.twitter_secret
 			
