@@ -6,22 +6,25 @@ $(function () {
 </script>
 
 <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,400italic,700' rel='stylesheet' type='text/css'>
-       <div class="programtitle"><%= @project.project_title %> <p><%= @project.brand_name %> - <%= @project.shares.count %> Members</p></div> 
-	   <div class="lines"></div>
-	   
-	   <div class="programbox">
-
-    <% if @user == @creator %><span><%= link_to "Edit Project", edit_project_path(@project) %></span>
+       
+        <div class="namebox">
+       <div class="programtitle"><%= @project.project_title %> <p><%= @project.brand_name %> - <%= @project.shares.count %> Members</p></div> 	   
+	  <% if @user == @creator %><span><%= link_to "Edit Project", edit_project_path(@project) %></span>
  <% end %>
     
-<ul class="nav nav-pills">
+<ul class="nav nav-tabs">
   <li><%= link_to "Home", (@project), "data-toggle"=>"tab" %></li>
   <li><%= link_to "Actions", actions_project_path(@project), "data-toggle"=>"tab" %></li>
-  <li><%= link_to "Members", backers_project_path(@project), "data-toggle"=>"tab" %></li>
+  <li class="active"><%= link_to "Members", backers_project_path(@project), "data-toggle"=>"tab" %></li>
   <% if @user == @creator %>
   <li><%= link_to "Edit", edit_project_path(@project), "data-toggle"=>"tab" %></li>
   <% end %>
 </ul>
+</div>
+	  
+	  <div class="programbox">
+
+    
 <div class="memberspage">
 <h3>People who support this brand</h3>
 <ul>

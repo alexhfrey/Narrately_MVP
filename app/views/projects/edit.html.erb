@@ -18,17 +18,19 @@ return false;
 
 </script>
 
+<div class="namebox">
 <div class="programtitle"><%= @project.project_title %> <p>Members</p></div>  
-<div class="lines"></div>
-
+</div>
 <div class="programbox">
-<ul class="nav nav-pills">
+<ul class="nav nav-tabs">
   <li><%= link_to "Home", (@project), "data-toggle"=>"tab" %></li>
   <li><%= link_to "Actions", actions_project_path(@project), "data-toggle"=>"tab" %></li>
   <li><%= link_to "Members", backers_project_path(@project), "data-toggle"=>"tab" %></li>
-  <% if @user == @creator %>
+     <% if @user == @creator %>
   <li><%= link_to "Edit", edit_project_path(@project), "data-toggle"=>"tab" %></li>
   <% end %>
+  
+  
 </ul>
 <%= render 'shared/error_messages' %>
 
