@@ -18,7 +18,7 @@
 <%= link_to image_tag("twitterbird.png", :class => "fimg3"), action_takens_path %>
 <%= form_tag(new_action_taken_path, :method => "post")%> 
 	<%= hidden_field_tag(:action_id, action.id )%>
-    <%= text_area_tag("message", nil, :size => "25x3") %>
+    <%= text_area_tag("message", nil, :size => "10x3") %>
 	<%= submit_tag "Submit", :class => "btn btn-success btn-large"	 %> 
 
 <h2>"Tweet this" says that bird...</h2>
