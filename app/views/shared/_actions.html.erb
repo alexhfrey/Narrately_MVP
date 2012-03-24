@@ -12,10 +12,7 @@
 <%= link_to image_tag("fb-comments.png", :class => "fimg3"), new_action_taken_path(:id => action.id)  %>
 <div class="brandactions"><h2>We Welcome Comments</h2>
 
-<% elsif action.actionable.class.name == "Tweet" %>
-<div class="brandactions" style="background-image: url(http://static1.grsites.com/archive/textures/pink/pink096.jpg); background-repeat-y;">
-<%= image_tag "twitterbird.png", :class => "fimg3" %>
-<h2>"Tweet this" says that bird...</h2>
+
 
 
 <% elsif action.actionable.class.name == "Tweet" %>
