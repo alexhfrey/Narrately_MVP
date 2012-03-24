@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120323023803) do
+ActiveRecord::Schema.define(:version => 20120319213118) do
 
   create_table "action_pages", :force => true do |t|
     t.string   "project_id"
@@ -18,15 +18,13 @@ ActiveRecord::Schema.define(:version => 20120323023803) do
     t.string   "actionable_type"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "prompt"
   end
 
-  create_table "action_takens", :force => true do |t|
+  create_table "action_taken", :force => true do |t|
     t.string   "action_page_id"
     t.string   "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "message"
   end
 
   create_table "actions", :force => true do |t|
@@ -90,21 +88,7 @@ ActiveRecord::Schema.define(:version => 20120323023803) do
     t.string   "video"
     t.string   "promotion_value"
     t.text     "short_description"
-    t.string   "brand_name"
   end
-
-  create_table "rails_admin_histories", :force => true do |t|
-    t.text     "message"
-    t.string   "username"
-    t.integer  "item"
-    t.string   "table"
-    t.integer  "month",      :limit => 2
-    t.integer  "year",       :limit => 5
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
 
   create_table "retweets", :force => true do |t|
     t.string   "post_id"
@@ -148,8 +132,6 @@ ActiveRecord::Schema.define(:version => 20120323023803) do
     t.text      "biography"
     t.string    "category"
     t.string    "facebook_page"
-    t.string    "twitter_secret"
-    t.string    "twitter_token"
   end
 
 end
