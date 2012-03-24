@@ -6,13 +6,15 @@ Rails.application.config.middleware.use OmniAuth::Builder do
   
 	{:client_options => {:ssl => {:ca_path => '/usr/lib/ssl/certs/ca-certificates.crt'}}}
 	end
-else
+elsif Rails.env.staging?
 Rails.application.config.middleware.use OmniAuth::Builder do
 	provider :facebook, '242735669136491', 'ea405d01fda59ee513e230cf3a779d0f', :scope => 'email, offline_access, publish_stream'  
 	provider :twitter, 'im56l5L3UGIDS3kQwJ6JA', 'NLZ7dxXWZImUl9CwJJYqHqEvONpCjOAwNYNljPKbJNo'
-	
-  
 	end
+else
+	Rails.application.config.middleware.use OmniAuth::Builder do
+	provider :facebook, '242735669136491', 'ea405d01fda59ee513e230cf3a779d0f', :scope => 'email, offline_access, publish_stream'  
+	provider :twitter, 'im56l5L3UGIDS3kQwJ6JA', 'NLZ7dxXWZImUl9CwJJYqHqEvONpCjOAwNYNljPKbJNo'
 end
 
 
