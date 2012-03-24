@@ -13,14 +13,12 @@
 <div class="brandactions"><h2>We Welcome Comments</h2>
 
 
-
-
 <% elsif action.actionable.class.name == "Tweet" %>
 <div class="brandactions" style="background-image: url(http://static1.grsites.com/archive/textures/pink/pink037.gif); background-repeat-y;">
-<%= link_to image_tag("twitterbird.png", :class => "fimg3"), new_action_taken_path(:id => action.id) %>
+<%= link_to image_tag("twitterbird.png", :class => "fimg3"), action_takens_path %>
 <%= form_tag(new_action_taken_path, :method => "post")%> 
 	<%= hidden_field_tag(:action_id, action.id )%>
-    <%= text_area_tag(:message) %>
+    <%= text_area_tag(:message, :size => "60x5") %>
 	<%= submit_tag "Submit", :class => "btn btn-success btn-large"	 %> 
 
 <h2>"Tweet this" says that bird...</h2>
