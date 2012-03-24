@@ -52,6 +52,11 @@ a {
 outline: medium none !important;
 text-decoration: none; 
 }
+.smalltextarea
+{
+width:270px;
+height:60px;
+}
 
 .menu1 li a {
     color: #0278A7;
@@ -629,10 +634,33 @@ margin-bottom: 30px;}
     }
     
 .brandactions {
+
 width:100%;
 height:100%;
 list-style:none;
 float:left;}
+
+.brandactions2 {
+
+padding-left:10px;
+width:290px;
+height:100%;
+}
+
+.actionprompt {
+width:100%;
+margin-top:10px;
+height:120px;
+}
+
+.actiontitle {
+font-size:22px;
+font-weight:bold;
+}
+.actionform {
+margin-left:0px;
+
+}
 
 .brandactions li {
 display:block;
@@ -929,6 +957,9 @@ background:url(../images/shizzle2.png) repeat-x;
     margin-left: auto;
     margin-right: auto;
 	margin-top:10px;}
+	.fimg4{
+	width:50px; height:50px; 
+	}
 	.gray {
 	background:url(../images/circle-gray.png);
 	margin-left:125px;}

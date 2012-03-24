@@ -1,41 +1,85 @@
 
-<% if action.actionable.class.name == "Post" %>
-<%=link_to image_tag("facebook-icon.png", :class => "fimg3"), new_action_taken_path(:id => action.id) %>
-<div class="brandactions"><h2>Facebook Stalk Us!</h2>
+<% if action.actionable.class.name == "Post"%>
+<div class="brandactions2"><div class = "actiontitle">
+<%=link_to image_tag("facebook-icon.png", :class => "fimg4"), action_takens_path(:id => action.id) %>
+Facebook Stalk Us!</div>
+<div class = "actionprompt">
+<p><%= action.prompt %></p>
+</div>
+<%= form_tag(action_takens_path, :method => "post", :class => "actionform") do %> 
+	<%= hidden_field_tag(:action_id, action.id )%>
+    <%= text_area_tag("message", nil, :size => "2x3", :class => "smalltextarea") %>
+	<%= submit_tag "Submit", :class => "btn btn-success btn-large"	 %> 
+	<% end %>
 
 
 <% elsif action.actionable.class.name == "Like" %>
-<%= link_to image_tag("fb_like.png", :class => "fimg3"), new_action_taken_path(:id => action.id) %>
-<div class="brandactions"><h2>LIKE..like a Boss</h2>
+<div class="brandactions2"><div class = "actiontitle">
+<%=link_to image_tag("facebook-icon.png", :class => "fimg4"), action_takens_path(:id => action.id) %>
+LIKE..like a Boss
+</div>
+<div class = "actionprompt">
+<p><%= action.prompt %></p>
+<p> <%= action.actionable.message %> </p>
+</div>
 
-<% elsif action.actionable.class.name == "Fb_comment" %>
-<%= link_to image_tag("fb-comments.png", :class => "fimg3"), new_action_taken_path(:id => action.id)  %>
-<div class="brandactions"><h2>We Welcome Comments</h2>
-
+<%= form_tag(action_takens_path, :method => "post", :class => "actionform") do %> 
+	<%= hidden_field_tag(:action_id, action.id )%>
+    <%= text_area_tag("message", nil, :size => "2x3", :class => "smalltextarea") %>
+	<%= submit_tag "Submit", :class => "btn btn-success btn-large"	 %> 
+	<% end %>
+	
+<% elsif action.actionable.class.name == "Fbcomment" %>
+<div class="brandactions2"><div class = "actiontitle"><%=link_to image_tag("facebook-icon.png", :class => "fimg4"), action_takens_path(:id => action.id) %>COMMENTS?
+</div>
+<div class = "actionprompt">
+<p><%= action.prompt %></p>
+<p> <%= action.actionable.message %> </p>
+</div>
+<%= form_tag(action_takens_path, :method => "post", :class => "actionform") do%> 
+	<%= hidden_field_tag(:action_id, action.id )%>
+    <%= text_area_tag("message", nil, :size => "2x3", :class => "smalltextarea") %>
+	<%= submit_tag "Submit", :class => "btn btn-success btn-large"	 %> 
+	<% end %>
 
 <% elsif action.actionable.class.name == "Tweet" %>
-<div class="brandactions" style="background-image: url(http://static1.grsites.com/archive/textures/pink/pink037.gif); background-repeat-y;">
-<%= link_to image_tag("twitterbird.png", :class => "fimg3"), action_takens_path %>
-<%= form_tag(new_action_taken_path, :method => "post")%> 
+<div class="brandactions2" style="background-image: url(http://static1.grsites.com/archive/textures/pink/pink037.gif); background-repeat-y;">
+<div class = "actiontitle">
+<%= link_to image_tag("twitterbird.png", :class => "fimg4"), action_takens_path %>
+"Tweet this" says bird...</div>
+<div class = "actionprompt">
+<p><%= action.prompt %></p>
+</div>
+<%= form_tag(action_takens_path, :method => "post", :class => "actionform") do%> 
 	<%= hidden_field_tag(:action_id, action.id )%>
-    <%= text_area_tag("message", nil, :size => "2x3") %>
+    <%= text_area_tag("message", nil, :size => "2x3", :class => "smalltextarea") %>
 	<%= submit_tag "Submit", :class => "btn btn-success btn-large"	 %> 
-
-<h2>"Tweet this" says that bird...</h2>
-
+		<% end %>
+	
 <% elsif action.actionable.class.name == "Retweet" %>
-<div class="brandactions" style="background-image: url(http://static2.grsites.com/archive/textures/pink/pink052.gif)">
-<%= link_to image_tag("twitterbird.png", :class => "fimg3"), new_action_taken_path(:id => action.id) %>
-<h2>Retweet Por Favor!</h2>
+<div class="brandactions2" style="background-image: url(http://static2.grsites.com/archive/textures/pink/pink052.gif)">
+<div class = "actiontitle" >
+<%= link_to image_tag("twitterbird.png", :class => "fimg4"), new_action_taken_path(:id => action.id) %>
+Retweet por favor! </div>
+<div class = "actionprompt">
 
+<p><%= action.prompt %></p>
+<p> <%= action.actionable.message %> </p>
+
+</div>
+<%= form_tag(action_takens_path, :method => "post", :class => "actionform") do%> 
+	<%= hidden_field_tag(:action_id, action.id )%>
+    <%= text_area_tag("message", nil, :size => "2x3", :class => "smalltextarea") %>
+	<%= submit_tag "Submit", :class => "btn btn-success btn-large"	 %> 
+	<% end %>
 <% elsif action.actionable.class.name == "Other" %>
 <%= image_tag "circle-greenhome.png", :class => "fimg2" %>
-<div class="brandactions"><h2>TWEET, TWEET....</h2>
+<div class="brandactions2"><h2>TWEET, TWEET....</h2>
 
 <% else %>
 <%= image_tag "circle-greenhome.png", :class => "fimg2" %>
-<div class="brandactions"><h2><%= action.actionable.class.name %></h2>
+<div class="brandactions2"><h2><%= action.actionable.class.name %></h2>
 
  <%end %>
 
-<p><%= action.prompt %></p></div>
+</div>

@@ -20,12 +20,15 @@ before_filter :is_page_admin
   elsif type == "retweet"
 	@action = Retweet.new
 	@action.post_id = link.split('/').last
+	@action.message = Twitter.status(@action.post_id).text
   elsif type == "like" 
 	graph = Koala::Facebook::API.new(@user.token)
 	@action = Like.new
 	link_split = link.split('https://').last.split('/')
 	uid = graph.get_object(link_split.second)["id"] 
 	@action.post_id = uid + '_' + link_split.last
+	@action.message = graph.get_object(@action.post_id)["message"]
+	
   elsif type == "post"
 	@action = Post.new
 	@action.link = link
@@ -35,6 +38,7 @@ before_filter :is_page_admin
 	link_split = link.split('https://').last.split('/')
 	uid = graph.get_object(link_split.second)["id"] 
 	@action.post_id = uid + '_' + link_split.last
+	@action.message = graph.get_object(@action.post_id)["message"]
   elsif type == "other"
   end
   
