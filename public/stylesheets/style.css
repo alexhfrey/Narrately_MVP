@@ -651,6 +651,7 @@ height:100%;
 width:100%;
 margin-top:10px;
 height:120px;
+overflow:scroll;
 }
 
 .actiontitle {
