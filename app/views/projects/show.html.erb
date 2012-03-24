@@ -14,7 +14,7 @@ $(function () {
 
 	<ul class="nav nav-tabs">
   <li class="active"><%= link_to "Home", (@project), "data-toggle"=>"tab" %></li>
-  <li><%= link_to "Actions", actions_project_path(@project), "data-toggle"=>"tab" %></li>
+  <li><%= link_to "Actions1", actions_project_path(@project), "data-toggle"=>"tab" %></li>
   <li><%= link_to "Members", backers_project_path(@project), "data-toggle"=>"tab" %></li>
   <% if @user == @creator %>
   <li><%= link_to "Edit", edit_project_path(@project), "data-toggle"=>"tab" %></li>
