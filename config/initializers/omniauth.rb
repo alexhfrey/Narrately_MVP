@@ -8,7 +8,7 @@ Rails.application.config.middleware.use OmniAuth::Builder do
 	end
 else
 Rails.application.config.middleware.use OmniAuth::Builder do
-	provider :facebook, '242735669136491', 'ea405d01fda59ee513e230cf3a779d0f', :scope => 'email, offline_access, publish_stream'  
+	provider :facebook, '333924066629604', '0cc1164e4805256031da55dbb9740125', :scope => 'email, offline_access, publish_stream'  
 	provider :twitter, 'im56l5L3UGIDS3kQwJ6JA', 'NLZ7dxXWZImUl9CwJJYqHqEvONpCjOAwNYNljPKbJNo'
 	
   
