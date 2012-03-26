@@ -1,5 +1,5 @@
 <%= if(p.file1.present?) 
-link_to image_tag(p.file1.url(:medium), :class => "fimg2"), p
+link_to image_tag(p.file1.url(:medium), :class => "fimg2"), backers_project_path(p)
 end %>
 <%= link_to p.brand_name || "Default title" + "...", p, :class => "mycreatedprojectsh1" %>
 <div class="mycreatedprojectsh1box"></div>
