@@ -37,7 +37,7 @@ class UsersController < ApplicationController
 	@user.add_to_mailchimp
   end
   if @user.update_attributes(params[:user])
-    flash[:notice] = "Successfully updated user."
+    flash[:notice] = "Success! Your profile has been updated."
 	
 	redirect_to @user
   end

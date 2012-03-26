@@ -85,13 +85,13 @@ before_filter :eligible_for_reward, :only => [:download, :backers, :actions]
    end
   
   def eligible_for_reward
+    @project = Project.find(params[:id])
 	@user = current_user
 	path = nil
 	if @user.nil?
-		flash[:notice] = "You must be logged in to access rewards."
-		path = signin_path 
+		flash[:notice] = "Please click 'Join Now' to to become a member"
+		path = @project 
 	else
-		@project = Project.find(params[:id])
 		unless @project.shares.collect {|s| s.user } .include?(@user)
 			flash[:notice] = "You are trying to access a members only page. Please join the program first."
 			 path = @project
