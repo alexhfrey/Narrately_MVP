@@ -8,38 +8,52 @@ $(function () {
 <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,400italic,700' rel='stylesheet' type='text/css'>
        
         <div class="namebox">
-       <div class="hometitle3"><%= @project.project_title %> <p><%= @project.brand_name %> - <%= @project.shares.count %> Members</p></div> 	   
-	  <% if @user == @creator %><span><%= link_to "Edit Project", edit_project_path(@project) %></span>
- <% end %>
+        <div class="hometitle3"><%= @project.project_title %> <p><%= @project.brand_name %> - <%= @project.shares.count %> Members</p></div> 	   
     
-<ul class="nav nav-tabs">
-  <li><%= link_to "Home", (@project), "data-toggle"=>"tab" %></li>
-  <li><%= link_to "Actions", actions_project_path(@project), "data-toggle"=>"tab" %></li>
-  <li class="active"><%= link_to "Members", backers_project_path(@project), "data-toggle"=>"tab" %></li>
-  <% if @user == @creator %>
-  <li><%= link_to "Edit", edit_project_path(@project), "data-toggle"=>"tab" %></li>
-  <% end %>
-</ul>
 </div>
 	  
-	  <div class="programbox">
-
-    
-<div class="memberspage">
-<h3>People who support this brand</h3>
+<div class="clubbox">
+<ul class="nav nav-tabs">
+  <li><%= link_to "About", (@project), "data-toggle"=>"tab" %></li>
+  <li class="active"><%= link_to "Members Home", backers_project_path(@project), "data-toggle"=>"tab" %></li>
+     <% if @user == @creator %>
+       <li><%= link_to "Edit", edit_project_path(@project), "data-toggle"=>"tab" %></li>
+  <% end %>
+</ul>
+<%= render 'shared/error_messages' %>
+<h1>Members Home</h1>
+<p>Welcome to the member's home of <%= @project.brand_name %>. This is where the good stuff happens. Below you'll see other members who support this brand, actions published by <%= @project.brand_name %>, and a community message board.</p>
+<h3>Club Members</h3>
 <ul>
 <% @shares.each() { |sl| %>
  <%= if sl.user.profile_image? 
  link_to image_tag(sl.user.profile_square), sl.user, :class => "memberspicture"  
  end %> 
-
  <% } %>
  </ul>
- </div>
 
-    <h3>Say hello to the community!</h3>
-  <div class="fb-comments" data-href= <%= request.fullpath %> data-num-posts="2" data-width="470"></div>
-    </div> 
-  
+<div class="discoverbox">
+<h3>Take an action. Show your love. Get awesome stuff.</h3>
+	<ul class="brandactions">
+<% @project.action_pages .first(3).each do |e| %>
+	<li>
+	<%= render :partial => "shared/actions", :locals => {  :action => e } %>
+	</li>
+	<% end %>
+	
+	</ul>	
+</div>
+
+<div class="lefthalf">
+<h3>Say hello to the community!</h3>
+<div class="fb-comments" data-href= <%= request.fullpath %> data-num-posts="2" data-width="470"></div>
+</div>  
+
+
+
+
+
+     </div> 
+
   
  

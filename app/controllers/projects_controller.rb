@@ -25,6 +25,7 @@ before_filter :eligible_for_reward, :only => [:download, :backers, :actions]
   def edit
   @project = Project.find(params[:id])
   @user = current_user
+  @creator = @project.user
   end
   
   def update
@@ -124,6 +125,7 @@ before_filter :eligible_for_reward, :only => [:download, :backers, :actions]
   def backers
   @project = Project.find(params[:id])
   @shares = @project.shares
+  @creator = @project.user
   end
   
   def show

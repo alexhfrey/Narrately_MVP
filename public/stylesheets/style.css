@@ -54,8 +54,8 @@ text-decoration: none;
 }
 .smalltextarea
 {
-width:270px;
-height:60px;
+width:260px;
+height:70px;
 }
 
 .smalltext {
@@ -685,20 +685,20 @@ list-style:none;
 float:left;}
 
 .brandactions2 {
-
 padding-left:10px;
-width:290px;
-height:100%;
+padding-top: 10px;  
+width:275px;
+height:350px;
 }
 
 .actionprompt {
 width:100%;
 margin-top:10px;
-height:120px;
+height:140px;
 }
 
 .actiontitle {
-font-size:22px;
+font-size:20px;
 font-weight:bold;
 }
 .actionform {
@@ -709,11 +709,11 @@ margin-left:0px;
 .brandactions li {
 display:block;
 float:left;
-width:300px;
-height:350px;
+width:285px;
+height:360px;
 background:#FFFFFE;
 border-style: solid; 
-border-width:0px; 
+border-width:0px;   
 border-color:#D4D4D4; 
 box-shadow: 4px 4px 1px #C0C0C0;
 -moz-box-shadow: 4px 4px 1px #C0C0C0;
@@ -2483,6 +2483,18 @@ height:20px;
     float: left; 
     }
     
+.clubbox {
+background:#FFF;
+width:940px;
+border-right:1px solid #c2cbd2;
+border-bottom:1px solid #c2cbd2;
+margin-left: 0px;
+float:left;
+padding-left:10px;
+padding-top:0px;
+padding-right:10px;
+padding-bottom:10px;}
+    
 .programbox {
 background:#FFF;
 width:940px;
@@ -2496,10 +2508,10 @@ padding-right:10px;
 padding-bottom:10px;}
 
 .namebox {
-background:#ffffff;
+background:#EEE8AA;
 width:940px;
 border-right:1px solid #c2cbd2;
-border-bottom:1px solid #ffffff;
+border-bottom:1px solid #EEE8AA;
 margin-top:0px;
 margin-left: 0px;
 float:none;
@@ -2507,6 +2519,21 @@ padding-left:10px;
 padding-top:10px;
 padding-right:10px;
 padding-bottom:0px;}
+
+.lefthalf {
+width: 400px;
+float:left;
+padding: 5px;
+margin-top: 15px; 
+clear: left; 
+}
+
+.righthalf {
+width: 400px;
+float:left;
+padding: 5px; 
+margin-top: 15px;  
+}
 
 	
     .productimages .onsale {

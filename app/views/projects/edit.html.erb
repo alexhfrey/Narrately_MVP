@@ -21,13 +21,12 @@ return false;
 <div class="namebox">
 <div class="hometitle3"><%= @project.project_title %> <p>Members</p></div>  
 </div>
-<div class="programbox">
+<div class="clubbox">
 <ul class="nav nav-tabs">
-  <li><%= link_to "Home", (@project), "data-toggle"=>"tab" %></li>
-  <li><%= link_to "Actions", actions_project_path(@project), "data-toggle"=>"tab" %></li>
-  <li><%= link_to "Members", backers_project_path(@project), "data-toggle"=>"tab" %></li>
-     <% if @user == @creator %>
-  <li><%= link_to "Edit", edit_project_path(@project), "data-toggle"=>"tab" %></li>
+  <li><%= link_to "About", (@project), "data-toggle"=>"tab" %></li>
+  <li><%= link_to "Members Home", backers_project_path(@project), "data-toggle"=>"tab" %></li>
+  <% if @user == @creator %>
+  <li class="active"><%= link_to "Edit", edit_project_path(@project), "data-toggle"=>"tab" %></li>
   <% end %>
   
   

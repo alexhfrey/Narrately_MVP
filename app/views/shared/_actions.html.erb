@@ -18,12 +18,14 @@ Post Link on Facebook</div>
 <% elsif action.actionable.class.name == "Like" %>
 <div class="brandactions2"><div class = "actiontitle">
 <%=link_to image_tag("facebook-icon.png", :class => "fimg4"), action_takens_path(:id => action.id) %>
-LIKE..like a Boss
-</div>
+LIKE..like a Boss</div>
+<b>Message from <%= action.project.brand_name %>:</b>
+
 <div class = "actionprompt">
 <p><%= action.prompt %></p>
 <p> <%= action.actionable.message %> </p>
 </div>
+<b>Take this action:</b>
 
 <%= form_tag(action_takens_path, :method => "post", :class => "actionform") do %> 
 	<%= hidden_field_tag(:action_id, action.id )%>
@@ -34,10 +36,13 @@ LIKE..like a Boss
 <% elsif action.actionable.class.name == "Fbcomment" %>
 <div class="brandactions2"><div class = "actiontitle"><%=link_to image_tag("facebook-icon.png", :class => "fimg4"), action_takens_path(:id => action.id) %>COMMENTS?
 </div>
+<b>Message from <%= action.project.brand_name %>:</b>
 <div class = "actionprompt">
 <p><%= action.prompt %></p>
 <p> <%= action.actionable.message %> </p>
 </div>
+<b>Take this action:</b>
+
 <%= form_tag(action_takens_path, :method => "post", :class => "actionform") do%> 
 	<%= hidden_field_tag(:action_id, action.id )%>
     <%= text_area_tag("message", nil, :size => "2x3", :class => "smalltextarea") %>
@@ -50,9 +55,12 @@ LIKE..like a Boss
 <div class = "actiontitle">
 <%= link_to image_tag("twitterbird.png", :class => "fimg4"), action_takens_path %>
 "Tweet this" says bird...</div>
+<b>Message from <%= action.project.brand_name %>:</b>
 <div class = "actionprompt">
 <p><%= action.prompt %></p>
 </div>
+<b>Take this action:</b>
+
 <%= form_tag(action_takens_path, :method => "post", :class => "actionform") do%> 
 	<%= hidden_field_tag(:action_id, action.id )%>
     <%= text_area_tag("message", nil, :size => "2x3", :class => "smalltextarea") %>
@@ -64,12 +72,14 @@ LIKE..like a Boss
 <div class = "actiontitle" >
 <%= link_to image_tag("twitterbird.png", :class => "fimg4"), new_action_taken_path(:id => action.id) %>
 Retweet por favor! </div>
+<b>Message from <%= action.project.brand_name %>:</b>
 <div class = "actionprompt">
 
 <p><%= action.prompt %></p>
 <p> <%= action.actionable.message %> </p>
-
 </div>
+<b>Take this action:</b>
+
 <%= form_tag(action_takens_path, :method => "post", :class => "actionform") do%> 
 	<%= hidden_field_tag(:action_id, action.id )%>
     <%= text_area_tag("message", nil, :size => "2x3", :class => "smalltextarea") %>
@@ -78,6 +88,8 @@ Retweet por favor! </div>
 <% elsif action.actionable.class.name == "Other" %>
 <%= image_tag "circle-greenhome.png", :class => "fimg2" %>
 <div class="brandactions2"><h2>TWEET, TWEET....</h2>
+<b>Message from <%= action.project.brand_name %>:</b>
+<b>Take this action:</b>
 
 <% else %>
 <%= image_tag "circle-greenhome.png", :class => "fimg2" %>

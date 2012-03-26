@@ -5,22 +5,23 @@ $(function () {
   })
 </script>
    <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,400italic,700' rel='stylesheet' type='text/css'>
-       
-       <div class="namebox">
-       <div class="hometitle3"><%= @project.project_title %> <p><%= @project.brand_name %> - <%= @project.shares.count %> Members</p></div> 
-	
-		 </div>
-<div class="programbox">
 
-	<ul class="nav nav-tabs">
-  <li class="active"><%= link_to "Home", (@project), "data-toggle"=>"tab" %></li>
-  <li><%= link_to "Actions", actions_project_path(@project), "data-toggle"=>"tab" %></li>
-  <li><%= link_to "Members", backers_project_path(@project), "data-toggle"=>"tab" %></li>
-  <% if @user == @creator %>
-  <li><%= link_to "Edit", edit_project_path(@project), "data-toggle"=>"tab" %></li>
+	   
+	    
+       <div class="namebox">
+      <div class="hometitle3"><%= @project.project_title %> <p><%= @project.brand_name %> - <%= @project.shares.count %> Members</p>
+       </div> 
+	   </div>
+	   
+<div class="clubbox">
+<ul class="nav nav-tabs">
+  <li class="active"><%= link_to "About", (@project), "data-toggle"=>"tab" %></li>
+  <li><%= link_to "Members Home", backers_project_path(@project), "data-toggle"=>"tab" %></li>
+     <% if @user == @creator %>
+       <li><%= link_to "Edit", edit_project_path(@project), "data-toggle"=>"tab" %></li>
   <% end %>
 </ul>
-
+<%= render 'shared/error_messages' %>
           <div class="programinfo"> 
 
     
@@ -57,7 +58,7 @@ $(function () {
     </div>
     
 <div class="projectmembers">
-<h3>People who support this brand</h3>
+<h1>Club Members</h1><p><%= link_to "Become a Member", new_project_share_path(@project)%></p>
 <ul>
 <% @shares.each_slice(16) { |sl| %>
 <li class="memberspicture">
@@ -81,39 +82,23 @@ $(function () {
   </div>
   </div>
     
-  <div class="projectshare">
-  <div class="productdata">
-  <h3>Support from Backers</h3>
-  <div class="grid_10">
-  <% @shares.select{|s| s.medium == "Twitter" && s.twittercode.present?}.each do |t| %>
-  <div><%= t.twittercode.html_safe %> </div>
-  <% end %>
-  
-  <% @shares.select{|s| s.medium == "facebook" && s.share_id.present?}.each do |t| %>
-  <ul class = "fbcomment">
-  	<li>
-  	<div id = "profileImage" style = "margin-top:10px; margin-left:10px; float:left; width:50px; height:200px;" > 
-	<% if t.user.profile_image.present? %>
-  <%=  image_tag(t.user.profile_image, :size => "50x50") %>  <% end %></div>
+       <div class="projectbox">
+    <div class="discoverbox">
+	<ul class="brandactions">
+<h1>Featured actions</h1>
+<p>Ambassadors get access to unique missions they can lead on behalf of the startup. Members may get cool goodies!</p>
+	<% @project.action_pages .first(3).each do |e| %>
+	<li>
+	<%= render :partial => "shared/actions", :locals => {  :action => e } %>
+	</li>
+	<% end %>
 	
-  	<div id = "fbpostcontainer" style = "float:left; margin-left:10px; width:420px;" >
- 		<%=image_tag "facebookicon.png", :style=>"float:right; padding-top:8px"%>
-  		<div id = "name" style = "margin-left:15px; margin-top:12px; font-size:14px; font-weight:bold;"><%=t.user.name%> </div>
-  		<div id = "post_title" style = "clear:both; margin-top:10 px; margin-left:15px; font-weight:bold;"><%=@project.project_title%> </div>
-  		<div id = "post_image" style = "float:left; margin-top:10px; margin-left:10px;">
-			
-					
-  			<%= image_tag @project.file1_url(:medium), :size => "100x68" %>
-			
-  		</div>
-  		<div id = "postdescription" style = "float:left; margin-top: 8px; margin-left:10px; width:300px;"> <%=simple_format(@project.description.first(120)) + '...' %></div>
-  		</div>
-  </li>
-  <%end %>
-  
+  </ul>
   </div>
   </div>
+    
   
+  </div>
   </div>
   
 
