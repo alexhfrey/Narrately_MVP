@@ -93,7 +93,7 @@ before_filter :eligible_for_reward, :only => [:download, :backers, :actions]
 	else
 		@project = Project.find(params[:id])
 		unless @project.shares.collect {|s| s.user } .include?(@user)
-			flash[:notice] = "You must share the project before you can claim any rewards."
+			flash[:notice] = "You are trying to access a members only page. Please join the program first."
 			 path = @project
 		end
 	end
