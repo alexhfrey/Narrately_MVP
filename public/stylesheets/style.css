@@ -1059,7 +1059,7 @@ border-right:1px solid #c2cbd2;
 border-bottom:1px solid #c2cbd2;
 margin-top:5px;
 float:left;
-padding-left:0px;
+padding-left:10px;
 padding-top:10px;
 padding-right:0px;
 padding-bottom:10px;}
@@ -2564,6 +2564,16 @@ margin-top: 15px;
 	padding-right:20px;
     margin-bottom: 20px;
     text-align: center;
+    }
+    
+    .clubdescription {
+	clear:both;
+	font-size:14px;
+    margin-top: 20px;
+    padding-left: 20px;
+	padding-right:20px;
+    margin-bottom: 20px;
+    text-align: left;
     }
     .productdescription  p{
 	font-size: 14px;

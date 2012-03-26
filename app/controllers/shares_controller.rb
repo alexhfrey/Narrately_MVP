@@ -9,8 +9,8 @@ class SharesController < ApplicationController
   #If there is not user logged in, store redirect parameter into sessions and then send to login
   if current_user.nil?
 	session[:redirect] = params[:project_id]
-	flash[:success] = "Great! Just connect below with your facebook or twitter account and you will be sharing in seconds!"
-	redirect_to signin_path and return
+	flash[:success] = "Great! To join this club, please sign in below."
+	redirect_to signup_path and return
   end
   
   @user = current_user
