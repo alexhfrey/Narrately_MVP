@@ -1,4 +1,5 @@
 class SharesController < ApplicationController
+before_filter :already_shared, :only => [:new]
   def new
   ###Define stuff for facebook open graph
   @project = Project.find(params[:project_id])
@@ -48,5 +49,15 @@ class SharesController < ApplicationController
 	render 'new'
    end
   end
-
+  
+  def already_shared
+  @user = current_user
+  @project = Project.find(params[:project_id])
+  if @user
+	if @user.shares.collect{|p| p.project_id.to_s} .include?(params[:project_id])
+		flash[:notice] = "You are already a member! You might want to take some more actions below."
+		redirect_to actions_project_path(@project) and return
+  end
+  end
+  end
 end
