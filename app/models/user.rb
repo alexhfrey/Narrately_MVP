@@ -66,7 +66,7 @@ end
 
 def profile_large
 	if provider == "twitter"
-	""
+	"/images/facebook_default_big.jpg"
 	else
 	if uid.present?
 	"http://graph.facebook.com/" + uid + "/picture?type=large"
@@ -76,7 +76,7 @@ end
 
 def profile_square 
 	if provider == "twitter"
-	""
+	"/images/facebook_default_square.jpg"
 	else
 	if uid.present?
 		"http://graph.facebook.com/" + uid + "/picture?type=square"
