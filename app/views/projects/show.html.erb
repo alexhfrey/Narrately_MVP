@@ -86,7 +86,7 @@ $(function () {
 	<ul class="brandactions">
 <h1>Featured actions</h1>
 <p>Ambassadors get access to unique missions they can lead on behalf of the startup. Members may get cool goodies!</p>
-	<% @project.action_pages .first(3).each do |en| %>
+	<% @project.action_pages .each do |en| %>
 	<li>
 	<%= render :partial => "shared/actions", :locals => {  :action => en } %>
 	</li>
