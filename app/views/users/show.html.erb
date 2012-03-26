@@ -34,7 +34,8 @@
 <% @shares .collect {|u| u.project } .each do |s| %>
 <li>
 <%= image_tag s.file1.url(:medium).to_s, :class => "fimg2" %>
-<span class="mycreatedprojectsh1"><%= link_to s.project_title.first(40), s %></span>
+<span class="mycreatedprojectsh1"><%= link_to s.brand_name, s %></span>
+<div class="mycreatedprojectsh1box"></div>
 <div class="boxdownload">
 <span class="btn btn-success" align="center"><%= link_to "Download", download_project_path(s), :style => "color:#ffffff;" %></span>
 </div>
