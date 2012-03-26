@@ -4,7 +4,7 @@ end %>
 <%= link_to p.brand_name || "Default title" + "...", p, :class => "mycreatedprojectsh1" %>
 <div class="mycreatedprojectsh1box"></div>
 <div class = "image_boxes">
-<% p.shares .select{|s| s.user.present? } .first(3) .each do |sh| %>
+<% p.shares .select{|s| s.user.present? } .first(5) .each do |sh| %>
 	<span><%= image_tag(sh.user.profile_square) %> </span>
 	<% end %>
 	
