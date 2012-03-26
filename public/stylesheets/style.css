@@ -226,6 +226,12 @@ margin-top: 20px;
 float:left;
 width:405px;}
 
+.openheader {
+width: 100%;
+background: #ffffff; 
+margin-top: -30px;
+}
+
 .hometitle {
 color:000000;
 font-size:55px;
@@ -238,14 +244,30 @@ line-height:55px;
 padding-top: 30px;
 }
 
-.rightpart {
-float:left;
-width:465px;
-margin-top:30px;
-white-space:normal;
+.hometitle2 {
+color:000000;
+font-size:35px;
+text-align: center;
+width:100%;
+margin-top:10px;
+margin-bottom:10px;
+text-shadow:1px 1px 1px #FFF;
+line-height:35px;
+padding-top: 10px;
 }
-.leftpart img {
-margin-top:20px;}
+
+.hometitle3 {
+color:000000;
+font-size:35px;
+text-align: left;
+width:100%;
+margin-top:10px;
+margin-bottom:10px;
+text-shadow:1px 1px 1px #FFF;
+line-height:35px;
+padding-top: 10px;
+padding-left:20px;
+}
 
 .rightpart h1 {
 color:#38414b;
@@ -261,7 +283,7 @@ line-height:54px;
 color:#5F5A59;
 width:100%;
 font-size:24px;
-line-height:22px;
+line-height:25px;
 text-align: center;
 }
 .padd {
@@ -289,7 +311,7 @@ height:46px;
 background:url(../images/getstarted.png);
 color:#FFF;
 font-weight:bold;
-font-size:23px;
+font-size:25px;
 text-decoration:none;
     line-height: 41px;
     text-align: center;
@@ -299,6 +321,18 @@ margin-top:25px;
 .getstarted:hover {
 background:url(/images/getstartedhover.png) no-repeat;
 color:#FFF!important;}
+
+.spancta {
+text-align:left;
+width:400px; 
+padding-right: 10px;
+}
+
+.spancta2 {
+text-align:right;
+width:400px; 
+padding-right: 10px;
+}
 
 .ctabuttons {
 width:20%;
@@ -566,7 +600,7 @@ position: relative;
 .mycreatedprojectsh1 a:hover {
     text-decoration: underline; 
     }
-    
+        
 .mycreatedprojectsh1box {
 height: 35px;
 width: 298px; 
@@ -959,9 +993,11 @@ background:url(../images/shizzle2.png) repeat-x;
 	width:210px;
 	margin-right:10px;
 	margin-bottom:8px;}
+    
 	.fimg2 {
 	margin-left:0px;
 	margin-top:0px;}
+    
     .fimg3 {
 	display: block;
     margin-left: auto;
@@ -1106,6 +1142,13 @@ float:left;
 padding-left:0px;
 padding-top:0px;
 padding-right:0px;
+padding-bottom:0px;}
+
+.discoverboxhp {
+width:990px;
+border-radius:0px;
+margin-top:5px;
+float:left;
 padding-bottom:0px;}
 
 
@@ -2484,12 +2527,12 @@ padding-bottom:0px;}
 	
     .productdata {
 	clear:both;
-	
 	font-size:14px;
     margin-top: 20px;
     padding-left: 20px;
 	padding-right:20px;
     margin-bottom: 20px;
+    text-align: center;
     }
     .productdescription  p{
 	font-size: 14px;

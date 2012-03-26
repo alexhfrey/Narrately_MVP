@@ -4,8 +4,8 @@
 
 
 <div class="grid_11 singleleft">
-<div class="myprojectbox">
-<div class="bigtitle">1. Awesome</div>
+<div class="programbox">
+<div class="hometitle2">Wonderful, only one step left to becoming an ambassador</div>
 <div class="lines"></div>
 <div class="productdata">
 
@@ -33,7 +33,7 @@ twttr.events.bind('tweet', function(event) {
 	
 
 </script>
-<p>Great- just one step left to claim your reward. Share on Twitter or Facebook:</p>
+<p>Share your accomplishment with your friends on Twitter or Facebook:</p>
 
 <%= form_tag(project_shares_path(@project), :method => "post") do %> 
 	<%= hidden_field_tag(:user_id, @user.id) %>
@@ -48,39 +48,7 @@ twttr.events.bind('tweet', function(event) {
 </ul>
 </div>
 </div>
-
-
-<div class="mysharesbox">
-<div class="bigtitle">2. Your Reward</div>
-<div class="lines"></div>
-<div class="productdata">
-<ul class="mysharedprojects">
-<li>
-<%= render :partial => "shared/projects", :locals => { :user => @user, :p => @project } %>
-</li>
-</ul>
-
 </div>
-</div>
-</div>
-
-
-<div class="grid_4 righthome">
-
-<div class="categorybox">
-<div class="authordata">
-<div class="grid_4">
-<br/>
-<h2>How it Works</h2>
-<p>1. Support the project by sharing it with friends</p>
-<p>2. Return to Snowball to receive your reward</p>
-<p>3. Repeat with other projects!</p>
-</div>
-</div>
-</div>
-</div>
-
-
 </div>
 
 

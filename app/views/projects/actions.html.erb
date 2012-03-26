@@ -8,7 +8,7 @@ $(function () {
 <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,400italic,700' rel='stylesheet' type='text/css'/>
        
         <div class="namebox">
-       <div class="programtitle"><%= @project.project_title %> <p><%= @project.brand_name %> - <%= @project.shares.count %> Members</p></div> 
+       <div class="hometitle3"><%= @project.project_title %> <p><%= @project.brand_name %> - <%= @project.shares.count %> Members</p></div> 
 	   <ul class="nav nav-tabs">
   <li><%= link_to "Home", (@project), "data-toggle"=>"tab" %></li>
   <li class="active"><%= link_to "Actions", actions_project_path(@project), "data-toggle"=>"tab" %></li>
