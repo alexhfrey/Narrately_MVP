@@ -2,14 +2,16 @@
 <% if action.actionable.class.name == "Post"%>
 <div class="brandactions2"><div class = "actiontitle">
 <%=link_to image_tag("facebook-icon.png", :class => "fimg4"), action_takens_path(:id => action.id) %>
-Facebook Stalk Us!</div>
+Post Link on Facebook</div>
+<b>Message from <%= action.project.brand_name %>:</b>
 <div class = "actionprompt">
 <p><%= action.prompt %></p>
 </div>
+<b>Take this action:</b>
 <%= form_tag(action_takens_path, :method => "post", :class => "actionform") do %> 
 	<%= hidden_field_tag(:action_id, action.id )%>
-    <%= text_area_tag("message", nil, :size => "2x3", :class => "smalltextarea") %>
-	<%= submit_tag "Submit", :class => "btn btn-success btn-large"	 %> 
+    <%= text_area_tag("message", nil, :size => "1x3", :class => "smalltextarea") %>
+	<%= submit_tag "Post to Facebook", :class => "btn btn-action"	 %> 
 	<% end %>
 
 
@@ -26,7 +28,7 @@ LIKE..like a Boss
 <%= form_tag(action_takens_path, :method => "post", :class => "actionform") do %> 
 	<%= hidden_field_tag(:action_id, action.id )%>
     <%= text_area_tag("message", nil, :size => "2x3", :class => "smalltextarea") %>
-	<%= submit_tag "Submit", :class => "btn btn-success btn-large"	 %> 
+	<%= submit_tag "Like it!", :class => "btn btn-action"	 %> 
 	<% end %>
 	
 <% elsif action.actionable.class.name == "Fbcomment" %>
@@ -39,7 +41,7 @@ LIKE..like a Boss
 <%= form_tag(action_takens_path, :method => "post", :class => "actionform") do%> 
 	<%= hidden_field_tag(:action_id, action.id )%>
     <%= text_area_tag("message", nil, :size => "2x3", :class => "smalltextarea") %>
-	<%= submit_tag "Submit", :class => "btn btn-success btn-large"	 %> 
+	<%= submit_tag "Add Comment", :class => "btn btn-action"	 %> 
 	<% end %>
 
 <% elsif action.actionable.class.name == "Tweet" %>
@@ -54,7 +56,7 @@ LIKE..like a Boss
 <%= form_tag(action_takens_path, :method => "post", :class => "actionform") do%> 
 	<%= hidden_field_tag(:action_id, action.id )%>
     <%= text_area_tag("message", nil, :size => "2x3", :class => "smalltextarea") %>
-	<%= submit_tag "Submit", :class => "btn btn-success btn-large"	 %> 
+	<%= submit_tag "Post Tweet", :class => "btn btn-action"	 %> 
 		<% end %>
 	
 <% elsif action.actionable.class.name == "Retweet" %>
@@ -71,7 +73,7 @@ Retweet por favor! </div>
 <%= form_tag(action_takens_path, :method => "post", :class => "actionform") do%> 
 	<%= hidden_field_tag(:action_id, action.id )%>
     <%= text_area_tag("message", nil, :size => "2x3", :class => "smalltextarea") %>
-	<%= submit_tag "Submit", :class => "btn btn-success btn-large"	 %> 
+	<%= submit_tag "Retweet", :class => "btn btn-action"	 %> 
 	<% end %>
 <% elsif action.actionable.class.name == "Other" %>
 <%= image_tag "circle-greenhome.png", :class => "fimg2" %>

@@ -58,6 +58,11 @@ width:270px;
 height:60px;
 }
 
+.smalltext {
+font-size: 12px;
+color: #736F6E;
+}
+
 .menu1 li a {
     color: #0278A7;
     display: block;
@@ -221,16 +226,16 @@ margin-top: 20px;
 float:left;
 width:405px;}
 
-.leftpart h1 
-{
+.hometitle {
 color:000000;
 font-size:55px;
-width:300px;
+text-align: center;
+width:100%;
 margin-top:10px;
 margin-bottom:15px;
 text-shadow:1px 1px 1px #FFF;
-line-height:54px;
-
+line-height:55px;
+padding-top: 30px;
 }
 
 .rightpart {
@@ -242,8 +247,7 @@ white-space:normal;
 .leftpart img {
 margin-top:20px;}
 
-.rightpart h1 
-{
+.rightpart h1 {
 color:#38414b;
 font-size:50px;
 width:300px;
@@ -251,14 +255,14 @@ margin-top:50px;
 margin-bottom:15px;
 text-shadow:1px 1px 1px #FFF;
 line-height:54px;
-
 }
 
 .pdesc {
 color:#5F5A59;
-width:300px;
+width:100%;
 font-size:24px;
 line-height:22px;
+text-align: center;
 }
 .padd {
 display:block;
@@ -295,6 +299,12 @@ margin-top:25px;
 .getstarted:hover {
 background:url(/images/getstartedhover.png) no-repeat;
 color:#FFF!important;}
+
+.ctabuttons {
+width:20%;
+margin: 0px auto;
+display:block;
+}
 
 
 .tagit {
@@ -651,7 +661,6 @@ height:100%;
 width:100%;
 margin-top:10px;
 height:120px;
-overflow:scroll;
 }
 
 .actiontitle {
@@ -667,7 +676,7 @@ margin-left:0px;
 display:block;
 float:left;
 width:300px;
-height:300px;
+height:350px;
 background:#FFFFFE;
 border-style: solid; 
 border-width:0px; 

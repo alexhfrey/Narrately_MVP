@@ -3,71 +3,31 @@
 
 
 
-<div class="grid_16">
-
-
-<div class="sliderinner">
-
-<!-- intro and call to action- left side -->
-<div class="leftpart">
-<h1>Build a Movement</h1>
-<div class="pdesc">Reward your fans for sharing your product or service. Start your Snowball now.</div>
-<%= link_to "Get Started", signup_path, :class => "getstarted" %>
+<div class="hometitle">Start a fan club. Build a movement.</div>
+<div class="pdesc">The easiest way for startups and creative entrepreneurs to create ambassador programs.
 <p>(It's Free and takes under 2 minutes)</p>
+<div class="ctabuttons">
+<%= link_to "Startups Click Here", signup_path, :class => "getstarted" %>
 </div>
-			
-<!-- Feautred projects- right side -->
+<a href = "auth/facebook"><%= image_tag "facebookbutton.png" %> </a>	
+</div>
+<br />
+<br />
 
-<div class="rightpart">
-<img src="images/laurapicture2.png" alt="" class="fimg"  >
-<p style = "margin-left:130px;" ><b>"The Snowball Effect"</b></p>
+<div class="lines"></div>
+<div class="discoverbox">
+<h2>Featured Fan Clubs</h2>
+<ul class="mysharedprojects">
+<% Project.all .sort_by {rand} [0..2] .each do |p| %>
+<li>
+<%= render :partial => "shared/projects", :locals => { :user => @user, :p => p } %>
 </li>
-</a>
-
+<%end%>
 </ul>
 </div>
 
-
-
-			
-</div>
-</div>
-
-
-<div class="clear"></div>
-
-
-<div class="featuredproducts">
-
-<div class="grid_16" > 
-<div class = "howitworks">
-<h2>How it Works</h2>
-
-<ul class="howitworksline">
-<li>
-<img src="../images/pencil.png" alt="" float="middle" class="hiwimg1" />
-<h3>1. Post a Project</h3>
-<p><a href = "/signup">Connect with Facebook or Twitter</a> and create your own optimized landing page in less than five minutes - it's free. </p>
-</li>
-<li>
-<img src="../images/shared.png" alt="" class="hiwimg1" />
-<h3>2. Incentizive Sharing</h3>
-<p>Reward your fans for sharing your project. Cap the number of rewards given to create scarcity value. 
-</p>
-
-</li>
-<li>
-<img src="../images/rewardun.png" alt="" class="hiwimg1" />
-<h3>3. Build Awareness</h3>
-<p>Build buzz as fans share your project on Facebook and Twitter. 
-</p>
-</li>
-</ul>
 <h3 style = "clear:both;"><a href = "/signup">Get started</a> or <a href = "/about">learn more</a></h3>
 	
-
-</div>
-</div>
 <div>
 
 
