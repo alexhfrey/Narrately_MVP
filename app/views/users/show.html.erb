@@ -31,7 +31,7 @@
 <div class="bigtitle">My Rewards</div>
 <div class="lines"></div>
 <ul class="mysharedprojects">
-<% @shares .collect {|u| u.project } .each do |s| %>
+<% @shares .select{|s| s.project.file2.present? } .collect {|u| u.project } .each do |s| %>
 <li>
 <%= image_tag s.file1.url(:medium).to_s, :class => "fimg2" %>
 <span class="mycreatedprojectsh1"><%= link_to s.brand_name, s %></span>
