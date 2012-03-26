@@ -80,8 +80,10 @@ class ActionTakensController < ApplicationController
 		graph = Koala::Facebook::API.new(@user.token)
 		graph.put_like(@action.actionable.post_id)
 	end
-	@action_takes.save
+	if @action_takes.save
+	flash[:success] = "Thanks! Your message has been posted!"
 	redirect_to actions_project_path(@action.project)
+	end
   end
 
 end

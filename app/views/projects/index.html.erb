@@ -5,21 +5,7 @@
 <% Project.all .sort_by {rand} [0..8] .each do |p| %>
 <li>
 <%= render :partial => "shared/projects", :locals => { :user => @user, :p => p } %>
-<div class="memberspicture">
-<p>Club Members</p>
-<ul class="memberspicture">
-<% p.shares.each_slice(16) { |sl| %>
-<li>
- <% sl .select {|u| defined? u.user.profile_square } .each do  |s| %>
- <%=link_to image_tag(s.user.profile_square), s.user, :class => "memberspicture" %>
 
- <% end %>
-  </li> 
- 
-
- <% } %>
- </ul>
-</div>
 
 </li>
 <%end%>

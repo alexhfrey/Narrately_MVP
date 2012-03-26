@@ -15,7 +15,7 @@
 <div class="hometitle2">Popular Fan Clubs on Snowball</div>
 <div class="discoverboxhp">
 <ul class="mysharedprojects">
-<% Project.all .sort_by {rand} [0..2] .each do |p| %>
+<% Project.all .sort_by {|p| p.shares.length} .last(3) .each do |p| %>
 <li>
 <%= render :partial => "shared/projects", :locals => { :user => @user, :p => p } %>
 </li>
