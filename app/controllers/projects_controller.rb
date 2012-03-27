@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
 before_filter :owns_project, :only => [:edit, :update]
 before_filter :eligible_for_reward, :only => [:download, :backers, :actions]
+before_filter :twitter_authorized, :only [:backers, :actions]
 
   def new
 	@user = current_user
@@ -127,10 +128,7 @@ before_filter :eligible_for_reward, :only => [:download, :backers, :actions]
 
   def backers
   #Check to see if user has authorized twitter or not - if not, let's do it here
-  if current_user.twitter_token.empty?
-				session[:redirect] = request.fullpath.to_s 
-				redirect_to '/auth/twitter' and return
-  end
+  
   @project = Project.find(params[:id])
   @shares = @project.shares
   @creator = @project.user
@@ -157,12 +155,18 @@ before_filter :eligible_for_reward, :only => [:download, :backers, :actions]
   def actions
 	@project = Project.find(params[:id])
 	@acts = ActionPage.find_all_by_project_id(params[:id])
-  
-
- 
- 
-   
+    
  end
+ 
+ def twitter_authorized
+ user = current_user
+ if user
+	if user .twitter_token.empty?
+				session[:redirect] = request.fullpath.to_s 
+				redirect_to '/auth/twitter' and return
+  end
+  end
+  end
   def confirmation
   end
 
