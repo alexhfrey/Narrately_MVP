@@ -699,6 +699,7 @@ padding-left:10px;
 padding-top: 10px;  
 width:275px;
 height:350px;
+background-color: #E9E1CB;
 }
 
 .actionprompt {
@@ -1068,6 +1069,18 @@ float:left;
 padding-left:10px;
 padding-top:10px;
 padding-right:10px;
+padding-bottom:10px;}
+
+.projectmembersmain{
+background:#FFF;
+width:950px;
+border-right:1px solid #c2cbd2;
+border-bottom:1px solid #c2cbd2;
+margin-top:10px;
+float:left;
+padding-left:10px;
+padding-top:10px;
+padding-right:0px;
 padding-bottom:10px;}
 
 .projectmembers {
