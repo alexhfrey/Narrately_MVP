@@ -23,7 +23,10 @@ $(function () {
 <%= render 'shared/error_messages' %>
 <h1>Members Home</h1>
 <p>Welcome to the member's home of <%= @project.brand_name %>. This is where the good stuff happens. Below you'll see other members who support this brand, actions published by <%= @project.brand_name %>, and a community message board.</p>
-<h3>Club Members</h3>
+</div>
+
+<div class="projectmembers">
+<h1>Club Members</h1>
 <ul>
 <% @shares.each() { |sl| %>
  <%= if sl.user.profile_image? 
@@ -31,9 +34,11 @@ $(function () {
  end %> 
  <% } %>
  </ul>
+</div>
 
+<div class="projectbox">
 <div class="discoverbox">
-<h3>Take an action. Show your love. Get awesome stuff.</h3>
+<h1>Take an action. Show your love.</h1>
 	<ul class="brandactions">
 <% @project.action_pages .first(3).each do |e| %>
 	<li>
@@ -43,17 +48,13 @@ $(function () {
 	
 	</ul>	
 </div>
+</div>
 
-<div class="lefthalf">
-<h3>Say hello to the community!</h3>
+<div class="projectbox">
+<h1>Say hello to the community!</h1>
 <div class="fb-comments" data-href= <%= request.fullpath %> data-num-posts="2" data-width="470"></div>
 </div>  
 
-
-
-
-
-     </div> 
 
   
  
