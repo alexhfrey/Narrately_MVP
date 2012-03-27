@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
 before_filter :owns_project, :only => [:edit, :update]
 before_filter :eligible_for_reward, :only => [:download, :backers, :actions]
-before_filter :twitter_authorized, :only [:backers, :actions]
+before_filter :twitter_authorized, :only => [:backers, :actions]
 
   def new
 	@user = current_user
@@ -161,7 +161,7 @@ before_filter :twitter_authorized, :only [:backers, :actions]
  def twitter_authorized
  user = current_user
  if user
-	if user .twitter_token.empty?
+	if user .twitter_token .nil?
 				session[:redirect] = request.fullpath.to_s 
 				redirect_to '/auth/twitter' and return
   end
