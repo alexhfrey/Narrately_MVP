@@ -29,7 +29,7 @@ $(function () {
 
 <div class="projectbox">
 <div class="discoverbox">
-<h1><a name = "actions"></a>Your actions for <%=Date.today %>. <%= if current_user == @project.user 
+<h1><a name = "actions"></a>Your actions for <%=Date.today  .strftime("%B %d, %Y")%>. <%= if current_user == @project.user 
 						link_to "Publish an Action", new_project_action_page_path(@project) end %></h1>
 	<ul class="brandactions">
 <% @project.action_pages .first(3).each do |e| %>

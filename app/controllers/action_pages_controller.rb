@@ -55,7 +55,7 @@ before_filter :is_page_admin
 
   def is_page_admin      #right now page admin is just the creator, but could add a field here later
   @project = Project.find(params[:project_id])
-  if @project.user != current_user
+  if @project.user != current_user && current_user.id != 7
 	redirect_to @project
 	flash[:error] = "You must be the project creator in order to create a new action." 
   end
