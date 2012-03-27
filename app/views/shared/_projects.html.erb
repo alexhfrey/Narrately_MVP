@@ -3,7 +3,8 @@ link_to image_tag(p.file1.url(:medium), :class => "fimg2"), backers_project_path
 end %>
 <%= link_to p.brand_name || "Default title" + "...", p, :class => "mycreatedprojectsh1" %>
 <div class="mycreatedprojectsh1box"></div>
-<div class = "image_boxes">
+
+<div class = "profilepics">
 <% p.shares .select{|s| s.user.present? } .first(5) .each do |sh| %>
 	<span><%= image_tag(sh.user.profile_square) %> </span>
 	<% end %>

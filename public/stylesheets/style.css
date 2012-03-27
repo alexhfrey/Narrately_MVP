@@ -587,7 +587,7 @@ float:left;
 height: 35px;
 width: 291px; 
 line-height: 35px;
-font-size: 19px; 
+font-size: 22px; 
 color: #ffffff; 
 padding-left: 7px;
 padding-top: 0px;
@@ -666,7 +666,7 @@ float:left;}
 display:block;
 float:left;
 width:298px;
-height:220px;
+height:255px;
 background:#FFFFFE;
 border-style: solid; 
 border-width:0px; 
@@ -681,6 +681,12 @@ margin-bottom: 30px;}
 .mysharedprojects li a:hover {
     text-decoration: none; 
     }
+    
+.profilepics {
+padding-left:5px;
+padding-top:5px;
+padding-right:5px;
+}
     
 .brandactions {
 width:100%;
