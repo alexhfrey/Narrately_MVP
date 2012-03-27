@@ -46,7 +46,7 @@ before_filter :is_page_admin
 		action_page = @action.build_action_page(:project_id => @project.id, :prompt => params[:prompt])
 		action_page.save
 		@action.save
-		redirect_to actions_project_path(@project)
+		redirect_to backers_project_path(@project)
 	end
   end
   def show
