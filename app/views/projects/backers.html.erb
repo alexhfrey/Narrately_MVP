@@ -21,24 +21,16 @@ $(function () {
   <% end %>
 </ul>
 <%= render 'shared/error_messages' %>
-<h1>Members Home</h1>
-<p>Welcome to the member's home of <%= @project.brand_name %>. This is where the good stuff happens. Below you'll see other members who support this brand, actions published by <%= @project.brand_name %>, and a community message board.</p>
+
+<p><b>Welcome to the member's home of <%= @project.brand_name %></b>. While you are here you may want to 
+<a href ="#actions">take an action</a>, check out the <a href = "#members">other members</a>, or <a href = "#community">say hello to the community</a>. </p>
 </div>
 
-<div class="projectmembers">
-<h1>Club Members</h1>
-<ul>
-<% @shares.each() { |sl| %>
- <%= if sl.user.profile_image? 
- link_to image_tag(sl.user.profile_square), sl.user, :class => "memberspicture"  
- end %> 
- <% } %>
- </ul>
-</div>
 
 <div class="projectbox">
 <div class="discoverbox">
-<h1>Take an action. Show your love.</h1>
+<h1><a name = "actions"></a>Your actions for <%=Date.today %>. <%= if current_user == @project.user 
+						link_to "Publish an Action", new_project_action_page_path(@project) end %></h1>
 	<ul class="brandactions">
 <% @project.action_pages .first(3).each do |e| %>
 	<li>
@@ -50,11 +42,25 @@ $(function () {
 </div>
 </div>
 
-<div class="projectbox">
-<h1>Say hello to the community!</h1>
-<div class="fb-comments" data-href= <%= request.fullpath %> data-num-posts="2" data-width="470"></div>
+
+
+
+
+
+<div class="communitybox">
+<h1><a name = "community"></a>Say hello to the community!</h1>
+<div class="fb-comments" data-href= <%= request.fullpath %> data-num-posts="2" data-width="430"></div>
 </div>  
 
-
+<div class="projectmembers">
+<h1><a name = "members"></a>Club Members</h1>
+<ul>
+<% @shares.each() { |sl| %>
+ <%= if sl.user.profile_image? 
+ link_to image_tag(sl.user.profile_square), sl.user, :class => "memberspicture"  
+ end %> 
+ <% } %>
+ </ul>
+</div>
   
  

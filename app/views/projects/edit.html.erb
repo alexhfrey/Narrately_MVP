@@ -41,9 +41,10 @@ return false;
    <p> <%= f.input :project_title, :label => "A Catchy Title",  :input_html => { :class => 'text'} %> </p><p class="helptext">A catchy title that describes what your brand stands for.</p>
    <p> <%= f.input :brand_name, :label => "What's the name of your brand?",  :input_html => { :class => 'text'} %> </p><p class="helptext">The name of your organization is you're a business/non-profit. Your name if you're an author.</p>
    <p><%= f.input :short_description, :label => "Why is your brand cool?", :input_html => {:size => "15x4"}%> </p><p class="helptext">Keep it around 140 characters!</p>   
-   <p><%= f.input :file1, :label => "Change Your Cover Image", :required => false%></p><p class="helptext">Use a creative photo! Ideal dimensions are 600px x 400px.  We accept JPEG and PNG for now with a maximum size of 2 MB.</p>
-   <p> <%= image_tag @project.file1_url(:medium) %>
-     <%= f.hidden_field :file1_cache %> </p>
+   <p><%= f.input :file1, :input_html => { :validate => false }, :label => "Change Your Cover Image", :required => false%></p><p class="helptext">Use a creative photo! Ideal dimensions are 600px x 400px.  We accept JPEG and PNG for now with a maximum size of 2 MB.</p>
+   <p><%= f.hidden_field :file1_cache %> 
+   <%= image_tag @project.file1_url(:medium), :required => false %> </p> 
+     
    <p><%= f.input :description, :label => "Describe fan club (Why Join, who should join, etc.)", :input_html => {:size => "20x11"}%> </p><p class="helptext">What does your brand stand for? Top 3 values?</p>   
 	
    <p> <%= f.input :video, :label => "Add a Youtube video (optional)"%> </p><p class="helptext">This is optional, videos tell a great story! Just enter the Youtube link here.</p>      

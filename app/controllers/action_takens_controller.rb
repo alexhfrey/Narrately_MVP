@@ -59,7 +59,7 @@ class ActionTakensController < ApplicationController
 			
 			)
 		link = @action.actionable.link + '?referral=' + @user.id.to_s
-		@client.update(@action_takes.message + " " + (@action.actionable.link + '?referral=' + link))
+		@client.update(@action_takes.message + " " + (@action.actionable.link))
 	
 	elsif @action.actionable.class.name.downcase == "retweet"
 @client = Twitter::Client.new(
@@ -82,7 +82,7 @@ class ActionTakensController < ApplicationController
 	end
 	if @action_takes.save
 	flash[:success] = "Thanks! Your message has been posted!"
-	redirect_to actions_project_path(@action.project)
+	redirect_to backers_project_path(@action.project)
 	end
   end
 
