@@ -10,15 +10,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120327000726) do
+ActiveRecord::Schema.define(:version => 20120327212541) do
 
   create_table "action_pages", :force => true do |t|
-    t.integer  "actionable_id"
-    t.string   "actionable_type"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.text     "prompt"
-    t.integer  "project_id"
+    t.integer   "actionable_id"
+    t.string    "actionable_type"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.text      "prompt"
+    t.integer   "project_id"
+    t.string    "title"
   end
 
   create_table "action_takens", :force => true do |t|
@@ -96,14 +97,14 @@ ActiveRecord::Schema.define(:version => 20120327000726) do
   end
 
   create_table "rails_admin_histories", :force => true do |t|
-    t.text     "message"
-    t.string   "username"
-    t.integer  "item"
-    t.string   "table"
-    t.integer  "month",      :limit => 2
-    t.integer  "year",       :limit => 5
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.text      "message"
+    t.string    "username"
+    t.integer   "item"
+    t.string    "table"
+    t.integer   "month"
+    t.integer   "year"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
