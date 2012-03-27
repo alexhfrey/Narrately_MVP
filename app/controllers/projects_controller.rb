@@ -106,7 +106,10 @@ before_filter :eligible_for_reward, :only => [:download, :backers, :actions]
 	@project = @user.projects.build(params[:project])
 	
 	if @project.save
-	@project.user.add_to_chimp_creators
+		@share = @project.shares.build(:user_id => @project.user)
+		@share.save
+	
+	    @project.user.add_to_chimp_creators
 		flash[:success] = "Thanks for your submission! Now you can optimize your project image"		
 		redirect_to :action => 'crop', :id => @project.id
 		#add check to see if this was users first project
@@ -123,6 +126,11 @@ before_filter :eligible_for_reward, :only => [:download, :backers, :actions]
   end
 
   def backers
+  #Check to see if user has authorized twitter or not - if not, let's do it here
+  if current_user.twitter_token.empty?
+				session[:redirect] = request.fullpath.to_s 
+				redirect_to '/auth/twitter' and return
+  end
   @project = Project.find(params[:id])
   @shares = @project.shares
   @creator = @project.user
