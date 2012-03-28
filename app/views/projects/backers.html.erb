@@ -16,6 +16,7 @@ $(function () {
 <ul class="nav nav-tabs">
   <li><%= link_to "About", (@project), "data-toggle"=>"tab" %></li>
   <li class="active"><%= link_to "Members Home", backers_project_path(@project), "data-toggle"=>"tab" %></li>
+    <li><%= link_to "Updates", actions_project_path(@project), "data-toggle"=>"tab" %></li>
      <% if @user == @creator %>
        <li><%= link_to "Edit", edit_project_path(@project), "data-toggle"=>"tab" %></li>
   <% end %>
@@ -31,32 +32,6 @@ to help spread awesome ideas. Help make <%= @project.brand_name %> a success by 
 earn access to exclusive rewards and events in the process! </p> 
 </div>
 
-
-<div class="projectbox">
-<div class="discoverbox">
-<h1><a name = "actions"></a>Your actions for <%=Date.today  .strftime("%B %d, %Y")%>. <%= if current_user == @project.user 
-						link_to "Publish an Action", new_project_action_page_path(@project) end %></h1>
-	<ul class="brandactions">
-<% @project.action_pages .first(3).each do |e| %>
-	<li>
-	<%= render :partial => "shared/actions", :locals => {  :action => e } %>
-	</li>
-	<% end %>
-	
-	</ul>	
-</div>
-</div>
-
-
-
-
-
-
-<div class="communitybox">
-<h1><a name = "community"></a>Say hello to the community!</h1>
-<div class="fb-comments" data-href= <%= request.fullpath %> data-num-posts="2" data-width="430"></div>
-</div>  
-
 <div class="projectmembers">
 <h1><a name = "members"></a>Club Members</h1>
 <ul>
@@ -67,5 +42,12 @@ earn access to exclusive rewards and events in the process! </p>
  <% } %>
  </ul>
 </div>
+
+<div class="communitybox">
+<h1><a name = "community"></a>Say hello to the community!</h1>
+<div class="fb-comments" data-href= <%= request.fullpath %> data-num-posts="2" data-width="430"></div>
+</div>  
+
+
   
  

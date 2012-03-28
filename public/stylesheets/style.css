@@ -687,6 +687,13 @@ padding-left:5px;
 padding-top:5px;
 padding-right:5px;
 }
+
+.actionprofilepics {
+padding-left:5px;
+padding-top:15px;
+padding-bottom: 15px;
+padding-right:5px;
+}
     
 .brandactions {
 width:100%;
@@ -694,12 +701,37 @@ height:100%;
 list-style:none;
 float:left;}
 
+.brandlogo {
+border-style: solid;
+border-width: 0px;
+border-color: #F2F2F2;
+width: 200px;
+float:left;
+margin-left: 0px;
+margin-right: 10px;
+}
+
+.smallname {
+font-size: 16px;
+color: #808080;
+float: left;
+margin-left: 5px;
+}
+
+.smallname2 {
+font-size: 13px;
+color: #808080;
+float: left;
+margin-left: 15px;
+}
+    
 .brandactions2 {
 padding-left:10px;
-padding-top: 10px;  
-width:275px;
-height:350px;
-background-color: #E9E1CB;
+padding-top: 10px;
+padding-bottom: 10px;  
+width:600px;
+height:100%;
+background-color: #ffffff;
 }
 
 .actionprompt {
@@ -720,17 +752,16 @@ margin-left:0px;
 .brandactions li {
 display:block;
 float:left;
-width:285px;
-height:360px;
+width:730px;
 background:#FFFFFE;
 border-style: solid; 
-border-width:0px;   
+border-width:1px;   
 border-color:#D4D4D4; 
 box-shadow: 4px 4px 1px #C0C0C0;
 -moz-box-shadow: 4px 4px 1px #C0C0C0;
 -webkit-box-shadow: 4px 4px 1px #C0C0C0;
-margin-left:0px;
-margin-right:27px;
+margin-left:15px;
+margin-right:0px;
 margin-bottom: 40px;
 list-style-type: none;}
 
@@ -1011,8 +1042,7 @@ background:url(../images/shizzle2.png) repeat-x;
     
     .fimg3 {
 	display: block;
-    margin-left: auto;
-    margin-right: auto;
+    float: left;
 	margin-top:10px;}
 	.fimg4{
 	width:50px; height:50px; 
@@ -1046,7 +1076,6 @@ float:left;}
 .memberspage li {
 list-style-type: none;}
 
-
 .projectbox {
 background:#FFF;
 width:940px;
@@ -1059,37 +1088,12 @@ padding-top:10px;
 padding-right:10px;
 padding-bottom:10px;}
 
-.communitybox {
-background:#FFF;
-width:448px;
-border-right:1px solid #c2cbd2;
-border-bottom:1px solid #c2cbd2;
-margin-top:25px;
-float:left;
-padding-left:10px;
-padding-top:10px;
-padding-right:10px;
-padding-bottom:10px;}
-
-.projectmembersmain{
+.projectmembers {
 background:#FFF;
 width:950px;
 border-right:1px solid #c2cbd2;
 border-bottom:1px solid #c2cbd2;
-margin-top:10px;
-float:left;
-padding-left:10px;
-padding-top:10px;
-padding-right:0px;
-padding-bottom:10px;}
-
-.projectmembers {
-background:#FFF;
-width:448px;
-border-right:1px solid #c2cbd2;
-border-bottom:1px solid #c2cbd2;
-margin-top:25px;
-margin-left:30px;
+margin-top:5px;
 float:left;
 padding-left:10px;
 padding-top:10px;

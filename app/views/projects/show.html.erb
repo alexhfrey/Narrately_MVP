@@ -17,6 +17,7 @@ $(function () {
 <ul class="nav nav-tabs">
   <li class="active"><%= link_to "About", (@project), "data-toggle"=>"tab" %></li>
   <li><%= link_to "Members Home", backers_project_path(@project), "data-toggle"=>"tab" %></li>
+      <li><%= link_to "Updates", actions_project_path(@project), "data-toggle"=>"tab" %></li>
      <% if @user == @creator %>
        <li><%= link_to "Edit", edit_project_path(@project), "data-toggle"=>"tab" %></li>
   <% end %>
@@ -57,7 +58,7 @@ $(function () {
 
     </div>
     
-<div class="projectmembersmain">
+<div class="projectmembers">
 <h1>Club Members</h1><p><%= link_to "Become a Member", new_project_share_path(@project)%></p>
 <ul>
 <% @shares.each_slice(16) { |sl| %>
@@ -79,21 +80,6 @@ $(function () {
    <div class = "bottomcallout">Be part of the movement.  <%= link_to "Back this project now", new_project_share_path(@project) %> to get 
    <%= @project.promotion_description %></b>.  Then check back here often for updates and additional actions you can take to help make this vision a reality.  
    </div>
-  </div>
-    
-       <div class="projectbox">
-    <div class="discoverbox">
-	<ul class="brandactions">
-<h1>Featured actions</h1>
-<p>Ambassadors get access to unique missions they can lead on behalf of the startup. Members may get cool goodies!</p>
-	<% ActionPage.find_all_by_project_id(@project.id.to_s) .each do |en| %>
-	<li>
-	<%= render :partial => "shared/actions", :locals => {  :action => en } %>
-	</li>
-	<% end %>
-	
-  </ul>
-  </div>
   </div>
     
   
