@@ -10,16 +10,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120327212541) do
+ActiveRecord::Schema.define(:version => 20120328184718) do
 
   create_table "action_pages", :force => true do |t|
-    t.integer   "actionable_id"
-    t.string    "actionable_type"
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
-    t.text      "prompt"
-    t.integer   "project_id"
-    t.string    "title"
+    t.integer  "actionable_id"
+    t.string   "actionable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "prompt"
+    t.integer  "project_id"
+    t.string   "title"
+    t.integer  "action_page_id"
   end
 
   create_table "action_takens", :force => true do |t|
