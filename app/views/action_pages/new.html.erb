@@ -12,9 +12,16 @@ return false;
 
 <div class="projectcreatebox">
 <fieldset class = "control-group">
+<p class="bluetitle">Publish an update</p>
+<p>With Snowball every update has an action that is tied to it. First, tell your most loyal fans what is new. Then, 
+tell them what they can do to help you spread the word. </p>
 <%= form_tag(project_action_pages_path(@project), :method => "post") do %> 
 	<%= hidden_field_tag(:medium, nil )%>	
-	<p class="bluetitle">The action you want your users to take</p>
+	<p><label>Your update title</label>
+	<%= text_field_tag :title %> </p>
+	<p><label>Enter your update - what is new or different that is associated with the action you want your users to take?</label></p>
+	<%= text_area_tag :prompt %>
+	
 	<hr>
 	<p><%= hidden_field_tag :actionable_type, "like" %> 
 	<label>What is the action?</label>
@@ -28,8 +35,7 @@ return false;
 	
 	<p><label>Enter the link that you would like users to share, retweet, like, or comment on. </label>
 	<%= text_field_tag :link %>  </p>
-	<p><label>Enter a prompt to get users to take the action - e.g. "Tweet about our upcoming concert this Friday in San Jose."
-	<%= text_area_tag :prompt %>
+	
  <p> <%= submit_tag "Submit", :class => "btn btn-success btn-large"	 %> </p>
  <% end %>
 

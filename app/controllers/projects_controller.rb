@@ -107,7 +107,7 @@ before_filter :twitter_authorized, :only => [:backers, :actions]
 	@project = @user.projects.build(params[:project])
 	
 	if @project.save
-		@share = @project.shares.build(:user_id => @project.user)
+		@share = @project.shares.build(:user_id => @project.user.id)
 		@share.save
 	
 	    @project.user.add_to_chimp_creators

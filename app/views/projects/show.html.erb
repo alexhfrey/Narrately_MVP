@@ -77,8 +77,8 @@ $(function () {
      <h1>Fan Club Description</h1>
    <div class = "productdescription"><%= simple_format(@project.description)%> </div>
    <h3>Believe in the vision? Here's what you can do to help</h3>
-   <div class = "bottomcallout">Be part of the movement.  <%= link_to "Back this project now", new_project_share_path(@project) %> to get 
-   <%= @project.promotion_description %></b>.  Then check back here often for updates and additional actions you can take to help make this vision a reality.  
+   <div class = "productdescription"><p>Be part of the movement.<b>  <%= link_to "Back this project now", new_project_share_path(@project) %> </b>to get 
+   <%= @project.promotion_description || "access to exclusive rewards and events." %></b>.  Then check back here often for updates and additional actions you can take to help make this vision a reality. </p> 
    </div>
   </div>
     
