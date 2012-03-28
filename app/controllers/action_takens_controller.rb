@@ -82,7 +82,7 @@ class ActionTakensController < ApplicationController
 	end
 	if @action_takes.save
 	flash[:success] = "Thanks! Your message has been posted!"
-	redirect_to backers_project_path(@action.project)
+	redirect_to actions_project_path(@action.project)
 	end
   end
 
