@@ -47,7 +47,7 @@ before_filter :is_page_admin
 						:title => params[:title])
 		action_page.save
 		@action.save
-		redirect_to backers_project_path(@project)
+		redirect_to actions_project_path(@project)
 	end
   end
   def show

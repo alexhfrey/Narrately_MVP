@@ -5,7 +5,7 @@
 <h1><%= action.title %></h1>
 <div class = "actionprompt">
 <p><%= action.prompt %></p>
-<% type = action.actionable.type.class.name.downcase %>
+
 <% if (action.actionable.class.name.downcase == "retweet" || action.actionable.class.name.downcase == "like" || action.actionable.class.name.downcase == "fb_comment") %>
 <div class = "actionmessage"><p><b>Our message:</b></p>
 </p> <%= action.actionable.message %> </p>
