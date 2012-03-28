@@ -730,14 +730,19 @@ padding-left:10px;
 padding-top: 10px;
 padding-bottom: 10px;  
 width:600px;
-height:100%;
 background-color: #ffffff;
 }
 
 .actionprompt {
 width:100%;
 margin-top:10px;
-height:140px;
+
+}
+
+.actionmessage {
+padding-left:30px;
+font-size:14px;
+font-style:italics;
 }
 
 .actiontitle {
