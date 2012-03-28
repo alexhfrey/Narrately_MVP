@@ -1,67 +1,22 @@
 
-<% if action.actionable.class.name == "Post"%>
+
 <div class="brandactions2">
 
-<h1>Update Title</h1>
-<p>This is the body of the update from the brand</p>
+<h1><%= action.title %></h1>
 <div class = "actionprompt">
 <p><%= action.prompt %></p>
-
+<% type = action.actionable.type.class.name.downcase %>
+<% if type == "tweet" || type == "like" || type == "fb_comment" %>
+<p>Our message: <%= action.actionable.message %> </p>
+<% end %>
+</div>
 <div class = "actionprofilepics">
-<% action.project.shares .select{|s| s.user.present? } .first(5) .each do |sh| %>
+<% action.action_takens .select{|s| s.user.present? } .first(5) .each do |sh| %>
 	<span><%= image_tag(sh.user.profile_square) %> </span>
 	<% end %>
 </div>
+
 <%= link_to "Take Action >",  new_action_taken_path(:id=> action.id), :class => "btn btn-success btn-large" %>
 
-
-
-<% elsif action.actionable.class.name == "Like" %>
-<div class="brandactions2">
-<h1>Update Title</h1>
-<div class = "actiontitle">
-LIKE..like a Boss</div>
-<b>Message from <%= action.project.brand_name %>:</b>
-<div class = "actionprompt">
-<p><%= action.prompt %></p>
-<p> <%= action.actionable.message %> </p>
 </div>
-<%= link_to "Take Action >",  new_action_taken_path(:id=> action.id), :class => "btn btn-success btn-large" %>
 
-	
-<% elsif action.actionable.class.name == "Fbcomment" %>
-<div class="brandactions2">
-<h1>Update Title</h1>
-<div class = "actionprompt">
-<p><%= action.prompt %></p>
-<p> <%= action.actionable.message %> </p>
-</div>
-<%= link_to "Take Action >",  new_action_taken_path(:id=> action.id), :class => "btn btn-success btn-large" %>
-
-
-<% elsif action.actionable.class.name == "Tweet" %>
-<div class="brandactions2">
-<h1>Update Title</h1>
-<div class = "actiontitle">
-"Tweet this" says bird...</div>
-<div class = "actionprompt">
-<p><%= action.prompt %></p>
-</div>
-<%= link_to "Take Action >",  new_action_taken_path(:id=> action.id), :class => "btn btn-success btn-large" %>
-
-	
-<% elsif action.actionable.class.name == "Retweet" %>
-<div class="brandactions2">
-<h1>Update Title</h1>
-<div class = "actiontitle" >
-Retweet por favor! </div>
-<div class = "actionprompt">
-<p><%= action.prompt %></p>
-<p> <%= action.actionable.message %> </p>
-</div>
-<%= link_to "Take Action >",  new_action_taken_path(:id=> action.id), :class => "btn btn-success btn-large" %>
-
-<% else %>
-<div>
-<%end %>
-</div>

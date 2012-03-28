@@ -43,7 +43,8 @@ before_filter :is_page_admin
   end
   
     if @action.save 
-		action_page = @action.build_action_page(:project_id => @project.id, :prompt => params[:prompt])
+		action_page = @action.build_action_page(:project_id => @project.id, :prompt => params[:prompt], 
+						:title => params[:title])
 		action_page.save
 		@action.save
 		redirect_to backers_project_path(@project)

@@ -45,9 +45,9 @@ class ActionTakensController < ApplicationController
 
   def create
   @user = current_user
-	@action = ActionPage.find(params[:action_id])
-	@action_takes = @action.action_takens.build
-    @action_takes.message = params[:message]
+	@action = ActionPage.find(params[:action_taken][:action_page_id])
+	@action_takes = @action.action_takens.build(params[:action_taken])
+  
 	
 	if @action.actionable.class.name.downcase == "tweet"	
 		

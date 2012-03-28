@@ -44,7 +44,7 @@ before_filter :already_shared, :only => [:new]
  
    if @share.save 
    flash[:success] = "Success! You are now a member of " + @share.project.brand_name
-	redirect_to backers_project_path(@share.project)
+	redirect_to actions_project_path(@share.project)
    else
 	render 'new'
    end
@@ -56,7 +56,7 @@ before_filter :already_shared, :only => [:new]
   if @user
 	if @user.shares.collect{|p| p.project_id.to_s} .include?(params[:project_id])
 		flash[:notice] = "You are already a member! You might want to take some more actions below."
-		redirect_to backers_project_path(@project) and return
+		redirect_to actions_project_path(@project) and return
   end
   end
   end
