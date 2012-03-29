@@ -1,4 +1,3 @@
-
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -21,15 +20,21 @@ ActiveRecord::Schema.define(:version => 20120328184718) do
     t.text     "prompt"
     t.integer  "project_id"
     t.string   "title"
-    t.integer  "action_page_id"
+  end
+
+  create_table "action_taken", :force => true do |t|
+    t.string   "action_page_id"
+    t.string   "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "action_takens", :force => true do |t|
-    t.string    "action_page_id"
-    t.string    "user_id"
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
-    t.text      "message"
+    t.string   "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "message"
+    t.integer  "action_page_id"
   end
 
   create_table "actions", :force => true do |t|
