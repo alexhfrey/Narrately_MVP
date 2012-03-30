@@ -1,6 +1,6 @@
 body {
-background-color: #F7F7F7;
 font-family:'calibri';
+background-color: #F7F7F7;
 }
 
 @font-face {
@@ -267,7 +267,7 @@ padding-top: 10px;
 color:000000;
 font-size:40px;
 text-align: left;
-width:100%;
+width:95%;
 margin-top:10px;
 margin-bottom:10px;
 text-shadow:1px 1px 1px #FFF;
@@ -1156,6 +1156,7 @@ height: 50px;
 width: 50px;
 padding-right: 5px;
 padding-left: 0px;
+margin-left:0px;
 padding-top:0px;
 padding-bottom: 5px;}
 
@@ -1473,8 +1474,7 @@ height:20px;
 	margin-left:0px;
 	text-decoration:none;
 	font-size:13px;
-	background:url(../images/libg2.png) no-repeat scroll right center transparent;
-	    margin-left: 3px;
+    margin-left: 3px;
     padding-right: 12px;
 	color:#565f67;}
 	.footermenu li a {
@@ -2589,8 +2589,20 @@ padding-top:10px;
 padding-right:10px;
 padding-bottom:10px;}
 
+.joinstep2 {
+background:#FFF;
+height:100%;
+-moz-box-shadow: 0 0 5px #888;
+-webkit-box-shadow: 0 0 5px#888;
+box-shadow: 0 0 5px #888;
+padding: 5px 5px 5px 15px; 
+float:center;
+width: 70%;    
+margin: 20px auto 20px;
+}
+
 .namebox {
-background:#EEE8AA;
+background:#FFF8DC;
 width:640px;
 float:none;
 -moz-box-shadow: 0 0 5px #888;

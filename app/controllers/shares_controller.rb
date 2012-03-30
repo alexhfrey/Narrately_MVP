@@ -56,7 +56,7 @@ before_filter :already_shared, :only => [:new]
   if @user
 	if @user.shares.collect{|p| p.project_id.to_s} .include?(params[:project_id])
 		flash[:notice] = "You are already a member! You might want to take some more actions below."
-		redirect_to actions_project_path(@project) and return
+		redirect_to (@project) and return
   end
   end
   end
