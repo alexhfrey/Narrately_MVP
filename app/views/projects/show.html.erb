@@ -36,7 +36,7 @@ $(function () {
     
     
 <div class="projectbox">
-<h1>Fan Club Description</h1>
+<h2>Fan Club Description</h2>
 <div class = "productdescription"><%= simple_format(@project.description)%> </div>
 <h3>Believe in the vision? Here's what you can do to help</h3>
 <div class = "productdescription"><p>Be part of the movement.<b>  <%= link_to "Back this project now", new_project_share_path(@project) %> </b>to get 
@@ -45,7 +45,7 @@ $(function () {
 </div>    
 
 <div class="projectbox">
-<h1>Say 'hello' to the community!</h1>
+<h2>Say 'hello' to the community!</h2>
 <div class="fb-comments" data-href= <%= request.fullpath %> data-num-posts="2" data-width="430"></div>
 </div>      
 
@@ -68,7 +68,7 @@ $(function () {
 
 
 <div class="projectmembers">
-<h1>Club Members</h1>
+<h2>Club Members</h2>
 <ul>
 <% @shares.each_slice(16) { |sl| %>
 <li class="memberspicture">
@@ -83,18 +83,17 @@ $(function () {
 
 <div class="centerbutton">
 <%= link_to "Become a Member", new_project_share_path(@project), :class => "btn btn-large btn-primary" %>
+<% if @project.promotion_description.present? %>
+<h3>Reward for Joining</h3>
+<p><%= @project.promotion_description %></p>
+<% end %>
 </div>
 </div>
 
 <div class="programinfo"> 
-<h1>Member Benefits</h1>
+<h2>Member Benefits</h2>
 <h3>Community Details</h3>
 <%= simple_format(@project.short_description)%>
-
-<% if @project.promotion_description.present? %>
-<h3>Reward for Joining</h3>
-<%= @project.promotion_description %>
-<% end %>
 </div>     
 
 
