@@ -81,15 +81,20 @@ $(function () {
  <% } %>
  </ul>
 
+<div class="centerbutton">
 <%= link_to "Become a Member", new_project_share_path(@project), :class => "btn btn-large btn-primary" %>
+</div>
 </div>
 
 <div class="programinfo"> 
 <h1>Member Benefits</h1>
 <h3>Community Details</h3>
 <%= simple_format(@project.short_description)%>
+
+<% if @project.promotion_description.present? %>
 <h3>Reward for Joining</h3>
-<p>Pull reward description field here</p> 
+<%= @project.promotion_description %>
+<% end %>
 </div>     
 
 

@@ -1,4 +1,4 @@
-/*!
+btn-primary/*!
  * Bootstrap v2.0.0
  *
  * Copyright 2012 Twitter, Inc
@@ -1781,6 +1781,9 @@ table .span12 {
   border-color: #006E9D #006E9D #002a80;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  margin-top: 15px;
+  margin-bottom: 10px;
+
 }
 .btn-primary:hover,
 .btn-primary:active,
