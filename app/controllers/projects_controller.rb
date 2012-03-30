@@ -155,6 +155,8 @@ before_filter :twitter_authorized, :only => [:backers, :actions]
   def actions
 	@project = Project.find(params[:id])
 	@acts = ActionPage.find_all_by_project_id(params[:id])
+	@user = current_user
+	@creator = @project.user
     
  end
  

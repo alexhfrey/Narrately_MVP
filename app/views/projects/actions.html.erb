@@ -22,8 +22,19 @@ $(function () {
   <% end %>
 </ul>
 <%= render 'shared/error_messages' %>
-  <h2>Take an action. Show your love. Get awesome stuff.</h2>
+<p><b>Welcome to the 'backers' page for <%= @project.brand_name %></b>.</p>
 
+<p><b>How this works</b><br/>
+Awesome brands like <%= @project.brand_name %> need equally awesome supporters to thrive. In today's world, being 
+an awesome supporter is about more than just buying a product or using a service - it's about leveraging your social influence
+to help spread awesome ideas. Help make <%= @project.brand_name %> a success by completing the missions below - and 
+earn access to exclusive rewards and events in the process! </p> 
+  <% if @user == @creator %>
+		<h2><%= link_to "Publish an update", new_project_action_page_path(@project) %>. Get your fans taking actions that spread the good word.</h2>
+  <% else %>
+		<h2>Take an action. Show your love. Get awesome stuff.</h2>
+  <% end %>
+	
 </div>
 
 	<div class="discoverbox">
