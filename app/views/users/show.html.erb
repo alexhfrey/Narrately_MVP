@@ -1,6 +1,26 @@
-<div class="grid_11 singleleft">
+<div class="grid_112">
+<div class="categorybox">
+<div class="grid_4">
+<div class="hometitle4"><%= @user.name %></div>
+<% if @user.profile_image.present? %>
+<%= image_tag @user.profile_large, :class=> "alignnone size-full wp-image-16236" %>
+<% end %>
+<p>
+<%= @user.biography %></p>
+<p><b>I am a:</b> <%= @user.category %></p>
+<ul>
+<% if @user.facebook_page.present? %>
+<li><a href="<%= @user.facebook_page_link %>" >Facebook</a></li>
+<% end %>
+<% if @user.twitter_handle.present? %>
+<li><%= link_to "Twitter", 'http://www.twitter.com/#!/' + @user.twitter_handle.sub('@', '')%> </li>
+<% end %>
+</ul>
+</div>
+</div>
+</div>
 
-
+<div class="grid_11">
 <div class="mysharesbox">
 <div class="bigtitle"><%= @user.first_name%>'s Fan Club Memberships</div>
 <div class="lines"></div>
@@ -45,31 +65,6 @@
 </ul>
 </div>
 <% end %>
+</div>
+</div>
 
-
-
-</div>
-<div class="grid_4 righthome">
-
-<div class="categorybox">
-<div class="authordata">
-<div class="grid_4">
-<% if @user.profile_image.present? %>
-<%= image_tag @user.profile_large, :class=> "alignnone size-full wp-image-16236" %>
-<% end %>
-<h2><%= @user.name %></h2>
-<p>
-<%= @user.biography %></p>
-<p><b>I am a:</b> <%= @user.category %></p>
-<ul>
-<% if @user.facebook_page.present? %>
-<li><a href="<%= @user.facebook_page_link %>" >Facebook</a></li>
-<% end %>
-<% if @user.twitter_handle.present? %>
-<li><%= link_to "Twitter", 'http://www.twitter.com/#!/' + @user.twitter_handle.sub('@', '')%> </li>
-<% end %>
-</ul>
-</div>
-</div>
-</div>
-</div>
