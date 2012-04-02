@@ -12,6 +12,9 @@
 </div>
 <% end %>
 </div>
+<% if action.action_takens .length > 0 %>
+<p class="actionmembers">Fans who have taken this action</p>
+<% end %> 
 <div class = "actionprofilepics">
 <% action.action_takens .select{|s| s.user.present? } .first(5) .each do |sh| %>
 	<span><%= image_tag(sh.user.profile_square) %> </span>

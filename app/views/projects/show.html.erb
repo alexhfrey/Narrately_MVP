@@ -13,6 +13,14 @@ $(function () {
 <div class="clubbox">
 <div class="namebox">
 <div class="hometitle3"><%= @project.project_title %> <p><%= @project.brand_name %> - <%= @project.shares.count %> Members</p>
+<p>
+<% if @creator == @user %>
+<%= link_to "Publish an update to your fans", new_project_action_page_path(@project) %> 
+</p>
+<p>
+<%= link_to "Edit fan club", edit_project_path(@project) %>
+<% end %> 
+</p>
 </div> 
 </div>
 </ul>

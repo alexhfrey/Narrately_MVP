@@ -2,9 +2,7 @@
 <div class="categorybox">
 <div class="grid_4">
 <div class="hometitle4"><%= @user.name %></div>
-<% if @user.profile_image.present? %>
 <%= image_tag @user.profile_large, :class=> "alignnone size-full wp-image-16236" %>
-<% end %>
 <p>
 <%= @user.biography %></p>
 <p><b>I am a:</b> <%= @user.category %></p>

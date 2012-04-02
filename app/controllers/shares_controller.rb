@@ -43,8 +43,8 @@ before_filter :already_shared, :only => [:new]
   @share = Share.new(:user_id => params[:user_id], :project_id => params[:project_id], :medium => medium, :share_id => share_id)
  
    if @share.save 
-   flash[:success] = "Success! You are now a member of " + @share.project.brand_name
-	redirect_to actions_project_path(@share.project)
+   flash[:success] = "Success! You are now a fan club member. Show your support for" + @share.project.brand_name + "by taking an action below"
+	redirect_to @share.project
    else
 	render 'new'
    end

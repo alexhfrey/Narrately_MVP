@@ -709,7 +709,7 @@ padding-right:5px;
 
 .actionprofilepics {
 padding-left:5px;
-padding-top:15px;
+padding-top:-2px;
 padding-bottom: 15px;
 padding-right:5px;
 }
@@ -1342,6 +1342,13 @@ padding-top: 25px;
 
 .titlepromo {
 font-size: 14px;
+color: #808080; 
+padding-top: 5px;  
+}
+
+.actionmembers {
+font-size: 14px;
+line-height: 14px; 
 color: #808080; 
 padding-top: 5px;  
 }
