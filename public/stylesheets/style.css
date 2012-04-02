@@ -720,6 +720,31 @@ height:100%;
 list-style:none;
 float:left;}
 
+.featuredaction { 
+width: 200px;
+background:url(../images/feat.png) no-repeat;
+position: absolute;
+height: 78px;
+line-height: 75px;
+margin-left: -32px;
+margin-top: -25px;
+}
+
+.goalmet21 {
+    background: url(../images/circle-blue.png) repeat scroll 0 0 transparent;
+    color: #FFFFFF;
+    text-shadow: 1px 0 0 #C51B00; 
+    display: inline;
+    font-size: 28px;
+    height: 78px;
+    line-height: 75px;
+    margin-left: -71px;
+    margin-top: 2px;
+    position: absolute;
+    text-align: center;
+    width: 78px;}
+
+
 .brandlogo {
 border-style: solid;
 border-width: 0px;
@@ -798,7 +823,7 @@ background:#FFFFFF;
 -moz-box-shadow: 0 0 5px #888;
 -webkit-box-shadow: 0 0 5px#888;
 box-shadow: 0 0 5px #888;
-margin-bottom: 40px;
+margin-bottom: 15px;
 margin-top:15px;
 margin-left: 0px;
 padding: 5px 5px 5px 15px; 
@@ -1126,6 +1151,7 @@ width:620px;
 box-shadow: 0 0 5px #888;
 padding: 5px 5px 5px 15px; 
 margin-top:15px;
+margin-bottom: 15px;
 float:left; }
 
 .profileeditbox {
@@ -2545,8 +2571,8 @@ height:20px;
 	width:610px;
 	height:401px;
 	background-color: #F2F2F2;
-	float:right;
-    margin-left: 20px;
+	float:left;
+    margin-left: 0px;
     margin-right: 20px;
     margin-top: 10px;}
     
@@ -2566,6 +2592,8 @@ height:20px;
     box-shadow: 0 0 5px #888;
     margin-top:15px;    
     }
+    
+
     
 .clubbox {
 background:#FFF;
@@ -2603,13 +2631,13 @@ margin: 20px auto 20px;
 
 .namebox {
 background:#FFF8DC;
-width:640px;
+width:650px;
 float:none;
 -moz-box-shadow: 0 0 5px #888;
 -webkit-box-shadow: 0 0 5px#888;
 box-shadow: 0 0 5px #888;
 padding: 0px 0px 5px 5px; 
-margin-left: -15px;
+margin-left: -23px;
 margin-top: -5px;
 }
 
