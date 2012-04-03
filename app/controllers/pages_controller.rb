@@ -18,5 +18,7 @@ class PagesController < ApplicationController
   def crop
   end
   
+  def howitworks
+  end
   
 end

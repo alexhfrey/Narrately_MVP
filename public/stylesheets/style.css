@@ -287,6 +287,17 @@ line-height:35px;
 padding-top: 10px;
 }
 
+.howitworksintro {
+color:000000;
+font-size:30px;
+line-height:30px;
+width:550px;
+margin-bottom:10px;
+text-shadow:1px 1px 1px #FFF;
+padding-top: 80px;
+padding-left:50px;
+text-align: center;
+}
 
 .rightpart h1 {
 color:#38414b;
@@ -300,7 +311,8 @@ line-height:54px;
 
 .pdesc {
 color:#5F5A59;
-width:100%;
+width:790px;
+padding-left: 80px;
 font-size:24px;
 line-height:25px;
 text-align: center;
@@ -354,9 +366,10 @@ padding-right: 10px;
 }
 
 .ctabuttons {
-width:20%;
+width:30%;
 margin: 0px auto;
 display:block;
+margin-top: 20px;
 }
 
 
@@ -882,24 +895,6 @@ margin-right:15px;
 margin-bottom: 25px;
 clear:both;}
 
-.howitworks {
-margin-left:auto;
-margin-right:auto;
-width: 880px;
-}
-
-.howitworksline {
-
-list-style:none;
-margin-top:10px;
-margin-left: -27px; 
-padding-bottom: 0px; 
-margin-left:auto;
-margin-right:auto;
-width: 830px;
-
-}
-
 .howitworksline li {
 background-color:#ffffff;
 display:block;
@@ -939,16 +934,68 @@ font-size: 14px;
 
 
 .hiwimg1 {
-margin-left: 9px;
+margin-left: 0px;
 margin-top: 0px;
 margin-bottom: 15px;
-align: middle;}	
+padding-top: 50px;
+margin: 0 auto;
+width: 40%;}	
 
 .hiwimg2 {
 margin-left: 0px;
 margin-top: 0px;
 margin-bottom: 15px;
 align: middle;}	
+
+.num1image {
+background:url(../images/twitterbird.png) no-repeat;
+margin-bottom: 15px;
+padding-top: 4px;
+margin-top: 10px;
+float: left;
+height: 120px;
+width: 120px; }
+
+.num2image {
+background:url(../images/twitterbird.png) no-repeat;
+margin-bottom: 15px;
+padding-top: 4px;
+margin-top: 50px;
+width: 200px;
+height: 200px;
+float:right;}
+
+.num3image {
+background:url(../images/twitterbird.png) no-repeat;
+margin-bottom: 5px;
+padding-top: 4px;
+margin-top: 60px;
+margin-left: 0px;
+width: 200px;
+height: 200px;
+float:left;}
+
+.num4image {
+background:url(../images/twitterbird.png) no-repeat;
+margin-bottom: 15px;
+padding-top: 4px;
+margin-top: 50px;
+width: 200px;
+height: 200px;
+float:right;}
+
+.num5image {
+background:url(../images/twitterbird.png) no-repeat;
+margin-bottom: 15px;
+padding-top: 4px;
+margin-top: 50px;
+width: 200px;
+height: 200px;
+float:right;}
+
+
+
+
 
     
 .howitworks123 {
@@ -1294,6 +1341,38 @@ float:center;
 width: 70%;    
 margin: 10px auto 20px;
 }
+
+.howitworksbox {
+background:#FFF;
+height:1300px;
+-moz-box-shadow: 0 0 5px #888;
+-webkit-box-shadow: 0 0 5px#888;
+box-shadow: 0 0 5px #888;
+padding: 15px 5px 5px 15px; 
+float:center;
+width: 70%;    
+margin: 10px auto 20px;
+}
+
+.howitworksbanner { 
+width: 720px;
+background:url(../images/howitworksbanner.png) no-repeat;
+position: absolute;
+height: 100px;
+line-height: 75px;
+margin-left: -30px;
+margin-top: -25px;
+-moz-box-shadow: 5 0 0px #888;
+-webkit-box-shadow: 5 0 0px#888;
+box-shadow: 5 0 0px #888;
+color: #FFFFFF;
+text-shadow: 1px 0 0 #C51B00; 
+font-size: 45px;
+line-height: 45px;
+padding-top: 20px;
+text-align: center;
+}
+
 
 .projectcreatebox {
 background:#FFF;
@@ -2817,17 +2896,25 @@ margin-top: 15px;
     width:585px;
     float:left;}
     
+    .ultimatecenter {
+    margin: 0 auto;
+    width: 60%;
+    }
+    
     .wcydtext {
-    width:290px;
+    width:400px;
     float: left;
-    padding-right: 0px;  
+    text-align: left;
+    padding-left: 10px; 
+    padding-bottom: 40px; 
     }
     
     .wcydtext2 {
-    width:270px;
-    float: right;
+    width:400px;
+    float: left;
     margin-left: 0px;
-    padding-right: 5px;   
+    padding-top: 30px; 
+    padding-right: 10px;   
     }
     
 	

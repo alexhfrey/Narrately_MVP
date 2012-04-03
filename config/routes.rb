@@ -53,6 +53,7 @@ MVP1::Application.routes.draw do
   match '/signin', :to => 'sessions#new'
   match '/discover', :to => 'projects#index'
   match '/about', :to=> 'pages#about'
+  match '/how-it-works', :to=> 'pages#howitworks' 
   match '/discover', :to=> 'pages#index'
   match '/projects/:id/download', :to=> 'projects#download'
   match '/faq', :to=> 'pages#faq'
