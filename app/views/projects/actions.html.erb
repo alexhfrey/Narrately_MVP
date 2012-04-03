@@ -11,18 +11,18 @@ $(function () {
 	    <div class="hometitle3"><%= @project.project_title %> <p><%= @project.brand_name %> - <%= @project.shares.count %> Members</p>
 	    </div> 
 	   </div>
-	
+	   
+	   
 <div class="clubbox">
-<ul class="nav nav-tabs">
-  <li><%= link_to "About", (@project), "data-toggle"=>"tab" %></li>
-  <li><%= link_to "Members Home", backers_project_path(@project), "data-toggle"=>"tab" %></li>
-  <li class="active"><%= link_to "Updates", actions_project_path(@project), "data-toggle"=>"tab" %></li>
-     <% if @user == @creator %>
-       <li><%= link_to "Edit", edit_project_path(@project), "data-toggle"=>"tab" %></li>
-  <% end %>
+    
 </ul>
 <%= render 'shared/error_messages' %>
-<p><b>Welcome to the 'backers' page for <%= @project.brand_name %></b>.</p>
+
+  <h2>Take an action. Show your love. Get awesome stuff.</h2>
+   <% if @user == @creator %>
+    <%= link_to "Edit", edit_project_path(@project) %>
+  <% end %>
+
 
 <p><b>How this works</b><br/>
 Awesome brands like <%= @project.brand_name %> need equally awesome supporters to thrive. In today's world, being 

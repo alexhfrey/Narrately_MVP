@@ -141,6 +141,7 @@ before_filter :twitter_authorized, :only => [:backers, :actions]
   @project = Project.find(params[:id])
   @creator = @project.user
   @shares = @project.shares
+  @acts = @project.action_pages
   @user = current_user
   @title = @project.project_title
   @image = @project.file1_url(:medium)

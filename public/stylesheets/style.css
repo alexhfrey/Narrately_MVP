@@ -1,7 +1,14 @@
 body {
-background:url(../images/bodybg.png) repeat;
 font-family:'calibri';
+background-color: #F7F7F7;
 }
+
+@font-face {
+font-family: GraublauWeb;
+font-weight: bold;
+src: url("path-to-the-font-file/GraublauWebBold.otf") format("opentype");
+}
+
 .header {
 background:;
 height:65px;
@@ -258,16 +265,28 @@ padding-top: 10px;
 
 .hometitle3 {
 color:000000;
+font-size:40px;
+text-align: left;
+width:95%;
+margin-top:10px;
+margin-bottom:10px;
+text-shadow:1px 1px 1px #FFF;
+line-height:40px;
+padding-top: 10px;
+padding-left:20px;
+}
+
+.hometitle4 {
+color:000000;
 font-size:35px;
 text-align: left;
 width:100%;
-margin-top:10px;
 margin-bottom:10px;
 text-shadow:1px 1px 1px #FFF;
 line-height:35px;
 padding-top: 10px;
-padding-left:20px;
 }
+
 
 .rightpart h1 {
 color:#38414b;
@@ -690,22 +709,47 @@ padding-right:5px;
 
 .actionprofilepics {
 padding-left:5px;
-padding-top:15px;
+padding-top:-2px;
 padding-bottom: 15px;
 padding-right:5px;
 }
     
 .brandactions {
-width:100%;
+width:620px;
 height:100%;
 list-style:none;
 float:left;}
+
+.featuredaction { 
+width: 200px;
+background:url(../images/feat.png) no-repeat;
+position: absolute;
+height: 78px;
+line-height: 75px;
+margin-left: -32px;
+margin-top: -25px;
+}
+
+.goalmet21 {
+    background: url(../images/circle-blue.png) repeat scroll 0 0 transparent;
+    color: #FFFFFF;
+    text-shadow: 1px 0 0 #C51B00; 
+    display: inline;
+    font-size: 28px;
+    height: 78px;
+    line-height: 75px;
+    margin-left: -71px;
+    margin-top: 2px;
+    position: absolute;
+    text-align: center;
+    width: 78px;}
+
 
 .brandlogo {
 border-style: solid;
 border-width: 0px;
 border-color: #F2F2F2;
-width: 200px;
+width: 120px;
 float:left;
 margin-left: 0px;
 margin-right: 10px;
@@ -733,6 +777,23 @@ width:600px;
 background-color: #ffffff;
 }
 
+.memberly {
+position: inline;
+width: 100%;
+height: 100%;
+margin-bottom: 5px;
+}
+
+.centerbutton {
+position: inline;
+width: 220px;
+padding-left: 30px;
+margin-left:-15px;
+margin-top: 70px;
+margin-bottom: -5px
+background-color: #E8E8E8;
+}
+
 .actionprompt {
 width:100%;
 margin-top:10px;
@@ -757,18 +818,17 @@ margin-left:0px;
 .brandactions li {
 display:block;
 float:left;
-width:730px;
-background:#FFFFFE;
-border-style: solid; 
-border-width:1px;   
-border-color:#D4D4D4; 
-box-shadow: 4px 4px 1px #C0C0C0;
--moz-box-shadow: 4px 4px 1px #C0C0C0;
--webkit-box-shadow: 4px 4px 1px #C0C0C0;
-margin-left:15px;
-margin-right:0px;
-margin-bottom: 40px;
-list-style-type: none;}
+width:100%;
+background:#FFFFFF;
+-moz-box-shadow: 0 0 5px #888;
+-webkit-box-shadow: 0 0 5px#888;
+box-shadow: 0 0 5px #888;
+margin-bottom: 15px;
+margin-top:15px;
+margin-left: 0px;
+padding: 5px 5px 5px 15px; 
+list-style-type: none;
+}
 
 .s2323 { 
 background:#FFF;
@@ -1065,9 +1125,11 @@ background:url(../images/shizzle2.png) repeat-x;
 }
 .categorybox {
 background:#FFF;
-width:252px;
-border-right:1px solid #c2cbd2;
-border-bottom:1px solid #c2cbd2;
+width:230px;
+-moz-box-shadow: 0 0 5px #888;
+-webkit-box-shadow: 0 0 5px#888;
+box-shadow: 0 0 5px #888;
+padding: 5px 5px 5px 15px; 
 margin-top:5px;
 float:left;}
 
@@ -1083,27 +1145,34 @@ list-style-type: none;}
 
 .projectbox {
 background:#FFF;
-width:940px;
-border-right:1px solid #c2cbd2;
-border-bottom:1px solid #c2cbd2;
-margin-top:5px;
+width:620px;
+-moz-box-shadow: 0 0 5px #888;
+-webkit-box-shadow: 0 0 5px#888;
+box-shadow: 0 0 5px #888;
+padding: 5px 5px 5px 15px; 
+margin-top:15px;
+margin-bottom: 15px;
+float:left; }
+
+.profileeditbox {
+background:#FFF;
+-moz-box-shadow: 0 0 5px #888;
+-webkit-box-shadow: 0 0 5px#888;
+box-shadow: 0 0 5px #888;
+padding: 5px 5px 5px 15px; 
+margin: 20px auto 20px;
 float:left;
-padding-left:10px;
-padding-top:10px;
-padding-right:10px;
-padding-bottom:10px;}
+width: 70%; }
 
 .projectmembers {
 background:#FFF;
-width:950px;
-border-right:1px solid #c2cbd2;
-border-bottom:1px solid #c2cbd2;
-margin-top:5px;
+width:250px;
 float:left;
-padding-left:10px;
-padding-top:10px;
-padding-right:0px;
-padding-bottom:10px;}
+-moz-box-shadow: 0 0 5px #888;
+-webkit-box-shadow: 0 0 5px#888;
+box-shadow: 0 0 5px #888;
+padding: 5px 5px 5px 15px; 
+margin-top:15px;}
 
 .memberspicture {
 list-style-type: none;
@@ -1113,6 +1182,7 @@ height: 50px;
 width: 50px;
 padding-right: 5px;
 padding-left: 0px;
+margin-left:0px;
 padding-top:0px;
 padding-bottom: 5px;}
 
@@ -1216,35 +1286,25 @@ margin: 0px auto;
 .cleanloginbox {
 background:#FFF;
 height:350px;
-border-right:1px solid #c2cbd2;
-border-bottom:1px solid #c2cbd2;
-margin-top:5px;
+-moz-box-shadow: 0 0 5px #888;
+-webkit-box-shadow: 0 0 5px#888;
+box-shadow: 0 0 5px #888;
+padding: 15px 5px 5px 15px; 
 float:center;
-padding-left:10px;
-padding-top:10px;
-padding-right:10px;
-padding-bottom:10px;
 width: 70%;    
-margin: 0px auto;
-margin-top: 20px;
-margin-bottom: 30px;
+margin: 10px auto 20px;
 }
 
 .projectcreatebox {
 background:#FFF;
-height:1400px;
-border-right:1px solid #c2cbd2;
-border-bottom:1px solid #c2cbd2;
-margin-top:5px;
+height:100%;
+-moz-box-shadow: 0 0 5px #888;
+-webkit-box-shadow: 0 0 5px#888;
+box-shadow: 0 0 5px #888;
+padding: 5px 5px 5px 15px; 
 float:center;
-padding-left:10px;
-padding-top:10px;
-padding-right:10px;
-padding-bottom:10px;
-width: 100%;    
-margin: 0px auto;
-margin-top: 20px;
-margin-bottom: 30px;
+width: 70%;    
+margin: 20px auto 20px;
 }
 
 .projecteditbox {
@@ -1282,6 +1342,13 @@ padding-top: 25px;
 
 .titlepromo {
 font-size: 14px;
+color: #808080; 
+padding-top: 5px;  
+}
+
+.actionmembers {
+font-size: 14px;
+line-height: 14px; 
 color: #808080; 
 padding-top: 5px;  
 }
@@ -1440,8 +1507,7 @@ height:20px;
 	margin-left:0px;
 	text-decoration:none;
 	font-size:13px;
-	background:url(../images/libg2.png) no-repeat scroll right center transparent;
-	    margin-left: 3px;
+    margin-left: 3px;
     padding-right: 12px;
 	color:#565f67;}
 	.footermenu li a {
@@ -2512,9 +2578,10 @@ height:20px;
 	width:610px;
 	height:401px;
 	background-color: #F2F2F2;
-	float:right;
-    margin-left: 20px;
-    margin-right: 20px;}
+	float:left;
+    margin-left: 0px;
+    margin-right: 20px;
+    margin-top: 10px;}
     
 	.mainimg2 img {
     margin-left: 5px;
@@ -2523,27 +2590,31 @@ height:20px;
     .programinfo {
     font-size: 17px; 
     line-height: 18px; 
-    padding-right: 10px;
-    padding-left: 10px; 
-    width: 240px; 
+    width: 250px; 
+    background-color: #ffffff;
     float: left; 
+    padding: 5px 5px 5px 15px; 
+    -moz-box-shadow: 0 0 5px #888;
+    -webkit-box-shadow: 0 0 5px#888;
+    box-shadow: 0 0 5px #888;
+    margin-top:15px;    
     }
+    
+
     
 .clubbox {
 background:#FFF;
-width:940px;
-border-right:1px solid #c2cbd2;
-border-bottom:1px solid #c2cbd2;
-margin-left: 0px;
+width:620px;
 float:left;
-padding-left:10px;
-padding-top:0px;
-padding-right:10px;
-padding-bottom:10px;}
+-moz-box-shadow: 0 0 5px #888;
+-webkit-box-shadow: 0 0 5px#888;
+box-shadow: 0 0 5px #888;
+padding: 5px 5px 5px 15px; 
+margin-top:15px;}
     
 .programbox {
 background:#FFF;
-width:940px;
+width:620px;
 border-right:1px solid #c2cbd2;
 border-bottom:1px solid #c2cbd2;
 margin-left: 0px;
@@ -2553,18 +2624,29 @@ padding-top:10px;
 padding-right:10px;
 padding-bottom:10px;}
 
+.joinstep2 {
+background:#FFF;
+height:100%;
+-moz-box-shadow: 0 0 5px #888;
+-webkit-box-shadow: 0 0 5px#888;
+box-shadow: 0 0 5px #888;
+padding: 5px 5px 5px 15px; 
+float:center;
+width: 70%;    
+margin: 20px auto 20px;
+}
+
 .namebox {
-background:#EEE8AA;
-width:940px;
-border-right:1px solid #c2cbd2;
-border-bottom:1px solid #EEE8AA;
-margin-top:0px;
-margin-left: 0px;
+background:#FFF8DC;
+width:650px;
 float:none;
-padding-left:10px;
-padding-top:10px;
-padding-right:10px;
-padding-bottom:0px;}
+-moz-box-shadow: 0 0 5px #888;
+-webkit-box-shadow: 0 0 5px#888;
+box-shadow: 0 0 5px #888;
+padding: 0px 0px 5px 5px; 
+margin-left: -23px;
+margin-top: -5px;
+}
 
 .lefthalf {
 width: 400px;
@@ -2618,7 +2700,7 @@ margin-top: 15px;
     text-align: left;
     }
     .productdescription  p{
-	font-size: 14px;
+	font-size: 17px;
 	font-family: 'Calibri';
 	}
     .formwelcome {

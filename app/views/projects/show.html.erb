@@ -5,43 +5,28 @@ $(function () {
   })
 </script>
    <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,400italic,700' rel='stylesheet' type='text/css'>
+    
+       
+<div class="container_12 grid_8">
 
-	   
-	    
-       <div class="namebox">
-      <div class="hometitle3"><%= @project.project_title %> <p><%= @project.brand_name %> - <%= @project.shares.count %> Members</p>
-       </div> 
-	   </div>
-	   
+
 <div class="clubbox">
-<ul class="nav nav-tabs">
-  <li class="active"><%= link_to "About", (@project), "data-toggle"=>"tab" %></li>
-  <li><%= link_to "Members Home", backers_project_path(@project), "data-toggle"=>"tab" %></li>
-      <li><%= link_to "Updates", actions_project_path(@project), "data-toggle"=>"tab" %></li>
-     <% if @user == @creator %>
-       <li><%= link_to "Edit", edit_project_path(@project), "data-toggle"=>"tab" %></li>
-  <% end %>
+<div class="namebox">
+<div class="hometitle3"><%= @project.project_title %> <p><%= @project.brand_name %> - <%= @project.shares.count %> Members</p>
+<p>
+<% if @creator == @user %>
+<%= link_to "Publish an update to your fans", new_project_action_page_path(@project) %> 
+</p>
+<p>
+<%= link_to "Edit fan club", edit_project_path(@project) %>
+<% end %> 
+</p>
+</div> 
+</div>
 </ul>
 <%= render 'shared/error_messages' %>
-          <div class="programinfo"> 
 
-    
-       <%= simple_format(@project.short_description)%>
-         <h3>Why Become an Ambassador?</h3>
-         <p>
-         1. Because you support what we're doing
-         <br>
-         2. You'll get free goodies!
-         <br>
-         3. Access to founders and other supporters 
-         </p>
-
-  <%= link_to "Join Now", new_project_share_path(@project), :class => "joinnow" %>
- 
-
-  	</div>
-  	
-  	 <div class="mainimg2" >
+<div class="mainimg2" >
 			<% if @project.video.present? %>
 					<% begin %>
 					<% video = @project.video_link %>
@@ -52,16 +37,49 @@ $(function () {
 					<% else %>
 					
   			<%= image_tag @project.file1_url(:large) %>
-			<% end %> 
-			
-			</div>
-
-    </div>
+			<% end %> 		
+</div>
+</div>
     
+    
+    
+<div class="projectbox">
+<h2>Fan Club Description</h2>
+<div class = "productdescription"><%= simple_format(@project.description)%> </div>
+<h3>Believe in the vision? Here's what you can do to help</h3>
+<div class = "productdescription"><p>Be part of the movement.<b>  <%= link_to "Back this project now", new_project_share_path(@project) %> </b>to get 
+<%= @project.promotion_description || "access to exclusive rewards and events." %></b>.  Then check back here often for updates and additional actions you can take to help make this vision a reality. </p> 
+</div>
+</div>    
+
+<div class="projectbox">
+<h2>Say hello to the community!</h2>
+<div class="fb-comments" data-href= <%= request.fullpath %> data-num-posts="2" data-width="430"></div>
+</div>      
+
+
+<ul class="brandactions">
+<% @acts .each do |e| %>
+<li>
+<div class="featuredaction"></div>
+<%= render :partial => "shared/actions", :locals => {  :action => e } %>
+</li>
+<% end %>
+</ul>
+
+
+
+</div>
+
+
+  
+<div class="grid_right">
+
+
 <div class="projectmembers">
-<h1>Club Members</h1><p><%= link_to "Become a Member", new_project_share_path(@project)%></p>
+<h2>Club Members</h2>
 <ul>
-<% @shares.each_slice(16) { |sl| %>
+<% @shares.first(12) .each_slice(4) { |sl| %>
 <li class="memberspicture">
  <% sl.each do  |s| %>
 
@@ -71,20 +89,22 @@ $(function () {
 
  <% } %>
  </ul>
-</div>
-    
-   <div class="projectbox">
-     <h1>Fan Club Description</h1>
-   <div class = "productdescription"><%= simple_format(@project.description)%> </div>
-   <h3>Believe in the vision? Here's what you can do to help</h3>
-   <div class = "productdescription"><p>Be part of the movement.<b>  <%= link_to "Back this project now", new_project_share_path(@project) %> </b>to get 
-   <%= @project.promotion_description || "access to exclusive rewards and events." %></b>.  Then check back here often for updates and additional actions you can take to help make this vision a reality. </p> 
-   </div>
-  </div>
-    
-  
-  </div>
-  </div>
-  
 
- 
+<div class="centerbutton">
+<%= link_to "Become a Member", new_project_share_path(@project), :class => "btn btn-large btn-primary" %>
+<% if @project.promotion_description.present? %>
+<h3>Reward for Joining</h3>
+<p><%= @project.promotion_description %></p>
+<% end %>
+</div>
+</div>
+
+<div class="programinfo"> 
+<h2>Member Benefits</h2>
+<h3>Community Details</h3>
+<%= simple_format(@project.short_description)%>
+</div>     
+
+
+
+</div>

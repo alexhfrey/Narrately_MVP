@@ -52,6 +52,23 @@ body {
   margin-right: 10px;
 }
 
+.grid_112 {
+  display: inline;
+  float: left;
+  width: 250px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-right: 20px;
+}
+
+.grid_right {
+  display: inline;
+  float: left;
+  width: 250px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-right: 20px;
+}
 
 .grid52 {
 display: inline;
@@ -90,7 +107,7 @@ width: 270px;
 
 .container_12 .grid_6,
 .container_16 .grid_8 {
-  width: 460px;
+  width: 640px;
 }
 
 .container_12 .grid_9,

@@ -18,19 +18,12 @@ return false;
 
 </script>
 
-<div class="namebox">
-<div class="hometitle3"><%= @project.project_title %> <p>Members</p></div>  
-</div>
 <div class="clubbox">
-<ul class="nav nav-tabs">
-  <li><%= link_to "About", (@project), "data-toggle"=>"tab" %></li>
-  <li><%= link_to "Members Home", backers_project_path(@project), "data-toggle"=>"tab" %></li>
-  <% if @user == @creator %>
-  <li class="active"><%= link_to "Edit", edit_project_path(@project), "data-toggle"=>"tab" %></li>
-  <% end %>
-  
-  
-</ul>
+<div class="namebox">
+<div class="hometitle3"><%= @project.project_title %> <p><%= @project.brand_name %> - <%= @project.shares.count %> Members</p>
+</div>  
+</div>
+
 <%= render 'shared/error_messages' %>
 
 <fieldset class = "control-group">
