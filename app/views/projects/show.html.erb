@@ -12,7 +12,7 @@ $(function () {
 
 <div class="clubbox">
 <div class="namebox">
-<div class="hometitle3"><%= @project.project_title %> <p><%= @project.brand_name %> - <%= @project.shares.count %> Members</p>
+<div class="hometitle3"><%= @project.project_title %> <p><%= @project.brand_name %> - <%= @project.shares.count %> <%= @callout_name %></p>
 <p>
 <% if @creator == @user %>
 <%= link_to "Publish an update to your fans", new_project_action_page_path(@project) %> 
@@ -48,7 +48,11 @@ $(function () {
 <div class = "productdescription"><%= simple_format(@project.description)%> </div>
 <h3>Believe in the vision? Here's what you can do to help</h3>
 <div class = "productdescription"><p>Be part of the movement.<b>  <%= link_to "Back this project now", new_project_share_path(@project) %> </b>to get 
-<%= @project.promotion_description || "access to exclusive rewards and events." %></b>.  Then check back here often for updates and additional actions you can take to help make this vision a reality. </p> 
+<% if @project.promotion_description.empty? %> 
+access to exclusive rewards and events 
+<% else %>
+<%= @project.promotion_description %>
+<% end %>.  Then check back here often for updates and additional actions you can take to help make this vision a reality. </p> 
 </div>
 </div>    
 
@@ -77,7 +81,7 @@ $(function () {
 
 
 <div class="projectmembers">
-<h2>Club Members</h2>
+<h2><%= @callout_name %> </h2>
 <ul>
 <% @shares.first(12) .each_slice(4) { |sl| %>
 <li class="memberspicture">
@@ -91,18 +95,22 @@ $(function () {
  </ul>
 
 <div class="centerbutton">
-<%= link_to "Become a Member", new_project_share_path(@project), :class => "btn btn-large btn-primary" %>
+<%= link_to @callout, new_project_share_path(@project), :class => "btn btn-large btn-primary" %>
 <% if @project.promotion_description.present? %>
-<h3>Reward for Joining</h3>
+<h3>Reward for <%= @callout_verb %>ing</h3>
 <p><%= @project.promotion_description %></p>
 <% end %>
 </div>
 </div>
 
 <div class="programinfo"> 
-<h2>Member Benefits</h2>
-<h3>Community Details</h3>
-<%= simple_format(@project.short_description)%>
+<h2 style = "line-height:22px;">Why <%= @callout_verb %> <%= @project.brand_name %>?</h2>
+<p>
+<ul>
+<li>Use your social capital to support a great cause </li>
+<li>Get recognized and rewarded for being an influencer</li>
+<li>Get involved in the community and be the first to know about <%=@project.brand_name %> news</li>
+</p>
 </div>     
 
 

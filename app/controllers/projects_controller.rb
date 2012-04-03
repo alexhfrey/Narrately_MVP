@@ -138,6 +138,7 @@ before_filter :twitter_authorized, :only => [:backers, :actions]
   if !current_user && params[:referral]        #if this is a new user and they have a referral code store this for later DB use
 		session[:referral] = params[:referral]
   end
+  
   @project = Project.find(params[:id])
   @creator = @project.user
   @shares = @project.shares
@@ -146,6 +147,17 @@ before_filter :twitter_authorized, :only => [:backers, :actions]
   @title = @project.project_title
   @image = @project.file1_url(:medium)
   @description = @project.description.html_safe.gsub(/[\"]/, '"')
+  
+  if (@project.id == 9 || @project.id == 15 || @project.id == 23 )
+	@callout = "Back " + @project.brand_name
+	@callout_verb = "Back"
+	@callout_name = "Backers"
+  else
+	@callout = "Become a Member"
+	@callout_verb = "Join"
+	@callout_name = "Members"
+  end
+  
   if @project.shares.present?
 	if @project.shares.last.twittercode.nil?
 		@project.updateShares
