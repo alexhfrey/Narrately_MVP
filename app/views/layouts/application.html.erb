@@ -87,14 +87,10 @@ $('.dropdown-toggle').dropdown()
 <div class="grid_10 logo">
 <%=link_to image_tag("logo.png"), root_path %></a></div>
 <% page = request.fullpath %>
-<li><%= link_to "Start a Fan Club", new_project_path, :class => if page.include? "signup" 
-								""
-								else 
-								""
-								end  %> 
+<li><%= link_to "Start a Fan Club", new_project_path %>
 </li>
 <li><%= link_to 'Join a Fan Club', "/discover" %></li>
-<li><%= link_to "How it Works", about_path %></li>
+<li><%= link_to "How it Works", '/how-it-works' %></li>
 </ul>
 
 <ul>

@@ -8,10 +8,10 @@
 <div class="wcydtext">
 <h2>
 <img src="../images/num1.png"/>
-Create your Fan Club
+Create your Snowball Page
 </h2>
 <p>
-A fan club is designed for your most passionate users. For startups, this is a typically a brand ambassador program. For authors, artists, and musicians this is typically a fan club. 
+A Snowball page is designed for you to connect with your most passionate fans. Startups might use it to run a brand ambassador program. Authors, artists, and musicians might use it to run a fan club. The choice is yours. 
 </p>
 </div>
 
@@ -20,10 +20,10 @@ A fan club is designed for your most passionate users. For startups, this is a t
 <div class="wcydtext">
 <h2>
 <img src="../images/num2.png" "align:left" />
-Share and Invite Fans to Join
+Invite Fans to Connect
 </h2>
 <p>
-Share your fan club on Facebook, Twitter, your website and other online outlets. Fans who are passionate about your brand will join because they want to support you. 
+Share your Snowball page on Facebook, Twitter, your website and other online outlets. Fans who are passionate about your brand will connect with you because they want to support you. 
 </p>
 </div>
 
@@ -31,9 +31,9 @@ Share your fan club on Facebook, Twitter, your website and other online outlets.
 <div class="wcydtext">
 <h2>
 <img src="../images/num3.png"/>
-Empower True Fans</h2>
+Empower Fans to Promote</h2>
 <p>
-The goal of any ambassador program is to get fans to spread your message. On Snowball, you can easily do this by publishing an action for your users to take. This includes Tweets, sharing on Facebook, composing a blog post, attending an event, and others. 
+Your goal is to get fans to spread your message. You can easily do this on Snowball by publishing actions for your fans to take. Actions can include tweeting about an upcoming event, sharing a promotion on Facebook, composing a blog post, attending an event or referring a friend, among others.  
 </p>
 </div>
 
@@ -41,10 +41,10 @@ The goal of any ambassador program is to get fans to spread your message. On Sno
 <div class="wcydtext">
 <h2>
 <img src="../images/num4.png"/>
-See the Results
+Track the Results
 </h2>
 <p>
-Every action your ambassadors take is tracked. You can see who your most active and influential ambassadors are. 
+Every action your fans take is tracked. You can see who your most active and influential advocates are at any time. 
 </p>
 </div>
 
@@ -55,10 +55,10 @@ Every action your ambassadors take is tracked. You can see who your most active 
 Rewards!
 </h2>
 <p>
-Show your most influential ambassadors that you appreciate their support by giving them cool stuff and members-only events and exclusive offers. 
+Show your most influential ambassadors that you appreciate their support by giving them cool stuff like access to special events and exclusive offers. 
 </p>
 </div>
-<a class="btn btn-success btn-large" href="/about/">Create your fan club >></a> 
+<%= link_to "Create your fan club >>", new_project_path %> 
 
 
 </div>
