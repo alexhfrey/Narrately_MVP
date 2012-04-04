@@ -57,8 +57,12 @@ Rewards!
 <p>
 Show your most influential ambassadors that you appreciate their support by giving them cool stuff like access to special events and exclusive offers. 
 </p>
+<br/>
+<%= link_to "Create your fan club >>", new_project_path, :class => "btn btn-success btn-large" %> 
 </div>
-<%= link_to "Create your fan club >>", new_project_path %> 
+
+
+
 
 
 </div>
