@@ -54,6 +54,7 @@ MVP1::Application.routes.draw do
   match '/discover', :to => 'projects#index'
   match '/about', :to=> 'pages#about'
   match '/how-it-works', :to=> 'pages#howitworks' 
+  match '/why-snowball', :to=>'pages#whysnowball'
   match '/discover', :to=> 'pages#index'
   match '/projects/:id/download', :to=> 'projects#download'
   match '/faq', :to=> 'pages#faq'

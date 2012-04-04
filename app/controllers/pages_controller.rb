@@ -21,4 +21,7 @@ class PagesController < ApplicationController
   def howitworks
   end
   
+  def whysnowball
+  end
+  
 end
