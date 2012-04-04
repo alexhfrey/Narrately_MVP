@@ -1,7 +1,7 @@
 <div class="howitworksbox">
 
 <div class="howitworksbanner">So, how does Snowball work?</div>
-<p class="howitworksintro">Quite simply, we help you find & amplify brand ambassadors</p>
+<p class="howitworksintro">Quite simply, we help you find & amplify your brand advocates</p>
 <div class="ultimatecenter">
 
 
@@ -55,7 +55,7 @@ Every action your fans take is tracked. You can see who your most active and inf
 Rewards!
 </h2>
 <p>
-Show your most influential ambassadors that you appreciate their support by giving them cool stuff like access to special events and exclusive offers. 
+Show your most influential advocates that you appreciate their support by giving them cool stuff like access to special events and exclusive offers. 
 </p>
 <br/>
 <%= link_to "Create your fan club >>", new_project_path, :class => "btn btn-success btn-large" %> 
