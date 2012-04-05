@@ -1,7 +1,7 @@
 <div class="howitworksbox">
 
 <div class="howitworksbanner">So, how does Snowball work?</div>
-<p class="howitworksintro">Quite simply, we help you find & amplify your brand advocates</p>
+<p class="howitworksintro">We help artists create and manage their fan clubs.</p>
 <div class="ultimatecenter">
 
 
@@ -11,7 +11,7 @@
 Create your Snowball Page
 </h2>
 <p>
-A Snowball page is designed for you to connect with your most passionate fans. Startups might use it to run a brand ambassador program. Authors, artists, and musicians might use it to run a fan club. The choice is yours. 
+The first step is to create your fan club on Snowball. This is free and takes under 3 minutes. Get Started.
 </p>
 </div>
 
@@ -20,10 +20,10 @@ A Snowball page is designed for you to connect with your most passionate fans. S
 <div class="wcydtext">
 <h2>
 <img src="../images/num2.png" "align:left" />
-Invite Fans to Connect
+Invite Fans to Join
 </h2>
 <p>
-Share your Snowball page on Facebook, Twitter, your website and other online outlets. Fans who are passionate about your brand will connect with you because they want to support you. 
+Share your fan club page on Facebook, Twitter, your website and other online outlets. Your passionate fans will join and share with their friends. 
 </p>
 </div>
 
@@ -33,7 +33,7 @@ Share your Snowball page on Facebook, Twitter, your website and other online out
 <img src="../images/num3.png"/>
 Empower Fans to Promote</h2>
 <p>
-Your goal is to get fans to spread your message. You can easily do this on Snowball by publishing actions for your fans to take. Actions can include tweeting about an upcoming event, sharing a promotion on Facebook, composing a blog post, attending an event or referring a friend, among others.  
+Your goal is to get fans to spread your message. You can easily do this on Snowball by publishing updates to fans. Actions can include tweeting about an upcoming event, sharing a new song on Facebook, publishing a blog post, among others.  
 </p>
 </div>
 
@@ -44,7 +44,7 @@ Your goal is to get fans to spread your message. You can easily do this on Snowb
 Track the Results
 </h2>
 <p>
-Every action your fans take is tracked. You can see who your most active and influential advocates are at any time. 
+Every action your fans take is tracked. You can see who your most active and influential fans are at any time. 
 </p>
 </div>
 
@@ -52,10 +52,10 @@ Every action your fans take is tracked. You can see who your most active and inf
 <div class="wcydtext">
 <h2>
 <img src="../images/num5.png"/>
-Rewards!
+Rewards Your Fans
 </h2>
 <p>
-Show your most influential advocates that you appreciate their support by giving them cool stuff like access to special events and exclusive offers. 
+Show your most passionate and influential fans that you appreciate their support by giving them cool stuff like access to special events and exclusive offers. 
 </p>
 <br/>
 <%= link_to "Create your fan club >>", new_project_path, :class => "btn btn-success btn-large" %> 
