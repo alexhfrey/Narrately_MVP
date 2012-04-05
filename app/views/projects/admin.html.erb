@@ -42,7 +42,10 @@ $(function () {
 			<td><%= link_to u.name, u %> </td>
 			<td><%= u.email %> </td>
 			<td><%= u.action_takens .select {|a| a.action_page . project_id == @project.id} .length + 1 %> </td>
-			<td><%= User.where("referral_source = ? OR referral_source = ?", 'fb_' + u.id.to_s + '_' + @project.id.to_s  , 'twitter_' + u.id.to_s +  '_' + @project.id.to_s ). length %> </td>
+		<% ref1 = ('fb_' + u.id.to_s + '_' + @project.id.to_s)  
+		   ref2 = ('twitter_' + u.id.to_s +  '_' + @project.id.to_s ) %>
+		   
+			<td><%= User.where("referral_source = '#{ref1}' OR referral_source = '#{ref2}'"). length %> </td>
 		</tr>
 	<% end %>
 	</tbody>
