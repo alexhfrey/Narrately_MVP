@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-before_filter :owns_project, :only => [:edit, :update]
+before_filter :owns_project, :only => [:edit, :update, :admin]
 before_filter :eligible_for_reward, :only => [:download, :backers, :actions]
 before_filter :twitter_authorized, :only => [:backers, :actions]
 
@@ -171,6 +171,12 @@ before_filter :twitter_authorized, :only => [:backers, :actions]
 	@user = current_user
 	@creator = @project.user
     
+ end
+ 
+ def admin
+	@project = Project.find(params[:id])
+	@user = current_user
+	@shares = @project.shares
  end
  
  def twitter_authorized
