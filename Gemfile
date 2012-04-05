@@ -21,6 +21,7 @@ gem 'rmagick'
 gem 'fog'
 gem 'carrierwave'
 gem 'gibbon'
+gem 'exception_notification'
 
 group :development do
 	gem 'annotate', '2.4.0'

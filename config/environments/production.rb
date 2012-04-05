@@ -1,6 +1,9 @@
 MVP1::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
-
+ config.middleware.use ExceptionNotifier,
+  :email_prefix => "[Whatever] ",
+  :sender_address => %{"notifier" <notifier@mysnowball.com>},
+  :exception_recipients => %w{alex@mysnowball.com}
   # The production environment is meant for finished, "live" apps.
   # Code is not reloaded between requests
   config.cache_classes = true

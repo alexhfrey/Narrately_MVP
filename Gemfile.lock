@@ -53,6 +53,8 @@ GEM
     erubis (2.6.6)
       abstract (>= 1.0.0)
     eventmachine (0.12.10)
+    exception_notification (2.5.2)
+      actionmailer (>= 3.0.4)
     excon (0.9.5)
     faraday (0.7.6)
       addressable (~> 2.2)
@@ -178,6 +180,7 @@ DEPENDENCIES
   aws-sdk
   carrierwave
   client_side_validations
+  exception_notification
   fog
   gibbon
   jquery-rails
