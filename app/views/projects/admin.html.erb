@@ -1,0 +1,60 @@
+<script type = "text/javascript">
+$('#myTab').tab('show'); 
+$(function () {
+    $('.tabs a:last').tab('show')
+  })
+</script>
+   <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,400italic,700' rel='stylesheet' type='text/css'>
+    
+       
+<div class="container_12 grid_8">
+
+
+
+
+<div class="clubbox">
+<div class="namebox">
+<div class="hometitle3"><%=  @project.brand_name %> Dashboard
+</div> 
+</div>
+</ul>
+<%= render 'shared/error_messages' %>
+
+
+</div>
+  <div class="projectbox">  
+  <h2>Your Fans...</h2>
+ <table class = "table table-bordered">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Name</th>
+			<th>Email</th>
+			<th>Actions Taken</th>
+			<th>Members Referred</th>
+		</tr>	
+	</thead>
+	<tbody>
+		
+<% @project.shares .collect {|s| s.user} .uniq .each_with_index do |u, index| %>
+		<tr>
+			<td> <%= index + 1%></td>
+			<td><%= link_to u.name, u %> </td>
+			<td><%= u.email %> </td>
+			<td><%= u.action_takens .select {|a| a.action_page . project_id == @project.id} .length + 1 %> </td>
+			<td><%= User.where("referral_source = ? OR referral_source = ?", 'fb_' + u.id.to_s + '_' + @project.id.to_s  , 'twitter_' + u.id.to_s +  '_' + @project.id.to_s ). length %> </td>
+		</tr>
+	<% end %>
+	</tbody>
+</table>   
+    
+
+
+</div>    
+
+
+</div>
+
+
+  
+

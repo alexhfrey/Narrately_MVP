@@ -13,14 +13,19 @@ $(function () {
 <div class="clubbox">
 <div class="namebox">
 <div class="hometitle3"><%= @project.project_title %> <p><%= @project.brand_name %> - <%= @project.shares.count %> <%= @callout_name %></p>
-<p>
+
 <% if @creator == @user %>
+<p>
 <%= link_to "Publish an update to your fans", new_project_action_page_path(@project) %> 
 </p>
 <p>
 <%= link_to "Edit fan club", edit_project_path(@project) %>
-<% end %> 
 </p>
+<p>
+<%= link_to "See analytics", admin_project_path(@project) %>
+</p>
+<% end %> 
+
 </div> 
 </div>
 </ul>
@@ -83,11 +88,11 @@ access to exclusive rewards and events
 <div class="projectmembers">
 <h2><%= @callout_name %> </h2>
 <ul>
-<% @shares.first(12) .each_slice(4) { |sl| %>
+<% @shares .collect {|s| s.user} .uniq .first(12) .each_slice(4) { |u| %>
 <li class="memberspicture">
- <% sl.each do  |s| %>
+ <% u.each do  |us| %>
 
-<%= link_to image_tag(s.user.profile_square), s.user, :class => "memberspicture" %>
+<%= link_to image_tag(us.profile_square), us, :class => "memberspicture" %>
  </li> 
  <% end %>
 

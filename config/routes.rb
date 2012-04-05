@@ -37,6 +37,7 @@ MVP1::Application.routes.draw do
 			get 'download'
 			get 'actions'
 		    get 'backers' 
+			get 'admin'
 		end
 		resources :shares, :only => [:new, :create]
 		resources :facebook_post, :only => [:new]
