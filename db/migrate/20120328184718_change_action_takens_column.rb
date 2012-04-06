@@ -1,6 +1,6 @@
 class ChangeActionTakensColumn < ActiveRecord::Migration
    change_table(:action_takens) do |t|
-	t.remove :action_page_id
-	t.integer :action_page_id
+	t.remove :user_id
+	t.integer :user_id
 	end
 end

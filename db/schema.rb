@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120328184718) do
+ActiveRecord::Schema.define(:version => 20120406000835) do
 
   create_table "action_pages", :force => true do |t|
     t.integer   "actionable_id"
@@ -23,11 +23,11 @@ ActiveRecord::Schema.define(:version => 20120328184718) do
   end
 
   create_table "action_takens", :force => true do |t|
-    t.string    "user_id"
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
-    t.text      "message"
-    t.integer   "action_page_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "message"
+    t.integer  "action_page_id"
+    t.integer  "user_id"
   end
 
   create_table "actions", :force => true do |t|
