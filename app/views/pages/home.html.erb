@@ -2,30 +2,62 @@
 <%= javascript_include_tag "bootstrap-carousel.js" %>      
 
 
-<div class="hometitle">Go viral with Snowball</div>
-<div class="pdesc">Snowball is the best way for authors & artists to turn passionate fans into evangelists. 
+<div class="hometitle">Make <em>Social</em> Work for <em>You</em></div>
+<div class="pdesc">Snowball's all-in-one "tribe-building" software makes it ridiculously simple to build, manage, and grow your audience through smart social marketing. 
+
 <div class="ctabuttons">
-<a class="btn btn-success btn-large" href="/why-snowball/">Learn More</a> 
+<a class="btn btn-success btn-large" href="/beta/">Sign up for the beta!</a> 
 <br>	
-<a href="/projects/new/">... or get started</a> 
+
 </div>
 </div>
 <br />
 <br />
 <div class="lines"></div>
-<div class="hometitle2">Popular Fan Clubs on Snowball</div>
+<div class="hometitle2"><u>How to build a "tribe" with Snowball</u></div>
 <div class="discoverboxhp">
-<ul class="mysharedprojects">
-<li>
-<%= render :partial => "shared/projects", :locals => { :user => @user, :p => Project.find(24) } %>
-</li>
-<li>
-<%= render :partial => "shared/projects", :locals => { :user => @user, :p => Project.find(23) } %>
-</li>
-<li>
-<%= render :partial => "shared/projects", :locals => { :user => @user, :p => Project.find(26) } %>
-</li>
-</ul>
+
+
+<div class = "hiw_box">
+<div class = "hiw">
+<div class = "hometitle4">1)Launch your projects virally...</div>
+<p>Launch your new work by virally by giving away a preview or early edition of your work for the "price" of a social media share and an email address. It's 
+the 2012 way to build your audience. </p><p>Snowball makes it easy to launch viral promotions with a click of the button.  </p>
+</div>
+<div class = "hiw">
+<%= image_tag("ib1.png", :class => "fimg2") %>
+</div>
+
+
+
+
+<div class = "hiw">
+<%= image_tag("ib2.png", :class => "fimg2") %>
+</div>
+<div class = "hiw">
+<div class = "hometitle4">2)Engage intelligently...  </div>
+<p>Say hello to your audience - it's only polite. Snowball makes it easy to automatically follow up with your 'leads' by asking them for feedback on your work.</p> <p> Once 
+you have found someone interested in your work, take the next step to convert them into a true tribe-member.</p>
+</div>
+
+
+<div class = "hiw">
+<div class = "hometitle4" > 3) Deputize your biggest fans... </div>
+<p>Advertising is so 20th century. With social media, your fans have powerful tools to authentically spread your message for you. 
+Empower them to use those tools by asking your 'inner circle' to take actions for you to spread your message even farther. </p><p>Track which 
+actions across social platforms and show your most loyal 
+supporters that you appreciate their efforts by giving them access to special offers or rewards. </p>
+</div>
+<div class = "hiw">
+<%= image_tag("ib3.png", :class => "fimg2") %>
+<br/> <br/>
+</div>
+
+<a class="btn btn-success btn-large" href="/beta/" style = "margin-left:40px;">Sign up!</a> 
+</div>
+
+
+
 </div>	
 <div>
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120406000835) do
+ActiveRecord::Schema.define(:version => 20120410215614) do
 
   create_table "action_pages", :force => true do |t|
     t.integer   "actionable_id"
@@ -51,6 +51,13 @@ ActiveRecord::Schema.define(:version => 20120406000835) do
     t.string    "password_digest"
     t.timestamp "created_at"
     t.timestamp "updated_at"
+  end
+
+  create_table "leads", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "likes", :force => true do |t|

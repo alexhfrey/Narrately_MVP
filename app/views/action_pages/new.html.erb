@@ -13,14 +13,13 @@ return false;
 <div class="projectcreatebox">
 <fieldset class = "control-group">
 <p class="bluetitle">Publish an update</p>
-<p>With Snowball every update has an action that is tied to it. First, tell your most loyal fans what is new. Then, 
-tell them what they can do to help you spread the word. </p>
+<p>Tell your fans what's new</p>
 <%= form_tag(project_action_pages_path(@project), :method => "post") do %> 
 	<%= hidden_field_tag(:medium, nil )%>	
 	<p><label>Your update title</label>
 	<%= text_field_tag :title %> </p>
 	<p><label>Enter your update - what is new or different that is associated with the action you want your users to take?</label></p>
-	<%= text_area_tag :prompt %>
+	<%= text_area_tag :prompt, nil, :size => "60x10" %>
 	
 	<hr>
 	<p><%= hidden_field_tag :actionable_type, "like" %> 

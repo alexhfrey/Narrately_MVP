@@ -87,10 +87,9 @@ $('.dropdown-toggle').dropdown()
 <div class="grid_10 logo">
 <%=link_to image_tag("logo.png"), root_path %></a></div>
 <% page = request.fullpath %>
-<li><%= link_to "Start a Fan Club", new_project_path %>
-</li>
-<li><%= link_to 'Join a Fan Club', "/discover" %></li>
-<li><%= link_to "How it Works", '/how-it-works' %></li>
+
+<li><%= link_to 'Back a Creator', "/discover" %></li>
+
 <li><%= link_to "Why Snowball?", '/why-snowball' %></li>
 </ul>
 
@@ -110,7 +109,7 @@ $('.dropdown-toggle').dropdown()
 </li>
 <% else %> 
 <li><%= link_to "Login", signin_path %></li>
-<li><%=link_to "Sign Up", signup_path, :class => "menu2li" %> </li>
+<li><%=link_to "Sign Up", new_lead_path, :class => "menu2li" %> </li>
 <% end %>
 </ul> 
 

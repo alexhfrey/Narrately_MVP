@@ -25,10 +25,11 @@ MVP1::Application.routes.draw do
   get "tweets/create"
 
   get "selectpost/show"
+  
 
   resources :users, :only => [:show, :update, :edit] 
   resources :action_takens, :only => [:new, :create]
-  
+  resources :leads, :only =>[:new, :create]
   resources :projects, :only => [:new, :create, :show, :index, :update, :edit] do
 		member do
 			get 'confirmation'
@@ -61,7 +62,7 @@ MVP1::Application.routes.draw do
   match '/faq', :to=> 'pages#faq'
   match '/aboutus', :to=> 'pages#aboutus'
   match '/projects/:id/backers', :to=> 'projects#backers'
-
+ match '/beta', :to=> 'leads#new'
   
   
   

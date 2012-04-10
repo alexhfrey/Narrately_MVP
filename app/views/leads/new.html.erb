@@ -1,0 +1,38 @@
+
+<script type = "text/javascript">
+function setValue(button, target) {
+
+$(target).val(button.attr('name'));
+button.closest('p').find('.btn-primary').removeClass('btn-primary');
+button.addClass('btn-primary');
+
+return false;
+}
+
+</script>
+
+
+
+
+<div class="projectcreatebox">
+
+<fieldset class = "control-group">
+<p class = "hometitle4">Sign up for an invitation to our closed beta. It's free for a limited time! </p>
+<%= simple_form_for @lead do |f| %>
+
+
+	
+   <p> <%= f.input :name, :label => "Your name",  :input_html => { :class => 'text'} %> </p>
+   <p> <%= f.input :email, :label => "Your email",  :input_html => { :class => 'text'} %> </p>
+  
+<br>
+ <p> <%= f.submit "Sign Up!", :class => "btn btn-success btn-large"	 %> </p>
+
+ <% end %>
+
+   
+
+</div>
+
+
+
