@@ -29,7 +29,7 @@ MVP1::Application.routes.draw do
 
   resources :users, :only => [:show, :update, :edit] 
   resources :action_takens, :only => [:new, :create]
-  resources :leads, :only =>[:new, :create]
+  resources :leads, :only => [:new, :create, :show]
   resources :projects, :only => [:new, :create, :show, :index, :update, :edit] do
 		member do
 			get 'confirmation'

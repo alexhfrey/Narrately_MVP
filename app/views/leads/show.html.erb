@@ -1,0 +1,36 @@
+
+<script type = "text/javascript">
+function setValue(button, target) {
+
+$(target).val(button.attr('name'));
+button.closest('p').find('.btn-primary').removeClass('btn-primary');
+button.addClass('btn-primary');
+
+return false;
+}
+
+</script>
+
+
+
+
+<div class="projectcreatebox">
+
+<fieldset class = "control-group">
+<p class = "hometitle4">Sign up for an invitation to our closed beta. It's free for a limited time! </p>
+<table border="10">
+<% Lead.all .each do |g| %>
+
+<tr>
+<td><%= g.name %></td>
+<td><%= g.email %></td>
+</tr>
+<% end %>
+</table>
+
+   
+
+</div>
+
+
+
