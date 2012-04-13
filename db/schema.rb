@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120410215614) do
+ActiveRecord::Schema.define(:version => 20120411225603) do
 
   create_table "action_pages", :force => true do |t|
     t.integer   "actionable_id"
@@ -115,6 +115,23 @@ ActiveRecord::Schema.define(:version => 20120410215614) do
   end
 
   add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
+
+  create_table "release_shares", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "release_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "releases", :force => true do |t|
+    t.string   "name"
+    t.string   "content"
+    t.integer  "project_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "description"
+    t.string   "image"
+  end
 
   create_table "retweets", :force => true do |t|
     t.string    "post_id"

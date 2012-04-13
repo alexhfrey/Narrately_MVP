@@ -1,0 +1,69 @@
+<script type = "text/javascript">
+$('#myTab').tab('show'); 
+$(function () {
+    $('.tabs a:last').tab('show')
+  })
+</script>
+   <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,400italic,700' rel='stylesheet' type='text/css'>
+    
+       
+<div class="container_12 grid_8">
+
+
+<div class="clubbox">
+<div class="namebox">
+<div class="hometitle3"><%= @release.name %> <p><%= @project.brand_name %> </p>
+
+
+</div> 
+</div>
+</ul>
+<%= render 'shared/error_messages' %>
+
+<div class="mainimg2" >
+			
+					
+  			<%= image_tag @release.image_url %>
+			
+</div>
+</div>
+    
+    
+    
+<div class="projectbox">
+<h2>Fan Club Description</h2>
+<div class = "productdescription"><%= simple_format(@release.description)%> </div>
+</div>
+</div>    
+
+<div class="projectbox">
+<h2>Say hello to the community!</h2>
+<div class="fb-comments" data-href= <%= request.url %> data-num-posts="5" data-width="430"></div>
+</div>      
+
+
+
+
+
+
+  
+<div class="grid_right">
+
+
+
+
+<div class="centerbutton">
+<%= link_to "Share it!", new_project_share_path(@release.project), :class => "btn btn-large btn-primary" %>
+
+</div>
+
+     
+
+
+
+</div>
+
+
+
+<%= link_to 'Edit', edit_release_path(@release) %> |
+<%= link_to 'Back', releases_path %>

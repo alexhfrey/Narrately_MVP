@@ -78,7 +78,7 @@ before_filter :twitter_authorized, :only => [:backers, :actions]
 	@user = current_user
 	@project = Project.find(params[:id])
 	if @user == @project.user || @user.id == 10 || @user.id == 7
-	flash[:success] = "You can edit your project below"
+
 	else
 	flash[:error] = "You must be the owner of this project to edit it."
 	redirect_to @project
@@ -111,10 +111,11 @@ before_filter :twitter_authorized, :only => [:backers, :actions]
 		@share.save
 	
 	    @project.user.add_to_chimp_creators
-		flash[:success] = "Thanks for your submission! Now you can optimize your project image"		
-		redirect_to :action => 'crop', :id => @project.id
-		#add check to see if this was users first project
-		@project.user.add_to_chimp_creators
+		flash[:success] = "Awesome! Your project is all setup and this is going to be your home here on Snowball so you might want to bookmark it. 
+		                   From here, you can launch a viral promotion or send an update below!"		
+		redirect_to admin_project_path(@project)
+		
+		
 	else 
 		render 'new'
 	end

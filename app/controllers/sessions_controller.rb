@@ -53,9 +53,8 @@ else
 		user.save
 	end
 	if session[:redirect].present?
-		@project = Project.find(session[:redirect])
+		redirect_path = session[:redirect]
 		session[:redirect] = nil
-		redirect_path = new_project_share_path(@project) 
 	end
 end
 	redirect_to redirect_path
