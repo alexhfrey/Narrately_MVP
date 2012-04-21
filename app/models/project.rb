@@ -2,6 +2,7 @@ require 'file_size_validator'
 class Project < ActiveRecord::Base
 belongs_to :user
 has_many :shares
+has_many :releases
 has_many :action_pages
 has_many :action_taken, :through => :action_pages
 

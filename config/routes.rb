@@ -8,7 +8,6 @@ MVP1::Application.routes.draw do
 
   
 
-  resources :releases
 
   get "fb_comments/new"
 
@@ -41,11 +40,17 @@ MVP1::Application.routes.draw do
 			get 'actions'
 		    get 'backers' 
 			get 'admin'
+			
 		end
 		resources :shares, :only => [:new, :create]
 		resources :facebook_post, :only => [:new]
 		resources :action_pages, :only => [:new, :create] 
-		resources :releases
+		resources :releases do
+			member do
+				get 'confirmation'
+				get 'share'
+			end
+		end
 			
 		
    end

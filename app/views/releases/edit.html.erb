@@ -2,5 +2,5 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @release %> |
-<%= link_to 'Back', releases_path %>
+<%= link_to 'Show', project_release_path(@project, @release) %> 
+<%= link_to 'Back', project_releases_path(@project) %>

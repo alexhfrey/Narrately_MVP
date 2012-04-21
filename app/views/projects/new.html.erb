@@ -26,8 +26,8 @@ return false;
 	<p class="titlepromo">Need help? Send us an email: <a href="mailto:support@mysnowball.com">support@mysnowball.com</a>.</p>
 	<hr>
 	
+	   <p> <%= f.input :brand_name, :label => "Your name, brand name, or project name",  :input_html => { :class => 'text'} %> </p><p class="helptext">This is your full name. For example, 'Seth 'Godin'</p>
    <p> <%= f.input :project_title, :label => "A catchy title for what you're doing" %> </p>
-   <p> <%= f.input :brand_name, :label => "Your name, brand name, or project name",  :input_html => { :class => 'text'} %> </p><p class="helptext">This is your full name. For example, 'Seth 'Godin'</p>
 <br>
  <p> <%= f.submit "Create Club", :class => "btn btn-success btn-large"	 %> </p>
 

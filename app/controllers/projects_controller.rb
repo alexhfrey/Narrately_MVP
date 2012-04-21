@@ -76,11 +76,16 @@ before_filter :twitter_authorized, :only => [:backers, :actions]
   
   def owns_project
 	@user = current_user
+	if @user.nil?
+		flash[:notice] = "You must sign in to access this page"
+		session[:redirect] = request.url
+		redirect_to signin_path and return
+	end
 	@project = Project.find(params[:id])
 	if @user == @project.user || @user.id == 10 || @user.id == 7
 
 	else
-	flash[:error] = "You must be the owner of this project to edit it."
+	flash[:error] = "You must be the owner of this project to view this page."
 	redirect_to @project
 	end
    end

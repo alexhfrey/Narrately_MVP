@@ -2,17 +2,23 @@
 
 
 
-<%= simple_form_for(@release, :html => { :multipart => true }) do |f| %>
+<%= simple_form_for([@project, @release], :html => { :multipart => true }) do |f| %>
   <%= f.error_notification %>
-<p class="hometitle4">Leverage your readers to launch your work virally</p>
-	<p class="titlepromo">You'll be on your way to viral growth minutes. Here's how it works: just pick a "giveaway" file and upload it below with the appropriate information. To get the 
-file, your fans will have to post it to facebook, making it visible to 150 other people on average in the process. Some of those 150 people might be interested as well! At the end, you get a collection
-of email addresses that are automatically added to your dashboard. 	</p>
-	<p class="titlepromo">Need help? Send us an email: <a href="mailto:support@mysnowball.com">support@mysnowball.com</a>.</p>
+<p class="hometitle4">Launch your work virally</p>
+	<p class="titlepromo"><b>Here's how this works:</b> 
+	<li> You upload a special edition, preview, or coupon file below and tell us a little about it </li>
+	<li> To claim the file, your fans will have to post it to facebook, making it visible to 150 other people on average in the process. </li>
+	<li>Some of those 150 people might be interested as well (hence the term - "viral")! </li>
+	<li>We automatically record the email address of everyone that shares through facbeook </li>
+	</p>
+	<p class="titlepromo">Need help? Send us an email: 
+	<a href="mailto:support@mysnowball.com">support@mysnowball.com</a>.</p> </p>
   <div class="inputs">
-    <p><%= f.input :name, :label => "Title of Your Work" %></p>
-    <p><%= f.input :content, :required => false, :label => "The file you want to give away" %></p>
-	 <p><%= f.input :image, :label => "Add a cover image", :required => false%></p><p class="helptext">Use a creative photo! Ideal dimensions are 600px x 400px.  We accept JPEG and PNG for now with a maximum size of 2 MB.</p>
+    <p><%= f.input :name, :label => "Title of Your Promotion" %></p><p class="helptext">Give your promotion a name</p>
+    <p><%= f.input :content, :required => false, :label => "The file you want to give away" %></p><p class="helptext">This could be a PDF of the first three chapters of your book, an MP3 of your latest single, a coupon, or just about anything else downloadable</p>
+		<%= f.hidden_field :content_cache %>
+	<p><%= f.input :image, :label => "A Cover Image", :required => false%></p><p class="helptext">This will be the news feed image when your work is shared, so pick something appropriate</p>
+	 <%= f.hidden_field :image_cache %>
    <p><%= f.input :description, :label => "Give a brief description or message that will be shared on facebook", :input_html => {:size => "20x11"}%> </p><p class="helptext">You could use a short bio here</p>   
   </div>
 
